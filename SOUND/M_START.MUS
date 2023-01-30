@@ -1,0 +1,161 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	field03
+	;
+	;	Converting on Thu May 27 07:58:32 1999
+	;
+	;				by ver 1.00
+	;
+;	public	musstart
+;musstart:
+		mushdr	c0,start031
+		mushdr	01,start032
+		mushdr	02,start033
+		mushdr	03,start034
+;----------------------------------------
+start031:
+;----------------------------------------
+		speed 00 a0
+		vol 77
+		duty 3
+		chorus
+		vib 10 15
+; P1-1
+		bal_s f0
+		init c 0f
+		tempo 8 	oct 5	d
+loop10$:
+		init c 92
+		tempo 6 	oct 5	c#
+		tempo 1 		c#
+					c#
+		tempo 2 		c#
+					c#
+		tempo 4 		c#
+		loop 2,loop10$
+; P1-2
+loop11$:
+		tempo 6 		d#
+		tempo 1 		d#
+					d#
+		tempo 2 		d#
+					d#
+		tempo 4 		d#
+		tempo 6 	oct 6	b
+		tempo 1 		b
+					b
+		tempo 2 		b
+					b
+		init c 94
+		tempo 4 	oct 5	b
+		jump loop10$
+;----------------------------------------
+start032:
+;----------------------------------------
+		duty 3
+; P2-1
+		bal_s 0f
+		init c 0f
+		tempo 8 	oct 5	g
+loop20$:
+		init c a2
+		tempo 6 		f#
+		tempo 1 		f#
+					f#
+		tempo 2 		f#
+					f#
+		tempo 4 		f#
+		loop 2,loop20$
+loop21$:
+		tempo 6 		g#
+		tempo 1 		g#
+					g#
+		tempo 2 		g#
+					g#
+		tempo 4 		g#
+		tempo 6 		e
+		tempo 1 		e
+					e
+		tempo 2 		e
+					e
+		init c a4
+		tempo 4 		f
+		jump loop20$
+;----------------------------------------
+start033:
+;----------------------------------------
+; P3-1
+		bal_s f0
+		init c 25
+		tempo 8 		r
+loop30$:
+		tempo 1 	oct 6	f#
+		tempo 5 		r
+		tempo 1 		f#
+					f#
+					f#
+					r
+					f#
+					r
+					f#
+		tempo 3 		r
+		loop 2,loop30$
+; P3-2
+loop31$:
+		tempo 1 		g#
+		tempo 5 		r
+		tempo 1 		g#
+					g#
+					g#
+					r
+					g#
+					r
+					g#
+		tempo 3 		r
+		tempo 1 		e
+		tempo 5 		r
+		tempo 1 		e
+					e
+					e
+					r
+					e
+					r
+					f
+		tempo 3 		r
+		jump loop30$
+;----------------------------------------
+start034:
+;----------------------------------------
+		bal_s 0f
+		drum_mode 03
+; P4-1
+		init c
+		tempo 8 		r
+		tempo 16 		r
+					r
+					r
+		tempo 12 		r
+		tempo 1 		drum 3
+					drum 3
+					drum 3
+					drum 3
+loop40$:
+		tempo 6 		drum 3
+		tempo 1 		drum 3
+					drum 3
+		tempo 2 		drum 3
+					drum 3
+		tempo 4 		drum 3
+		tempo 6 		drum 3
+		tempo 1 		drum 3
+					drum 3
+		tempo 2 		drum 3
+					drum 3
+					drum 4
+					drum 4
+					drum 3
+					drum 3
+		jump loop40$
+
+

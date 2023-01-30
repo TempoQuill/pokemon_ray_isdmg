@@ -1,0 +1,22 @@
+;	include	group.def
+;bank2c	group	G_SE2
+;	public	m_bluestar
+;m_bluestar:
+	db	004h
+	dw	m_bluestar1
+m_bluestar1:
+	db	com_duty,002h
+	db	com_sweep,05fh
+	db	004h,040h,0e0h,007h
+	db	004h,060h,0e0h,007h
+	db	004h,080h,0e0h,007h
+	db	008h,0a0h,0e0h,007h
+	db	008h,0a0h,0e0h,007h
+	db	008h,080h,0e0h,007h
+	db	008h,060h,0e0h,007h
+	db	008h,030h,0e0h,007h
+	db	00fh,012h,0e0h,007h
+	db	com_sweep,008h
+	db	com_end
+
+

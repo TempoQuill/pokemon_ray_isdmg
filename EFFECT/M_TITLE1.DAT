@@ -1,0 +1,564 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	title2_1
+	;
+	;	Converting on Fri Jul 30 18:29:35 1999
+	;
+	;				by ver 1.01
+	;
+;	public	mustitle1
+;mustitle1:
+	db	080h
+	dw	title2_11
+	db	001h
+	dw	title2_12
+	db	002h
+	dw	title2_13
+;----------------------------------------
+title2_11:
+;----------------------------------------
+	db	$da,$01,$00
+	db	$e5,$77
+	db	$f1
+	db	$db,$02
+	db	$ef,$f0
+; P1-2
+	db	$d8,$c,$b7
+	db	$d7,$9f		;kane
+; P1-3
+	db	$9f		;kane
+	db	$da,$00,$a8
+	db	$db,$03
+; P1-4
+	db	$d8,$6,$c7
+	db	$d5,$6b
+	db	$a3
+	db	$d4,$1b
+	db	$d5,$c1
+	db	$b1
+; P1-5
+	db	$8b
+	db	$b3
+	db	$d4,$4b
+	db	$31
+	db	$21
+; P1-6
+	db	$d8,$6,$b5
+	db	$17
+	db	$d5,$67
+	db	$a7
+	db	$c3
+	db	$d4,$13
+; P1-7
+	db	$d8,$6,$b3
+	db	$d5,$b7
+	db	$27
+	db	$d6,$77
+	db	$d7,$c7
+; P1-8
+	db	$d8,$6,$b2
+	db	$03
+	db	$d5,$b3
+	db	$b7
+	db	$93
+	db	$97
+	db	$83
+; P1-9
+	db	$87
+	db	$73
+	db	$77
+	db	$d6,$a3
+	db	$a7
+; P1-10
+	db	$93
+	db	$97
+	db	$83
+	db	$87
+	db	$73
+	db	$a7
+; P1-11
+	db	$a3
+	db	$a7
+	db	$95
+	db	$95
+	db	$73
+; P1-12
+	db	$83
+	db	$63
+	db	$d8,$8,$b3
+	db	$d4,$60
+	db	$80
+	db	$a0
+	db	$b0
+	db	$c0
+	db	$d3,$10
+	db	$db,$02
+	db	$d8,$c,$b3
+	db	$30
+	db	$20
+	db	$33
+	db	$a0
+	db	$90
+; P1-13
+	db	$a3
+	db	$d4,$b1
+	db	$d3,$31
+	db	$61
+	db	$85
+; P1-14
+	db	$41
+	db	$31
+	db	$11
+	db	$43
+	db	$71
+	db	$db,$03
+	db	$d8,$8,$92
+	db	$a0
+	db	$60
+	db	$40
+	db	$10
+	db	$d4,$a0
+	db	$80
+; P1-15
+	db	$60
+	db	$40
+	db	$10
+	db	$d5,$a2
+	db	$d8,$c,$b2
+	db	$b1
+	db	$c1
+	db	$d4,$11
+	db	$31
+	db	$41
+	db	$dc,$c2
+	db	$61
+; P1-16
+	db	$81
+	db	$af
+	db	$ff
+;----------------------------------------
+title2_12:
+;----------------------------------------
+	db	$f1
+	db	$ef,$0f
+; P2-1
+	db	$d8,$c,$b7
+	db	$db,$02
+; P2-2
+	db	$d6,$1f
+; P2-3
+	db	$1f
+; P2-4
+	db	$db,$03
+	db	$d8,$c,$b2
+	db	$01
+	db	$d8,$6,$62
+	db	$d7,$61
+	db	$a1
+	db	$d6,$11
+	db	$51
+	db	$61
+	db	$a1
+	db	$d5,$11
+	db	$51
+	db	$61
+	db	$a1
+	db	$d4,$11
+	db	$51
+	db	$61
+	db	$a1
+; P2-5
+	db	$d3,$11
+	db	$51
+	db	$d7,$41
+	db	$81
+	db	$b1
+	db	$d6,$31
+	db	$41
+	db	$81
+	db	$b1
+	db	$d5,$31
+	db	$41
+	db	$81
+	db	$b1
+	db	$d4,$31
+	db	$41
+	db	$81
+; P2-6
+	db	$d8,$c,$b7
+	db	$d7,$6f
+; P2-7
+	db	$dc,$83
+	db	$d4,$61
+	db	$dc,$81
+	db	$31
+	db	$dc,$93
+	db	$91
+	db	$dc,$91
+	db	$61
+	db	$dc,$a3
+	db	$d3,$21
+	db	$dc,$a1
+	db	$d4,$b1
+	db	$dc,$b3
+	db	$d3,$71
+	db	$dc,$c1
+	db	$41
+; P2-8
+	db	$dc,$b3
+	db	$d7,$b1
+	db	$d8,$6,$b2
+	db	$d4,$33
+	db	$33
+	db	$d7,$63
+	db	$d4,$33
+	db	$33
+	db	$d6,$13
+	db	$d4,$43
+; P2-9
+	db	$43
+	db	$d7,$63
+	db	$d4,$43
+	db	$43
+	db	$d7,$b3
+	db	$d5,$33
+	db	$33
+	db	$d7,$c3
+; P2-10
+	db	$d5,$33
+	db	$33
+	db	$d6,$13
+	db	$d5,$43
+	db	$43
+	db	$d7,$c3
+	db	$d5,$43
+	db	$73
+; P2-11
+	db	$d7,$b3
+	db	$d5,$33
+	db	$33
+	db	$d7,$c3
+	db	$d5,$35
+	db	$31
+	db	$d6,$13
+	db	$d5,$43
+; P2-12
+	db	$4f
+	db	$d6,$41
+	db	$d5,$83
+	db	$83
+	db	$81
+	db	$d6,$43
+; P2-13
+	db	$d5,$73
+	db	$73
+	db	$d6,$31
+	db	$d5,$63
+	db	$63
+	db	$61
+	db	$d6,$83
+	db	$d5,$c3
+	db	$c3
+; P2-14
+	db	$d6,$13
+	db	$d5,$43
+	db	$43
+	db	$d6,$13
+	db	$d5,$43
+	db	$4f
+; P2-15-tie
+	db	$d8,$6,$a2
+	db	$63
+	db	$83
+	db	$93
+	db	$d8,$6,$c2
+	db	$a3
+	db	$b3
+	db	$d4,$13
+	db	$d8,$6,$d2
+	db	$d5,$a3
+; P2-16
+	db	$d4,$13
+	db	$4f
+	db	$ff
+;----------------------------------------
+title2_13:
+;----------------------------------------
+; P3-2
+	db	$d8,$6,$10
+	db	$d6,$33
+	db	$d8,$6,$20
+	db	$33
+	db	$d8,$6,$30
+	db	$33
+	db	$0b
+	db	$07
+;		init 6 10
+;		tempo 8			d
+;		init 6 20
+;		tempo 4			d
+;		init 6 30
+;		tempo 4			d
+; P3-3
+	db	$d8,$6,$10
+	db	$d6,$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d5,$30
+	db	$00
+	db	$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d2,$30
+	db	$00
+; P3-4
+	db	$d6,$60
+	db	$00
+	db	$a0
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$50
+	db	$00
+	db	$60
+	db	$00
+	db	$a0
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$50
+	db	$00
+	db	$60
+	db	$00
+	db	$a0
+	db	$00
+	db	$d3,$10
+	db	$00
+	db	$50
+	db	$00
+	db	$60
+	db	$00
+	db	$a0
+	db	$00
+	db	$d2,$10
+	db	$00
+	db	$50
+	db	$00
+; P3-5
+	db	$d6,$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d5,$30
+	db	$00
+	db	$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$40
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$d2,$30
+	db	$00
+; P3-6
+	db	$d8,$8,$10
+	db	$60
+	db	$d3,$c0
+	db	$a0
+	db	$c0
+	db	$a0
+	db	$60
+	db	$a0
+	db	$60
+	db	$d4,$c0
+	db	$d3,$60
+	db	$d4,$c0
+	db	$a0
+	db	$c0
+	db	$a0
+	db	$60
+	db	$a0
+	db	$60
+	db	$d5,$c0
+	db	$d4,$60
+	db	$d5,$c0
+	db	$a0
+	db	$c0
+	db	$a0
+	db	$60
+; P3-7
+	db	$d3,$a2
+	db	$d8,$c,$10
+	db	$80
+	db	$00
+	db	$d2,$11
+	db	$d3,$b0
+	db	$00
+	db	$d2,$61
+	db	$40
+	db	$00
+	db	$b1
+	db	$90
+	db	$00
+; P3-8
+	db	$0f
+; P3-9
+	db	$03
+	db	$d8,$6,$10
+	db	$d6,$80
+	db	$02
+	db	$a1
+	db	$01
+	db	$d3,$6b
+	db	$33
+; P3-10 -tie
+	db	$35
+	db	$61
+	db	$4b
+	db	$91
+	db	$01
+	db	$75
+	db	$41
+; P3-11
+	db	$6b
+	db	$31
+	db	$01
+	db	$45
+	db	$61
+	db	$81
+	db	$01
+	db	$71
+	db	$01
+; P3-12
+	db	$81
+	db	$01
+	db	$a3
+	db	$43
+	db	$61
+	db	$01
+	db	$d4,$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$10
+	db	$00
+; P3-13
+	db	$d4,$b0
+	db	$00
+	db	$d3,$10
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$10
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$d3,$10
+	db	$00
+	db	$30
+	db	$00
+	db	$60
+	db	$00
+	db	$30
+	db	$00
+	db	$60
+	db	$00
+; P3-14
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$70
+	db	$00
+	db	$b0
+	db	$00
+	db	$70
+	db	$00
+	db	$b0
+	db	$00
+	db	$70
+	db	$00
+	db	$b0
+	db	$08
+; P3-15
+	db	$d8,$c,$10
+	db	$0d
+	db	$d5,$61
+; P3-16
+	db	$40
+	db	$00
+	db	$10
+	db	$0c
+	db	$ff
+
+

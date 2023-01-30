@@ -1,0 +1,212 @@
+;	include	group.def
+;bank27	group	G_MUSIC3
+	;
+	;	Dendou01
+	;
+	;	Converting on Wed Aug 14 12:50:52 2019
+	;
+	;				by ver 1.01
+	;
+;	public	musdendou1
+;musdendou1:
+	db	0c0h
+	dw	m_dendou11
+	db	001h
+	dw	m_dendou12
+	db	002h
+	dw	m_dendou13
+	db	003h
+	dw	m_dendou14
+;----------------------------------------
+m_dendou11:
+;----------------------------------------
+	db	$da,$00,$e2
+	db	$e5,$77
+	db	$db,$03
+	db	$e1,$6,$22
+; P1-1
+	db	$d8,$6,$a7
+loop$:
+	db	$0f
+; P1-2
+	db	$0f
+; P1-3
+	db	$0f
+; P1-4
+	db	$0b
+	db	$d5,$90
+	db	$a0
+	db	$b0
+	db	$c0
+; P1-5
+sub5_8$:
+	db	$d4,$1f
+; P1-6
+	db	$5f
+; P1-7
+	db	$7f
+; P1-8
+	db	$6f
+; P1-9
+	db	$fd,3
+	dw	sub5_8$
+; P1-13
+; P1-17
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_dendou12:
+;----------------------------------------
+	db	$db,$03
+	db	$e1,$e,$84
+: P2-1
+	db	$d8,$c,$c2
+loop1_4$:
+	db	$d9,$02
+	db	$fe
+	dw	bass1$
+: P2-2
+	db	$fe
+	dw	bass1$
+: P2-3
+	db	$fe
+	dw	bass1$
+: P2-4
+	db	$d9,$00
+	db	$fe
+	dw	bass1$
+: P2-5
+	db	$fd,3
+	dw	loop1_4$
+: P2-9
+: P2-13
+	db	$dc,$c3
+	db	$31
+	db	$81
+	db	$31
+	db	$81
+: P2-14
+	db	$51
+	db	$81
+	db	$51
+	db	$81
+: P2-15
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+: P2-16
+	db	$61
+	db	$a1
+	db	$61
+	db	$a1
+; P2-17
+	db	$fc
+	dw	m_dendou12
+bass1$:
+	db	$d6,$10
+	db	$60
+	db	$10
+	db	$60
+	db	$10
+	db	$60
+	db	$10
+	db	$60
+	db	$ff
+;----------------------------------------
+m_dendou13:
+;----------------------------------------
+	db	$e1,$8,$13
+loop$:
+; P3-1
+	db	$d8,$3,$14
+	db	$d9,$02
+	db	$fe
+	dw	mero1$
+; P3-2
+	db	$fe
+	dw	mero2$
+	db	$83
+; P3-3
+	db	$fe
+	dw	mero1$
+; P3-4
+	db	$d9,$00
+	db	$fe
+	dw	mero2$
+	db	$63
+	db	$fc
+	dw	loop$
+mero1$:
+	db	$d4,$63
+	db	$13
+	db	$63
+	db	$86
+	db	$dc,$24
+	db	$86
+	db	$dc,$34
+	db	$85
+	db	$ff
+mero2$:
+	db	$dc,$14
+	db	$63
+	db	$13
+	db	$63
+	db	$b6
+	db	$dc,$24
+	db	$b0
+	db	$dc,$14
+	db	$a6
+	db	$dc,$24
+	db	$a0
+	db	$dc,$14
+	db	$ff
+;----------------------------------------
+m_dendou14:
+;----------------------------------------
+	db	$e3,$007
+; P4-1
+	db	$d8,$6
+loop$:
+	db	$0f
+; P4-2
+	db	$0f
+; P4-3
+	db	$0f
+; P4-4
+	db	$0f
+dr5_6$:
+; P4-5
+	db	$fe
+	dw	dr5$
+	db	$a3
+; P4-6
+	db	$fe
+	dw	dr5$
+	db	$31
+	db	$a1
+; P4-7
+	db	$fd,5
+	dw	dr5_6$
+; P4-9
+; P4-11
+; P4-13
+; P4-15
+	db	$fe
+	dw	dr5$
+	db	$a3
+; P4-16
+	db	$fe
+	dw	dr5$
+	db	$33
+; P4-17
+	db	$fc
+	dw	loop$
+dr5$:
+	db	$a1
+	db	$a3
+	db	$80
+	db	$90
+	db	$a1
+	db	$a1
+	db	$ff

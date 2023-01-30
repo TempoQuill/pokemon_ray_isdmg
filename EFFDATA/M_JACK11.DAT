@@ -1,0 +1,22 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	win2
+;	;
+;	;	Converting on Mon Aug 16 22:58:35 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	muswin2
+;muswin2:
+	extern	m_jackpot111
+	extern	m_jackpot112
+	extern	m_jackpot113
+	db	080h
+	dw	m_jackpot111
+	db	001h
+	dw	m_jackpot112
+	db	002h
+	dw	m_jackpot113
+
+

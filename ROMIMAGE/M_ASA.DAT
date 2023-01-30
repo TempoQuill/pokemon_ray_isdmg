@@ -1,0 +1,100 @@
+	;
+	;	Asa
+	;
+	;	Converting on Tue Oct 16 18:11:48 1990
+	;
+	;				by ver 1.02
+	;
+
+	db	080h
+	dw	Asa1
+	db	001h
+	dw	Asa2
+	db	002h
+	dw	Asa3
+;----------------------------------------
+Asa1:
+;----------------------------------------
+	db	$da,$00,$90
+	db	$e5,$77
+;		vib 08 24
+	db	$db,$02
+	db	$f1
+;		init c 81
+; P1-1
+;		tempo 2 	oct 4	b
+;					a
+;					g#
+;					e
+;		duty 3
+;		init c c5
+;		tempo 2 	oct 5	g#
+;					e
+;					f#
+;					d#
+; P1-2
+;		tempo 8 		e
+; New Asa (Wait A Minits)
+	db	$d8,$c,$81
+	db	$01
+	db	$e0,$00,$40,$c1
+	db	$e0,$00,$55,$c1
+	db	$e0,$00,$45,$51
+	db	$03
+	db	$e0,$00,$30,$53
+	db	$e0,$00,$40,$c3
+	db	$ff
+;----------------------------------------
+Asa2:
+;----------------------------------------
+;		vib 05 15
+	db	$db,$02
+;		init c d4
+; P2-1
+;		tempo 2 	oct 4	b
+;					a
+;					g#
+;					e
+;				oct 3	e
+;				oct 4	c#
+;				oct 5	b
+;					a
+; P2-2
+;		tempo 8 		g#
+; New Asa (Wait A Minits)
+	db	$d8,$c,$c3
+	db	$d4,$c3
+	db	$c3
+	db	$c1
+	db	$91
+	db	$d8,$c,$c4
+	db	$d3,$57
+	db	$ff
+;----------------------------------------
+Asa3:
+;----------------------------------------
+;		init c 10
+; P3-1
+;		tempo 2 	oct 4	e
+;					f#
+;					g#
+;					a
+;		tempo 4 		g#
+;		tempo 2 		e
+;					f#
+; P3-2
+;		tempo 6 		e
+;		tempo 2			r
+; New Asa (Wait A Minits)
+	db	$d8,$c,$10
+	db	$d4,$51
+	db	$01
+	db	$51
+	db	$01
+	db	$51
+	db	$91
+	db	$55
+	db	$01
+	db	$ff
+
+

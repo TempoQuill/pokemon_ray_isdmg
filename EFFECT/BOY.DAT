@@ -1,0 +1,281 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	boy
+;	;
+;	;	Converting on Mon Jun 07 05:07:29 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musboy
+;musboy:
+	db	080h
+	dw	boy1
+	db	001h
+	dw	boy2
+	db	002h
+	dw	boy3
+;----------------------------------------
+boy1:
+;----------------------------------------
+	db	$da,$00,$76
+	db	$e5,$77
+	db	$ef,$0f
+; P1-1
+	db	$db,$03
+	db	$d8,$c,$a3
+	db	$d5,$80
+	db	$90
+	db	$a0
+	db	$b0
+; P1-2
+	db	$dc,$3e
+	db	$cf
+	db	$dc,$c3
+; P1-3
+	db	$d4,$10
+	db	$02
+	db	$13
+	db	$01
+	db	$15
+	db	$dc,$b3
+loop$:
+; P1-4
+	db	$01
+	db	$d5,$80
+	db	$00
+	db	$c0
+	db	$00
+	db	$80
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$10
+	db	$02
+	db	$10
+	db	$00
+; P1-5
+	db	$0f
+; P1-6
+	db	$01
+	db	$d5,$80
+	db	$00
+	db	$c0
+	db	$00
+	db	$80
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$10
+	db	$02
+	db	$10
+	db	$00
+; P1-7
+	db	$0f
+; P1-8
+	db	$fc
+	dw	loop$
+;		end
+;----------------------------------------
+boy2:
+;----------------------------------------
+	db	$ef,$f0
+; P2-1
+	db	$e1,$12,$26
+	db	$db,$01
+	db	$d8,$c,$a3
+	db	$d5,$c0
+	db	$d4,$10
+	db	$20
+	db	$30
+; P2-2
+	db	$dc,$3e
+	db	$d8,$c,$2e
+	db	$8f
+	db	$d8,$c,$b3
+	db	$dc,$c3
+; P2-3
+	db	$60
+	db	$02
+	db	$63
+	db	$01
+	db	$75
+loop$:
+	db	$db,$03
+	db	$dc,$b3
+; P2-4
+	db	$01
+	db	$d5,$c0
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$d5,$c0
+	db	$00
+	db	$d4,$80
+	db	$00
+	db	$60
+	db	$02
+	db	$60
+	db	$00
+; P2-5
+	db	$dc,$97
+	db	$db,$02
+	db	$40
+	db	$60
+	db	$40
+	db	$30
+	db	$10
+	db	$00
+	db	$d5,$90
+	db	$02
+	db	$60
+	db	$00
+	db	$80
+	db	$00
+	db	$90
+	db	$00
+	db	$db,$03
+	db	$dc,$b3
+; P2-6
+	db	$01
+	db	$c0
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$d5,$c0
+	db	$00
+	db	$d4,$80
+	db	$00
+	db	$60
+	db	$02
+	db	$60
+	db	$00
+	db	$db,$02
+	db	$dc,$97
+; P2-7
+	db	$90
+	db	$b0
+	db	$90
+	db	$80
+	db	$60
+	db	$00
+	db	$10
+	db	$02
+	db	$d5,$90
+	db	$00
+	db	$b0
+	db	$00
+	db	$d4,$10
+	db	$00
+; P2-8
+	db	$fc
+	dw	loop$
+;		end
+;----------------------------------------
+boy3:
+;----------------------------------------
+	db	$ef,$ff
+; P3-1
+	db	$e1,$02,$24
+	db	$d8,$c,$25
+	db	$03
+; P3-2
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$dc,$15
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+; P3-3
+	db	$30
+	db	$02
+	db	$33
+	db	$01
+	db	$95
+	db	$dc,$25
+loop$:
+; P3-4
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+; P3-5
+	db	$d6,$60
+	db	$00
+	db	$d5,$40
+	db	$00
+	db	$d6,$60
+	db	$00
+	db	$d5,$40
+	db	$00
+	db	$d6,$60
+	db	$00
+	db	$d5,$40
+	db	$00
+	db	$d6,$60
+	db	$00
+	db	$d5,$40
+	db	$00
+; P3-6
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$80
+	db	$00
+	db	$d5,$80
+	db	$00
+; P3-7
+	db	$d6,$90
+	db	$00
+	db	$d5,$40
+	db	$00
+	db	$d6,$90
+	db	$00
+	db	$d5,$40
+	db	$00
+	db	$d6,$90
+	db	$00
+	db	$d5,$40
+	db	$00
+	db	$80
+	db	$00
+	db	$90
+	db	$00
+; P3-8
+	db	$fc
+	dw	loop$
+;		end
+
+

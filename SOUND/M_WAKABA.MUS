@@ -1,0 +1,336 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_wakaba
+;	;
+;	;	Converting on Mon Jun 14 03:50:31 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_wakaba
+;musm_wakaba:
+		mushdr	80,m_wakaba1
+		mushdr	01,m_wakaba2
+		mushdr	02,m_wakaba3
+		mushdr	03
+;----------------------------------------
+m_wakaba1:
+;----------------------------------------
+		speed 00 bb
+		vol 77
+; P1-1
+		bal_s 0f
+		vib 12 23
+		init c 87
+		tempo 4 		r
+loop$:
+		duty 0
+; P1-2
+		call sub2_4$
+; P1-5
+		tempo 1 	oct 5	c#
+					r
+				oct 6	a
+					r
+		tempo 2 	oct 5	g
+					f#
+		duty 2
+		env 82
+		tempo 1 		e
+					f#
+					e
+					d
+					c#
+				oct 6	b
+					a
+					g
+; P1-6
+		duty 0
+		env 87
+		call sub2_4$
+; P1-9
+		tempo 1 	oct 5	c#
+					r
+				oct 6	a
+					r
+		tempo 2 	oct 5	e
+		duty 2
+		env 82
+		tempo 1 		c#
+					r
+				oct 6	a
+				oct 5	c#
+					e
+					g
+					a
+				oct 4	c#
+					e
+					a
+; P1-10
+		duty 1
+		env 5e
+		call sub10_11$
+; P1-12
+		call sub10_11$
+; P1-14
+		call sub10_11$
+; P1-16
+		tempo 2 	oct 6	g
+					b
+				oct 5	d
+		tempo 4 		f#
+					g
+		tempo 2 		d
+; P1-17
+				oct 6	a
+				oct 5	c#
+					e
+		tempo 4 		g
+					a
+		tempo 2 		b
+; P1-18
+		env 87
+		jump loop$
+sub2_4$:
+		tempo 1 	oct 5	f#
+					r
+					d
+					r
+		tempo 2 		a
+		tempo 1 		d
+					r
+					f#
+					r
+					d
+					r
+		tempo 2 		a#
+		tempo 1 		d
+					r
+; P1-3
+					f#
+					r
+					d
+					r
+		tempo 2 		b
+		tempo 1 		f#
+					r
+					f#
+					r
+					d
+					r
+		tempo 2 	oct 4	c
+		tempo 1 	oct 5	d
+					r
+; P1-4
+				oct 6	b
+					r
+					g
+					r
+		tempo 2 	oct 5	g
+		tempo 1 	oct 6	b
+					r
+					b
+					r
+					g#
+					r
+		tempo 2 	oct 5	e
+		tempo 1 	oct 6	b
+					r
+		return
+sub10_11$:
+		tempo 2 	oct 6	g
+					b
+				oct 5	d
+		tempo 4 		f#
+					g
+		tempo 2 		d
+; P1-11
+				oct 6	a
+				oct 5	c#
+					e
+		tempo 4 		g
+					a
+		tempo 2 		e
+		return
+;----------------------------------------
+m_wakaba2:
+;----------------------------------------
+		bal_s ff
+; P2-1
+		vib 12 23
+		init 6 a7
+		tempo 8 		r
+loop$:
+; P2-2
+		duty 2
+		init 6 a7
+		call mero2_5$
+; P2-6
+		call mero2_5$
+mero10_11$:
+; P2-10
+		init 6 97
+		duty 2
+		tempo 12 	oct 4	b
+					a
+		tempo 8 		g
+; P2-11
+		init c 97
+		tempo 16 		e
+; P2-12
+		env 87
+		tempo 6 	oct 3	b
+					a
+		env 77
+		tempo 4 	oct 2	d
+; P2-13
+		tempo 16 		c#
+; P2-14
+		loop 2,mero10_11$
+; P2-15
+; P2-16
+; P2-17
+; P2-18
+		jump loop$
+mero2_5$:
+		tempo 4 	oct 6	d
+		tempo 8 		r
+		tempo 1 		d
+					r
+					d
+					r
+		tempo 2 		d
+					r
+		tempo 8 		d
+		tempo 2 		a#
+					r
+; P2-3
+		tempo 4 		d
+		tempo 8 		r
+		tempo 1 		d
+					r
+					d
+					r
+		tempo 2 		d
+					r
+		tempo 8 		d
+		tempo 2 	oct 5	c
+					r
+; P2-4
+		tempo 4 	oct 6	g
+		tempo 8 		r
+		tempo 1 		g
+					r
+					g
+					r
+		tempo 2 	oct 7	g#
+					r
+		tempo 8 		g#
+		tempo 2 	oct 6	d
+					r
+; P2-5
+		tempo 4 		a
+		tempo 8 		r
+		tempo 1 		a
+					r
+					a
+					r
+		tempo 2 	oct 7	a
+					r
+		tempo 8 		a
+		tempo 4 	oct 6	c#
+		return
+;----------------------------------------
+m_wakaba3:
+;----------------------------------------
+		bal_s f0
+; P3-1
+		init c 10
+		tempo 2 	oct 3	d
+					e
+loop$:
+		vib 16 23
+; P3-2
+		tempo 4 		f#
+					a
+		tempo 2 		g
+					f#
+					e
+;					g
+					d
+; P3-3
+		tempo 6 		f#
+		tempo 2 		d
+		tempo 6 	oct 4	a
+		tempo 1 		g
+					a
+; P3-4
+		tempo 4 		b
+				oct 3	d
+		tempo 2 		e
+					d
+					c#
+					d
+; P3-5
+		tempo 6 		e
+		tempo 2 		f#
+;		tempo 4 		e
+;		tempo 2 		r
+		tempo 6 		e
+		tempo 1 		d
+					e
+; P3-6
+		tempo 4 		f#
+					a
+		tempo 2 		a#
+					a
+					g
+					a#
+; P3-7
+		tempo 6 		a
+		tempo 2 	oct 2	c#
+		tempo 6 		d
+		tempo 1 	oct 3	e
+					f#
+; P3-8
+		tempo 6 		g
+		tempo 2 		a
+		tempo 8 		b
+; P3-9
+		tempo 6 		a
+;		tempo 1 		g
+;					f#
+;		tempo 4 		e
+		tempo 1 		a
+					b
+		tempo 4 	oct 2	c#
+					r
+; P3-10
+		env 25
+		vib 12 53
+		tempo 16 	oct 6	g
+; P3-11
+					a
+; P3-12
+					g
+; P3-13
+					a
+; P3-14
+					g
+; P3-15
+					a
+; P3-16
+					g
+; P3-17
+;		tempo 14 		a
+		tempo 12 		a
+		env 10
+		vib 16 23
+;		tempo 1 		d
+;					e
+		tempo 2 	oct 3	d
+					e
+; P3-18
+		jump loop$
+
+

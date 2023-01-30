@@ -1,0 +1,15 @@
+;	include	group.def
+;bank2c	group	G_SE2
+;	public	m_corrupt
+;m_corrupt:
+	db	004h
+	dw	m_corrupt1
+m_corrupt1:
+	db	com_duty,001h
+	db	com_sweep,017h
+	db	00fh,0d7h,000h,006h
+	db	00fh,0b7h,080h,005h
+	db	00fh,087h,000h,005h
+	db	00fh,047h,080h,004h
+	db	00fh,017h,000h,004h
+	db	com_end

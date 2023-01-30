@@ -1,0 +1,774 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	kita_no_tsuchi
+;	;
+;	;	Converting on Wed May 20 22:07:26 2020
+;	;
+;	;				by ver 1.01
+;	;
+;	public	m_kita
+;m_kita:
+		mushdr	c0,m_kita1
+		mushdr	01,m_kita2
+		mushdr	02,m_kita3
+		mushdr	03,m_kita4
+;----------------------------------------
+m_kita1:
+;----------------------------------------
+		speed 00 a5
+		vol 77
+; P1-1
+		chorus 
+		duty 2
+		init c a1
+		tempo 2 		r
+; P1-2
+		call sub2$
+; P1-3
+; P1-4
+; P1-5
+loop$:
+; P1-6
+		call sub2$
+; P1-7
+; P1-8
+; P1-9
+; P1-10
+		call sub10$
+; P1-11
+; P1-12
+; P1-13
+		call sub13$
+; P1-14
+		call sub2$
+; P1-15
+; P1-16
+; P1-17
+; P1-18
+		call sub10$
+; P1-19
+; P1-20
+; P1-21
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c#
+; P1-22
+		init 6 68
+		tempo 8 		c#
+		tempo 1 		e
+		tempo 7 		f
+		tempo 4 		d#
+		env 71
+		tempo 4 		d#
+					d#
+		duty 3
+		env 68
+		tempo 2 		c
+				oct 5	a#
+; P1-23
+		tempo 8 		g#
+					f#
+		tempo 4 		f
+					f#
+					g#
+					c#
+; P1-24
+		duty 2
+		tempo 12 	oct 4	c#
+		tempo 2 		c
+				oct 5	a#
+		tempo 4 	oct 4	c
+		init c 61
+		tempo 2 		c
+					c
+					c
+; P1-25
+		call sub25$
+		call sub25$
+		env a1
+		tempo 2 		c#
+		env 77
+		tempo 2 	oct 5	g#
+; P1-26
+					a#
+					f#
+					a#
+		tempo 4 	oct 4	c
+		tempo 1 		c
+					d#
+		tempo 4 		g#
+; P1-27
+		tempo 3 		f
+		tempo 1 		d#
+		tempo 2 		c#
+		tempo 4 	oct 5	g#
+		tempo 1 	oct 4	c#
+					f
+		tempo 4 		g#
+; P1-28
+					a#
+					f#
+					g#
+					f#
+; P1-29
+		tempo 6 		f
+		call sub25$
+		env a1
+		tempo 2 		c#
+				oct 5	f
+		jump loop$
+sub2$:
+; P1-2
+		env a1
+		tempo 2 	oct 4	c#
+		env 71
+		tempo 2 		c#
+					c#
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c#
+					c#
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		d#
+; P1-3
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c#
+					c#
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c#
+					c#
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c
+; P1-4
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c#
+					c#
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c#
+					c#
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		d#
+; P1-5
+		env a1
+		tempo 2 		c#
+		env 71
+		tempo 2 		c#
+					c#
+		env a1
+		tempo 2 		c
+		env 71
+		tempo 2 		c
+					c
+sub13$:
+		env a1
+		tempo 2 		c
+		env 71
+		tempo 2 		c
+		return
+sub10$:
+; P1-10
+		tempo 2 	oct 5	a#
+					a#
+					a#
+					a#
+				oct 4	c
+					c
+					c
+					c
+; P1-11
+					c#
+					c#
+					c
+				oct 5	g#
+					f
+					a#
+				oct 4	c#
+		env a2
+		tempo 1 	oct 5	c#
+					d#
+; P1-12
+		tempo 2 		a#
+					g#
+					f#
+					f
+					f#
+					g#
+					f#
+					d#
+; P1-13
+		tempo 6 		f
+sub25$:
+		env a1
+		tempo 2 	oct 4	c#
+		env 71
+		tempo 2 		c#
+					c#
+		return
+;----------------------------------------
+m_kita2:
+;----------------------------------------
+; P2-1
+		duty 2
+		init c d1
+		tempo 2 		r
+; P2-2
+		call mero2$
+		tempo 2 		g#
+		env a1
+		tempo 2 		f
+; P2-3
+		env d1
+		tempo 2 		g#
+		env a1
+		tempo 2 		g#
+					c#
+		env d1
+		tempo 2 		g#
+		env a1
+		tempo 2 		g#
+					f#
+					f
+					d#
+; P2-4
+		call mero2$
+		tempo 2 		f#
+		env a1
+		tempo 2 		f
+; P2-5
+loop5$:
+		env d1
+		tempo 2 		d#
+		env a1
+		tempo 2 		d#
+					d#
+		loop 2,loop5$
+		env d1
+		tempo 2 		d#
+loop$:
+	; nutamona
+		call mero5$
+; P2-6
+	; rotana
+; P2-7
+	; lecan
+; P2-8
+	; Hales Walemin
+; P2-9
+	; nota
+; P2-10
+	; leya pere
+; P2-11
+	; mona tahoto hi
+; P2-12
+	; Windigo ro din
+; P2-13
+		tempo 2 		d#
+		call mero5$
+	; leya
+; P2-14
+	; nota norata
+; P2-15
+	; te za
+; P2-16
+	; ga za rudar ro
+; P2-17
+	; i vo
+; P2-18
+	; ni nat deyo
+; P2-19
+	; va curedo orinoda
+; P2-20
+	; rudero
+; P2-21
+		tempo 2 		g#
+		duty 3
+		env d4
+	; te
+		tempo 2 	oct 4	c#
+; P2-22
+	; liru
+		tempo 6 		a#
+		tempo 2 		a#
+	; diha
+		tempo 6 		g#
+	; sotefala
+		tempo 1 		g#
+					f#
+; P2-23
+		tempo 4 		f
+		tempo 2 		d#
+	; i
+		tempo 8 		c#
+	; yucoya
+		tempo 2 		c#
+; P2-24
+		tempo 6 		a#
+		tempo 2 		a#
+	; le
+		tempo 4 		g#
+	; yote
+		tempo 2 		d#
+		tempo 4 		f
+; P2-25 -tie
+		duty 2
+loop25$:
+		env a1
+		tempo 2 	oct 5	f
+					f
+		env d1
+		tempo 2 		f
+		loop 2,loop25$
+		duty 3
+		env d4
+	; uhedo
+		tempo 2 	oct 3	c
+; P2-26
+		tempo 4 		c#
+		tempo 2 	oct 4	f
+	; le
+		tempo 8 		f#
+	; hin
+		tempo 2 		a#
+; P2-27
+	; dega
+		tempo 3 		g#
+		tempo 1 		f#
+	; liruho
+					f
+					d#
+		tempo 6 		c#
+	; leyu
+		tempo 2 		d#
+					f
+; P2-28
+	; alada
+		tempo 4 		f#
+					d#
+					c
+	; rote
+		tempo 2 		c
+		tempo 8 		c#
+; P2-29
+		duty 2
+		env d1
+		tempo 2 	oct 5	f
+		env a1
+		tempo 2 		f
+					f
+		env d1
+		tempo 2 		f
+		jump loop$
+mero2$:
+		env d1
+		tempo 2 	oct 5	f
+		env a1
+		tempo 2 		f
+					d#
+		env d1
+		tempo 2 		f
+		env a1
+		tempo 2 		f
+					f
+		env d1
+		return
+mero5$:
+; P2-5
+		duty 3
+		env d4
+		tempo 1 	oct 4	c#
+					d#
+; P2-6
+		tempo 6 		f
+		tempo 2 		d#
+		tempo 6 		c#
+		tempo 1 		c
+		tempo 7 	oct 5	a#
+; P2-7 -tie
+		duty 2
+		env d1
+		tempo 2 		g#
+		env a1
+		tempo 2 		g#
+					f#
+					f
+		duty 3
+		env d4
+		tempo 1 	oct 4	c#
+					d#
+; P2-8
+		tempo 6 		f
+		tempo 2 		f#
+		tempo 6 		g#
+		tempo 1 		a#
+		tempo 7 		g#
+; P2-9 -tie
+		duty 2
+		env d1
+		tempo 2 	oct 5	d#
+		env a1
+		tempo 2 		d#
+					d#
+		env d1
+		tempo 2 		d#
+		duty 3
+		env d4
+		tempo 1 	oct 4	f
+					d#
+; P2-10
+		tempo 8 		c#
+					d#
+; P2-11
+		tempo 6 		f
+		tempo 1 		d#
+		tempo 7 		c#
+		tempo 1 	oct 5	a#
+				oct 4	c
+; P2-12
+		tempo 6 		c#
+		tempo 2 		g#
+		tempo 6 		d#
+		tempo 2 	oct 5	g#
+; P2-13
+		tempo 6 	oct 4	c#
+		duty 2
+		env d1
+		tempo 2 	oct 5	f
+		env a1
+		tempo 2 		f
+					f
+		env d1
+		return
+;----------------------------------------
+m_kita3:
+;----------------------------------------
+; P3-1
+		init 6 1e
+		tempo 2 	oct 6	g#
+				oct 5	c
+; P3-2
+		call bass2$
+; P3-3
+; P3-4
+; P3-5
+		tempo 2 		c#
+					d#
+loop$:
+; P3-6
+		call bass2$
+; P3-7
+; P3-8
+; P3-9
+		call bass9$
+; P3-10
+; P3-11
+; P3-12
+; P3-13
+		tempo 8 		g#
+; P3-14
+		call bass2$
+; P3-15
+; P3-16
+; P3-17
+		call bass9$
+; P3-18
+; P3-19
+; P3-20
+; P3-21
+		tempo 1 		d#
+		tempo 7 		f
+; P3-22
+		tempo 2 		f#
+					r
+		env 10
+		tempo 4 	oct 4	c#
+					f#
+		env 1e
+		tempo 2 	oct 5	c
+					r
+					g#
+					r
+		tempo 1 		b
+		tempo 7 	oct 4	c
+		tempo 4 	oct 5	g#
+; P3-23
+		tempo 2 		c#
+					r
+		env 10
+		tempo 2 	oct 4	f
+					f#
+					g#
+					r
+		env 1e
+		tempo 2 	oct 5	c#
+					r
+		env 10
+		tempo 2 	oct 3	c#
+					r
+		env 1e
+		tempo 2 	oct 5	c#
+		env 10
+		tempo 2 	oct 4	g#
+		env 1e
+		tempo 1 	oct 5	d#
+		tempo 7 		f
+; P3-24
+		tempo 2 		f#
+					r
+		env 10
+		tempo 2 		f#
+				oct 4	c#
+					a#
+					r
+		env 1e
+		tempo 4 	oct 5	f#
+		tempo 2 		g
+					r
+		env 10
+		tempo 2 	oct 4	d#
+					r
+		tempo 1 		b
+		tempo 3 	oct 3	c
+		env 1e
+		tempo 4 	oct 5	g
+; P3-25
+		tempo 2 		g#
+					r
+		env 10
+		tempo 2 	oct 4	f
+					g#
+		env 1e
+		tempo 2 	oct 5	f
+					r
+		env 10
+		tempo 1 	oct 3	e
+		tempo 3 		f
+		env 1e
+		tempo 2 	oct 5	a#
+					r
+					f
+					r
+				oct 6	a#
+					r
+				oct 5	f#
+					f
+; P3-26
+					d#
+					r
+		env 10
+		tempo 4 	oct 4	a#
+		env 1e
+		tempo 2 	oct 5	d#
+					r
+		tempo 4 		g#
+		env 10
+		tempo 4 	oct 3	c
+		tempo 2 	oct 5	g#
+				oct 4	c
+					d#
+					g#
+				oct 3	c
+					d#
+; P3-27
+		env 1e
+		tempo 2 	oct 5	c#
+					r
+		env 10
+		tempo 4 	oct 3	c#
+		env 1e
+		tempo 2 	oct 5	c
+					r
+		tempo 4 	oct 6	a#
+		env 10
+		tempo 4 	oct 4	f
+		tempo 2 	oct 5	a#
+				oct 4	c#
+					f
+					a#
+				oct 3	c#
+					f
+; P3-28
+		env 1e
+		tempo 2 	oct 6	f#
+					g#
+					a#
+				oct 5	c#
+					d#
+					r
+		tempo 1 		b
+		tempo 7 	oct 4	c
+		tempo 4 	oct 6	g#
+		tempo 1 	oct 5	g
+		tempo 3 		g#
+		tempo 4 		d#
+; P3-29
+		tempo 2 		c#
+		tempo 10 		r
+		tempo 2 		c#
+					c#
+					c#
+					r
+		tempo 1 		g
+		tempo 5 		g#
+		tempo 2 		r
+		tempo 4 		d#
+		jump loop$
+bass2$:
+; P3-2
+		tempo 2 		c#
+		tempo 10 		r
+		tempo 2 		c#
+		tempo 6 		r
+		tempo 2 		c#
+					r
+		tempo 1 		d#
+		tempo 7 		f
+; P3-3
+		tempo 2 		f#
+		tempo 10 		r
+		tempo 2 		f#
+					r
+				oct 6	f#
+					r
+		tempo 4 	oct 5	a#
+					g#
+					f#
+; P3-4
+		tempo 2 		c#
+		tempo 10 		r
+		tempo 2 		c#
+		tempo 6 		r
+		tempo 2 		c#
+					r
+		tempo 1 		g#
+		tempo 7 		a#
+; P3-5
+		tempo 2 		g#
+		tempo 10 		r
+		tempo 2 	oct 6	g#
+					g#
+					g#
+					r
+		tempo 1 		b
+		tempo 5 	oct 5	c
+		tempo 2 		r
+		return
+bass9$:
+		tempo 2 		d#
+					f
+; P3-10
+					f#
+					r
+		env 2e
+		tempo 1 	oct 4	c#
+		tempo 3 		r
+		tempo 1 		c#
+		tempo 3 		r
+		env 1e
+		tempo 4 	oct 5	f#
+		tempo 2 		g
+					r
+		env 2e
+		tempo 1 	oct 4	d#
+		tempo 3 		r
+		tempo 1 		d#
+		tempo 3 		r
+		env 1e
+		tempo 4 	oct 5	g
+; P3-11
+		tempo 2 		g#
+					r
+		env 2e
+		tempo 1 	oct 4	f
+		tempo 3 		r
+		env 1e
+		tempo 2 	oct 5	f
+					r
+		env 2e
+		tempo 1 	oct 4	d#
+		tempo 3 		r
+		env 1e
+		tempo 2 	oct 5	a#
+					r
+					f
+					r
+				oct 6	a#
+					r
+				oct 5	d#
+					f
+; P3-12
+					f#
+		tempo 10 		r
+		tempo 2 		c
+					r
+					g#
+					r
+		tempo 1 		b
+		tempo 7 	oct 4	c
+		tempo 4 	oct 5	g#
+; P3-13
+		tempo 2 		c#
+		tempo 10 		r
+		tempo 2 		c#
+		tempo 6 		r
+		tempo 2 		c#
+					r
+		return
+;----------------------------------------
+m_kita4:
+;----------------------------------------
+		drum_mode 05
+; P4-1
+		init c
+		tempo 2 		r
+_loop4:
+; P4-2
+		call dr2$
+		tempo 1 		drum 5
+					drum 5
+; P4-3
+		loop 3,_loop4
+; P4-4
+; P4-5
+		call dr2$
+		tempo 1 		drum 1
+					drum 1
+; P4-6
+loop6$:
+		call dr2$
+		tempo 1 		drum 5
+					drum 5
+; P4-7
+		loop 4,loop6$
+; P4-8
+; P4-9
+		jump _loop4
+dr2$:
+		tempo 2 		drum c
+					drum 5
+					drum 1
+		tempo 1 		drum c
+					drum 5
+					drum 5
+					drum 5
+		tempo 2 		drum c
+					drum 1
+		return
+
+

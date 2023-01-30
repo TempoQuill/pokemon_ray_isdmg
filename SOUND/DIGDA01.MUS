@@ -1,0 +1,779 @@
+	;
+	;	Digda01
+	;
+	;	Converting on Fri Jul 28 15:35:04 1995
+	;
+	;				by ver 1.02
+	;
+
+		public Digda011
+		public Digda012
+		public Digda013
+
+;----------------------------------------
+Digda011
+;----------------------------------------
+
+		speed 00 90
+		vol 77
+
+		duty 1
+		chorus
+		init c c3
+loop$:
+		tempo 16		r
+					r
+					r
+					r
+					r
+					r
+					r
+					r
+; P1-1
+		tempo 2 	oct 5	d#
+; P1-2 --- tied
+					d
+; P1-3 --- tied
+					d#
+; P1-4 --- tied
+					f
+; P1-5 --- tied
+					f#
+; P1-6 --- tied
+					f
+; P1-7 --- tied
+					f#
+; P1-8 --- tied
+					g#
+; P1-9
+					a
+; P1-10 --- tied
+					g#
+					a
+					g#
+					f#
+					f
+					f#
+					g#
+; P1-11
+					a
+					g#
+					a
+					g#
+					f#
+					f
+					f#
+					f
+; P1-12
+					a
+					g#
+					a
+					g#
+					f#
+					f
+					d#
+					d
+; P1-13 -
+		tempo 16		r
+; P1-14 -
+					r
+; P1-15 -
+					r
+; P1-16 -
+					r
+; P1-17 -
+					r
+; P1-18 -
+					r
+; P1-19
+		tempo 2 	oct 4	c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+; P1-20
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					r
+; P1-21 --- tied
+					f#
+					r
+					f#
+					r
+					f#
+					r
+					f#
+					r
+; P1-22 --- tied
+					f#
+					r
+					f#
+					r
+					f
+					r
+					f
+					r
+; P1-23 --- tied
+					f
+					r
+					f
+					r
+					f
+					r
+					f
+					r
+; P1-24 --- tied
+					f#
+					r
+					f#
+					r
+					f#
+					r
+					f#
+					r
+; P1-25 --- tied
+					f#
+					r
+					f#
+					r
+					g
+					r
+					g
+					r
+; P1-26 --- tied
+					g
+					r
+					g
+					r
+					g
+					r
+					g
+					r
+; P1-27 --- tied
+					f#
+					r
+					f#
+					r
+					f#
+					r
+					f#
+					r
+; P1-28 --- tied
+					f#
+					r
+					f#
+					r
+					f
+					r
+					f
+					r
+; P1-29 --- tied
+					f
+					r
+					f
+					r
+					f
+					r
+					f
+					r
+; P1-30 --- tied
+					e
+					r
+					e
+					r
+					e
+					r
+					e
+					r
+; P1-31 --- tied
+					e
+					r
+					e
+					r
+					f
+					r
+					f
+					r
+; P1-32 --- tied
+					f
+					r
+					f
+					r
+					f
+					r
+					f
+; P1-33
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+; P1-34
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+					c#
+; P1-35 -
+		tempo 16		r
+; P1-36 -
+					r
+
+		loop 0,loop$
+
+;----------------------------------------
+Digda012
+;----------------------------------------
+
+		duty 1
+loop$:
+		init c d3
+; P2-1 -
+		tempo 16		r
+; P2-2 -
+					r
+; P2-3 -
+					r
+; P2-4 -
+					r
+; P2-5
+		tempo 6 	oct 5	a#
+		tempo 2 	oct 4	c
+		tempo 6 		c#
+		tempo 2 		c
+; P2-6
+		tempo 6 		c#
+		tempo 2 		c
+		tempo 6 		c#
+		tempo 2 		d#
+; P2-7
+		tempo 6 		e
+		tempo 2 		d#
+		tempo 6 		e
+		tempo 2 		d#
+; P2-8
+		tempo 6 		c#
+		tempo 2 		c
+		tempo 6 	oct 5	a#
+		tempo 2 		g#
+; P2-9
+		tempo 6 		a#
+		tempo 2 	oct 4	c
+		tempo 6 		c#
+		tempo 2 		c
+; P2-10
+		tempo 6 		c#
+		tempo 2 		c
+		tempo 6 		c#
+		tempo 2 		d#
+; P2-11
+		tempo 6 		e
+		tempo 2 		d#
+		tempo 6 		e
+		tempo 2 		d#
+; P2-12
+		tempo 6 		c#
+		tempo 2 		c
+		tempo 6 	oct 5	a#
+		tempo 2 		g#
+; P2-13 -
+		tempo 16		r
+; P2-14
+		tempo 2 		c#
+					a
+					g
+					d#
+					f
+					a
+; P2-15 -
+		tempo 16		r
+; P2-16 -
+		tempo 4 		r
+		tempo 2 		c
+					g#
+					f#
+					d
+					e
+					g#
+; P2-17 -
+		tempo 16		r
+; P2-18 -
+					r
+; P2-19 -
+		tempo 4 		r
+		init c c2
+		tempo 2 	oct 4	b
+					b
+					b
+					b
+					b
+					b
+					b
+					b
+; P2-20
+					b
+					b
+					b
+					b
+					b
+					b
+					b
+					b
+					r
+; P2-21 --- tied
+					b
+					r
+					b
+					r
+					b
+					r
+					b
+					r
+; P2-22 --- tied
+					b
+					r
+					b
+					r
+					a#
+					r
+					a#
+					r
+; P2-23 --- tied
+					a#
+					r
+					a#
+					r
+					a#
+					r
+					a#
+					r
+; P2-24 --- tied
+					b
+					r
+					b
+					r
+					b
+					r
+					b
+					r
+; P2-25 --- tied
+					b
+					r
+					b
+					r
+				oct 3	c
+					r
+					c
+					r
+; P2-26 --- tied
+					c
+					r
+					c
+					r
+					c
+					r
+					c
+					r
+; P2-27 --- tied
+				oct 4	b
+					r
+					b
+					r
+					b
+					r
+					b
+					r
+; P2-28 --- tied
+					b
+					r
+					b
+					r
+					a#
+					r
+					a#
+					r
+; P2-29 --- tied
+					a#
+					r
+					a#
+					r
+					a#
+					r
+					a#
+					r
+; P2-30 --- tied
+					a
+					r
+					a
+					r
+					a
+					r
+					a
+					r
+; P2-31 --- tied
+					a
+					r
+					a
+					r
+					a#
+					r
+					a#
+					r
+; P2-32 --- tied
+					a#
+					r
+					a#
+					r
+					a#
+					r
+					a#
+; P2-33
+					b
+					b
+					b
+					b
+					b
+					b
+					b
+					b
+; P2-34
+					b
+					b
+					b
+					b
+					b
+					b
+					b
+					b
+; P2-35 -
+		tempo 16		r
+; P2-36 -
+					r
+
+		loop 0,loop$
+
+;----------------------------------------
+Digda013
+;----------------------------------------
+
+; P3-1
+		init c 10
+loop$:
+		tempo 2 	oct 3	d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-2
+		tempo 2 	oct 4	d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-3
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-4
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-5
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-6
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-7
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-8
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-9
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-10
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-11
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-12
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-13
+		tempo 2 		c#
+					a
+					g
+					d#
+					f
+					a
+		tempo 4 		r
+; P3-14
+		tempo 2 		c#
+					a
+					g
+					d#
+					f
+					a
+		tempo 4 		r
+; P3-15
+		tempo 2 		c
+					g#
+					f#
+					d
+					e
+					g#
+		tempo 4 		r
+; P3-16
+		tempo 2 		c
+					g#
+					f#
+					d
+					e
+					g#
+		tempo 4 		r
+; P3-17
+		tempo 2 	oct 5	b
+				oct 4	g
+					f
+					c#
+					d#
+					g
+		tempo 4 		r
+; P3-18
+		tempo 2 	oct 5	b
+				oct 4	g
+					f
+					c#
+					d#
+					g
+		tempo 4 		r
+; P3-19
+		tempo 2 	oct 5	b
+				oct 4	g
+					f
+					c#
+					d#
+					g
+		tempo 4 		r
+; P3-20
+		tempo 2 	oct 5	b
+				oct 4	g
+					f
+					c#
+					d#
+					g
+		tempo 4 		r
+; P3-21
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+					d
+					a#
+; P3-22
+					g#
+					e
+					f#
+					a#
+					c#
+					a
+					g
+					d#
+; P3-23
+					f
+					a
+					c#
+					a
+					g
+					d#
+					f
+					a
+; P3-24
+					d
+					a#
+					g#
+					e
+					f#
+					a#
+					d
+					a#
+; P3-25
+					g#
+					e
+					f#
+					a#
+					d#
+					b
+					a
+					f
+; P3-26
+					g
+					b
+					d#
+					b
+					a
+					f
+					g
+					b
+; P3-27
+					d
+					a#
+					g#
+					e
+					f#
+					a#
+					d
+					a#
+; P3-28
+					g#
+					e
+					f#
+					a#
+					c#
+					a
+					g
+					d#
+; P3-29
+					f
+					a
+					c#
+					a
+					g
+					d#
+					f
+					a
+; P3-30
+					c
+					g#
+					f#
+					d
+					e
+					g#
+					c
+					g#
+; P3-31
+					f#
+					d
+					e
+					g#
+					c#
+					a
+					g
+					d#
+; P3-32
+					f
+					a
+					c#
+					a
+					g
+					d#
+					f
+					a
+; P3-33
+					d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-34
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-35
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+; P3-36
+		tempo 2 		d
+					a#
+					g#
+					e
+					f#
+					a#
+		tempo 4 		r
+
+		loop 0,loop$
+
+

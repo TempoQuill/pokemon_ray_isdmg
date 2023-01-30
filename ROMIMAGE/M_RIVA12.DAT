@@ -1,0 +1,86 @@
+;	include	group.def
+;bank3d	group	G_MUSIC4
+	;
+	;	rival01
+	;
+	;	Converting on Thu May 27 07:59:44 1999
+	;
+	;				by ver 1.00
+	;
+;	public	musrival12
+;musrival12:
+	db	0c0h
+	dw	rival021
+	db	001h
+	dw	rival022
+	db	002h
+	dw	rival023
+	db	003h
+	dw	rival024
+;----------------------------------------
+rival021:
+;----------------------------------------
+	db	$da,$00,$70
+	db	$e5,$77
+	db	$db,$00
+	db	$f1
+	db	$e1,$8,$14
+	db	$ef,$f0
+	db	$d8,$c,$b2
+	db	$d6,$93
+	db	$93
+	db	$dc,$82
+	db	$d5,$91
+	db	$91
+	db	$91
+	db	$91
+	db	$fc
+	dw	Rloop10
+;----------------------------------------
+rival022:
+;----------------------------------------
+	db	$db,$01
+	db	$e1,$6,$35
+	db	$ef,$0f
+	db	$d8,$c,$c2
+	db	$d4,$93
+	db	$93
+	db	$dc,$a2
+	db	$91
+	db	$91
+	db	$91
+	db	$91
+	db	$fc
+	dw	Rloop20
+;----------------------------------------
+rival023:
+;----------------------------------------
+	db	$d8,$c,$28
+	db	$d5,$41
+	db	$01
+	db	$41
+	db	$01
+	db	$91
+	db	$71
+	db	$61
+	db	$41
+	db	$fc
+	dw	Rloop30
+;----------------------------------------
+rival024:
+;----------------------------------------
+	db	$e3,$003
+	db	$ef,$0f
+; P4-1
+	db	$d8,$c
+; P4-2
+	db	$33
+	db	$33
+	db	$41
+	db	$31
+	db	$31
+	db	$31
+	db	$fc
+	dw	Rloop40
+
+

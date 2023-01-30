@@ -1,0 +1,137 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	onna
+;	;
+;	;	Converting on Fri Aug 20 21:17:26 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musonna
+;musonna:
+	db	0c0h
+	dw	onna1
+	db	001h
+	dw	onna2
+	db	002h
+	dw	onna3
+	db	003h
+	dw	onna4
+;----------------------------------------
+onna1:
+;----------------------------------------
+	db	$da,$00,$84
+	db	$e5,$77
+	db	$f1
+; P1-2
+	db	$db,$02
+	db	$d8,$c,$c7
+	db	$d5,$c0
+	db	$00
+	db	$d4,$cd
+; P1-3
+	db	$ef,$0f
+	db	$db,$00
+_loop:
+	db	$dc,$a2
+	db	$d5,$53
+	db	$dc,$a1
+	db	$53
+	db	$53
+	db	$51
+	db	$dc,$a3
+	db	$c1
+	db	$fc
+	dw	_loop
+;----------------------------------------
+onna2:
+;----------------------------------------
+	db	$ef,$f0
+; P2-2
+	db	$db,$00
+	db	$d8,$c,$83
+	db	$0f
+; P2-3
+_loop:
+	db	$dc,$92
+	db	$d6,$c3
+	db	$dc,$91
+	db	$c3
+	db	$c3
+	db	$c1
+	db	$dc,$93
+	db	$d5,$91
+; P2-4
+	db	$fc
+	dw	_loop
+;----------------------------------------
+onna3:
+;----------------------------------------
+; P3-2
+	db	$d8,$c,$10
+	db	$07
+	db	$d2,$51
+	db	$41
+	db	$21
+	db	$11
+; P3-3
+_loop:
+	db	$d3,$c1
+	db	$01
+	db	$d2,$41
+	db	$01
+	db	$51
+	db	$01
+	db	$41
+	db	$01
+; P3-4
+	db	$21
+	db	$11
+	db	$d3,$c1
+	db	$a1
+	db	$91
+	db	$a1
+	db	$b1
+	db	$d2,$21
+; P3-5
+	db	$d3,$c1
+	db	$01
+	db	$d2,$21
+	db	$01
+	db	$d3,$c1
+	db	$01
+	db	$a1
+	db	$01
+; P3-6
+	db	$91
+	db	$71
+	db	$51
+	db	$41
+	db	$51
+	db	$71
+	db	$91
+	db	$a1
+; P3-7
+	db	$fc
+	dw	_loop
+;----------------------------------------
+onna4:
+;----------------------------------------
+	db	$e3,$004
+; P4-2
+	db	$d8,$c
+	db	$1f
+; P4-3
+_loop:
+	db	$d8,$6
+	db	$37
+	db	$27
+	db	$27
+	db	$23
+	db	$30
+	db	$20
+	db	$20
+	db	$20
+; P4-4
+	db	$fc
+	dw	_loop

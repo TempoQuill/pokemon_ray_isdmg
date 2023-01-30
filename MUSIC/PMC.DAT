@@ -1,0 +1,585 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	PC011
+	;
+	;	Converting on Wed Sep 27 17:34:34 1995
+	;
+	;				by ver 1.02
+	;
+;	public	muspmc
+;muspmc:
+	db	0c0h
+	dw	PMC1
+	db	001h
+	dw	PMC2
+	db	002h
+	dw	PMC3
+	db	003h
+	dw	PMC4
+;----------------------------------------
+PMC1:
+;----------------------------------------
+	db	$da,$00,$90
+	db	$e5,$77
+	db	$db,$03
+	db	$e1,$0a,$22
+;		chorus
+; P1-1
+loop10$
+	db	$d8,$c,$a3
+	db	$d5,$71
+	db	$61
+	db	$71
+	db	$d8,$c,$b5
+	db	$d4,$33
+	db	$21
+	db	$d5,$b1
+	db	$a1
+; P1-2
+	db	$c1
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-3
+	db	$d8,$c,$a3
+	db	$a1
+	db	$51
+	db	$a1
+	db	$d8,$c,$b5
+	db	$d4,$23
+	db	$d5,$c1
+	db	$a1
+	db	$81
+; P1-4
+	db	$71
+	db	$a1
+	db	$c1
+	db	$d4,$21
+	db	$31
+	db	$21
+	db	$d5,$b1
+	db	$a1
+; P1-5
+	db	$d8,$c,$a3
+	db	$71
+	db	$61
+	db	$71
+	db	$d8,$c,$b5
+	db	$d4,$33
+	db	$21
+	db	$d5,$b1
+	db	$a1
+; P1-6
+	db	$c1
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-7
+	db	$d8,$c,$a3
+	db	$a1
+	db	$51
+	db	$a1
+	db	$d8,$c,$b5
+	db	$d4,$23
+	db	$d5,$c1
+	db	$a1
+	db	$81
+; P1-8
+	db	$71
+	db	$51
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+	db	$c1
+; P1-9
+	db	$71
+	db	$51
+	db	$33
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-10
+	db	$c1
+	db	$a1
+	db	$83
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-11
+	db	$81
+	db	$71
+	db	$53
+	db	$21
+	db	$31
+	db	$51
+	db	$81
+; P1-12
+	db	$71
+	db	$81
+	db	$a1
+	db	$c1
+	db	$a7
+; P1-13
+	db	$d4,$31
+	db	$21
+	db	$d5,$c3
+	db	$a1
+	db	$c1
+	db	$d4,$21
+	db	$31
+; P1-14
+	db	$51
+	db	$31
+	db	$23
+	db	$d5,$c1
+	db	$d4,$21
+	db	$31
+	db	$51
+; P1-15
+	db	$21
+	db	$d5,$b1
+	db	$a3
+	db	$81
+	db	$a1
+	db	$c1
+	db	$81
+; P1-16
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$fc
+	dw	loop10$
+;----------------------------------------
+PMC2:
+;----------------------------------------
+	db	$db,$02
+	db	$d8,$c,$c1
+;		init c 28
+; P2-1
+loop30$:
+;		bal_s f0
+	db	$d6,$30
+	db	$04
+	db	$70
+	db	$02
+	db	$70
+	db	$00
+	db	$80
+	db	$00
+	db	$70
+	db	$00
+; P2-2
+	db	$fe
+	dw	e_a_e_a$
+; P2-3
+	db	$fe
+	dw	e_a_g_a$
+; P2-4
+	db	$70
+	db	$04
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+	db	$80
+	db	$00
+	db	$a0
+	db	$00
+; P2-5
+	db	$30
+	db	$04
+	db	$70
+	db	$02
+	db	$70
+	db	$00
+	db	$80
+	db	$00
+	db	$70
+	db	$00
+; P2-6
+	db	$fe
+	dw	e_a_e_a$
+; P2-7
+	db	$fe
+	dw	e_a_g_a$
+; P2-8
+	db	$30
+	db	$04
+	db	$70
+	db	$02
+	db	$70
+	db	$00
+	db	$30
+	db	$00
+	db	$80
+	db	$00
+;		tempo 1			f#
+;					r
+;					d
+;					b
+;					a
+;					g
+; P2-9
+;		bal_s ff
+	db	$fe
+	dw	fs_a_fs_a$
+; P2-10
+	db	$80
+	db	$04
+	db	$c0
+	db	$02
+	db	$c0
+	db	$00
+	db	$80
+	db	$00
+	db	$c0
+	db	$00
+; P2-11
+	db	$50
+	db	$04
+	db	$80
+	db	$02
+	db	$80
+	db	$02
+	db	$80
+	db	$00
+; P2-12
+	db	$70
+	db	$04
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+	db	$90
+	db	$00
+	db	$a0
+	db	$00
+; P2-13
+	db	$fe
+	dw	fs_a_fs_a$
+; P2-14
+	db	$80
+	db	$04
+	db	$c0
+	db	$02
+	db	$c0
+	db	$02
+	db	$c0
+	db	$00
+; P2-15
+	db	$50
+	db	$04
+	db	$80
+	db	$02
+	db	$80
+	db	$02
+	db	$80
+	db	$00
+; P2-16
+	db	$70
+	db	$04
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+	db	$80
+	db	$00
+	db	$50
+	db	$00
+	db	$fc
+	dw	loop30$
+e_a_e_a$:
+	db	$50
+	db	$04
+	db	$a0
+	db	$02
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+	db	$ff
+e_a_g_a$:
+	db	$50
+	db	$04
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+	db	$80
+	db	$00
+	db	$a0
+	db	$00
+	db	$ff
+fs_a_fs_a$:
+	db	$70
+	db	$04
+	db	$a0
+	db	$02
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+	db	$ff
+;----------------------------------------
+PMC3:
+;----------------------------------------
+; P3-1
+	db	$fe
+	dw	mero1_3$
+; P3-4
+	db	$d3,$32
+	db	$dc,$2b
+	db	$30
+	db	$dc,$1b
+	db	$72
+	db	$dc,$2b
+	db	$72
+	db	$dc,$3b
+	db	$72
+	db	$02
+	db	$dc,$10
+	db	$d4,$a4
+	db	$dc,$20
+	db	$a2
+	db	$dc,$10
+	db	$54
+	db	$dc,$20
+	db	$52
+; P3-5
+	db	$fe
+	dw	mero1_3$
+; P3-8
+	db	$34
+	db	$dc,$2b
+	db	$34
+	db	$dc,$3b
+	db	$34
+	db	$00
+	db	$dc,$10
+	db	$d4,$34
+	db	$dc,$20
+	db	$32
+	db	$dc,$10
+	db	$54
+	db	$dc,$20
+	db	$52
+; P3-9
+	db	$fe
+	dw	sub9$
+; P3-10
+	db	$a3
+	db	$83
+	db	$73
+	db	$54
+	db	$dc,$2b
+	db	$54
+	db	$dc,$3b
+	db	$54
+	db	$00
+; P3-11-12
+	db	$dc,$1b
+	db	$24
+	db	$dc,$2b
+	db	$24
+	db	$dc,$3b
+	db	$24
+	db	$00
+	db	$dc,$1b
+	db	$54
+	db	$dc,$2b
+	db	$54
+	db	$dc,$3b
+	db	$54
+	db	$fe
+	dw	mero11_12$
+; P3-13
+	db	$fe
+	dw	sub9$
+; P3-14
+	db	$73
+	db	$83
+	db	$a3
+	db	$c4
+	db	$dc,$2b
+	db	$c4
+	db	$dc,$3b
+	db	$c4
+	db	$00
+; P3-15-16
+	db	$dc,$1b
+	db	$a4
+	db	$dc,$2b
+	db	$a2
+	db	$dc,$1b
+	db	$83
+	db	$73
+	db	$84
+	db	$dc,$2b
+	db	$84
+	db	$dc,$3b
+	db	$84
+	db	$fe
+	dw	mero11_12$
+	db	$fc
+	dw	PMC3
+mero1_3$:
+; P3-1
+	db	$d8,$6,$1b
+	db	$d3,$32
+	db	$dc,$2b
+	db	$30
+	db	$dc,$1b
+	db	$d4,$a2
+	db	$dc,$2b
+	db	$a0
+	db	$dc,$1b
+	db	$d3,$32
+	db	$dc,$2b
+	db	$30
+	db	$dc,$1b
+	db	$a2
+	db	$dc,$2b
+	db	$a2
+	db	$dc,$3b
+	db	$a1
+	db	$dc,$1b
+	db	$82
+	db	$dc,$2b
+	db	$82
+	db	$dc,$3b
+	db	$81
+	db	$dc,$1b
+	db	$72
+	db	$dc,$2b
+	db	$70
+; P3-2
+	db	$dc,$1b
+	db	$52
+	db	$dc,$2b
+	db	$50
+	db	$dc,$1b
+	db	$22
+	db	$dc,$2b
+	db	$22
+	db	$dc,$3b
+	db	$22
+	db	$02
+	db	$dc,$10
+	db	$d4,$a4
+	db	$dc,$20
+	db	$a2
+	db	$dc,$10
+	db	$84
+	db	$dc,$20
+	db	$82
+; P3-3
+	db	$dc,$1b
+	db	$22
+	db	$dc,$2b
+	db	$20
+	db	$dc,$1b
+	db	$d4,$a2
+	db	$dc,$2b
+	db	$a0
+	db	$dc,$1b
+	db	$d3,$22
+	db	$dc,$2b
+	db	$20
+	db	$dc,$1b
+	db	$72
+	db	$dc,$2b
+	db	$72
+	db	$dc,$3b
+	db	$71
+	db	$dc,$1b
+	db	$52
+	db	$dc,$2b
+	db	$52
+	db	$dc,$3b
+	db	$51
+	db	$dc,$1b
+	db	$22
+	db	$dc,$2b
+	db	$20
+	db	$dc,$1b
+	db	$ff
+sub9$:
+; P3-9
+	db	$dc,$1b
+	db	$d3,$74
+	db	$dc,$2b
+	db	$74
+	db	$dc,$3b
+	db	$74
+	db	$00
+	db	$dc,$1b
+	db	$a4
+	db	$dc,$2b
+	db	$a4
+	db	$dc,$3b
+	db	$a4
+	db	$00
+; P3-10
+	db	$dc,$1b
+	db	$83
+	db	$ff
+mero11_12$:
+	db	$00
+; P1-12
+	db	$dc,$1b
+	db	$73
+	db	$83
+	db	$73
+	db	$53
+	db	$34
+	db	$dc,$2b
+	db	$34
+	db	$dc,$3b
+	db	$34
+	db	$00
+	db	$ff
+;----------------------------------------
+PMC4:
+;----------------------------------------
+;		drum_mode 03
+	db	$e3,$001
+	db	$d8,$c
+;		bal_s ff
+; P4-1
+loop40$:
+	db	$c5
+	db	$c3
+	db	$c1
+	db	$c1
+	db	$c1
+	db	$c5
+	db	$c5
+	db	$c1
+	db	$c1
+;		tempo 6 		drum 8
+;		tempo 4 		drum 8
+;		tempo 2 		drum 8
+;					drum 8
+;					drum 8
+	db	$fc
+	dw	loop40$
+
+

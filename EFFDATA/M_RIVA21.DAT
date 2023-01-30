@@ -1,0 +1,23 @@
+;	include	group.def
+;bank3d	group	G_MUSIC4
+	;
+	;	rival2_01
+	;
+	;	Converting on Thu Sep 19 17:08:06 2019
+	;
+	;				by ver 1.00
+	;
+;	public	musrival21
+;musrival21:
+	extern	rival2_011
+	extern	rival2_012
+	extern	rival2_013
+	extern	rival2_014
+	db	0c0h
+	dw	rival2_011
+	db	001h
+	dw	rival2_012
+	db	002h
+	dw	rival2_013
+	db	003h
+	dw	rival2_014

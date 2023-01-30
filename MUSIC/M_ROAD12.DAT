@@ -1,0 +1,982 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	road_02
+	;
+	;	Converting on Tue Aug 20 18:32:24 2019
+	;
+	;				by ver 1.02
+	;
+;	public	musroad12
+;musroad12:;					ansuta
+	db	0c0h
+	dw	road_021
+	db	001h
+	dw	road_022
+	db	002h
+	dw	road_023
+	db	003h
+	dw	road_024
+;----------------------------------------
+road_021:
+;----------------------------------------
+	db	$da,$00,$a0
+	db	$e5,$77
+; P1-1
+	db	$e6,$ff,$ff
+	db	$db,$02
+	db	$d8,$c,$a3
+	db	$0f
+; P1-2
+	db	$01
+	db	$fe
+	dw	road_02sub2
+; P1-3
+	db	$05
+	db	$63
+	db	$65
+; P1-4 -tie
+	db	$61
+	db	$61
+	db	$41
+	db	$41
+	db	$33
+	db	$3b
+; P1-5 -tie
+	db	$31
+	db	$11
+	db	$d5,$bd
+; P1-6 -tie
+	db	$b1
+	db	$91
+; P1-7
+	db	$71
+	db	$b1
+	db	$71
+	db	$d4,$21
+	db	$d5,$b1
+	db	$d4,$61
+	db	$21
+	db	$d5,$b1
+; P1-8
+	db	$61
+	db	$a1
+	db	$61
+	db	$d4,$11
+	db	$61
+	db	$11
+	db	$d5,$61
+	db	$a1
+; P1-9
+	db	$fe
+	dw	road_02sub9
+; P1-10
+; P1-11
+loop$:
+	db	$fe
+	dw	road_02sub9
+; P1-12
+; P1-13
+	db	$d9,$05
+	db	$fe
+	dw	road_02sub13
+; P1-14
+	db	$d8,$6,$a3
+	db	$d6,$60
+	db	$b0
+	db	$d8,$c,$a3
+	db	$d5,$3e
+; P1-15
+	db	$fe
+	dw	road_02sub13
+; P1-16
+	db	$d9,$02
+	db	$fe
+	dw	road_02sub16
+	db	$d5,$4e
+; P1-17
+	db	$d9,$00
+	db	$fe
+	dw	road_02sub16
+	db	$d5,$3e
+; P1-18
+	db	$fe
+	dw	road_02sub16
+	db	$d5,$4e
+; P1-19
+	db	$d9,$01
+	db	$fe
+	dw	road_02sub13
+; P1-20
+	db	$d9,$00
+	db	$fe
+	dw	road_02sub13
+; P1-21
+	db	$fe
+	dw	road_02sub21
+	db	$d5,$b7
+	db	$b3
+; P1-22
+	db	$d6,$b0
+	db	$d5,$40
+	db	$81
+	db	$fe
+	dw	road_02sub22
+	db	$d5,$b3
+	db	$d4,$43
+	db	$33
+; P1-23
+	db	$fe
+	dw	road_02sub21
+	db	$d5,$b7
+	db	$d4,$13
+; P1-24
+	db	$d6,$a0
+	db	$d5,$10
+	db	$61
+	db	$d4,$11
+	db	$31
+	db	$43
+	db	$13
+	db	$13
+	db	$d5,$a3
+	db	$d4,$43
+	db	$33
+; P1-25
+	db	$d6,$80
+	db	$b0
+	db	$d5,$31
+	db	$fe
+	dw	road_02sub22
+	db	$b3
+	db	$d3,$13
+	db	$33
+; P1-26
+	db	$d6,$80
+	db	$b0
+	db	$d5,$41
+	db	$d4,$b3
+	db	$b3
+	db	$83
+	db	$61
+	db	$81
+	db	$b3
+	db	$83
+	db	$43
+; P1-27
+	db	$d9,$01
+	db	$fe
+	dw	road_02sub13
+; P1-28
+	db	$d9,$00
+	db	$fe
+	dw	road_02sub13
+; P1-29
+loop29$:
+	db	$d4,$81
+	db	$a1
+	db	$b1
+	db	$63
+	db	$81
+	db	$61
+	db	$43
+; P1-30 -tie
+	db	$31
+	db	$11
+	db	$d5,$b3
+	db	$d4,$41
+	db	$d5,$b1
+	db	$d4,$13
+; P1-31 -tie
+	db	$31
+	db	$d5,$b1
+	db	$d4,$63
+	db	$d5,$b3
+	db	$d4,$11
+; P1-32
+	db	$d5,$61
+	db	$b1
+	db	$a1
+	db	$d4,$63
+	db	$d5,$a1
+	db	$d4,$11
+	db	$d5,$b1
+; P1-33
+	db	$d4,$81
+	db	$a1
+	db	$b1
+	db	$63
+	db	$b1
+	db	$d3,$11
+	db	$33
+; P1-34 -tie
+	db	$11
+	db	$d4,$b1
+	db	$63
+	db	$31
+	db	$d5,$b1
+	db	$d4,$31
+; P1-35
+	db	$11
+	db	$31
+	db	$41
+	db	$33
+	db	$63
+	db	$a3
+; P1-36 -tie
+	db	$81
+	db	$61
+	db	$d3,$13
+	db	$d4,$a1
+	db	$b1
+	db	$a1
+; P1-37
+	db	$fd,2
+	dw	loop29$
+; P1-38
+; P1-39
+; P1-40
+; P1-41
+; P1-42
+; P1-43
+; P1-44
+	db	$fc
+	dw	loop$
+road_02sub2:
+	db	$d4,$b1
+	db	$b1
+	db	$a1
+	db	$a1
+	db	$83
+	db	$63
+; P1-3 -tie
+	db	$ff
+road_02sub9:
+; P1-9
+	db	$d8,$c,$a3
+	db	$d5,$b1
+	db	$d4,$11
+	db	$41
+	db	$39
+; P1-10
+	db	$d5,$b1
+	db	$d4,$11
+	db	$31
+	db	$63
+	db	$31
+	db	$11
+	db	$d5,$b1
+	db	$ff
+road_02sub13:
+	db	$d8,$6,$a3
+	db	$d6,$60
+	db	$a0
+	db	$d8,$c,$a3
+	db	$d5,$1e
+	db	$ff
+road_02sub16:
+	db	$d8,$6,$a3
+	db	$d6,$80
+	db	$b0
+	db	$d8,$c,$a3
+	db	$ff
+road_02sub21:
+	db	$d8,$6,$a1
+	db	$d6,$b0
+	db	$d5,$30
+	db	$61
+road_02sub22:
+	db	$d4,$31
+	db	$41
+	db	$63
+	db	$33
+	db	$33
+	db	$ff
+;----------------------------------------
+road_022:
+;----------------------------------------
+	db	$db,$03
+; P2-1
+	db	$d8,$c,$d2
+	db	$fe
+	dw	road_02mero1
+; P2-2
+	db	$61
+	db	$61
+	db	$41
+	db	$30
+	db	$40
+	db	$61
+	db	$11
+	db	$d5,$b1
+; P2-3
+	db	$fe
+	dw	road_02mero1
+; P2-4
+	db	$31
+	db	$41
+	db	$d5,$b1
+	db	$d4,$11
+	db	$d5,$b1
+	db	$a1
+	db	$d4,$61
+; P2-5
+	db	$fe
+	dw	road_02mero1
+; P2-6
+	db	$61
+	db	$61
+	db	$41
+	db	$30
+	db	$10
+	db	$d5,$b1
+	db	$81
+	db	$b1
+; P2-7
+	db	$d4,$21
+	db	$11
+	db	$d5,$b1
+	db	$d4,$63
+	db	$d5,$b3
+	db	$d4,$13
+; P2-8 -tie
+	db	$d5,$b3
+	db	$a3
+	db	$b1
+	db	$d4,$11
+	db	$41
+; P2-9
+	db	$fe
+	dw	road_02mero9
+; P2-10
+; P2-11
+loop$:
+	db	$fe
+	dw	road_02mero9
+; P2-12
+; P2-13
+	db	$db,$02
+	db	$d8,$6,$97
+loop13$:
+	db	$d9,$1a
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P2-14
+	db	$d9,$13
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P2-15
+	db	$d9,$1a
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P2-16
+	db	$d9,$15
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P2-17
+	db	$d9,$17
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P2-18
+	db	$d9,$13
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P2-19
+	db	$d9,$16
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P2-20
+	db	$d9,$15
+	db	$fe
+	dw	road_02mero13
+	db	$d6,$11
+	db	$d5,$10
+	db	$00
+	db	$d6,$51
+	db	$d5,$50
+	db	$00
+	db	$d6,$81
+	db	$d5,$80
+	db	$00
+	db	$d5,$11
+	db	$d4,$10
+	db	$00
+; P2-21
+	db	$fd,2
+	dw	loop13$
+; P2-22
+; P2-23
+; P2-24
+; P2-25
+; P2-26
+; P2-27
+; P2-28
+; P2-29
+	db	$d9,$00
+	db	$d8,$c,$d3
+loop29$:
+	db	$0f
+; P2-30
+	db	$db,$03
+	db	$81
+	db	$a1
+	db	$b1
+	db	$63
+	db	$41
+	db	$31
+	db	$61
+; P2-31
+	db	$41
+	db	$31
+	db	$d5,$b1
+	db	$d4,$63
+	db	$d5,$b3
+	db	$d4,$13
+; P2-32 -tie
+	db	$d5,$b1
+	db	$a1
+	db	$6f
+; P2-33 -tie
+	db	$03
+	db	$d4,$81
+	db	$a1
+	db	$b3
+; P2-34 -tie
+	db	$a1
+	db	$81
+	db	$33
+	db	$d5,$b1
+	db	$61
+	db	$b1
+; P2-35
+	db	$a1
+	db	$61
+	db	$d4,$11
+	db	$d5,$a1
+	db	$d4,$61
+	db	$11
+	db	$61
+	db	$11
+; P2-36
+	db	$d5,$a1
+	db	$61
+	db	$d4,$11
+	db	$d5,$a1
+	db	$d4,$41
+	db	$11
+	db	$31
+	db	$11
+; P2-37
+	db	$fd,2
+	dw	loop29$
+; P2-38
+; P2-39
+; P2-40
+; P2-41
+; P2-42
+; P2-43
+; P2-44
+	db	$fc
+	dw	loop$
+road_02mero1:
+	db	$d6,$b1
+	db	$fc
+	dw	road_02sub2
+road_02mero9:
+; P2-9
+	db	$d8,$c,$d2
+	db	$d4,$31
+	db	$31
+	db	$d5,$b1
+	db	$b1
+	db	$d4,$11
+	db	$11
+	db	$d5,$61
+	db	$61
+; P2-10
+	db	$d4,$31
+	db	$31
+	db	$d5,$b1
+	db	$b1
+	db	$d4,$11
+	db	$d5,$b1
+	db	$a1
+	db	$61
+	db	$ff
+road_02mero13:
+	db	$d6,$12
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$10
+	db	$00
+	db	$d6,$12
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$10
+	db	$00
+	db	$ff
+;----------------------------------------
+road_023:
+;----------------------------------------
+; P3-1
+	db	$d8,$6,$1e
+	db	$d9,$05
+	db	$fe
+	dw	bass1$
+; P3-2
+	db	$d9,$1a
+	db	$fe
+	dw	bass1$
+; P3-3
+	db	$d9,$05
+	db	$fe
+	dw	bass1$
+; P3-4
+	db	$d9,$00
+	db	$fe
+	dw	bass1$
+; P3-5
+	db	$d9,$02
+	db	$fe
+	dw	bass1$
+; P3-6
+	db	$23
+	db	$03
+	db	$23
+	db	$03
+	db	$23
+	db	$03
+	db	$23
+	db	$43
+; P3-7
+	db	$d9,$01
+	db	$fe
+	dw	bass1$
+; P3-8
+	db	$d9,$00
+	db	$fe
+	dw	bass1$
+; P3-9
+	db	$fe
+	dw	bass9$
+; P3-10
+; P3-11
+loop$:
+	db	$d9,$10
+	db	$fe
+	dw	bass9$
+; P3-12
+; P3-13
+	db	$d9,$00
+	db	$d8,$c,$12
+	db	$01
+	db	$fe
+	dw	bass13$
+	db	$62
+	db	$00
+	db	$62
+; P3-14 -tie
+	db	$00
+	db	$fe
+	dw	bass13$
+	db	$fe
+	dw	bass14$
+; P3-15
+	db	$fe
+	dw	bass15$
+; P3-16
+	db	$fe
+	dw	bass14$
+; P3-17
+	db	$fe
+	dw	bass17$
+; P3-18
+; P3-19
+; P3-20
+; P3-21
+	db	$d4,$b0
+	db	$00
+	db	$dc,$14
+	db	$fe
+	dw	bass13$
+	db	$62
+	db	$00
+	db	$62
+; P3-22 -tie
+	db	$00
+	db	$fe
+	dw	bass13$
+	db	$fe
+	dw	bass14$
+; P3-23
+	db	$fe
+	dw	bass15$
+; P3-24
+	db	$fe
+	dw	bass14$
+; P3-25
+	db	$fe
+	dw	bass17$
+; P3-26
+; P3-27
+; P3-28
+; P3-29
+	db	$d8,$6,$1e
+loop29$:
+	db	$d9,$07
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-30
+	db	$d9,$03
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-31
+	db	$d9,$0a
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-32
+	db	$d9,$05
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-33
+	db	$d9,$07
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-34
+	db	$d9,$03
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-35
+	db	$d9,$05
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-36
+	db	$fe
+	dw	road_02mero13
+	db	$fe
+	dw	road_02mero13
+; P3-37
+	db	$fd,2
+	dw	loop29$
+; P3-38
+; P3-39
+; P3-40
+; P3-41
+; P3-42
+; P3-43
+; P3-44
+	db	$fc
+	dw	loop$
+bass1$:
+	db	$d5,$63
+	db	$03
+	db	$63
+	db	$03
+	db	$63
+	db	$03
+	db	$63
+	db	$03
+	db	$ff
+bass9$:
+; P3-9
+	db	$d5,$b5
+	db	$05
+	db	$b3
+	db	$b5
+	db	$05
+	db	$b3
+; P3-10
+	db	$b3
+	db	$03
+	db	$b5
+	db	$05
+	db	$b3
+	db	$b3
+	db	$b3
+	db	$ff
+bass14$:
+	db	$60
+	db	$00
+	db	$d3,$11
+	db	$d4,$b1
+; P3-15
+	db	$01
+bass13$:
+	db	$d4,$b0
+	db	$d3,$10
+	db	$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$b0
+	db	$00
+	db	$ff
+bass15$:
+	db	$62
+	db	$00
+; P3-16
+	db	$a2
+	db	$00
+	db	$a0
+	db	$b0
+	db	$d3,$10
+	db	$00
+	db	$d4,$a0
+	db	$00
+	db	$a0
+	db	$00
+	db	$ff
+bass17$:
+	db	$d3,$60
+	db	$00
+	db	$a1
+	db	$b1
+; P3-18
+	db	$01
+	db	$60
+	db	$00
+	db	$60
+	db	$00
+	db	$40
+	db	$00
+	db	$30
+	db	$40
+	db	$60
+	db	$00
+	db	$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+; P3-19
+	db	$d3,$20
+	db	$00
+	db	$10
+	db	$d4,$b0
+	db	$70
+	db	$00
+	db	$70
+	db	$02
+	db	$b1
+	db	$d3,$10
+	db	$00
+	db	$d4,$a2
+; P3-20 -tie
+	db	$00
+	db	$60
+	db	$00
+	db	$60
+	db	$00
+	db	$a0
+	db	$00
+	db	$a0
+	db	$00
+	db	$d3,$10
+	db	$00
+	db	$41
+	db	$31
+	db	$ff
+;----------------------------------------
+road_024:
+;----------------------------------------
+	db	$e3,$005
+; P4-1
+	db	$d8,$c
+loop1$:
+	db	$c1
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+; P4-2
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+	db	$51
+	db	$c1
+; P4-3
+	db	$fd,2
+	dw	loop1$
+; P4-4
+; P4-5
+loop5$:
+	db	$c1
+	db	$51
+	db	$11
+	db	$51
+	db	$51
+	db	$51
+	db	$11
+	db	$51
+; P4-6
+	db	$51
+	db	$51
+	db	$11
+	db	$51
+	db	$51
+	db	$51
+	db	$11
+	db	$c1
+; P4-7
+	db	$fd,2
+	dw	loop5$
+; P4-8
+; P4-9
+	db	$fe
+	dw	dr9$
+; P4-10
+	db	$50
+	db	$50
+; P4-11
+_loop4$:
+	db	$fe
+	dw	dr9$
+; P4-12
+	db	$10
+	db	$10
+; P4-13
+loop13$:
+	db	$fe
+	dw	dr13$
+	db	$fe
+	dw	dr13$
+; P4-14
+	db	$fe
+	dw	dr13$
+	db	$fe
+	dw	dr13$
+; P4-15
+	db	$fe
+	dw	dr13$
+	db	$fe
+	dw	dr13$
+; P4-16
+	db	$fe
+	dw	dr13$
+	db	$c1
+	db	$50
+	db	$50
+	db	$11
+	db	$10
+	db	$50
+; P4-17
+	db	$fe
+	dw	dr13$
+	db	$fe
+	dw	dr13$
+; P4-18
+	db	$fe
+	dw	dr13$
+	db	$fe
+	dw	dr13$
+; P4-19
+	db	$fe
+	dw	dr13$
+	db	$fe
+	dw	dr13$
+; P4-20
+	db	$fe
+	dw	dr13$
+	db	$c1
+	db	$10
+	db	$10
+	db	$11
+	db	$10
+	db	$10
+; P4-21
+	db	$fd,4
+	dw	loop13$
+; P4-22
+; P4-23
+; P4-24
+; P4-25
+; P4-26
+; P4-27
+; P4-28
+; P4-29
+; P4-30
+; P4-31
+; P4-32
+; P4-33
+; P4-34
+; P4-35
+; P4-36
+; P4-37
+; P4-38
+; P4-39
+; P4-40
+; P4-41
+; P4-42
+; P4-43
+; P4-44
+	db	$fc
+	dw	_loop4$
+dr9$:
+; P4-9
+	db	$c1
+	db	$50
+	db	$50
+	db	$c1
+	db	$50
+	db	$50
+	db	$c1
+	db	$51
+	db	$c1
+	db	$50
+	db	$50
+; P4-10
+	db	$c1
+	db	$50
+	db	$50
+	db	$c1
+	db	$50
+	db	$50
+	db	$c1
+	db	$51
+	db	$c1
+	db	$ff
+dr13$:
+	db	$c1
+	db	$50
+	db	$50
+	db	$11
+	db	$50
+	db	$50
+	db	$ff
+
+

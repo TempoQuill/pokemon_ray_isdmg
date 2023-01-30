@@ -1,0 +1,257 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_rinia
+;	;
+;	;	Converting on Sun Aug 22 10:15:36 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_rinia
+;musm_rinia:
+		mushdr	c0,m_rinia1
+		mushdr	01,m_rinia2
+		mushdr	02,m_rinia3
+		mushdr	03,m_rinia4
+;----------------------------------------
+m_rinia1:
+;----------------------------------------
+		speed 00 6e
+		vol 77
+; P1-1
+		bal_s 0f
+		vib 14 23
+		duty 2
+		init c b2
+; P1-4
+		tempo 16 		r
+; P1-5
+					r
+		env b7
+; P1-6
+		tempo 1 	oct 4	d
+					c
+				oct 5	g
+				oct 4	c
+					d
+					c
+				oct 5	g
+				oct 4	c
+					d
+					c
+				oct 5	g
+				oct 4	c
+					d
+					c
+				oct 5	g
+				oct 4	c
+; P1-7
+					e
+					c
+				oct 5	a
+				oct 4	c
+					e
+					c
+				oct 5	a
+				oct 4	c
+					e
+					c
+				oct 5	a
+				oct 4	c
+					e
+					c
+		init 6 b7
+		tempo 1 		f#
+					r
+					f#
+					r
+; P1-8
+		init c b7
+		tempo 16 		d
+; P1-9
+		end
+;----------------------------------------
+m_rinia2:
+;----------------------------------------
+; P2-1
+		vib 14 23
+		duty 1
+		init c d2
+		bal_s f0
+; P2-4
+		init c d8
+		tempo 12 	oct 7	f
+		tempo 2 		r
+		init 6 d7
+		tempo 1 		f
+					r
+					f
+					r
+; P2-5
+		tempo 4 	oct 6	f
+					r
+					f
+					r
+					f
+					r
+					f
+					r
+; P2-6
+		duty 3
+		init c d7
+		tempo 16 	oct 4	g
+; P2-7
+		tempo 13 		a
+		tempo 1 		r
+		init 6 d7
+		tempo 1 		a
+					r
+					a
+					r
+; P2-8
+		init c d7
+		tempo 16 		a
+; P2-9
+		end
+;----------------------------------------
+m_rinia3:
+;----------------------------------------
+; P3-1
+		bal_s ff
+		vib 10 23
+		init c 15
+; P3-4
+		tempo 1 	oct 2	c
+				oct 3	g
+					d#
+					c
+					g
+					d#
+					c
+				oct 4	g
+				oct 3	d#
+					c
+				oct 4	g
+					d#
+				oct 3	c
+				oct 4	g
+					d#
+					c
+; P3-5
+					g
+					d#
+					c
+				oct 5	g
+				oct 4	c
+					d#
+					g
+					c
+					d#
+					g
+				oct 3	c
+				oct 4	g
+				oct 3	c
+					d#
+					g
+					c
+; P3-6
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+; P3-7
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+				oct 6	d
+				oct 5	d
+; P3-8
+		tempo 16 	oct 6	d
+; P3-9
+		end
+;----------------------------------------
+m_rinia4:
+;----------------------------------------
+		drum_mode 03
+; P4-1
+		init c
+; P4-4
+		tempo 12 		drum c
+		tempo 2 		drum 3
+		tempo 1 		drum b
+					drum b
+; P4-5
+		init 6
+		tempo 4 		drum 4
+					drum 7
+					drum 4
+					drum 7
+					drum b
+					drum 7
+					drum b
+		tempo 2 		drum 3
+					drum 3
+; P4-6
+		call dr6$
+; P4-7
+		call dr6$
+; P4-8
+		init c
+		tempo 16 		drum c
+; P4-9
+		end
+dr2$:
+		tempo 1 		drum 9
+					drum 8
+					drum 8
+					drum 9
+					drum 8
+					drum 8
+					drum 9
+					drum 8
+					drum 8
+					drum 9
+					drum 8
+					drum 8
+		return
+dr6$:
+		tempo 2 		drum 9
+					drum 8
+					drum 8
+					drum 8
+					drum 9
+					drum 8
+					drum 8
+					drum 8
+					drum 9
+					drum 8
+					drum 8
+					drum 8
+					drum 9
+					drum 8
+					drum 8
+					drum 8
+		return

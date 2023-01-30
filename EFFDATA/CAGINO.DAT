@@ -1,0 +1,409 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	cagino
+;	;
+;	;	Converting on Sat Apr 11 15:23:38 2020
+;	;
+;	;				by ver 1.00
+;	;
+;	public	muscagino
+;muscagino:;					jagetsu
+	db	0c0h
+	dw	cagino1
+	db	001h
+	dw	cagino2
+	db	002h
+	dw	cagino3
+	db	003h
+	dw	cagino4
+;----------------------------------------
+cagino1:
+;----------------------------------------
+	db	$da,$00,$a5
+	db	$e5,$77
+; P1-1
+	db	$d8,$c,$00
+loop1$:
+	db	$0f
+; P1-2
+	db	$fd,8
+	dw	loop1$
+; P1-3
+; P1-4
+; P1-5
+; P1-6
+; P1-7
+; P1-8
+; P1-9
+loop9_10$:
+	db	$fe
+	dw	cagino1sub9
+	db	$09
+; P1-10
+	db	$0f
+; P1-11
+	db	$fd,2
+	dw	loop9_10$
+; P1-13
+loop$:
+	db	$ef,$ff
+	db	$dc,$72
+	db	$d2,$41
+	db	$41
+	db	$41
+	db	$40
+	db	$41
+	db	$40
+	db	$41
+	db	$40
+	db	$40
+	db	$40
+	db	$40
+; P1-14
+	db	$fd,4
+	dw	loop$
+; P1-15
+; P1-16
+; P1-17
+loop17_18$:
+	db	$fe
+	dw	cagino1sub9
+	db	$fe
+	dw	cagino1sub17
+; P1-18
+	db	$fe
+	dw	cagino1sub18
+; P1-19
+	db	$fd,6
+	dw	loop17_18$
+; P1-21
+; P1-23
+; P1-25
+; P1-27
+; P1-29
+	db	$db,$00
+	db	$fc
+	dw	loop$
+cagino1sub9:
+	db	$ef,$ff
+	db	$db,$00
+	db	$e1,$0,$12
+	db	$dc,$19
+	db	$d2,$40
+	db	$dc,$71
+	db	$40
+	db	$dc,$19
+	db	$d3,$c0
+	db	$dc,$71
+	db	$c0
+	db	$dc,$19
+	db	$90
+	db	$dc,$71
+	db	$90
+	db	$e1,$0,$00
+	db	$ff
+cagino1sub18:
+	db	$ef,$0f
+	db	$db,$03
+	db	$dc,$d1
+	db	$d5,$91
+	db	$91
+	db	$c1
+cagino1sub17:
+	db	$ef,$0f
+	db	$db,$03
+	db	$dc,$d1
+	db	$d5,$90
+	db	$d4,$21
+	db	$d5,$90
+	db	$d4,$30
+	db	$40
+	db	$20
+	db	$d5,$c0
+	db	$90
+	db	$70
+	db	$ff
+;----------------------------------------
+cagino2:
+;----------------------------------------
+	db	$ef,$0f
+	db	$f1
+	db	$db,$03
+; P2-1
+	db	$d8,$c,$d1
+	db	$d5,$93
+	db	$c2
+	db	$d4,$22
+	db	$32
+	db	$d5,$c1
+	db	$70
+; P2-2
+	db	$91
+	db	$91
+	db	$c1
+	db	$90
+	db	$d4,$22
+	db	$32
+	db	$d5,$c0
+	db	$90
+	db	$70
+; P2-3
+loop3$:
+	db	$fe
+	dw	cagino1sub18
+; P2-4
+	db	$fd,10
+	dw	loop3$
+; P2-5
+; P2-6
+; P2-7
+; P2-8
+; P2-9
+; P2-10
+; P2-11
+; P2-12
+; P2-13
+loop$:
+	db	$fe
+	dw	cagino1sub18
+; P2-14
+	db	$fd,4
+	dw	loop$
+; P2-15
+; P2-16
+	db	$db,$00
+	db	$dc,$a8
+; P2-17
+loop17$:
+	db	$ef,$ff
+	db	$d7,$92
+	db	$c2
+	db	$71
+	db	$93
+	db	$93
+; P2-18
+	db	$fd,12
+	dw	loop17$
+; P2-19
+; P2-20
+; P2-21
+; P2-22
+; P2-23
+; P2-24
+; P2-25
+; P2-26
+; P2-27
+; P2-28
+; P2-29
+	db	$fc
+	dw	loop$
+;----------------------------------------
+cagino3:
+;----------------------------------------
+	db	$ef,$ff
+; P3-1
+	db	$d8,$c,$10
+	db	$0f
+; P3-2
+	db	$0f
+; P3-3
+loop30$:
+	db	$d4,$93
+	db	$c3
+	db	$d3,$23
+	db	$d4,$c3
+; P3-4
+	db	$93
+	db	$c3
+	db	$d3,$23
+	db	$d4,$c0
+	db	$90
+	db	$71
+; P3-5
+	db	$fc
+	dw	loop30$
+;----------------------------------------
+cagino4:
+;----------------------------------------
+	db	$ef,$f0
+	db	$e3,$005
+; P4-1
+	db	$d8,$6
+	db	$fe
+	dw	dr1_4$
+; P4-5
+	db	$fe
+	dw	dr5$
+; P4-6
+	db	$fe
+	dw	dr6$
+; P4-7
+	db	$fe
+	dw	dr5$
+; P4-8
+	db	$c3
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$c1
+	db	$11
+	db	$c3
+	db	$13
+	db	$21
+	db	$11
+; P4-9
+	db	$fe
+	dw	dr6$
+; P4-10
+	db	$fe
+	dw	dr6$
+; P4-11
+	db	$fe
+	dw	dr11$
+; P4-12
+	db	$11
+	db	$a1
+	db	$c3
+	db	$c3
+	db	$11
+	db	$a1
+	db	$c1
+	db	$21
+	db	$a1
+	db	$a1
+	db	$11
+	db	$11
+	db	$11
+	db	$11
+; P4-13
+loop$:
+	db	$fe
+	dw	dr1_4$
+; P4-17
+	db	$fe
+	dw	dr11$
+; P4-18
+	db	$fe
+	dw	dr5$
+; P4-19
+	db	$fe
+	dw	dr6$
+; P4-20
+	db	$c3
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$c1
+	db	$11
+	db	$c1
+	db	$a1
+	db	$13
+	db	$11
+	db	$11
+; P4-21
+	db	$fe
+	dw	dr11$
+; P4-22
+	db	$fe
+	dw	dr5$
+; P4-23
+	db	$fe
+	dw	dr6$
+; P4-24
+	db	$c3
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$c1
+	db	$31
+	db	$21
+	db	$a1
+	db	$13
+	db	$11
+	db	$11
+; P4-25
+	db	$fe
+	dw	dr11$
+; P4-26
+	db	$fe
+	dw	dr5$
+; P4-27
+	db	$fe
+	dw	dr6$
+; P4-28
+	db	$c3
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$11
+	db	$11
+	db	$31
+	db	$11
+	db	$c1
+	db	$a1
+	db	$11
+	db	$11
+; P4-29
+	db	$fc
+	dw	loop$
+dr1_4$:
+; P4-1
+	db	$0f
+	db	$fd,6
+	dw	dr1_4$
+; P4-2
+; P4-3
+; P4-4
+	db	$0f
+	db	$07
+	db	$31
+	db	$21
+	db	$a1
+	db	$11
+	db	$ff
+dr5$:
+	db	$c3
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$c1
+	db	$11
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$ff
+dr6$:
+	db	$c3
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$c1
+	db	$11
+	db	$c3
+	db	$13
+	db	$c1
+	db	$30
+	db	$a0
+	db	$ff
+dr11$:
+	db	$c3
+	db	$c3
+	db	$13
+	db	$c1
+	db	$11
+	db	$c1
+	db	$11
+	db	$c3
+	db	$15
+	db	$a1
+	db	$ff
+
+

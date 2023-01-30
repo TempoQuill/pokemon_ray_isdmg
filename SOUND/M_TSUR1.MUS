@@ -1,0 +1,118 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_tsur1
+;	;
+;	;	Converting on Tue Jul 13 12:42:31 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_tsur1
+;musm_tsur1:
+		mushdr	81,m_tsur12
+		mushdr	02,m_tsur13
+		mushdr	03,m_tsur14
+;----------------------------------------
+m_tsur12:
+;----------------------------------------
+		speed 00 90
+		vol 77
+; P2-1
+		bal_s 0f
+		duty 2
+		init 6 b3
+		tempo 1 	oct 5	b
+				oct 4	e
+					g#
+					a
+		tempo 8 		b
+; P2-2
+loop$:
+		init c b1
+; P1-2
+		tempo 4 		r
+		tempo 6 	oct 5	c#
+		tempo 4 		d
+		tempo 2 		c
+; P1-3
+					r
+		tempo 6 		c#
+		tempo 4 	oct 6	e
+		tempo 2 		a#
+					b
+		jump loop$
+;----------------------------------------
+m_tsur13:
+;----------------------------------------
+; P3-1
+		bal_s f0
+		init 6 25
+		tempo 1 	oct 5	e
+					d
+				oct 6	b
+					g#
+		tempo 8 		e
+; P3-2
+		env 23
+loop$:
+		tempo 2 	oct 6	a
+		tempo 6 		r
+		tempo 2 	oct 4	e
+					r
+				oct 6	a
+					r
+				oct 5	d
+					r
+		tempo 8 	oct 4	f#
+		tempo 2 		d#
+					r
+; P3-3
+				oct 6	a
+					r
+				oct 4	e
+		tempo 6 		r
+		tempo 2 	oct 6	a
+					r
+				oct 4	d
+		tempo 6 		r
+		tempo 4 		c#
+		tempo 2 		d
+					r
+		jump loop$
+;----------------------------------------
+m_tsur14:
+;----------------------------------------
+		drum_mode 03
+; P4-1
+		init c
+		tempo 6 		r
+; P4-2
+loop$:
+		tempo 1 		drum 4
+					r
+		tempo 2 		drum 7
+		tempo 1 		drum 3
+					r
+					drum 8
+					r
+					drum 8
+					r
+		tempo 4 		drum 7
+		tempo 1 		drum 3
+					r
+; P4-3
+					drum 4
+					r
+		tempo 4 		drum 7
+		tempo 1 		drum 3
+					r
+					drum 8
+					r
+					drum 8
+					r
+		tempo 2 		drum 3
+		tempo 1 		drum 4
+		tempo 1 		r
+		jump loop$
+
+

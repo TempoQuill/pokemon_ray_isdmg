@@ -1,0 +1,525 @@
+
+;	include	group.def
+;bank29	group	G_MUSIC1
+;	;
+;	;	fight23
+;	;
+;	;	Converting on Thu Nov 07 06:39:04 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	musfight23
+;musfight23:
+	db	080h
+	dw	fight231
+	db	001h
+	dw	fight232
+	db	002h
+	dw	fight233
+;----------------------------------------
+fight231:
+;----------------------------------------
+	db	$da,$00,$db
+	db	$e5,$77
+	db	$db,$02
+; P1-1
+	db	$d8,$6,$a1
+	db	$0f
+; P1-2
+	db	$d4,$80
+	db	$70
+	db	$60
+	db	$50
+	db	$60
+	db	$50
+	db	$40
+	db	$30
+	db	$20
+	db	$10
+	db	$d5,$c0
+	db	$b0
+	db	$a0
+	db	$90
+	db	$80
+	db	$90
+loop3_4$:
+; P1-3
+	db	$87
+	db	$87
+; P1-4
+	db	$97
+	db	$b1
+	db	$d4,$11
+	db	$31
+	db	$d5,$b1
+; P1-5
+	db	$fd,4
+	dw	loop3_4$
+; P1-7
+; P1-9
+; P1-11
+loop$:
+	db	$fe
+	dw	fight23sub11
+; P1-12
+	db	$fe
+	dw	fight23sub11
+; P1-13
+	db	$fe
+	dw	fight23sub13
+; P1-14
+	db	$fe
+	dw	fight23sub13
+; P1-15
+	db	$fe
+	dw	fight23sub11
+; P1-16
+	db	$fe
+	dw	fight23sub11
+; P1-17
+	db	$fe
+	dw	fight23sub17_18
+; P1-19
+	db	$dc,$a5
+	db	$35
+	db	$45
+	db	$63
+; P1-20
+	db	$95
+	db	$b5
+	db	$d4,$13
+; P1-21
+	db	$37
+	db	$17
+; P1-22
+	db	$d5,$b7
+	db	$67
+; P1-23
+	db	$35
+	db	$45
+	db	$63
+; P1-24
+	db	$95
+	db	$d4,$15
+	db	$43
+; P1-25
+	db	$37
+	db	$d5,$67
+; P1-26
+	db	$d4,$65
+	db	$45
+	db	$33
+; P1-27
+	db	$dc,$d7
+	db	$d5,$bf
+; P1-28
+	db	$9f
+; P1-29
+	db	$dc,$d8
+	db	$bf
+; P1-30
+	db	$dc,$d7
+	db	$bf
+; P1-31
+	db	$dc,$d8
+	db	$9f
+; P1-32
+	db	$dc,$d7
+	db	$9f
+; P1-33
+	db	$dc,$d0
+	db	$8f
+; P1-34
+	db	$dc,$d7
+	db	$8f
+loop35$:
+; P1-35
+	db	$0f
+; P1-36
+	db	$fd,8
+	dw	loop35$
+; P1-37
+; P1-38
+; P1-39
+; P1-40
+; P1-41
+; P1-42
+	db	$dc,$a1
+; P1-43
+	db	$fc
+	dw	loop$
+fight23sub11:
+	db	$d6,$b0
+	db	$d5,$40
+	db	$60
+	db	$fd,5
+	dw	fight23sub11
+	db	$40
+	db	$ff
+fight23sub13:
+	db	$d6,$90
+	db	$d5,$20
+	db	$60
+	db	$fd,5
+	dw	fight23sub13
+	db	$20
+	db	$ff
+fight23sub17_18:
+; P1-17
+	db	$d6,$90
+	db	$d5,$40
+	db	$60
+	db	$fd,5
+	dw	fight23sub17_18
+	db	$40
+; P1-18
+loop18$:
+	db	$d6,$90
+	db	$d5,$30
+	db	$60
+	db	$fd,5
+	dw	loop18$
+	db	$30
+	db	$ff
+;----------------------------------------
+fight232:
+;----------------------------------------
+	db	$db,$03
+	db	$e1,$5,$13
+; P2-1
+	db	$d8,$6,$a1
+loop1$:
+	db	$d3,$40
+	db	$50
+	db	$40
+	db	$30
+	db	$fd,4
+	dw	loop1$
+; P2-2
+	db	$40
+	db	$30
+	db	$20
+	db	$10
+	db	$20
+	db	$10
+	db	$d4,$c0
+	db	$b0
+	db	$a0
+	db	$90
+	db	$80
+	db	$70
+	db	$60
+	db	$50
+	db	$40
+	db	$30
+; P2-3
+	db	$47
+	db	$47
+; P2-4
+	db	$47
+	db	$dc,$a2
+	db	$31
+	db	$41
+	db	$61
+	db	$31
+; P2-5
+	db	$47
+	db	$47
+; P2-6
+	db	$47
+	db	$dc,$e2
+	db	$31
+	db	$41
+	db	$61
+	db	$31
+; P2-7
+	db	$47
+	db	$47
+; P2-8
+	db	$47
+	db	$31
+	db	$41
+	db	$61
+	db	$31
+; P2-9
+	db	$d3,$47
+	db	$47
+; P2-10
+	db	$47
+	db	$91
+	db	$81
+	db	$61
+	db	$31
+; P2-11
+	db	$41
+loop$:
+	db	$dc,$e2
+	db	$fe
+	dw	mero11$
+	db	$63
+; P2-12 -tie
+	db	$41
+	db	$61
+	db	$91
+	db	$81
+	db	$61
+	db	$41
+	db	$11
+; P2-13
+	db	$dc,$d3
+	db	$27
+	db	$67
+; P2-14
+	db	$dc,$1d
+	db	$97
+	db	$dc,$a7
+	db	$97
+; P2-15
+	db	$01
+	db	$dc,$e2
+	db	$fe
+	dw	mero11$
+	db	$61
+; P2-16
+	db	$95
+	db	$80
+	db	$60
+	db	$41
+	db	$61
+	db	$81
+	db	$41
+; P2-17
+	db	$dc,$d5
+	db	$67
+	db	$b7
+; P2-18
+	db	$d3,$35
+	db	$10
+	db	$30
+	db	$d4,$b7
+; P2-19
+	db	$dc,$a7
+	db	$d5,$97
+	db	$d4,$17
+; P2-20
+	db	$dc,$a0
+	db	$47
+	db	$dc,$a7
+	db	$43
+	db	$61
+	db	$81
+; P2-21
+	db	$dc,$d0
+	db	$6f
+; P2-22
+	db	$dc,$d7
+	db	$6f
+; P2-23
+	db	$dc,$a5
+	db	$17
+	db	$47
+; P2-24
+	db	$97
+	db	$d3,$17
+; P2-25
+	db	$dc,$d0
+	db	$d4,$bf
+; P2-26
+	db	$dc,$d7
+	db	$bf
+; P2-27
+	db	$4f
+; P2-28
+	db	$6f
+; P2-29
+	db	$dc,$d0
+	db	$4f
+; P2-30
+	db	$dc,$d7
+	db	$4f
+; P2-31
+	db	$dc,$d0
+	db	$4f
+; P2-32
+	db	$dc,$d7
+	db	$4b
+	db	$dc,$d3
+	db	$33
+; P2-33
+	db	$dc,$d0
+	db	$4f
+; P2-34
+	db	$dc,$d7
+	db	$4f
+; P2-35
+	db	$dc,$d2
+	db	$fe
+	dw	fight23sub11
+; P2-36
+	db	$fe
+	dw	fight23sub11
+; P2-37
+	db	$fe
+	dw	fight23sub13
+; P2-38
+	db	$fe
+	dw	fight23sub13
+; P2-39
+	db	$fe
+	dw	fight23sub11
+; P2-40
+	db	$fe
+	dw	fight23sub11
+; P2-41
+	db	$fe
+	dw	fight23sub17_18
+; P2-43
+	db	$01
+	db	$fc
+	dw	loop$
+mero11$:
+	db	$d5,$91
+	db	$b1
+	db	$d4,$43
+	db	$d5,$b1
+	db	$d4,$41
+	db	$ff
+;----------------------------------------
+fight233:
+;----------------------------------------
+	db	$e1,$3,$52
+; P3-1
+	db	$d8,$6,$18
+	db	$d6,$41
+	db	$d5,$41
+	db	$d6,$51
+	db	$d5,$51
+	db	$d6,$61
+	db	$d5,$61
+	db	$d6,$71
+	db	$d5,$71
+; P3-2
+	db	$d6,$81
+	db	$d5,$81
+	db	$d6,$91
+	db	$d5,$91
+	db	$d6,$a1
+	db	$d5,$a1
+	db	$d6,$b1
+	db	$d5,$b1
+loop3_4$:
+; P3-3
+	db	$41
+	db	$b1
+	db	$41
+	db	$b1
+	db	$41
+	db	$b1
+	db	$41
+	db	$b1
+; P3-4
+	db	$41
+	db	$c1
+	db	$41
+	db	$c1
+	db	$61
+	db	$b1
+	db	$61
+	db	$b1
+; P3-5
+	db	$fd,4
+	dw	loop3_4$
+; P3-7
+; P3-9
+; P3-11
+loop$:
+	db	$d9,$07
+	db	$fe
+	dw	bass11_12$
+; P3-13
+	db	$d9,$05
+	db	$fe
+	dw	bass11_12$
+; P3-15
+	db	$d9,$07
+	db	$fe
+	dw	bass11_12$
+; P3-17
+	db	$d9,$02
+	db	$fe
+	dw	bass11_12$
+; P3-19
+	db	$d9,$00
+	db	$fe
+	dw	bass11_12$
+; P3-21
+	db	$d9,$02
+	db	$fe
+	dw	bass11_12$
+; P3-23
+	db	$d9,$00
+	db	$fe
+	dw	bass11_12$
+; P3-25
+	db	$d9,$02
+	db	$fe
+	dw	bass11_12$
+; P3-27
+	db	$d9,$00
+	db	$41
+	db	$d6,$b1
+	db	$d5,$41
+	db	$63
+	db	$41
+	db	$61
+	db	$41
+; P3-28
+	db	$23
+	db	$43
+	db	$63
+	db	$23
+; P3-29
+	db	$d6,$c7
+	db	$d5,$77
+; P3-30
+	db	$c7
+	db	$73
+	db	$43
+; P3-31
+	db	$57
+	db	$97
+; P3-32
+	db	$c7
+	db	$93
+	db	$53
+; P3-33
+	db	$d9,$07
+	db	$fe
+	dw	bass11_12$
+; P3-35
+	db	$fe
+	dw	bass11_12$
+; P3-37
+	db	$d9,$05
+	db	$fe
+	dw	bass11_12$
+; P3-39
+	db	$d9,$07
+	db	$fe
+	dw	bass11_12$
+; P3-41
+	db	$d9,$02
+	db	$fe
+	dw	bass11_12$
+; P3-43
+	db	$fc
+	dw	loop$
+bass11_12$:
+; P3-11-12
+	db	$d6,$91
+	db	$d5,$41
+	db	$fd,8
+	dw	bass11_12$
+	db	$ff
+
+

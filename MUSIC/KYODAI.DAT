@@ -1,0 +1,207 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	kyodai
+;	;
+;	;	Converting on Wed Dec 18 20:39:54 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	muskyokai
+;muskyokai:
+	db	080h
+	dw	kyodai1
+	db	001h
+	dw	kyodai2
+	db	002h
+	dw	kyodai3
+;----------------------------------------
+kyodai1:
+;----------------------------------------
+	db	$da,$00,$f5
+	db	$e5,$77
+	db	$f1
+	db	$db,$02
+	db	$e1,$9,$53
+; P1-1
+	db	$d8,$6,$a7
+	db	$d4,$60
+	db	$50
+	db	$40
+	db	$30
+	db	$2d
+; P1-2	-tie
+	db	$e1,$0,$00
+	db	$dc,$a1
+loop$:
+	db	$d5,$33
+	db	$33
+	db	$33
+	db	$73
+; P1-3	-tie
+	db	$33
+	db	$33
+	db	$23
+	db	$23
+; P1-4	-tie
+	db	$33
+	db	$53
+	db	$33
+	db	$23
+; P1-5	-tie
+	db	$33
+	db	$33
+	db	$d6,$a3
+	db	$dc,$a6
+	db	$d5,$50
+	db	$80
+; P1-6
+	db	$75
+	db	$70
+	db	$80
+	db	$a3
+	db	$73
+; P1-7
+	db	$37
+	db	$25
+	db	$80
+	db	$a0
+; P1-8
+	db	$c3
+	db	$83
+	db	$53
+	db	$81
+	db	$a1
+; P1-9
+	db	$75
+	db	$dc,$a1
+	db	$73
+	db	$a3
+	db	$73
+; P1-10	-tie
+	db	$fc
+	dw	loop$
+;----------------------------------------
+kyodai2:
+;----------------------------------------
+	db	$db,$03
+	db	$e1,$9,$33
+; P2-1
+	db	$d8,$6,$d7
+	db	$d4,$60
+	db	$70
+	db	$80
+	db	$90
+	db	$ab
+loop$:
+; P2-2
+	db	$d8,$3,$d7
+	db	$d5,$7b
+	db	$71
+	db	$81
+	db	$a6
+	db	$d4,$20
+	db	$37
+; P2-3
+	db	$5b
+	db	$73
+	db	$d5,$af
+; P2-4
+	db	$ab
+	db	$d4,$21
+	db	$31
+	db	$56
+	db	$70
+	db	$87
+; P2-5
+	db	$7b
+	db	$53
+	db	$3b
+	db	$d5,$a1
+	db	$d4,$21
+; P2-6
+	db	$3b
+	db	$31
+	db	$51
+	db	$77
+	db	$36
+	db	$90
+; P2-7
+	db	$af
+	db	$d5,$ab
+	db	$d4,$51
+	db	$71
+; P2-8
+	db	$8b
+	db	$53
+	db	$23
+	db	$33
+	db	$53
+	db	$73
+; P2-9
+	db	$d8,$6,$d7
+	db	$3f
+; P2-10
+	db	$fc
+	dw	loop$
+;----------------------------------------
+kyodai3:
+;----------------------------------------
+; P3-1
+	db	$d8,$6,$14
+	db	$d4,$30
+	db	$20
+	db	$d5,$c0
+	db	$b0
+	db	$a5
+	db	$d6,$a0
+	db	$00
+	db	$c0
+	db	$00
+	db	$d5,$20
+	db	$00
+loop$:
+; P3-2
+	db	$fe
+	dw	bass2$
+; P3-3
+	db	$50
+	db	$00
+	db	$c0
+	db	$00
+	db	$d6,$a0
+	db	$00
+	db	$d5,$c0
+	db	$00
+loop3$:
+	db	$50
+	db	$00
+	db	$a0
+	db	$00
+	db	$d6,$a0
+	db	$00
+	db	$d5,$a0
+	db	$00
+; P3-4
+	db	$fd,3
+	dw	loop3$
+; P3-5
+	db	$fe
+	dw	bass2$
+; P3-6
+	db	$fc
+	dw	loop$
+bass2$:
+	db	$30
+	db	$00
+	db	$70
+	db	$00
+	db	$d6,$a0
+	db	$00
+	db	$d5,$a0
+	db	$00
+	db	$fd,2
+	dw	bass2$
+	db	$ff
+
+

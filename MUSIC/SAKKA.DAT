@@ -1,0 +1,130 @@
+;	include	group.def
+;bank2a	group	G_MUSIC2
+;	;
+;	;	sakka
+;	;
+;	;	Converting on Sat Nov 30 22:27:08 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	mussakka
+;mussakka:
+	db	080h
+	dw	sakka1
+	db	001h
+	dw	sakka2
+	db	002h
+	dw	sakka3
+;----------------------------------------
+sakka1:
+;----------------------------------------
+	db	$da,$00,$a5
+	db	$e5,$77
+	db	$db,$03
+; P1-1
+	db	$d8,$6,$a1
+	db	$d6,$c0
+	db	$d5,$30
+	db	$80
+	db	$a0
+	db	$dc,$a5
+	db	$cf
+loop$:
+; P1-2
+	db	$d6,$8f
+	db	$a7
+	db	$d5,$67
+; P1-3
+	db	$17
+	db	$07
+	db	$67
+	db	$83
+	db	$63
+; P1-4
+	db	$57
+	db	$37
+	db	$1b
+	db	$53
+; P1-5
+	db	$77
+	db	$53
+	db	$33
+	db	$d6,$c3
+	db	$d5,$13
+	db	$33
+	db	$63
+	db	$fc
+	dw	loop$
+;----------------------------------------
+sakka2:
+;----------------------------------------
+	db	$db,$02
+; P2-1
+	db	$d8,$c,$a5
+	db	$01
+	db	$d6,$85
+	db	$d5,$31
+loop$:
+; P2-2
+	db	$53
+	db	$83
+	db	$d4,$13
+	db	$d5,$c1
+	db	$a1
+; P2-3
+	db	$81
+	db	$61
+	db	$51
+	db	$81
+	db	$a7
+; P2-4
+	db	$c7
+	db	$a5
+	db	$81
+; P2-5
+	db	$a3
+	db	$81
+	db	$71
+	db	$87
+	db	$fc
+	dw	loop$
+;----------------------------------------
+sakka3:
+;----------------------------------------
+; P3-1
+	db	$d8,$6,$13
+	db	$d3,$80
+	db	$c0
+	db	$d2,$30
+	db	$60
+	db	$82
+	db	$dc,$23
+	db	$82
+	db	$dc,$33
+	db	$82
+	db	$02
+	db	$e1,$c,$53
+	db	$dc,$13
+	db	$d6,$c3
+loop$:
+; P3-2
+	db	$d5,$1f
+	db	$3f
+; P3-3
+	db	$57
+	db	$07
+	db	$d4,$17
+	db	$d5,$c3
+	db	$a3
+; P3-4
+	db	$8f
+	db	$6b
+	db	$53
+; P3-5
+	db	$33
+	db	$0b
+	db	$8f
+	db	$fc
+	dw	loop$
+
+

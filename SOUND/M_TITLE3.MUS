@@ -1,0 +1,1290 @@
+;	include	group.def
+;bank29	group	G_MUSIC1
+	;
+	;	title048
+	;
+	;	Converting on Tue Aug 17 13:22:09 1999
+	;
+	;				by ver 1.01
+	;
+;	public	mustitle3
+;mustitle3:
+		mushdr	c0,title0481
+		mushdr	01,title0482
+		mushdr	02,title0483
+		mushdr	03,title0484
+;----------------------------------------
+title0481:
+;----------------------------------------
+		speed 01 00				; tempo 80
+		vol 77
+		duty 3
+		chorus 00 02
+		vib 10 12
+		balanace_s f0
+; P1-10
+		init c a7
+		tempo 6 	oct 5	d
+		tempo 2 	oct 6	b
+		tempo 4 		b
+				oct 5	d
+; P1-11
+		env a0
+		tempo 6 		c
+		env a7
+		tempo 6 		c
+		tempo 4 		d#
+; P1-12
+		tempo 6 		d
+		tempo 2 	oct 6	g
+		tempo 4 		g
+				oct 5	d
+; P1-13
+		tempo 8 		d#
+		speed 00 b8				; tempo 128
+		tempo 8 		g#
+		speed 00 86				; tempo 144
+; P1-14
+		tempo 1 	oct 6	g
+		tempo 2 		r
+		tempo 1 		a
+		tempo 8 		b
+		tempo 4 		g
+; P1-15
+		tempo 1 	oct 5	c
+		tempo 2 		r
+		tempo 1 		d
+		tempo 8 		e
+		tempo 4 		c
+; P1-16
+		tempo 1 	oct 6	b
+		tempo 2 		r
+		tempo 1 	oct 5	c
+		tempo 8 	oct 6	b
+		tempo 4 		a
+; P1-17
+		tempo 1 		a
+		tempo 2 		r
+		tempo 1 		b
+		tempo 6 	oct 5	c
+		tempo 4 		e
+		tempo 2 		f#
+; P1-18							; Melo
+		balanace_s ff
+		tempo 1 	oct 4	g
+		balanace_s f0
+		tempo 5 	oct 5	d
+		tempo 2 	oct 6	b
+		tempo 4 	oct 5	d
+				oct 6	b
+; P1-19
+		tempo 6 	oct 5	c
+					f
+		tempo 4 		c
+; P1-20
+		tempo 6 		d
+		env b7
+		tempo 1 		d#
+					e
+		tempo 6 		f
+		tempo 1 		e
+					d#
+; P1-21
+		tempo 8 		d
+		init 8 a7
+		tempo 4 		c
+				oct 6	b
+				oct 5	c
+; P1-22
+		tempo 9 		d
+		tempo 3 	oct 6	b
+		tempo 6 	oct 5	d
+		tempo 6 	oct 6	b
+; P1-23
+		tempo 3 	oct 5	c
+		tempo 6 		d
+		tempo 3 	oct 5	e
+		tempo 4 		e
+					e
+					c
+; P1-24
+		init 8 a0
+		tempo 6 	oct 6	b
+		init 8 a7
+		tempo 6 		b
+		init 8 a7
+		tempo 4 	oct 5	f
+					e
+					c
+; P1-25
+		init 8 a0
+		tempo 6 		d
+		init 8 a7
+		tempo 6 		d
+		init 8 a7
+		tempo 3 		r
+				oct 6	b
+				oct 5	c
+					d
+; P1-26
+		tempo 9 		d
+		tempo 3 	oct 6	b
+		tempo 6 	oct 5	d
+				oct 6	b
+; P1-27
+		tempo 9 	oct 5	c
+					f
+		tempo 6 		c
+; P1-28
+		tempo 9 		d
+		init c b7
+		tempo 1 		d#
+					e
+		tempo 6 		f
+		tempo 1 		e
+					d#
+; P1-29
+		tempo 8 		d
+		init 8 a7
+		tempo 4 		c
+				oct 6	b
+				oct 5	c
+; P1-30
+		tempo 9 		d
+		tempo 3 	oct 6	b
+		tempo 9 	oct 5	d
+		init 8 b7
+		tempo 3 		g
+; P1-31
+		tempo 4 		a
+					g
+					f
+		tempo 6 		f
+					e
+; P1-32
+		tempo 9 		d
+		tempo 3 		f
+					g
+		tempo 6 		d
+		tempo 3 		g
+; P1-33
+;		duty 2
+		init 8 54
+		tempo 3 	oct 6	g
+					b
+		init 8 94
+		tempo 3 	oct 5	d
+					g
+		speed 00 88				; Tempo Change
+		init 8 b4
+		tempo 3 		f
+					a
+		init 8 d4
+		tempo 3 	oct 4	c
+					f
+		speed 00 8a				; Tempo Change
+; P1-34
+		init 8 b4
+;		duty 3
+		tempo 9 		d
+					c
+		tempo 6 	oct 5	a#
+; P1-35
+		init c b7
+		tempo 1 		f
+					e
+					d
+					e
+		tempo 4 		f
+				oct 4	d
+					f
+; P1-36
+		tempo 6 		e
+		tempo 2 	oct 5	g
+		init 8 b7
+		tempo 4 		a
+					g
+					f
+; P1-37
+		tempo 12 		g
+		tempo 6 	oct 4	c
+		speed 00 88				; tempo change
+		tempo 6 		c#
+; P1-38
+		speed 00 86				; tempo 144
+		call sub1_38$
+		tempo 4 	oct 4	c
+					c
+					c#
+; P1-40
+		call sub1_38$
+		tempo 4 	oct 4	c
+					c
+					c#
+; P1-42
+		call sub1_38$
+		tempo 4 	oct 5	e
+					e
+					c
+; P1-44
+		init c a0
+		tempo 6 		d
+		init c a7
+		tempo 10 		d
+; P1-45
+		env a0
+		tempo 8 		c
+		env a7
+		tempo 8 		c
+; P1-46
+		env a0
+		tempo 8 	oct 6	b
+		env a7
+		tempo 8 		b
+; P1-47
+				oct 5	c
+				oct 6	b
+; P1-48
+				oct 5	d
+				oct 6	b
+; P1-49
+				oct 5	c
+					f
+; P1-50
+					a
+		tempo 6 		g
+		tempo 1 		g
+		tempo 1 		f#
+; P1-51
+		tempo 8 		f
+					e
+; P1-52
+		env a0
+		tempo 16 		d
+; P1-53
+		env a7
+		tempo 16 		d
+; P1-54
+		env a3
+		tempo 1 	oct 6	g
+		tempo 3 		r
+		tempo 1 		g
+		tempo 5 		r
+		tempo 1 		g
+			 		g
+					g
+		tempo 3 		r
+; P1-55
+		tempo 1 		g
+		tempo 3 		r
+		tempo 1 		g
+		tempo 3 		r
+		init 8 b2
+		tempo 2 		a
+					a
+					a
+					a
+					a
+					f#
+; P1-56
+		init c b7
+		tempo 1 		g
+		tempo 3 		r
+		tempo 1 	oct 7	g
+		tempo 11 		r
+		end
+sub1_38$:
+		init c c3
+		tempo 1 		d
+lp1_1$:
+		tempo 1 		r
+				oct 6	d
+				oct 7	a
+				oct 6	d
+		loop 5,lp1_1$
+		tempo 1 		r
+					d
+				oct 7	a
+		init 8 b7
+		return
+;----------------------------------------
+title0482:
+;----------------------------------------
+		duty 3
+		vib 14 12
+		init c c7
+; P2-10
+		tempo 6 	oct 5	g
+		tempo 2 		d
+		tempo 4 		d
+					g
+; P2-11
+		env b0
+		tempo 8 		f
+		env b7
+		tempo 8 		f
+; P2-12
+		env c7
+		tempo 6 		g
+		tempo 2 		d
+		tempo 4 		d
+					g
+; P2-13
+		env b0
+		tempo 4 		g#
+		env b7
+		tempo 4 		g#
+		env b0
+		tempo 4 	oct 4	c
+		env b7
+		tempo 4 		c
+; P2-14
+		env c2
+		tempo 1 	oct 3	b
+		tempo 2 		r
+		tempo 1 		a
+		env b0
+		tempo 6 		g
+		env b7
+		tempo 6 		g
+; P2-15
+		tempo 16 		r
+; P2-16
+					r
+; P2-17
+		env c7
+		tempo 1 	oct 4	c
+		tempo 2 		r
+		tempo 1 		d
+		tempo 8 		e
+		tempo 2 		f#
+		tempo 1 		e
+					f#
+; P2-18							; Main Theme Start
+		tempo 6 	oct 5	g
+		tempo 2 		b
+		tempo 8 	oct 4	d
+; P2-19
+		balanace_s f0
+		env 97
+		tempo 4 	oct 6	a
+					f
+		balanace_s ff
+		env c7
+		tempo 6 	oct 4	f
+		tempo 1 		e
+					d#
+; P2-20
+		tempo 8 		d
+		balanace_s f0
+		env 97
+		tempo 6 	oct 6	a
+		tempo 2 	oct 5	c
+; P2-21
+;		duty 2
+		balanace_s 0f
+		env a3
+		tempo 4 	oct 4	d
+		tempo 2 		d
+		tempo 4 		c
+		tempo 2 		c
+		tempo 4 	oct 5	b
+;		duty 3
+; P2-22
+		balanace_s ff
+		env c7
+		tempo 6 	oct 5	g
+		tempo 2 		b
+		tempo 8 	oct 4	d
+; P2-23
+		balanace_s f0
+		env 97
+		tempo 2 	oct 6	a
+		tempo 4 		f
+		tempo 2 		a
+		balanace_s ff
+		init 8 c7
+		tempo 4 	oct 4	c
+				oct 5	b
+				oct 4	c
+; P2-24
+		tempo 12 		d
+		balanace_s f0
+		init 8 b7
+		tempo 9 	oct 6	a
+		balanace_s 0f
+		init c c7
+		tempo 1 		g
+					a
+; P2-25
+		tempo 6 		b
+		tempo 1 		e
+					f#
+		tempo 4 		g
+		init c 4b
+		tempo 4 		a
+; P2-26
+		balanace_s ff
+		init c c7
+		tempo 6 	oct 5	g
+		tempo 2 		b
+		tempo 8 	oct 4	d
+; P2-27
+		balanace_s f0
+		env 97
+		tempo 2 	oct 6	a
+		tempo 6 		f
+		balanace_s ff
+		env c7
+		tempo 6 	oct 4	f
+		tempo 1 		e
+					d#
+; P2-28
+		tempo 8 		d
+		balanace_s f0
+		env 97
+		tempo 2 	oct 5	c
+		tempo 6 	oct 6	a
+; P2-29
+		tempo 6 		b
+		tempo 2 		g
+		init 8 c7
+		tempo 4 		f
+					g
+					f
+; P2-30
+		balanace_s ff
+		tempo 9 	oct 5	g
+		tempo 3 		b
+		tempo 12 	oct 4	d
+; P2-31
+		balanace_s f0
+		init 8 a7
+		tempo 4 	oct 5	d
+					c
+					d
+		balanace_s ff
+		init 8 c7
+		tempo 4 	oct 4	f
+					e
+					f
+; P2-32
+		tempo 9 		g
+		tempo 3 		a#
+		init c b0
+		tempo 8 		g
+		init c b7
+		tempo 8 		g
+; P2-33 -tie
+		env c6
+		tempo 4 		a
+		env 5d
+		tempo 4 		a
+; P2-34
+		env c7
+		tempo 6 		a#
+		env c3
+		tempo 2 		f
+		env c7
+		tempo 8 		f
+; P2-35
+		env a7
+		tempo 8 	oct 5	a#
+		env c7
+		tempo 4 	oct 4	a#
+					b
+; P2-36
+		tempo 6 	oct 3	c
+		env c3
+		tempo 2 	oct 4	g
+		env c7
+		tempo 8 		g
+; P2-37
+		env a7
+		tempo 8 	oct 5	e
+		env c7
+		tempo 4 	oct 3	c
+					c#
+		chorus
+; P2-38
+		balanace_s 0f
+		call sub2_38$
+		tempo 4 		c#
+; P2-40
+		call sub2_38$
+		tempo 4 		c#
+; P2-42
+		call sub2_38$
+		tempo 4 	oct 4	a
+; P2-44
+		balanace_s ff
+		chorus
+		init c b0
+		tempo 6 	oct 5	b
+		init c b7
+		tempo 10 		b
+; P2-45
+		env c7
+		tempo 8 		a
+		tempo 6 		f
+		tempo 1 		e
+					d#
+; P2-46
+		tempo 8 		d
+					g
+; P2-47
+					f
+					a
+; P2-48
+		env b0
+		tempo 8 		g
+		env b7
+		tempo 8 		g
+; P2-49
+		env c7
+		tempo 8 		f
+		tempo 6 	oct 4	f
+		tempo 1 		e
+					d#
+; P2-50
+		tempo 8 		d
+				oct 6	b
+; P2-51
+				oct 5	c
+		tempo 6 		a
+		tempo 1 		f
+					a
+; P2-52
+		env b0
+		tempo 16 		g
+; P2-53
+		env b7
+		tempo 16 		g
+; P2-54
+		env c2
+		tempo 1 	oct 4	g
+		tempo 3 		r
+		tempo 1 		g
+		tempo 5 		r
+		tempo 1 		g
+					g
+					g
+		tempo 3 		r
+; P2-55
+		tempo 1 		g
+		tempo 3 		r
+		env 90
+		tempo 4 		g
+		init 8 c2
+		tempo 2 	oct 5	f
+					f
+					f
+					f
+					f
+					f#
+; P2-56
+		init c c7
+		tempo 1 		g
+		tempo 3 		r
+		tempo 1 	oct 6	g
+		tempo 11 		r
+		end
+sub2_38$:
+		init c b2
+		tempo 1 		d
+lp2_1$:
+		tempo 1 	oct 5	a
+				oct 4	d
+					a
+					d
+		loop 5,lp2_1$
+		tempo 1 	oct 5	a
+				oct 4	d
+					a
+		init 8 b7
+		tempo 4 	oct 3	c
+					c
+		return
+;----------------------------------------
+title0483:
+;----------------------------------------
+		balanace_s 0f
+		vib 10 14
+		chorus
+		init c 16
+; P3-10
+		tempo 6 	oct 5	b
+		tempo 2 		d
+		tempo 4 		g
+					d
+; P3-11
+		tempo 2 		f
+					c
+					f
+		tempo 4 		a
+					g
+		tempo 2 		f
+; P3-12
+					g
+					d
+					g
+		tempo 4 		b
+					a
+		tempo 2 		g
+; P3-13
+					g#
+					d#
+					g#
+				oct 4	c
+					c
+		tempo 4 	oct 5	a#
+		tempo 2 		g#
+; P3-14
+				oct 6	g
+		tempo 1 		d
+					c#
+					d
+					r
+		tempo 2 		g
+		tempo 1 		d
+					r
+		tempo 2 		d
+					g
+					d
+; P3-15
+		tempo 2 		f
+		tempo 1 		c
+				oct 7	b
+				oct 6	c
+					r
+		tempo 2 		f
+		tempo 1 		c
+					r
+		tempo 2 		c
+					f
+					c
+; P3-16
+				oct 6	g
+		tempo 1 		d
+					c#
+					d
+					r
+		tempo 2 		g
+		tempo 1 		d
+					r
+		tempo 2 		d
+					g
+					d
+; P3-17
+		tempo 2 		a
+		tempo 1 		f
+					e
+					f
+					r
+		tempo 2 		a
+					f
+		tempo 4 		a
+		tempo 2 	oct 5	c
+; P3-18
+		tempo 4 	oct 6	g
+		tempo 2 		d
+		tempo 4 		g
+		tempo 2 		d
+					g
+					d
+; P3-19
+		tempo 4 		a
+		tempo 2 		f
+		tempo 4 		a
+		tempo 2 		f
+					a
+				oct 5	c
+; P3-20
+		tempo 4 	oct 6	b
+		tempo 2 		g
+		tempo 4 		b
+		tempo 2 		g
+					b
+					g
+; P3-21
+		tempo 4 		g
+		tempo 2 		b
+		tempo 4 		a
+		tempo 2 		b
+		tempo 4 	oct 5	c
+; P3-22
+				oct 6	g
+		tempo 2 		d
+		tempo 4 		g
+		tempo 2 		d
+					g
+					d
+; P3-23
+		tempo 4 		a
+		tempo 2 		f
+		tempo 4 		a
+		tempo 2 		f
+					a
+				oct 5	c
+; P3-24
+		tempo 4 	oct 6	b
+		tempo 2 		g
+		tempo 4 		b
+		tempo 2 		g
+					b
+				oct 5	c
+; P3-25
+		tempo 4 	oct 6	b
+		tempo 2 		g
+		tempo 4 		b
+		tempo 2 		g
+		tempo 4 	oct 5	d
+; P3-26
+				oct 6	g
+		tempo 2 		d
+		tempo 4 		g
+		tempo 2 		d
+					g
+					d
+; P3-27
+		tempo 4 		a
+		tempo 2 		f
+		tempo 4 		a
+		tempo 2 		f
+					a
+				oct 5	c
+; P3-28
+		tempo 4 	oct 6	b
+		tempo 2 		g
+		tempo 4 		b
+		tempo 2 		g
+					b
+					g
+; P3-29
+		tempo 4 	oct 5	d
+		tempo 2 	oct 6	g
+		tempo 4 	oct 5	d
+		tempo 2 	oct 6	g
+				oct 5	d
+				oct 6	a
+; P3-30
+		tempo 4 		g
+		tempo 2 		d
+		tempo 4 		g
+		tempo 2 		d
+					g
+					d
+; P3-31
+		tempo 4 		a
+		tempo 2 		f
+		tempo 4 		a
+		tempo 2 		f
+					a
+				oct 5	c
+; P3-32
+		tempo 4 	oct 6	b
+		tempo 2 		g
+		tempo 4 		b
+		tempo 2 		g
+				oct 5	d
+				oct 6	g
+; P3-33
+					g
+					d
+					g
+					a	; Tempo Change for Part 1
+					a
+					f
+					a
+				oct 5	c
+; P3-34
+		tempo 6 		d
+				oct 6	a#
+		tempo 4 	oct 5	f
+; P3-35
+		tempo 6 		a#
+					f
+		tempo 4 		d
+; P3-36
+		tempo 6 		e
+					c
+		tempo 4 		e
+; P3-37
+		tempo 6 	oct 4	c
+				oct 5	g
+		tempo 4 		e
+; P3-38
+		tempo 1 		d
+		tempo 1 		r
+		balanace_s ff
+		init c 16
+		chorus
+		tempo 2 	oct 4	a
+				oct 3	d
+		tempo 6 		a
+		tempo 2 		g
+					f#
+; P3-39
+		tempo 1 		d
+		tempo 2 		r
+		tempo 1 		e
+		tempo 4 		f#
+		init 8 16
+		tempo 4 	oct 5	c
+					c
+					c#
+; P3-40
+		init c 16
+		tempo 1 		d
+					r
+		tempo 2 	oct 4	a
+				oct 3	d
+		tempo 6 		a
+		tempo 2 		g
+					f#
+; P3-41
+		tempo 1 		b
+		tempo 2 		r
+		tempo 1 		a
+		tempo 4 		a
+		init 8 16
+		tempo 4 	oct 5	c
+					c
+					c#
+; P3-42
+		init c 16
+		tempo 1 		d
+					r
+		init c 16
+		tempo 2 	oct 4	a
+				oct 3	d
+		tempo 6 		g
+		tempo 2 		e
+					g
+; P3-43
+		tempo 1 		f#
+					e
+		tempo 6 		d
+		chorus
+		init 8 16
+		tempo 4 	oct 5	c
+					c
+		tempo 2 		e
+					f#
+		balanace_s 0f
+; P3-44
+		init c 16
+		tempo 16 		g
+; P3-45
+		tempo 16 		f
+; P3-46
+		tempo 8 		g
+		tempo 6 		d
+		tempo 1 		d
+					e
+; P3-47
+		tempo 2 		f
+		tempo 12 		f
+		tempo 1 		e
+					d#
+; P3-48
+		tempo 8 		d
+					g
+; P3-49
+					f
+					a
+; P3-50
+					g
+		tempo 6 		d
+		tempo 1 		d
+					e
+; P3-51
+		tempo 16 		f
+; P3-52
+		tempo 1 		g
+		tempo 3 		r
+		tempo 1 		g
+		tempo 5 		r
+		tempo 1 		g
+					g
+					g
+		tempo 3 		r
+; P3-53
+		tempo 1 		g
+		tempo 3 		r
+		tempo 1 		g
+		tempo 5 		r
+		tempo 1 		g
+					g
+					g
+		tempo 3 		r
+; P3-54
+		tempo 1 	oct 6	g
+		tempo 3 		r
+		tempo 1 		g
+		tempo 5 		r
+		tempo 1 		g
+					g
+					g
+		tempo 3 		r
+; P3-55
+		tempo 1 		g
+		tempo 3 		r
+		tempo 1 		g
+		tempo 3 		r
+		init 8 16
+		tempo 2 		f
+					f
+					f
+					f
+					f
+					a
+; P3-56
+		init c 16
+		tempo 1 		g
+		tempo 3 		r
+		tempo 1 	oct 7	g
+		tempo 11 		r
+		end
+;----------------------------------------
+title0484:
+;----------------------------------------
+		drum_mode 05
+		balanace_s f0
+		init c
+; P4-10
+		tempo 16 		r
+; P4-11
+					r
+; P4-12
+					r
+; P4-13
+		tempo 8 		r
+		tempo 2 		drum 1
+					drum 1
+		tempo 1 		drum 1
+					drum 1
+					drum 1
+					drum 1
+; P4-14
+;211211116_111111111
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+					drum 1
+					drum 1
+		tempo 6 		drum 1
+; P4-15
+;211211113111_111111111111
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+					drum 1
+					drum 1
+		tempo 3 		drum 1
+		tempo 1 		drum 1
+					drum 1
+					drum 1
+; P4-16
+;2112111142_1111111114
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+					drum 1
+					drum 1
+		tempo 4 		drum 1
+		tempo 2 		drum 4
+; P4-17
+;211211112#611111111_111111111#633222211
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+					drum 1
+					drum 1
+		tempo 2 		drum 1
+		init 6
+		tempo 1 		drum 3
+					drum 3
+					drum 2
+					drum 2
+					drum 2
+					drum 2
+					drum 1
+					drum 1
+		init c
+; P4-18							; Melody Start
+		call sub4_18$
+; P4-19
+		call sub4_19$
+; P4-20
+		call sub4_19$
+; P4-21
+;22222112#61111_14144111#62211
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 4
+					drum 4
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		init 6
+		tempo 1 		drum 2
+					drum 2
+		tempo 1 		drum 1
+					drum 1
+		init c
+; P4-22
+		call sub4_18$
+; P4-23
+;222221122_141641111
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 6
+					drum 4
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+					drum 1
+; P4-24
+		call sub4_19$
+; P4-25
+;2222211211_1414411111
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 4
+					drum 4
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+; P4-26
+		call sub4_18$
+; P4-27
+		call sub4_19$
+; P4-28
+		call sub4_19$
+; P4-29
+;22222112#61111_14144111#62332
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 4
+					drum 4
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		init 6
+		tempo 1 		drum 2
+					drum 3
+					drum 3
+					drum 2
+		init c
+; P4-30
+		call sub4_18$
+; P4-31
+		call sub4_19$
+; P4-32
+;2222211211_1416411111
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 6
+					drum 4
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+; P4-33
+;22222112#61111_14144111#63322
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 4
+					drum 4
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		init 6
+		tempo 1 		drum 3
+					drum 3
+					drum 2
+					drum 2
+		init c
+; P4-34							; Slow down
+;24424_14141
+		tempo 2 		drum a
+		tempo 4 		drum 4
+					drum a
+		tempo 2 		drum 4
+		tempo 4 		drum a
+; P4-35
+;244222_141411
+		tempo 2 		drum a
+		tempo 4 		drum 4
+					drum a
+		tempo 2 		drum 4
+					drum a
+					drum a
+; P4-36
+;24424_14141
+		tempo 2 		drum a
+		tempo 4 		drum 4
+					drum a
+		tempo 2 		drum 4
+		tempo 4 		drum a
+; P4-37
+;442111111_111332211
+		tempo 4 		drum a
+					drum a
+		tempo 2 		drum a
+		tempo 1 		drum 3
+					drum 3
+					drum 2
+					drum 2
+					drum 1
+					drum 1
+; P4-38							; Slow End First Start!
+		call sub4_38$
+; P4-39
+		call sub4_39$
+		tempo 1 		drum 2
+					drum 3
+					drum 3
+					drum 2
+		init c
+; P4-40
+		call sub4_38$
+; P4-41
+		call sub4_39$
+		tempo 1 		drum 3
+					drum 3
+					drum 2
+					drum 2
+		init c
+; P4-42
+		call sub4_38$
+; P4-43
+		call sub4_39$
+		tempo 1 		drum 2
+					drum 2
+					drum 2
+					drum 2
+		init c
+; P4-44
+		tempo 16 		drum 9		; Drum Down
+; P4-45
+loop41$:
+		tempo 16 		r
+		loop 6,loop41$
+; P4-51
+		tempo 12 		r
+		init 6
+		tempo 1 		drum 3		; Rebirth
+					drum 2
+					drum 3
+					drum 2
+					drum 3
+					drum 2
+					drum 1
+					drum 1
+		init c
+; P4-52
+		tempo 4 		drum 1
+		tempo 6 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 4 		drum 1
+; P4-53
+		tempo 4 		drum 1
+		tempo 6 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 4 		drum 1
+; P4-54
+		tempo 4 		drum 1
+		tempo 6 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 4 		drum 1
+; P4-55
+		tempo 4 		drum 1
+					drum 1
+		init 8
+		tempo 2 		drum 1
+					drum 1
+					drum 1
+		init 6
+		tempo 1 		drum 2
+					drum 2
+					drum 3
+					drum 3
+					drum 2
+					drum 2
+					drum 1
+					drum 1
+		init c
+; P4-56
+		tempo 4 		drum 1
+					drum c
+		end
+sub4_18$:
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 4
+					drum 6
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+					drum 4
+		return
+sub4_19$:
+		tempo 2 		drum 1
+					drum 4
+					drum 1
+					drum 6
+					drum 4
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+					drum 4
+		return
+sub4_38$:
+; P4-38
+lp1$:
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		loop 4,lp1$
+		return
+sub4_39$:
+; P4-39
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		tempo 2 		drum 1
+		tempo 1 		drum 1
+					drum 1
+		init 8
+		tempo 4 		drum 1
+					drum 1
+		return
+
+

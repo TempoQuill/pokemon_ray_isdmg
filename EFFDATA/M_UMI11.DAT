@@ -1,0 +1,446 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_umi1
+;	;
+;	;	Converting on Fri Mar 30 10:19:02 2020
+;	;
+;	;				by ver 1.00
+;	;
+;	public	musm_umi1
+;musm_umi1:
+	db	080h
+	dw	m_umi11
+	db	001h
+	dw	m_umi12
+	db	002h
+	dw	m_umi13
+	db	003h
+;----------------------------------------
+m_umi11:
+;----------------------------------------
+	db	$da,$00,$c0
+	db	$e5,$77
+; P1-1
+	db	$d8,$c,$a7
+	db	$0b
+; P1-2
+	db	$db,$03
+	db	$ef,$ff
+	db	$e1,$9,$22
+	db	$d5,$b5
+	db	$b1
+	db	$91
+	db	$b1
+loop$:
+; P1-3
+	db	$d8,$6,$a7
+	db	$03
+	db	$ef,$f0
+	db	$d5,$c0
+	db	$02
+	db	$c0
+	db	$06
+	db	$d4,$10
+	db	$02
+	db	$10
+	db	$02
+; P1-4
+	db	$fe
+	dw	sub4$
+; P1-5
+	db	$fe
+	dw	sub5$
+loop6$:
+; P1-6
+	db	$fe
+	dw	sub4$
+; P1-7
+	db	$fd,3
+	dw	loop6$
+; P1-8
+; P1-9
+	db	$fe
+	dw	sub5$
+; P1-10
+	db	$03
+	db	$ef,$ff
+	db	$d4,$23
+	db	$33
+	db	$43
+	db	$ef,$f0
+	db	$d5,$c0
+	db	$02
+	db	$c0
+	db	$02
+; P1-11
+	db	$db,$02
+	db	$ef,$ff
+	db	$dc,$a2
+	db	$d3,$93
+	db	$db,$03
+	db	$ef,$f0
+	db	$dc,$a7
+	db	$d4,$50
+	db	$02
+	db	$50
+	db	$02
+	db	$db,$02
+	db	$ef,$ff
+	db	$dc,$a2
+	db	$d3,$c3
+	db	$db,$03
+	db	$ef,$f0
+	db	$dc,$a7
+	db	$d5,$c0
+	db	$02
+	db	$c0
+	db	$02
+; P1-12
+	db	$db,$02
+	db	$ef,$ff
+	db	$dc,$a2
+	db	$d3,$73
+	db	$db,$03
+	db	$ef,$f0
+	db	$dc,$a7
+	db	$d5,$c0
+	db	$02
+	db	$c0
+	db	$02
+	db	$db,$02
+	db	$ef,$ff
+	db	$dc,$a2
+	db	$d3,$c3
+	db	$db,$03
+	db	$ef,$f0
+	db	$dc,$a7
+	db	$d5,$70
+	db	$02
+	db	$70
+	db	$02
+; P1-13
+	db	$ef,$ff
+	db	$dc,$80
+	db	$2b
+	db	$bb
+; P1-14
+	db	$cf
+	db	$dc,$a7
+	db	$41
+	db	$71
+	db	$c1
+	db	$d4,$41
+; P1-15
+	db	$73
+	db	$93
+	db	$53
+	db	$d5,$cb
+; P1-16
+	db	$c3
+	db	$d4,$33
+	db	$43
+	db	$7b
+; P1-17
+	db	$23
+	db	$d5,$c3
+	db	$b3
+	db	$d4,$2b
+; P1-18
+	db	$43
+	db	$23
+	db	$43
+	db	$d5,$cb
+; P1-19
+	db	$fc
+	dw	loop$
+sub4$:
+	db	$03
+	db	$d5,$c0
+	db	$02
+	db	$c0
+	db	$06
+	db	$c0
+	db	$02
+	db	$c0
+	db	$02
+	db	$ff
+sub5$:
+	db	$03
+	db	$c0
+	db	$02
+	db	$c0
+	db	$06
+	db	$b0
+	db	$04
+	db	$b1
+	db	$ff
+;----------------------------------------
+m_umi12:
+;----------------------------------------
+; P2-1
+	db	$d8,$6,$c7
+	db	$0b
+	db	$db,$03
+	db	$ef,$ff
+	db	$e1,$17,$44
+	db	$d5,$b0
+	db	$c2
+	db	$b5
+	db	$91
+; P2-2
+	db	$d6,$7b
+	db	$d7,$73
+	db	$93
+	db	$b3
+loop$:
+; P2-3
+	db	$ef,$ff
+	db	$d7,$c3
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$40
+	db	$02
+	db	$ef,$ff
+	db	$d6,$13
+	db	$ef,$0f
+	db	$d5,$70
+	db	$02
+	db	$70
+	db	$02
+; P2-4
+	db	$ef,$ff
+	db	$d6,$23
+	db	$fe
+	dw	bass4_6$
+; P2-7
+	db	$ef,$ff
+	db	$d7,$c3
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$40
+	db	$02
+	db	$ef,$ff
+	db	$d6,$43
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$40
+	db	$02
+; P2-8
+	db	$ef,$ff
+	db	$d6,$53
+	db	$fe
+	dw	bass4_6$
+loop11_14$:
+; P2-11
+	db	$ef,$ff
+	db	$d6,$53
+	db	$ef,$0f
+	db	$d5,$90
+	db	$02
+	db	$90
+	db	$02
+	db	$ef,$ff
+	db	$d7,$c3
+	db	$ef,$0f
+	db	$d5,$50
+	db	$02
+	db	$50
+	db	$02
+; P2-12
+	db	$ef,$ff
+	db	$d6,$43
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$40
+	db	$02
+	db	$ef,$ff
+	db	$d7,$c3
+	db	$ef,$0f
+	db	$d6,$c0
+	db	$02
+	db	$c0
+	db	$02
+; P2-13
+	db	$ef,$ff
+	db	$53
+	db	$ef,$0f
+	db	$d5,$50
+	db	$02
+	db	$50
+	db	$02
+	db	$ef,$ff
+	db	$d6,$23
+	db	$ef,$0f
+	db	$d5,$50
+	db	$02
+	db	$50
+	db	$02
+; P2-14
+	db	$ef,$ff
+	db	$d7,$c3
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$40
+	db	$02
+	db	$ef,$ff
+	db	$d7,$73
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$40
+	db	$02
+; P2-15
+	db	$fd,2
+	dw	loop11_14$
+; P2-19
+	db	$fc
+	dw	loop$
+bass4_6$:
+	db	$ef,$0f
+	db	$d5,$90
+	db	$02
+	db	$90
+	db	$02
+	db	$ef,$ff
+	db	$d7,$93
+	db	$ef,$0f
+	db	$d5,$90
+	db	$02
+	db	$90
+	db	$02
+; P2-5
+	db	$ef,$ff
+	db	$d7,$73
+	db	$ef,$0f
+	db	$d5,$50
+	db	$02
+	db	$50
+	db	$02
+	db	$ef,$ff
+	db	$d7,$b3
+	db	$ef,$0f
+	db	$d5,$50
+	db	$04
+	db	$21
+; P2-6
+	db	$ef,$ff
+	db	$d7,$c3
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$40
+	db	$02
+	db	$ef,$ff
+	db	$d7,$73
+	db	$ef,$0f
+	db	$d5,$70
+	db	$02
+	db	$70
+	db	$02
+	db	$ff
+;----------------------------------------
+m_umi13:
+;----------------------------------------
+	db	$e1,$e,$13
+	db	$ef,$ff
+; P3-1
+	db	$d8,$6,$14
+	db	$d3,$b0
+	db	$c2
+	db	$b5
+	db	$91
+	db	$7b
+; P3-2
+	db	$d2,$7b
+	db	$d3,$73
+	db	$53
+	db	$23
+loop$:
+; P3-3
+	db	$d8,$c,$19
+	db	$d3,$75
+	db	$44
+	db	$70
+; P3-4
+	db	$55
+	db	$25
+; P3-5
+	db	$55
+	db	$21
+	db	$90
+	db	$01
+	db	$50
+; P3-6
+	db	$75
+	db	$45
+; P3-7
+	db	$75
+	db	$44
+	db	$70
+; P3-8
+	db	$95
+	db	$55
+; P3-9
+	db	$95
+	db	$71
+	db	$90
+	db	$01
+	db	$70
+; P3-10
+	db	$c5
+	db	$c5
+; P3-11
+	db	$dc,$10
+	db	$d2,$21
+	db	$d3,$c2
+	db	$50
+	db	$95
+; P3-12
+	db	$71
+	db	$92
+	db	$70
+	db	$45
+; P3-13
+	db	$51
+	db	$42
+	db	$20
+	db	$95
+; P3-14
+	db	$71
+	db	$62
+	db	$70
+	db	$c5
+; P3-15
+	db	$d2,$21
+	db	$d3,$c2
+	db	$50
+	db	$95
+; P3-16
+	db	$71
+	db	$62
+	db	$70
+	db	$c5
+; P3-17
+	db	$b1
+	db	$92
+	db	$70
+	db	$b5
+; P3-18
+	db	$c1
+	db	$b2
+	db	$c0
+	db	$d2,$45
+; P3-19
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_umi14:
+;----------------------------------------
+
+

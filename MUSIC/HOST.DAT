@@ -1,0 +1,227 @@
+;	include	group.def
+;bank2a	group	G_MUSIC2
+;	;
+;	;	host
+;	;
+;	;	Converting on Mon Sep 16 08:40:32 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	mushost
+;mushost:
+	db	080h
+	dw	m_host1
+	db	001h
+	dw	m_host2
+	db	002h
+	dw	m_host3
+	db	003h
+;----------------------------------------
+m_host1:
+;----------------------------------------
+	db	$da,$00,$fb
+	db	$e5,$77
+	db	$f1
+	db	$db,$03
+; P1-1
+	db	$d8,$c,$a1
+	db	$03
+loop$:
+; P1-2
+	db	$00
+	db	$d5,$60
+	db	$fd,10
+	dw	loop$
+; P1-3
+; P1-4 -tie
+	db	$00
+	db	$51
+	db	$50
+; P1-5
+	db	$00
+	db	$61
+	db	$61
+	db	$50
+	db	$60
+	db	$80
+; P1-6
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_host2:
+;----------------------------------------
+	db	$db,$03
+	db	$e1,$9,$23
+; P2-1
+	db	$d8,$3,$c7
+	db	$d4,$10
+	db	$60
+	db	$a0
+	db	$b0
+	db	$d3,$1b
+	db	$db,$02
+loop$:
+; P2-2
+	db	$dc,$c4
+	db	$d4,$6b
+	db	$13
+	db	$63
+	db	$13
+	db	$63
+	db	$a3
+; P2-3
+	db	$bb
+	db	$a3
+	db	$8f
+; P2-4
+	db	$6b
+	db	$81
+	db	$61
+	db	$53
+	db	$33
+	db	$13
+	db	$83
+; P2-5
+	db	$6b
+	db	$33
+	db	$1b
+	db	$11
+	db	$51
+; P2-6
+	db	$6b
+	db	$53
+	db	$63
+	db	$83
+	db	$a3
+	db	$63
+; P2-7
+	db	$bb
+	db	$d3,$13
+	db	$3b
+	db	$51
+	db	$31
+; P2-8
+	db	$1b
+	db	$d4,$b3
+	db	$a3
+	db	$83
+	db	$63
+	db	$53
+; P2-9
+	db	$6b
+	db	$dc,$a2
+	db	$11
+	db	$51
+	db	$6f
+; P2-10
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_host3:
+;----------------------------------------
+; P3-1
+	db	$d8,$6,$1e
+	db	$05
+	db	$d5,$10
+	db	$50
+loop$:
+; P3-2
+	db	$fe
+	dw	bass2$
+	db	$fe
+	dw	bass2$
+; P3-3
+	db	$d9,$02
+	db	$fe
+	dw	bass2$
+	db	$d9,$00
+	db	$d5,$80
+	db	$00
+	db	$d4,$20
+	db	$00
+	db	$d5,$60
+	db	$00
+	db	$d4,$20
+	db	$00
+; P3-4
+	db	$fe
+	dw	bass4_5$
+; P3-6
+	db	$fe
+	dw	bass2$
+	db	$fe
+	dw	bass2$
+; P3-7
+	db	$d6,$b0
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$d5,$60
+	db	$00
+	db	$d4,$30
+	db	$00
+	db	$d6,$b0
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$d5,$60
+	db	$00
+	db	$d4,$10
+	db	$00
+; P3-8
+	db	$fe
+	dw	bass4_5$
+; P3-10
+	db	$fc
+	dw	loop$
+bass2$:
+	db	$d5,$60
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$ff
+bass4_5$:
+; P3-4
+	db	$d5,$10
+	db	$00
+	db	$b0
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$10
+	db	$00
+	db	$b0
+	db	$00
+	db	$50
+	db	$00
+	db	$b0
+	db	$00
+; P3-5
+	db	$60
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$d5,$60
+	db	$00
+	db	$10
+	db	$00
+	db	$30
+	db	$00
+	db	$50
+	db	$00
+	db	$ff
+;----------------------------------------
+m_host4:
+;----------------------------------------
+
+

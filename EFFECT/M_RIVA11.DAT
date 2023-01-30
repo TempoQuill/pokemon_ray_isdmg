@@ -1,0 +1,418 @@
+;	include	group.def
+;bank3d	group	G_MUSIC4
+	;
+	;	rival01
+	;
+	;	Converting on Thu May 27 07:59:44 1999
+	;
+	;				by ver 1.00
+	;
+;	public	musrival11
+;musrival11:
+	db	0c0h
+	dw	rival011
+	db	001h
+	dw	rival012
+	db	002h
+	dw	rival013
+	db	003h
+	dw	rival014
+;----------------------------------------
+rival011:
+;----------------------------------------
+	db	$da,$00,$70
+	db	$e5,$77
+	db	$db,$01
+	db	$f1
+	db	$e1,$12,$15
+	db	$ef,$0f
+; P1-1
+	db	$d8,$c,$b2
+	db	$d4,$10
+	db	$d5,$b0
+	db	$91
+	db	$b0
+	db	$90
+	db	$71
+; P1-2
+	db	$65
+	db	$dc,$b7
+	db	$95
+	db	$dc,$b2
+	db	$b3
+; P1-3
+	db	$61
+	db	$93
+	db	$dc,$a0
+	db	$99
+; P1-4 -tie
+	db	$dc,$a5
+	db	$97
+	db	$dc,$a6
+	db	$77
+Rloop10:
+	db	$dc,$b5
+; P1-5
+	db	$63
+	db	$41
+	db	$65
+	db	$61
+	db	$81
+; P1-6
+	db	$93
+	db	$b3
+	db	$91
+	db	$83
+	db	$dc,$a0
+	db	$61
+; P1-7 -tie
+	db	$dc,$a7
+	db	$6f
+; P1-8
+	db	$dc,$66
+	db	$01
+	db	$61
+	db	$83
+	db	$dc,$b6
+	db	$93
+	db	$d4,$13
+; P1-9
+	db	$d5,$b3
+	db	$91
+	db	$b5
+	db	$dc,$b4
+	db	$b1
+	db	$d4,$11
+; P1-10
+	db	$21
+	db	$21
+	db	$41
+	db	$41
+	db	$21
+	db	$15
+; P1-11
+	db	$dc,$b7
+	db	$d5,$bb
+	db	$91
+	db	$81
+; P1-12
+	db	$91
+	db	$b9
+	db	$c3
+; P1-13
+	db	$d4,$15
+	db	$d5,$b5
+	db	$d4,$31
+	db	$11
+; P1-14
+	db	$d5,$b5
+	db	$89
+; P1-15
+	db	$b5
+	db	$95
+	db	$d4,$11
+	db	$d5,$b1
+; P1-16
+	db	$97
+	db	$65
+	db	$11
+; P1-17
+loop11$:
+	db	$dc,$b2
+	db	$65
+	db	$dc,$b7
+	db	$93
+	db	$71
+	db	$61
+	db	$41
+	db	$fd,3
+	dw	loop11$
+; P1-20
+	db	$dc,$b2
+	db	$61
+	db	$93
+	db	$dc,$b7
+	db	$95
+	db	$73
+	db	$fc
+	dw	Rloop10
+;----------------------------------------
+rival012:
+;----------------------------------------
+	db	$db,$03
+	db	$e1,$8,$36
+	db	$ef,$f0
+; P2-1
+	db	$d8,$c,$c2
+	db	$d4,$71
+	db	$61
+	db	$41
+	db	$21
+; P2-2
+	db	$15
+	db	$dc,$c7
+	db	$45
+	db	$dc,$c2
+	db	$63
+; P2-3
+	db	$11
+	db	$43
+	db	$dc,$b0
+	db	$49
+; P2-4 -tie
+	db	$dc,$b7
+	db	$4f
+Rloop20:
+	db	$dc,$c7
+; P2-5
+	db	$1b
+	db	$dc,$c4
+	db	$11
+	db	$31
+; P2-6
+	db	$43
+	db	$33
+	db	$11
+	db	$33
+	db	$dc,$b0
+	db	$15
+; P2-7 -tie
+	db	$dc,$b7
+	db	$17
+	db	$dc,$b4
+	db	$d5,$a1
+	db	$81
+; P2-8
+	db	$a1
+	db	$dc,$c6
+	db	$d4,$15
+	db	$dc,$c7
+	db	$47
+; P2-9
+	db	$6b
+	db	$dc,$c4
+	db	$61
+	db	$81
+; P2-10
+	db	$91
+	db	$91
+	db	$81
+	db	$81
+	db	$61
+	db	$dc,$c4
+	db	$85
+; P2-11
+	db	$dc,$b0
+	db	$6f
+; P2-12
+	db	$dc,$b7
+	db	$6f
+; P2-13
+	db	$dc,$b0
+	db	$8b
+	db	$63
+; P2-14
+	db	$5f
+; P2-15
+	db	$6b
+	db	$43
+; P2-16
+	db	$dc,$c7
+	db	$37
+	db	$dc,$c4
+	db	$11
+	db	$31
+	db	$40
+	db	$30
+	db	$41
+; P2-17
+loop21$:
+	db	$dc,$c2
+	db	$15
+	db	$dc,$c7
+	db	$45
+	db	$dc,$c2
+	db	$63
+	db	$fd,3
+	dw	loop21$
+; P2-20
+	db	$11
+	db	$43
+	db	$dc,$c7
+	db	$49
+	db	$fc
+	dw	Rloop20
+;----------------------------------------
+rival013:
+;----------------------------------------
+; P3-1
+	db	$d8,$c,$28
+	db	$01
+	db	$d4,$11
+	db	$d5,$91
+	db	$71
+; P3-2
+	db	$63
+	db	$91
+	db	$43
+	db	$11
+	db	$31
+	db	$41
+; P3-3
+	db	$91
+	db	$71
+	db	$61
+	db	$49
+; P3-4 -tie
+	db	$49
+	db	$11
+	db	$41
+	db	$71
+Rloop30:
+; P3-5
+	db	$fe
+	dw	sub3_5_5$
+	db	$fd,3
+	dw	Rloop30
+; P3-8
+	db	$63
+	db	$11
+	db	$43
+	db	$91
+	db	$81
+	db	$71
+; P3-9
+	db	$fe
+	dw	sub3_9_9$
+; P3-10
+	db	$b1
+	db	$61
+	db	$81
+	db	$93
+	db	$61
+	db	$81
+	db	$90
+	db	$a0
+; P3-11
+	db	$fe
+	dw	sub3_11_11$
+; P3-12
+	db	$b1
+	db	$61
+	db	$81
+	db	$93
+	db	$61
+	db	$b1
+	db	$c1
+; P3-13
+	db	$d4,$13
+	db	$d5,$81
+	db	$b3
+	db	$81
+	db	$a1
+	db	$b1
+; P3-14
+	db	$d4,$13
+	db	$d5,$81
+	db	$b3
+	db	$81
+	db	$a1
+	db	$b0
+	db	$a0
+; P3-15
+	db	$fe
+	dw	sub3_9_9$
+; P3-16
+	db	$fe
+	dw	sub3_11_11$
+; P3-17
+	db	$fe
+	dw	sub3_5_5$
+; P3-18
+	db	$fe
+	dw	sub3_5_5$
+; P3-19
+	db	$61
+	db	$11
+	db	$31
+	db	$43
+	db	$11
+	db	$31
+	db	$40
+	db	$50
+; P3-20
+	db	$61
+	db	$11
+	db	$31
+	db	$43
+	db	$11
+	db	$71
+	db	$51
+	db	$fc
+	dw	Rloop30
+sub3_5_5$:
+	db	$61
+	db	$11
+	db	$31
+	db	$43
+	db	$11
+	db	$31
+	db	$41
+	db	$ff
+sub3_9_9$:
+	db	$b1
+	db	$61
+	db	$81
+	db	$93
+	db	$61
+	db	$81
+	db	$91
+	db	$ff
+sub3_11_11$:
+	db	$b3
+	db	$61
+	db	$93
+	db	$61
+	db	$81
+	db	$91
+	db	$ff
+;----------------------------------------
+rival014:
+;----------------------------------------
+	db	$ef,$f0
+	db	$e3,$003
+; P4-1
+	db	$d8,$c
+	db	$07
+; P4-2
+	db	$0f
+; P4-3
+	db	$41
+	db	$33
+	db	$35
+	db	$33
+; P4-4
+	db	$43
+	db	$43
+	db	$31
+	db	$31
+	db	$31
+	db	$31
+Rloop40:
+; P4-5
+	db	$43
+	db	$31
+	db	$43
+	db	$41
+	db	$33
+; P4-6
+	db	$43
+	db	$31
+	db	$43
+	db	$41
+	db	$31
+	db	$31
+	db	$fc
+	dw	Rloop40
+
+

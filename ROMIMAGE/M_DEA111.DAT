@@ -1,0 +1,198 @@
+;	include	group.def
+;bank2a	group	G_MUSIC2
+	;
+	;	yakuin
+	;
+	;	Converting on Tue Sep 10 23:36:36 2019
+	;
+	;				by ver 1.01
+	;
+;	public	musyakuin
+;musyakuin:;					jumasu
+	db	080h
+	dw	m_deal111
+	db	001h
+	dw	m_deal112
+	db	002h
+	dw	m_deal113
+;----------------------------------------
+m_deal111:
+;----------------------------------------
+	db	$da,$00,$eb
+	db	$e5,$77
+	db	$ef,$f0
+	db	$db,$01
+	db	$e1,$b,$32
+; P1-1
+	db	$d8,$6,$a7
+	db	$03
+	db	$d4,$9b
+; P1-2
+	db	$db,$02
+	db	$d5,$a3
+	db	$53
+	db	$41
+	db	$00
+	db	$70
+	db	$d4,$51
+	db	$71
+	db	$dc,$c7
+loop$:
+; P1-3
+	db	$d4,$93
+	db	$d5,$91
+	db	$d4,$73
+	db	$d5,$51
+	db	$d4,$51
+	db	$d5,$51
+; P1-4
+	db	$d4,$41
+	db	$21
+	db	$d5,$91
+	db	$a1
+	db	$c1
+	db	$51
+	db	$d4,$41
+	db	$d5,$51
+; P1-5
+	db	$bf
+; P1-6
+	db	$af
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_deal112:
+;----------------------------------------
+	db	$ef,$ff
+	db	$db,$03
+	db	$e1,$b,$23
+: P2-1
+	db	$d8,$6,$d6
+	db	$d4,$20
+	db	$30
+	db	$40
+	db	$50
+	db	$6b
+: P2-2
+	db	$ef,$0f
+	db	$41
+	db	$00
+	db	$71
+	db	$00
+	db	$a1
+	db	$c1
+	db	$00
+	db	$d3,$21
+	db	$00
+	db	$41
+loop$:
+: P2-3
+	db	$55
+	db	$45
+	db	$23
+: P2-4
+	db	$d4,$c1
+	db	$a1
+	db	$91
+	db	$71
+	db	$91
+	db	$a1
+	db	$c1
+	db	$d3
+	db	$21
+: P2-5
+	db	$67
+	db	$37
+: P2-6
+	db	$57
+	db	$27
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_deal113:
+;----------------------------------------
+	db	$ef,$0f
+	db	$e1,$b,$13
+; P3-1
+	db	$d8,$6,$16
+	db	$d2,$40
+	db	$30
+	db	$20
+	db	$10
+	db	$d3,$c5
+	db	$ef,$ff
+	db	$dc,$17
+	db	$d5,$c1
+	db	$dc,$27
+	db	$c0
+	db	$dc,$37
+	db	$c0
+	db	$dc,$17
+	db	$c1
+; P3-2
+bass2$:
+	db	$dc,$17
+	db	$d6,$c0
+	db	$dc,$27
+	db	$c0
+	db	$dc,$17
+	db	$d5,$c0
+	db	$dc,$27
+	db	$c0
+	db	$fd,4
+	dw	bass2$
+loop$:
+; P3-3
+	db	$fe
+	dw	bass3$
+; P3-4
+	db	$fe
+	dw	bass3$
+; P3-5
+	db	$d9,$16
+	db	$fe
+	dw	bass3$
+; P3-6
+	db	$d9,$15
+	db	$fe
+	dw	bass3$
+; P3-7
+	db	$d9,$00
+	db	$fc
+	dw	loop$
+bass3$:
+	db	$dc,$17
+	db	$50
+	db	$dc,$27
+	db	$50
+	db	$dc,$17
+	db	$90
+	db	$dc,$27
+	db	$90
+	db	$dc,$17
+	db	$d4,$50
+	db	$dc,$27
+	db	$50
+	db	$dc,$17
+	db	$d5,$50
+	db	$dc,$27
+	db	$50
+	db	$dc,$17
+	db	$90
+	db	$dc,$27
+	db	$90
+	db	$dc,$17
+	db	$c0
+	db	$dc,$27
+	db	$c0
+	db	$dc,$17
+	db	$50
+	db	$dc,$27
+	db	$50
+	db	$dc,$17
+	db	$c0
+	db	$dc,$27
+	db	$c0
+	db	$ff
+
+

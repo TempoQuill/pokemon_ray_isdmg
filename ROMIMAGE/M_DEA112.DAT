@@ -1,0 +1,221 @@
+;	include	group.def
+;bank2a	group	G_MUSIC2
+	;
+	;	onnanoko
+	;
+	;	Converting on Sat Aug 24 18:38:12 2019
+	;
+	;				by ver 1.01
+	;
+;	public	musonnanoko
+;musonnanoko:;					jumasu
+	db	0c0h
+	dw	deal121
+	db	001h
+	dw	deal122
+	db	002h
+	dw	deal123
+	db	003h
+	dw	deal124
+;----------------------------------------
+deal121:
+;----------------------------------------
+	db	$da,$01,$0b
+	db	$e5,$77
+	db	$ef,$0f
+	db	$db,$02
+	db	$e1,$0,$12
+; P1-1
+	db	$d8,$3,$a7
+	db	$0f
+	db	$0f
+loop$:
+; P1-2
+	db	$03
+	db	$d5,$91
+	db	$c1
+	db	$d4,$50
+	db	$00
+	db	$d5,$c0
+	db	$00
+	db	$90
+	db	$00
+	db	$50
+	db	$00
+sub2$:
+	db	$d4,$c0
+	db	$d3,$20
+	db	$fd,4
+	dw	sub2$
+	db	$d4,$c7
+; P1-3
+	db	$03
+	db	$d5,$c3
+	db	$a0
+	db	$00
+	db	$90
+	db	$00
+	db	$70
+	db	$00
+	db	$50
+	db	$00
+	db	$41
+	db	$50
+	db	$00
+	db	$70
+	db	$00
+	db	$50
+	db	$00
+	db	$41
+	db	$20
+	db	$00
+	db	$c0
+	db	$00
+	db	$d6,$c0
+	db	$04
+; P1-4	-tie
+	db	$d4,$50
+	db	$00
+	db	$90
+	db	$00
+	db	$c1
+	db	$a0
+	db	$00
+	db	$90
+	db	$00
+	db	$70
+	db	$00
+sub4$:
+	db	$d3,$50
+	db	$70
+	db	$fd,4
+	dw	sub4$
+	db	$57
+; P1-5
+	db	$d5,$c3
+	db	$a3
+	db	$93
+	db	$73
+	db	$93
+	db	$a3
+	db	$c3
+	db	$d4,$23
+	db	$fc
+	dw	loop$
+;----------------------------------------
+deal122:
+;----------------------------------------
+	db	$ef,$ff
+	db	$db,$02
+	db	$e1,$a,$33
+: P2-1
+	db	$d8,$3,$a7
+	db	$d5,$c0
+	db	$02
+	db	$d4,$cb
+	db	$db,$03
+	db	$ef,$f0
+	db	$dc,$c2
+	db	$53
+	db	$43
+	db	$23
+	db	$13
+loop$:
+: P2-2
+	db	$d5,$c7
+	db	$d4,$47
+	db	$57
+	db	$47
+: P2-3
+	db	$23
+	db	$13
+	db	$d5,$c3
+	db	$a3
+	db	$93
+	db	$a3
+	db	$c3
+	db	$d4,$23
+: P2-4
+	db	$d5,$c7
+	db	$d4
+	db	$27
+	db	$d5
+	db	$c7
+	db	$a7
+: P2-5
+	db	$93
+	db	$73
+	db	$53
+	db	$43
+	db	$53
+	db	$73
+	db	$93
+	db	$a3
+	db	$fc
+	dw	loop$
+;----------------------------------------
+deal123:
+;----------------------------------------
+	db	$ef,$ff
+; P3-1
+	db	$d8,$6,$14
+	db	$07
+	db	$d6,$c1
+	db	$d5,$21
+	db	$31
+loop$:
+	db	$41
+bass2$:
+; P3-2-3
+	db	$d5,$50
+	db	$02
+	db	$d6,$c0
+	db	$02
+	db	$fd,3
+	dw	bass2$
+	db	$d5,$51
+	db	$d6,$c1
+	db	$d5,$21
+	db	$fc
+	dw	loop$
+;----------------------------------------
+deal124:
+;----------------------------------------
+	db	$e3,$005
+	db	$ef,$f0
+; P4-1
+	db	$d8,$3
+	db	$0f
+	db	$07
+	db	$30
+	db	$30
+	db	$20
+	db	$20
+	db	$a0
+	db	$a0
+	db	$10
+	db	$10
+loop$:
+; P4-2
+	db	$ef,$ff
+	db	$97
+	db	$ef,$f0
+	db	$1b
+	db	$31
+	db	$21
+	db	$13
+	db	$23
+; P4-3
+	db	$17
+	db	$1b
+	db	$31
+	db	$21
+	db	$11
+	db	$31
+	db	$21
+	db	$a1
+; P4-4
+	db	$fc
+	dw	loop$
+
+

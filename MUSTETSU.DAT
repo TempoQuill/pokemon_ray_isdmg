@@ -1,0 +1,4190 @@
+	include	common.def
+	include	group.def
+	include	mustetsu.h
+	include	system.def
+
+bank27	group	G_AUDIO
+
+	public	MUSICINIT
+	public	MUSICMAIN
+	public	MusicSet
+	public	VoiceSet
+	public	SESet
+	public	WazaSESet
+
+	extern	MusicTable
+	extern	VoiceTable
+	extern	SETable
+
+	extern	SoundDataGet
+
+;*********************************************************
+;**							**
+;**     POCKET MONSTER MUSIC MAIN ROUTINE		**
+;**							**
+;**							**
+;**							**
+;*********************************************************
+;************************************************;
+;*						*;
+;*	MUSIC Initialize			*;
+;*						*;
+;************************************************;
+MUSICINIT:
+	push	hl
+	push	de
+	push	bc
+	push	af
+
+	call	MusicDriveOFF
+	ld	hl,NR50			;NR_Control Initialize
+	xor	a
+	ld	(hli),a			;NR50
+	ld	(hli),a			;NR51
+	ld	a,10000000b
+	ld	(hli),a			;NR52
+
+	ld	hl,NR10			;NR_Area Initialize
+	ld	e,4
+NR_clear_loop$:
+	xor	a
+	ld	(hli),a			;NRx0
+	ld	(hli),a			;NRx1
+	ld	a,SOUND_STOP
+	ld	(hli),a			;NRx2
+	xor	a
+	ld	(hli),a			;NRx3
+	ld	a,INITIAL_BIT
+	ld	(hli),a			;NRx4
+	dec	e
+	jr	nz,NR_clear_loop$
+
+	ld	hl,SoundWork		;Work_Area Initialize
+	ld	de,SoundWorkArea_End - SoundWorkArea_Top
+Work_clear_loop$:
+	xor	a
+	ld	(hli),a
+	dec	de
+	ld	a,e
+	or	d
+	jr	nz,Work_clear_loop$
+
+	ld	a,01110111b
+	ld	(SoundVolume),a
+	call	MusicDriveON
+
+	pop	af
+	pop	bc
+	pop	de
+	pop	hl
+	ret
+
+
+MusicReset:
+	ld	a,(MusicNext+1)
+	push	af
+	ld	a,(MusicNext+0)
+	push	af
+
+	call	MUSICINIT
+
+	pop	af
+	ld	(MusicNext+0),a
+	pop	af
+	ld	(MusicNext+1),a
+	ret
+
+
+
+;=======================================;
+;	MusicDriveON 			;
+;=======================================;
+MusicDriveON:
+	ld	a,1
+	ld	(DriveOn),a
+	ret
+
+;=======================================;
+;	MusicDriveOFF 			;
+;=======================================;
+MusicDriveOFF:
+	xor	a
+	ld	(DriveOn),a
+	ret
+
+
+;************************************************;
+;*						*;
+;*	MUSIC MAIN				*;
+;*						*;
+;************************************************;
+;=======================================;
+;	Main				;
+;=======================================;
+MUSICMAIN:
+	ld	a,(DriveOn)
+	and	a
+	ret	z
+
+	xor	a
+	ld	(SoundLineNo),a
+	ld	(BalanceMask),a
+
+	ld	bc,SoundWork
+mainloop$:
+	S_HL	S_STATUS
+	bit	SOUND_ON,(hl)
+	jp	z,next$
+
+	S_HL	S_LENGTH
+	ld	a,(hl)
+	cp	01+1
+	jr	c,NextSoundSet$
+	dec	(hl)
+	jr	SoundOn$
+NextSoundSet$:
+	S_HL	S_VIB_WAIT_B		; vibrato wait value set
+	ld	a,(hl)
+	S_HL	S_VIB_WAIT
+	ld	(hl),a
+
+	S_HL	S_EFFECT		;portamento flag initialize
+	res	PORTAMENT_ON,(hl)
+	call	CommandCheck
+SoundOn$:
+	call	PortamentCalc
+
+	S_HL	S_DUTY
+	ld	a,(hli)
+	ld	(Set_duty),a
+	ld	a,(hli)
+	ld	(Set_env),a
+	ld	a,(hli)
+	ld	(Set_tone),a
+	ld	a,(hl)
+	ld	(Set_tone+1),a
+
+	call	SoundEffect
+	call	DrumCheck
+;--------------------------------	;�r�d���������ۂ̃��x���`�F���W
+	ld	a,(BGMmodeFlag)
+	and	a
+	jr	z,LvChangePass$
+
+	ld	a,(SoundLineNo)
+	cp	SE_NO
+	jr	nc,LvChangePass$
+change$:
+	ld	hl,SOUNDWORK_LEN*4 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE1 ON?
+	jr	nz,LvChange$
+	ld	hl,SOUNDWORK_LEN*5 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE2 ON?
+	jr	nz,LvChange$
+	ld	hl,SOUNDWORK_LEN*6 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE3 ON?
+	jr	nz,LvChange$
+	ld	hl,SOUNDWORK_LEN*7 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE4 ON?
+	jr	z,LvChangePass$
+LvChange$:
+	S_HL	S_REQ
+	set	STOP_SET,(hl)
+LvChangePass$:
+;--------------------------------	;�v���C�I���e�B�[�`�F�b�N
+	ld	a,(SoundLineNo)
+	cp	SE_NO
+	jr	nc,set$
+PriCheck$:
+	S_HL	SOUNDWORK_LEN*4 + S_STATUS
+	bit	SOUND_ON,(hl)
+	jr	nz,end$			;SE ON
+set$:
+;--------------------------------
+	call	SoundSetMain
+
+	S_HL	S_BALANCE
+	ld	a,(BalanceMask)
+	or	(hl)
+	ld	(BalanceMask),a
+end$:
+	S_HL	S_REQ
+	xor	a
+	ld	(hl),a
+next$:
+	ld	hl,SOUNDWORK_LEN
+	add	hl,bc
+	ld	c,l
+	ld	b,h
+
+
+	ld	a,(SoundLineNo)
+	inc	a
+	ld	(SoundLineNo),a
+
+	cp	SOUNDLINE_MAX
+	jp	nz,mainloop$
+
+;	call	TempoOffsCheck
+	call	PinchSECheck
+	call	FadeInOut
+;	call	BalanceChanger
+
+	ld	a,(SoundVolume)
+	ld	(NR50),a
+	ld	a,(BalanceMask)
+	ld	(NR51),a
+	ret
+
+;************************************************;
+;*						*;
+;*	SOUND SET				*;
+;*						*;
+;************************************************;
+;=======================================;
+;	SoundSet Main			;
+;=======================================;
+SoundSetMain:
+	ld	hl,SoundSetTable
+	ld	a,(SoundLineNo)
+	and	00000111b
+	add	a,a
+	ld	e,a
+	ld	d,0
+	add	hl,de
+	ld	a,(hli)
+	ld	h,(hl)
+	ld	l,a
+	jp	(hl)
+
+SoundSetTable:
+	dw	Sound1Set
+	dw	Sound2Set
+	dw	Sound3Set
+	dw	Sound4Set
+	dw	SE1Set
+	dw	SE2Set
+	dw	SE3Set
+	dw	SE4Set
+
+;---------------------------------------;
+;	Sound1				;
+;---------------------------------------;
+Sound1Set:
+	ld	a,(PinchFlag)		;7th_bit  0=Off,1=On
+	bit	7,a
+	ret	nz
+SE1Set:
+	S_HL	S_REQ
+	bit	SWEEP_SET,(hl)
+	jr	z,next$
+
+	ld	a,(Sweep_value)
+	ld	(NR10),a		;Sweep Set
+next$:
+	bit	STOP_SET,(hl)
+	jr	nz,stop$
+	bit	ALL_SET,(hl)
+	jr	nz,set$
+	bit	TONE_SET,(hl)
+	jr	nz,tone$
+	bit	VIBTONE_SET,(hl)
+	jr	nz,vibtone$
+
+;	bit	TONE_SET,(hl)
+;	jr	z,pass1$
+	jr	pass1$
+tone$:
+	ld	a,(Set_tone)
+	ld	(NR13),a		;Tone Set
+	ld	a,(Set_tone+1)
+	ld	(NR14),a
+pass1$:
+	bit	ENV_SET,(hl)
+	jr	z,pass2$
+env$:
+	ld	a,(Set_env)
+	ld	(NR12),a		;Envelope Set
+	ld	a,(Set_tone+1)
+	or	INITIAL_BIT
+	ld	(NR14),a
+pass2$:
+	bit	DUTY_SET,(hl)
+	ret	z
+duty$:
+	ld	a,(Set_duty)
+	ld	d,a
+	ld	a,(NR11)
+	and	00111111b
+	or	d
+	ld	(NR11),a		;Duty Set
+	ret
+ ifn 0
+tone2$:
+	ld	a,(Set_duty)
+	ld	d,a
+	ld	a,(NR11)
+	and	00111111b
+	or	d
+	ld	(NR11),a		;Duty Set
+
+	ld	a,(Set_tone)
+	ld	(NR13),a		;Tone Set
+;	ld	a,(Set_tone+1)
+;	or	INITIAL_BIT
+;	ld	(NR14),a
+	ret
+ endif
+
+vibtone$:
+	ld	a,(Set_duty)
+	ld	d,a
+	ld	a,(NR11)
+	and	00111111b
+	or	d
+	ld	(NR11),a		;Duty Set
+
+	ld	a,(Set_tone)
+	ld	(NR13),a		;Tone Set
+	ret
+
+stop$:
+	ld	a,(NR52)
+	and	10001110b
+	ld	(NR52),a
+	ld	hl,NR10
+ ifn 0
+	call	MusRegInitMain
+	ld	a,SOUND_STOP
+	ld	(NR12),a
+	ld	a,(Set_tone+1)
+	or	INITIAL_BIT
+	ld	(NR14),a
+	ret
+ else
+	jp	MusRegInitMain
+ endif
+set$:
+	ld	hl,Set_duty
+	ld	a,00111111b
+	or	(hl)
+	ld	(NR11),a		;Duty&Time Set
+
+	ld	a,(Set_env)
+	ld	(NR12),a		;Envelope Set
+
+	ld	a,(Set_tone)
+	ld	(NR13),a		;Tone Set
+	ld	a,(Set_tone+1)
+	or	INITIAL_BIT
+	ld	(NR14),a
+	ret
+
+;---------------------------------------;
+;	Sound2				;
+;---------------------------------------;
+Sound2Set:
+SE2Set:
+	S_HL	S_REQ
+	bit	STOP_SET,(hl)
+	jr	nz,stop$
+	bit	ALL_SET,(hl)
+	jr	nz,set$
+	bit	TONE_SET,(hl)
+	jr	z,tone$
+	bit	VIBTONE_SET,(hl)
+	jr	nz,vibtone$
+
+;	bit	TONE_SET,(hl)
+;	jr	z,pass1$
+;	jr	nz,tone$
+;tone$:
+;	ld	a,(Set_tone)
+;	ld	(NR23),a		;Tone Set
+;	ld	a,(Set_tone+1)
+;	ld	(NR24),a
+pass1$
+	bit	ENV_SET,(hl)
+	jr	z,pass2$
+env$:
+	ld	a,(Set_env)
+	ld	(NR22),a		;Envelope Set
+	ld	a,(Set_tone+1)
+	or	INITIAL_BIT
+	ld	(NR24),a
+pass2$
+	bit	DUTY_SET,(hl)
+	ret	z
+duty$:
+	ld	a,(Set_duty)
+	ld	d,a
+	ld	a,(NR21)
+	and	00111111b
+	or	d
+	ld	(NR21),a		;Duty Set
+	ret
+
+tone$:
+	ld	a,(Set_tone)
+	ld	(NR23),a		;Tone Set
+	ld	a,(Set_tone+1)
+;	or	INITIAL_BIT
+	ld	(NR24),a
+ ifn 0
+	ret
+ else
+	jr	pass1$
+ endif
+
+vibtone$:
+	ld	a,(Set_duty)
+	ld	d,a
+	ld	a,(NR21)
+	and	00111111b
+	or	d
+	ld	(NR21),a		;Duty Set
+
+	ld	a,(Set_tone)
+	ld	(NR23),a		;Tone Set
+	ret
+
+stop$:
+	ld	a,(NR52)
+	and	10001101b
+	ld	(NR52),a
+	ld	hl,NR21-1
+ ifn 0
+	call	MusRegInitMain
+	ld	a,SOUND_STOP
+	ld	(NR22),a
+	ld	a,(Set_tone+1)
+	or	INITIAL_BIT
+	ld	(NR24),a
+	ret
+ else
+	jp	MusRegInitMain
+ endif
+set$:
+	ld	hl,Set_duty
+	ld	a,00111111b
+	or	(hl)
+	ld	(NR21),a		;Duty&Time Set
+
+	ld	a,(Set_env)
+	ld	(NR22),a		;Envelope Set
+
+	ld	a,(Set_tone)
+	ld	(NR23),a		;Tone Set
+	ld	a,(Set_tone+1)
+	or	INITIAL_BIT
+	ld	(NR24),a
+	ret
+
+;---------------------------------------;
+;	Sound3				;
+;---------------------------------------;
+Sound3Set:
+SE3Set:
+	S_HL	S_REQ
+	bit	STOP_SET,(hl)
+	jr	nz,stop$
+	bit	ALL_SET,(hl)
+	jr	nz,set$
+	bit	TONE_SET,(hl)
+	jr	z,tone$
+	bit	VIBTONE_SET,(hl)
+	jr	nz,vibtone$
+
+;	bit	TONE_SET,(hl)
+;	jr	z,pass1$
+;	jr	nz,tone$
+;tone$:
+;	ld	a,(Set_tone)
+;	ld	(NR33),a		;Tone Set
+;	ld	a,(Set_tone+1)
+;	ld	(NR34),a
+pass1$:
+	bit	ENV_SET,(hl)
+	jr	nz,env$
+;	ret	z
+;env$:
+;	xor	a
+;	ld	(NR30),a
+;	call	sound3_waveset
+;	ld	a,10000000b
+;	ld	(NR30),a
+;	ld	a,(Set_tone)
+;	ld	(NR33),a		;Tone Set
+;	ld	a,(Set_tone+1)
+;	or	INITIAL_BIT
+;	ld	(NR34),a
+	ret
+
+tone$:
+	ld	a,(Set_tone)
+	ld	(NR33),a		;Tone Set
+	ld	a,(Set_tone+1)
+;	or	INITIAL_BIT
+	ld	(NR34),a
+ ifn 0
+	ret
+ else
+	jr	pass1$
+ endif
+
+vibtone$:
+	ld	a,(Set_tone)
+	ld	(NR33),a		;Tone Set
+	ret
+
+stop$:
+	ld	a,(NR52)
+	and	10001011b
+	ld	(NR52),a
+	
+	ld	hl,NR30
+ ifn 0
+	call	MusRegInitMain
+	xor	a
+	ld	(NR30),a		;Time Set
+	ret
+ else
+	jp	MusRegInitMain
+ endif
+
+set$:
+;	ld	a,(NR52)
+;	and	10001011b
+;	ld	(NR52),a
+
+	ld	a,00111111b
+	ld	(NR31),a		;Time Set
+env$:
+	xor	a
+	ld	(NR30),a
+	call	sound3_waveset
+	ld	a,10000000b
+	ld	(NR30),a
+
+	ld	a,(Set_tone)
+	ld	(NR33),a		;Tone Set
+	ld	a,(Set_tone+1)
+	or	INITIAL_BIT
+	ld	(NR34),a
+
+;	ld	a,(NR52)
+;	or	00000100b
+;	ld	(NR52),a
+;	ld	a,10000000b
+;	ld	(NR30),a
+	ret
+
+sound3_waveset:
+	push	hl
+	ld	a,(Set_env)
+	and	00001111b
+	swap	a
+	ld	l,a
+	ld	h,00h
+;	add	hl,hl
+;	add	hl,hl
+;	add	hl,hl
+;	add	hl,hl
+	ld	de,wavedata
+	add	hl,de
+ ifn 0
+	ld	de,waveram		; 0FF30h
+
+;	push	bc
+;	ld	b,010h
+waveset_loop$:
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+	inc	e
+	ld	a,(hli)			; writting wave data
+	ld	(de),a
+;	inc	de
+;	dec	b
+;	jr	nz,waveset_loop$
+;	pop	bc
+ else
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+00h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+01h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+02h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+03h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+04h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+05h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+06h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+07h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+08h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+09h),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+0ah),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+0bh),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+0ch),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+0dh),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+0eh),a
+	ld	a,(hli)			; writting wave data
+	ld	(waveram+0fh),a
+ endif
+	pop	hl
+
+	ld	a,(Set_env)
+	and	11110000b
+	sla	a
+	ld	(NR32),a		;Wave_level Set
+	ret
+
+;---------------------------------------;
+;	Sound4				;
+;---------------------------------------;
+Sound4Set:
+SE4Set:
+	S_HL	S_REQ
+	bit	STOP_SET,(hl)
+	jr	nz,stop$
+	bit	ALL_SET,(hl)
+	ret	z
+	ld	a,00111111b
+	ld	(NR41),a		;Time Set
+
+	ld	a,(Set_env)
+	ld	(NR42),a		;Envelope Set
+
+	ld	a,(Set_tone)
+	ld	(NR43),a		;Tone Set
+	ld	a,INITIAL_BIT
+	ld	(NR44),a
+	ret
+;	jr	nz,set$
+
+;	bit	TONE_SET,(hl)
+;	jr	z,pass1$
+;	jr	nz,tone$
+;tone$:
+;	ld	a,(Set_tone)
+;	ld	(NR43),a		;Tone Set
+pass1$
+;	bit	ENV_SET,(hl)
+;	ret	z
+;env$:
+;	ld	a,(Set_env)
+;	ld	(NR42),a		;Envelope Set
+
+;	ld	a,INITIAL_BIT
+;	ld	(NR44),a
+	ret
+
+tone$:
+	ld	a,(Set_tone)
+	ld	(NR43),a		;Tone Set
+;	ld	a,INITIAL_BIT
+;	ld	(NR44),a
+	ret
+
+stop$:
+	ld	a,(NR52)
+	and	10000111b
+	ld	(NR52),a
+	ld	hl,NR41-1
+ ifn 0
+	call	MusRegInitMain
+	ld	a,SOUND_STOP
+	ld	(NR42),a
+	ld	a,INITIAL_BIT
+	ld	(NR44),a
+	ret
+ else
+	jp	MusRegInitMain
+ endif
+;set$:
+;	ld	a,00111111b
+;	ld	(NR41),a		;Time Set
+;
+;	ld	a,(Set_env)
+;	ld	(NR42),a		;Envelope Set
+;
+;	ld	a,(Set_tone)
+;	ld	(NR43),a		;Tone Set
+;	ld	a,INITIAL_BIT
+;	ld	(NR44),a
+;	ret
+
+;=======================================;
+;	SE ON Check	 		;
+;=======================================;
+SE_ON_Check:
+	ld	hl,SOUNDWORK_LEN*4 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE1 ON?
+	jr	nz,se_on$
+	ld	hl,SOUNDWORK_LEN*5 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE2 ON?
+	jr	nz,se_on$
+	ld	hl,SOUNDWORK_LEN*6 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE3 ON?
+	jr	nz,se_on$
+	ld	hl,SOUNDWORK_LEN*7 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE4 ON?
+	jr	nz,se_on$
+no_se$:
+	and	a
+	ret
+se_on$:
+	scf
+	ret
+
+
+
+
+
+;************************************************;
+;*						*;
+;*	SOUND CONTROL				*;
+;*						*;
+;************************************************;
+;=======================================;
+;	PinchSECheck			;
+;=======================================;
+PinchSECheck:
+	ld	a,(PinchFlag)		;7th_bit  0=Off,1=On
+	bit	7,a
+	ret	z
+
+	and	01111111b
+	ld	d,a
+	call	SE_ON_Check
+	jr	c,ret$
+
+	and	a
+	jr	z,pin$
+	cp	10h
+	jr	z,kon$
+	jr	ret$
+kon$:
+	ld	hl,con_sound$
+	jr	sound_set$
+pin$:
+	ld	hl,pin_sound$
+sound_set$:
+	xor	a
+	ld	(NR10),a
+	ld	a,(hli)
+	ld	(NR11),a
+	ld	a,(hli)
+	ld	(NR12),a
+	ld	a,(hli)
+	ld	(NR13),a
+	ld	a,(hli)
+	ld	(NR14),a
+ret$:
+	ld	a,d
+	inc	a
+	cp	30
+	jr	c,no_over$
+	xor	a
+no_over$:
+	or	10000000b
+	ld	(PinchFlag),a
+
+	ld	a,(BalanceMask)
+	and	00010001b
+	ret	nz
+
+	ld	a,(BalanceMask)
+	or	00010001b
+	ld	(BalanceMask),a
+	ret
+
+pin_sound$:
+	db	0c0h,084h,031h,087h
+con_sound$:
+	db	0c0h,074h,0eeh,086h
+
+ ifn 0
+;=======================================;
+;	TempoOffsCheck			;
+;=======================================;
+TempoOffsCheck:
+	call	tempocheck$
+	ret	c
+
+	ld	a,(TempoOffset)
+	ld	e,a
+	ld	a,(TempoOffset+1)
+	ld	d,a
+	or	e
+	ret	z
+
+	ld	hl,SOUNDWORK_LEN*0 + S_TEMPO + SoundWork
+	call	tempochange$	;Sound1 Tempo
+	ld	hl,SOUNDWORK_LEN*1 + S_TEMPO + SoundWork
+	call	tempochange$	;Sound2 Tempo
+	ld	hl,SOUNDWORK_LEN*2 + S_TEMPO + SoundWork
+	call	tempochange$	;Sound3 Tempo
+	ld	hl,SOUNDWORK_LEN*3 + S_TEMPO + SoundWork
+	call	tempochange$	;Sound4 Tempo
+
+	xor	a
+	ld	(TempoOffset),a
+	ld	(TempoOffset+1),a
+	ret
+
+tempochange$:
+	push	de
+	push	hl
+	ld	a,(hli)
+	ld	h,(hl)
+	ld	l,a
+	add	hl,de
+	ld	e,l
+	ld	d,h
+	pop	hl
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+	pop	de
+	ret
+
+tempocheck$:
+	ld	hl,SOUNDWORK_LEN*0 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)
+	jr	z,next1$
+	ld	hl,SOUNDWORK_LEN*0 + S_LENGTH + SoundWork
+	ld	a,(hl)
+	cp	1
+	jr	nz,not$
+next1$:
+	ld	hl,SOUNDWORK_LEN*1 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)
+	jr	z,next2$
+	ld	hl,SOUNDWORK_LEN*1 + S_LENGTH + SoundWork
+	ld	a,(hl)
+	cp	1
+	jr	nz,not$
+next2$:
+	ld	hl,SOUNDWORK_LEN*2 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)
+	jr	z,next3$
+	ld	hl,SOUNDWORK_LEN*2 + S_LENGTH + SoundWork
+	ld	a,(hl)
+	cp	1
+	jr	nz,not$
+next3$:
+	ld	hl,SOUNDWORK_LEN*3 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)
+	jr	z,change$
+	ld	hl,SOUNDWORK_LEN*3 + S_LENGTH + SoundWork
+	ld	a,(hl)
+	cp	1
+	jr	nz,not$
+change$:
+	and	a
+	ret
+not$:
+	scf
+	ret
+ endif
+
+
+;=======================================;
+;	Fade In/Out			;
+;=======================================;
+FadeInOut:
+	ld	a,(SoundFade)
+	and	a
+	ret	z
+
+	ld	a,(FadeWork)
+	and	a
+	jr	z,vol_check$
+	dec	a
+	ld	(FadeWork),a
+	ret
+
+vol_check$:
+	ld	a,(SoundFade)
+	ld	d,a
+	and	00111111b
+	ld	(FadeWork),a
+
+	ld	a,(SoundVolume)
+	and	00000111b
+
+	bit	7,d
+	jr	nz,in$
+out$:
+	and	a
+	jr	z,outend$
+	dec	a
+	jr	set$
+outend$:
+	xor	a
+	ld	(SoundVolume),a
+
+	ld	a,(oresama_status)		; player visual status
+	cp	MODE_BICYCLE
+	jr	z,mode2$
+mode1$:
+	push	bc
+	call	MusicReset
+
+	ld	a,(MusicNext)
+	and	a
+;	jr	z,set_pass$
+	ld	e,a
+	ld	a,(MusicNext+1)
+	ld	d,a
+	jr	nz,set_mand$
+	and	a
+	jr	z,set_pass$
+set_mand$:
+	call	MusicSet
+set_pass$:
+	pop	bc
+	xor	a
+	ld	(SoundFade),a
+	ret
+mode2$:
+	push	bc
+	call	MusicReset
+	xor	a
+	ld	(SoundVolume),a
+
+	ld	a,(MusicNext)
+	ld	e,a
+	ld	a,(MusicNext+1)
+	ld	d,a
+	call	MusicSet
+	pop	bc
+	ld	hl,SoundFade
+	set	7,(hl)
+	ret
+in$:
+	cp	00000111b
+	jr	nc,inend$
+	inc	a
+	jr	set$
+inend$:
+	xor	a
+	ld	(SoundFade),a
+	ret
+set$:
+	ld	d,a
+	swap	a
+	or	d
+	ld	(SoundVolume),a
+	ret
+
+
+ ifn 0
+	ld	a,(SoundFade)
+	and	a
+	ret	z
+
+	ld	a,(FadeWork)
+	and	a
+	jr	z,vol_check$
+	dec	a
+	ld	(FadeWork),a
+	ret
+
+vol_check$:
+	ld	a,(SoundFade)
+	ld	d,a
+	and	01111111b
+	ld	(FadeWork),a
+
+	ld	a,(SoundVolume)
+	and	00000111b
+
+	bit	7,d
+	jr	nz,in$
+out$:
+	and	a
+	jr	z,outend$
+	dec	a
+	jr	set$
+outend$:
+	ld	a,(MusicNext)
+	ld	e,a
+	ld	a,(MusicNext+1)
+	ld	d,a
+	push	bc
+	push	de
+	ld	de,00h
+	call	MusicSet
+	pop	de
+	call	MusicSet
+	pop	bc
+	ld	hl,SoundFade
+	set	7,(hl)
+	ret
+in$:
+;	ld	a,01110111b
+;	ld	(SoundVolume),a
+	cp	00000111b
+	jr	nc,inend$
+	inc	a
+	jr	set$
+inend$:
+	xor	a
+	ld	(SoundFade),a
+	ret
+set$:
+	ld	d,a
+	swap	a
+	or	d
+	ld	(SoundVolume),a
+	ret
+ endif
+
+ ifn 0
+;=======================================;
+;	Auto Balance Changer		;
+;=======================================;
+BalanceChanger:
+	ld	a,(BalanceChange)
+	and	a
+	ret	z
+
+	swap	a
+	and	00000111b
+	ld	e,a
+	ld	d,00h	
+	ld	hl,BC2seq_table
+	add	hl,de
+	add	hl,de
+	ld	a,(hli)
+	ld	h,(hl)
+	ld	l,a
+	jp	(hl)
+
+BC2seq_table:
+	dw	BC2Init
+	dw	BC2LeftUp
+	dw	BC2LeftDown
+	dw	BC2RightUp
+	dw	BC2RightDown
+	dw	BC2End
+	dw	BC2Init
+	dw	BC2Init	
+
+BC2Init:
+	ld	a,1
+	call	IncBC2Seq
+	xor	a
+	ld	(BC_Work),a
+	ld	(SoundVolume),a
+BC2LeftUp:
+	call	BC2LeftBalance
+	call	BC2TimeCount
+	ret	nc
+	call	BC2VolUp
+	ret	nc
+
+	ld	a,2
+	call	IncBC2Seq
+BC2LeftDown:
+	call	BC2LeftBalance
+	call	BC2TimeCount
+	ret	nc
+	call	BC2VolDown
+	ret	nc
+
+	ld	a,3
+	call	IncBC2Seq
+BC2RightUp:
+	call	BC2RightBalance
+	call	BC2TimeCount
+	ret	nc
+	call	BC2VolUp
+	ret	nc
+
+	ld	a,4
+	call	IncBC2Seq
+BC2RightDown:
+	call	BC2RightBalance
+	call	BC2TimeCount
+	ret	nc
+	call	BC2VolDown
+	ret	nc
+
+	ld	a,0
+	call	IncBC2Seq
+	ret
+BC2End:
+	xor	a
+	ld	(BalanceChange),a
+	ld	a,01110111b
+	ld	(SoundVolume),a
+	ret
+
+IncBC2Seq:
+	swap	a
+	ld	d,a
+	ld	a,(BalanceChange)
+	and	00001111b
+	or	d
+	ld	(BalanceChange),a
+	ret
+	
+BC2TimeCount:
+	ld	a,(BC_Work)
+	and	a
+	jr	z,next$
+	dec	a
+	ld	(BC_Work),a
+	and	a
+	ret
+next$:
+	ld	a,(BalanceChange)
+	and	00001111b
+	ld	(BC_Work),a
+	scf
+	ret
+	
+BC2VolUp:
+	ld	a,(SoundVolume)
+	and	00000111b
+	cp	00000111b	
+	jr	nc,next$
+
+	inc	a
+	ld	d,a
+	swap	a
+	or	d
+	ld	(SoundVolume),a
+	and	a
+	ret
+next$:
+	scf
+	ret
+
+BC2VolDown:
+	ld	a,(SoundVolume)
+	and	00001111b
+	jr	z,next$
+
+	dec	a
+	ld	d,a
+	swap	a
+	or	d
+	ld	(SoundVolume),a
+	and	a
+	ret
+next$:
+	scf
+	ret
+
+BC2LeftBalance:
+	call	SE_ON_Check
+	ret	c
+
+	ld	a,(BalanceMask)
+	and	11110000b
+	ld	(BalanceMask),a
+	ret
+
+BC2RightBalance:
+	call	SE_ON_Check
+	ret	c
+
+	ld	a,(BalanceMask)
+	and	00001111b
+	ld	(BalanceMask),a
+	ret
+ endif
+
+
+
+
+
+;************************************************;
+;*						*;
+;*	SOUND EFFECT				*;
+;*						*;
+;************************************************;
+;=======================================;
+;	Sound Effect Initialize		;
+;=======================================;
+SoundEffectInit:
+;---------------------------------------;
+;	PortamentoInit			;
+;---------------------------------------;
+	S_HL	S_EFFECT
+	bit	PORTAMENT_ON,(hl)
+;	jp	z,ef_i_pass1
+;	ret	z
+	jp	z,ef_i_pass2
+
+PortamentoInit:
+	S_HL	S_LENGTH
+	ld	a,(hl)
+	ld	hl,Por_length
+	sub	(hl)
+	jr	nc,next$
+	ld	a,001h
+next$:
+	ld	(hl),a			;portamento length set
+
+	S_HL	S_TONE	
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_POREND_L
+	ld	a,e
+	sub	(hl)
+	ld	e,a
+	ld	a,d
+	sbc	a,00h
+	ld	d,a
+
+	S_HL	S_POREND_H
+	sub	(hl)
+	jr	nc,up$
+down$:
+	S_HL	S_EFFECT_STAT
+	set	PORTAMENT_STAT,(hl)	;down status
+
+	S_HL	S_TONE	
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_POREND_L
+	ld	a,(hl)
+	sub	e
+	ld	e,a
+	ld	a,d
+	sbc	a,00h
+	ld	d,a
+
+	S_HL	S_POREND_H
+	ld	a,(hl)
+	sub	d
+	ld	d,a
+	jr	calc$
+up$:
+	S_HL	S_EFFECT_STAT
+	res	PORTAMENT_STAT,(hl)	;up status
+
+	S_HL	S_TONE	
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_POREND_L
+	ld	a,e
+	sub	(hl)
+	ld	e,a
+	ld	a,d
+	sbc	a,00h
+	ld	d,a
+
+	S_HL	S_POREND_H
+	sub	(hl)
+	ld	d,a
+calc$:
+	push	bc
+	ld	hl,Por_length
+	ld	b,00h
+calc_loop$:
+	inc	b
+	ld	a,e
+	sub	(hl)
+	ld	e,a
+	jr	nc,calc_loop$
+	ld	a,d
+	and	a
+	jr	z,set$
+	dec	d
+	jr	calc_loop$
+set$:
+	ld	a,e
+	add	a,(hl)
+	ld	d,b
+	pop	bc
+
+	S_HL	S_PORADD_INT		; set portamento add value
+	ld	(hl),d
+	S_HL	S_PORADD_FRT
+	ld	(hl),a
+	S_HL	S_PORADD_TMP
+	xor	a
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	VibratoInit			;
+;---------------------------------------;
+;ef_i_pass1:
+;	S_HL	S_EFFECT
+;	bit	VIBRATO_ON,(hl)
+;	jr	z,ef_i_pass2
+;VibratoInit:
+;	S_HL	S_VIB_WAIT_B		; vibrato wait value set
+;	ld	a,(hl)
+;	S_HL	S_VIB_WAIT
+;	ld	(hl),a
+;---------------------------------------;
+;	CodeInit			;
+;---------------------------------------;
+ef_i_pass2:
+	S_HL	S_EFFECT
+	bit	CODE_ON,(hl)
+	jr	z,ef_i_pass3
+CodeInit:
+	S_HL	S_CODE_OFFSET
+	ld	a,(hl)
+	and	a
+	jr	z,codeoff$
+	S_HL	S_EFFECT_STAT
+	set	CODE_STAT,(hl)
+	jr	ef_i_pass3
+codeoff$:
+	S_HL	S_EFFECT_STAT
+	res	CODE_STAT,(hl)
+
+;---------------------------------------;
+;	EnvChangerInit			;
+;---------------------------------------;
+ef_i_pass3:
+	S_HL	S_EFFECT
+	bit	ENV_CHANGER,(hl)
+	jr	z,ef_i_pass4
+EnvChangerInit:
+	S_HL	S_EC_OFFSET		;env_changer Initialize
+	xor	a
+	ld	(hl),a
+
+;---------------------------------------;
+;	Mute Init			;
+;---------------------------------------;
+ef_i_pass4:
+	S_HL	S_EFFECT
+	bit	SOUND_MUTE,(hl)
+	ret	z
+MuteInit:
+	S_HL	S_MUTE_WAIT_B
+	ld	a,(hl)
+	S_HL	S_MUTE_WAIT
+	ld	(hl),a
+	ret
+
+
+
+;=======================================;
+;	Sound Effect			;
+;=======================================;
+SoundEffect:
+;---------------------------------------;
+;	DutyChangerSet			;
+;---------------------------------------;
+	S_HL	S_EFFECT
+	bit	DUTY_CHANGER,(hl)
+	jr	z,ef_m_pass1
+DutyChangerSet:
+	S_HL	S_DC_VAL
+	ld	a,(hl)
+	rlca
+	rlca
+	ld	(hl),a
+	and	11000000b		;duty bit
+	ld	(Set_duty),a
+	S_HL	S_REQ
+	set	DUTY_SET,(hl)
+
+;---------------------------------------;
+;	Code				;
+;---------------------------------------;
+ef_m_pass1:
+	S_HL	S_EFFECT
+	bit	CODE_ON,(hl)
+	jr	z,ef_m_pass2
+Code:
+	S_HL	S_EFFECT_STAT
+	bit	CODE_STAT,(hl)
+	jr	z,ret$
+;	jr	nz,code_on$
+;	set	CODE_STAT,(hl)
+;	jr	ret$
+;code_on$:
+;	res	CODE_STAT,(hl)
+;
+	S_HL	S_TONE_NO
+	ld	a,(hl)
+	and	a
+	jr	z,ret$			;branch
+
+	S_HL	S_CODE_OFFSET		;code_offset
+	add	a,(hl)
+	ld	e,a
+	S_HL	S_OCTOVE		;tone octove_offset
+	ld	d,(hl)
+	call	ToneGet
+
+	ld	hl,Set_tone
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+ret$:
+;	S_HL	S_REQ
+;	set	TONE_SET,(hl)
+
+;---------------------------------------;
+;	Chorus				;
+;---------------------------------------;
+ef_m_pass2:
+	S_HL	S_EFFECT
+	bit	CHORUS_ON,(hl)
+	jr	z,ef_m_pass3
+Chorus:
+	S_HL	S_CHORUS_OFFS
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	ld	hl,Set_tone
+	ld	a,(hli)
+	ld	h,(hl)
+	ld	l,a
+
+	add	hl,de
+	ld	e,l
+	ld	d,h
+
+	ld	hl,Set_tone
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+;---------------------------------------;
+;	Detune				;
+;---------------------------------------;
+ef_m_pass3:
+	S_HL	S_STATUS
+	bit	DETUNE_MODE,(hl)
+	jp	ef_m_pass35
+DetuneSet:
+	ld	hl,Set_tone
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+	S_HL	S_DETUNE
+	ld	a,(hl)
+	and	a
+	jr	z,ret$
+	inc	e
+	jr	z,ret$
+	inc	d
+ret$
+	ld	hl,Set_tone
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+;---------------------------------------;
+;	PortamentSet			;
+;---------------------------------------;
+ef_m_pass35:
+ ifn 0
+	S_HL	S_EFFECT
+	bit	PORTAMENT_ON,(hl)
+	jp	z,ef_m_pass4
+PortamentSet:
+	S_HL	S_TONE
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_EFFECT_STAT
+	bit	PORTAMENT_STAT,(hl)
+	jr	z,up$
+down$:
+	S_HL	S_PORADD_INT
+	ld	l,(hl)
+	ld	h,00h
+
+	add	hl,de
+	ld	d,h
+	ld	e,l
+
+	S_HL	S_PORADD_FRT
+	ld	a,(hl)
+	S_HL	S_PORADD_TMP
+	add	a,(hl)
+	ld	(hl),a
+	ld	a,000h
+	adc	a,e
+	ld	e,a
+	ld	a,000h
+	adc	a,d
+	ld	d,a
+
+	S_HL	S_POREND_H		; portament end check (down mode) 
+	ld	a,(hl)
+	cp	d
+	jp	c,Por_End$
+	jr	nz,Por_Set$
+
+	S_HL	S_POREND_L
+	ld	a,(hl)
+	cp	e
+	jp	c,Por_End$
+	jr	Por_Set$
+up$:
+	ld	a,e
+	S_HL	S_PORADD_INT
+	ld	e,(hl)
+	sub	e
+	ld	e,a
+	ld	a,d
+	sbc	a,00h
+	ld	d,a
+
+	S_HL	S_PORADD_FRT
+	ld	a,(hl)
+	add	a,a
+	ld	(hl),a
+
+	ld	a,e
+	sbc	a,00h
+	ld	e,a
+	ld	a,d
+	sbc	a,00h
+	ld	d,a
+
+	S_HL	S_POREND_H		; portament end check (up mode) 
+	ld	a,d
+	cp	(hl)
+	jr	c,Por_End$
+	jr	nz,Por_Set$
+	S_HL	S_POREND_L
+	ld	a,e
+	cp	(hl)
+	jr	nc,Por_Set$
+Por_End$:
+	S_HL	S_EFFECT
+	res	PORTAMENT_ON,(hl)
+	S_HL	S_EFFECT_STAT
+	res	PORTAMENT_STAT,(hl)
+
+	S_HL	S_POREND_H
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+Por_Set$:
+	S_HL	S_TONE
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	S_HL	S_REQ
+	set	TONE_SET,(hl)
+ endif
+
+;---------------------------------------;
+;	Vibrato				;
+;---------------------------------------;
+ef_m_pass4:
+	S_HL	S_EFFECT
+	bit	VIBRATO_ON,(hl)
+	jr	z,ef_m_pass5
+
+VibratoSet:
+	S_HL	S_VIB_WAIT		;Vibrato Start Check
+	ld	a,(hl)
+	and	a
+	jr	nz,countdown$
+
+	S_HL	S_VIB_WAVE
+	ld	a,(hl)
+	and	a
+	jr	z,ret$
+	ld	d,a
+
+	S_HL	S_VIB_LENGTH
+	ld	a,(hl)
+	and	00001111b
+	jr	z,vib$
+countdown$:
+	dec	(hl)
+	jr	ret$
+vib$:
+	ld	a,(hl)
+	swap	(hl)
+	or	(hl)
+	ld	(hl),a			;Vib_length Recover 
+
+	ld	a,(Set_tone)
+	ld	e,a
+
+	S_HL	S_EFFECT_STAT
+	bit	VIBRATO_STAT,(hl)
+	jr	z,up$
+down$:
+	res	VIBRATO_STAT,(hl)
+
+	ld	a,d
+	and	00001111b
+	ld	d,a
+	ld	a,e
+	sub	d
+	jr	nc,set$
+	ld	a,00h
+	jr	set$
+up$:
+	set	VIBRATO_STAT,(hl)
+
+	ld	a,d
+	and	11110000b
+	swap	a
+	add	a,e
+	jr	nc,set$
+	ld	a,0ffh
+set$:
+	ld	(Set_tone),a
+	S_HL	S_REQ
+	set	VIBTONE_SET,(hl)
+ret$:
+
+;---------------------------------------;
+;	EnvChangerSet			;
+;---------------------------------------;
+ef_m_pass5:
+	S_HL	S_EFFECT
+	bit	ENV_CHANGER,(hl)
+	jr	z,ef_m_pass6
+EnvChangerSet:
+	S_HL	S_EC_NO
+	ld	e,(hl)
+	ld	d,00h
+
+	ld	a,(SoundLineNo)
+	and	00000011b
+	cp	SOUND3			;sound_line 3,7
+	jr	nz,no_sound3$
+sound3$:
+	ld	hl,WaveChangeTable
+	call	EnvChangeGet
+	jr	c,stop$
+
+	ld	d,a
+	and	00001111b
+	ld	a,(Set_env)
+	and	11110000b
+	or	d
+	ld	(Set_env),a
+	call	sound3_waveset
+
+;	S_HL	S_REQ
+;	set	ENV_SET,(hl)
+	jr	ret$
+no_sound3$:
+	ld	hl,EnvChangeTable
+	call	EnvChangeGet
+	jr	nc,set$
+stop$:
+	S_HL	S_REQ
+	set	STOP_SET,(hl)
+	jr	ret$
+set$:
+	ld	(Set_env),a
+
+	S_HL	S_REQ
+	set	ALL_SET,(hl)
+ret$:
+	
+;---------------------------------------;
+;	Mute				;
+;---------------------------------------;
+ef_m_pass6:
+	S_HL	S_EFFECT
+	bit	SOUND_MUTE,(hl)
+	ret	z
+;	jr	z,ef_m_pass7
+Mute:
+	S_HL	S_MUTE_WAIT
+	ld	a,(hl)
+	and	a
+	jr	z,mute_on$
+mute_wait$:
+	dec	(hl)
+	jr	ret$
+mute_on$:
+	S_HL	S_REQ
+	set	STOP_SET,(hl)
+ret$:
+
+;---------------------------------------;
+;	BalanceChange			;
+;---------------------------------------;
+ef_m_pass7:
+ ifn 0
+	S_HL	S_EFFECT
+	bit	BC_ON,(hl)
+	ret	z
+BC_Set:
+	S_HL	S_BC_WAIT
+	ld	a,(hl)
+	and	a
+	jr	z,next1$
+	dec	(hl)
+	S_HL	S_BC_WORK
+	ld	a,(hl)
+	S_HL	S_BALANCE
+	ld	(hl),a
+	ret
+next1$:
+	S_HL	S_BC_WAIT2
+	ld	a,(hl)
+	and	a
+	jr	z,next2$
+	dec	(hl)
+	S_HL	S_BC_WORK
+	ld	a,(hl)
+	swap	a
+	or	(hl)
+	S_HL	S_BALANCE
+	ld	(hl),a
+	ret
+next2$:
+	S_HL	S_BC_WORK
+	ld	a,(hl)
+	swap	a
+	S_HL	S_BALANCE
+	ld	(hl),a
+	S_HL	S_EFFECT
+	res	BC_ON,(hl)
+ endif
+	ret
+
+
+EnvChangeGet:
+	add	hl,de
+	add	hl,de
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_EC_OFFSET
+	push	hl
+	ld	l,(hl)
+	ld	h,00h
+	add	hl,de
+	ld	a,(hl)
+	pop	hl
+
+	cp	0ffh
+	jr	z,end$
+	cp	0feh
+	jr	nz,set$
+
+	xor	a			;Offset init
+	ld	(hl),a
+	ld	a,(de)
+set$:
+	inc	(hl)
+	and	a
+	ret
+end$:
+	scf
+	ret
+
+PortamentCalc:
+	S_HL	S_EFFECT
+	bit	PORTAMENT_ON,(hl)
+	ret	z
+PortamentSet:
+	S_HL	S_TONE
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_EFFECT_STAT
+	bit	PORTAMENT_STAT,(hl)
+	jr	z,up$
+down$:
+	S_HL	S_PORADD_INT
+	ld	l,(hl)
+	ld	h,00h
+
+	add	hl,de
+	ld	d,h
+	ld	e,l
+
+	S_HL	S_PORADD_FRT
+	ld	a,(hl)
+	S_HL	S_PORADD_TMP
+	add	a,(hl)
+	ld	(hl),a
+	ld	a,000h
+	adc	a,e
+	ld	e,a
+	ld	a,000h
+	adc	a,d
+	ld	d,a
+
+	S_HL	S_POREND_H		; portament end check (down mode) 
+	ld	a,(hl)
+	cp	d
+	jp	c,Por_End$
+	jr	nz,Por_Set$
+
+	S_HL	S_POREND_L
+	ld	a,(hl)
+	cp	e
+	jp	c,Por_End$
+	jr	Por_Set$
+up$:
+	ld	a,e
+	S_HL	S_PORADD_INT
+	ld	e,(hl)
+	sub	e
+	ld	e,a
+	ld	a,d
+	sbc	a,00h
+	ld	d,a
+
+	S_HL	S_PORADD_FRT
+	ld	a,(hl)
+	add	a,a
+	ld	(hl),a
+
+	ld	a,e
+	sbc	a,00h
+	ld	e,a
+	ld	a,d
+	sbc	a,00h
+	ld	d,a
+
+	S_HL	S_POREND_H		; portament end check (up mode) 
+	ld	a,d
+	cp	(hl)
+	jr	c,Por_End$
+	jr	nz,Por_Set$
+	S_HL	S_POREND_L
+	ld	a,e
+	cp	(hl)
+	jr	nc,Por_Set$
+Por_End$:
+	S_HL	S_EFFECT
+	res	PORTAMENT_ON,(hl)
+	S_HL	S_EFFECT_STAT
+	res	PORTAMENT_STAT,(hl)
+
+;	S_HL	S_POREND_H
+;	ld	e,(hl)
+;	inc	hl
+;	ld	d,(hl)
+;	S_HL	S_REQ
+;	set	STOP_SET,(hl)
+	ret
+Por_Set$:
+	S_HL	S_TONE
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	S_HL	S_REQ
+	set	TONE_SET,(hl)
+	set	DUTY_SET,(hl)
+	ret
+
+
+
+
+
+;************************************************;
+;*						*;
+;*	DrumCheck				*;
+;*						*;
+;************************************************;
+;---------------------------------------;
+;	DrumCheck			;
+;---------------------------------------;
+DrumCheck:
+	S_HL	S_STATUS
+	bit	DRUM_MODE,(hl)
+	ret	z
+
+	ld	a,(SoundLineNo)
+	bit	2,a
+	jr	nz,set$		;use Sound7		
+
+	ld	hl,SOUNDWORK_LEN*7+S_STATUS+SoundWork
+	bit	SOUND_ON,(hl)		;SE4 ON?
+	jr	z,set$
+	bit	DRUM_MODE,(hl)
+	ret	nz
+set$:
+	ld	a,(DrumLength)
+	and	a
+	jr	z,DrumSet
+	dec	a
+	ld	(DrumLength),a
+	ret
+
+;---------------------------------------;
+;	DrumSet				;
+;---------------------------------------;
+DrumSet:
+	ld	hl,DrumAddress
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+	ld	a,e
+	or	d
+	jr	z,drum_end$
+
+	ld	a,(de)
+	inc	de
+	cp	0ffh
+	jr	z,drum_end$
+
+	and	00001111b
+;	inc	a		;�����
+	ld	(DrumLength),a
+
+	ld	a,(de)
+	inc	de
+	ld	(Set_env),a
+
+	ld	a,(de)
+	inc	de
+	ld	(Set_tone),a
+	xor	a
+	ld	(Set_tone+1),a
+
+	ld	hl,DrumAddress
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	S_HL	S_REQ
+	set	ALL_SET,(hl)
+	ret
+drum_end$:
+	ret
+
+
+;************************************************;
+;*						*;
+;*	SOUND COMMAND				*;
+;*						*;
+;************************************************;
+;=======================================;
+;	CommandCheck			;
+;=======================================;
+CommandCheck:
+	call	DataLOAD
+	cp	0ffh
+	jr	z,end_check$
+	cp	0d0h
+	jr	c,ToneSet$
+command$:
+	call	SoundCommand
+	jr	CommandCheck
+ToneSet$:
+	S_HL	S_STATUS
+	bit	DIRECT_MODE,(hl)
+	jp	nz,DirectSet
+	bit	MVOICE_MODE,(hl)
+	jp	nz,DirectSet
+	bit	DRUM_MODE,(hl)
+	jp	nz,DrumAddressSet
+CalcTone$:
+	ld	a,(SoundData)
+	and	00001111b
+	call	CalcLength		
+
+	ld	a,(SoundData)
+	swap	a
+	and	00001111b
+	jr	z,stop$			;branch
+
+	S_HL	S_TONE_NO		;tone_no back_up
+	ld	(hl),a
+	ld	e,a
+	S_HL	S_OCTOVE		;tone octove_offset
+	ld	d,(hl)
+	call	ToneGet
+
+	S_HL	S_TONE
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	S_HL	S_REQ
+	set	ALL_SET,(hl)
+	jp	SoundEffectInit
+stop$:
+	S_HL	S_REQ
+	set	STOP_SET,(hl)
+	ret
+
+end_check$:
+	S_HL	S_STATUS
+	bit	SUB_JUMP,(hl)		; return fg
+	jr	nz,command$
+
+	ld	a,(SoundLineNo)		;�v���C�I���e�B�[�`�F�b�N
+	cp	SE_NO
+	jr	nc,set$
+PriCheck$:
+	S_HL	SOUNDWORK_LEN*4 + S_STATUS
+	bit	SOUND_ON,(hl)
+	jr	nz,ret$			;SE ON
+set$:
+	S_HL	S_STATUS
+	bit	MVOICE_MODE,(hl)
+	call	nz,vol_recover$
+
+	ld	a,(SoundLineNo)
+	cp	SE1
+	jr	nz,ret$
+	xor	a			;sweep off
+	ld	(NR10),a
+ret$:
+	S_HL	S_STATUS
+	res	SOUND_ON,(hl)		;SoundOff
+	S_HL	S_REQ
+	set	STOP_SET,(hl)		;SoundOff
+
+	S_HL	S_MUSIC_NO
+	xor	a
+	ld	(hli),a
+	ld	(hli),a
+	ld	(hli),a
+	ret
+
+vol_recover$:
+	ld	a,(SoundLineNo)
+	cp	SE1
+	ret	nz
+check$:
+	xor	a
+	ld	hl,SOUNDWORK_LEN*SE2 + SoundWork + S_CHORUS_OFFS
+	ld	(hli),a
+	ld	(hl),a
+	ld	hl,SOUNDWORK_LEN*SE4 + SoundWork + S_CHORUS_OFFS
+	ld	(hli),a
+	ld	(hl),a
+	
+	ld	a,(VolRec)
+	ld	(SoundVolume),a
+	xor	a
+	ld	(VolRec),a
+	ld	(BGMmodeFlag),a
+	ret
+
+
+;=======================================;
+;	DirectSet			;
+;=======================================;
+DirectSet:
+	S_HL	S_REQ
+	set	ALL_SET,(hl)
+
+	ld	a,(SoundData)
+	call	CalcLength
+
+	call	DataLOAD
+	S_HL	S_ENV			;envelope
+	ld	(hl),a
+
+	call	DataLOAD
+	S_HL	S_TONE			;porinomial or tone(low)
+	ld	(hl),a
+
+	ld	a,(SoundLineNo)
+	and	00000011b
+	cp	SOUND4			;data read pass(sound4.8)
+	ret	z
+
+	call	DataLOAD
+	S_HL	S_TONE+1		;tone(high)
+	ld	(hl),a
+	ret
+
+;=======================================;
+;	DrumAddressSet			;
+;=======================================;
+DrumAddressSet:
+	ld	a,(SoundLineNo)
+	and	00000011b
+	cp	SOUND4			;use Sound4
+	ret	nz		
+
+	ld	a,(SoundData)
+	and	00001111b
+	call	CalcLength		
+
+	ld	a,(SoundLineNo)
+	bit	2,a
+	jr	nz,onSE$		;use Sound7		
+
+	ld	hl,SOUNDWORK_LEN*7 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE4 ON?
+	ret	nz
+
+	ld	a,(DrumSetting)
+	jr	set$
+onSE$:
+	ld	a,(DrumSettingSE)
+set$:
+	ld	e,a
+	ld	d,00h
+	ld	hl,DrumsetTable
+	add	hl,de
+	add	hl,de
+	ld	a,(hli)
+	ld	h,(hl)
+	ld	l,a
+
+	ld	a,(SoundData)
+	swap	a
+	and	00001111b
+	ret	z
+
+	ld	e,a
+	ld	d,00h
+	add	hl,de
+	add	hl,de
+
+	ld	a,(hli)
+	ld	(DrumAddress +0),a
+	ld	a,(hl)
+	ld	(DrumAddress +1),a
+	xor 	a
+	ld	(DrumLength),a
+	ret
+
+;=======================================;
+;	SoundCommand			;
+;=======================================;
+SoundCommand:
+	ld	a,(SoundData)
+	sub	0d0h
+	ld	e,a
+	ld	d,00h
+	ld	hl,CommandTable
+	add	hl,de
+	add	hl,de
+	ld	a,(hli)
+	ld	h,(hl)
+	ld	l,a
+	jp	(hl)
+
+;=======================================;
+;	CommandTable			;
+;=======================================;
+CommandTable:
+	dw	octove_change		;d0	hai
+	dw	octove_change		;d1	 |
+	dw	octove_change		;d2	 |
+	dw	octove_change		;d3	 |
+	dw	octove_change		;d4	 |
+	dw	octove_change		;d5	 |
+	dw	octove_change		;d6	 v
+	dw	octove_change		;d7	lou
+	dw	sound_initialize	;d8	initialize(tempo,env)
+	dw	key_change		;d9	sound_key change
+	dw	tempo_change		;da	tempo change
+	dw	duty_change		;db 	duty change
+	dw	env_change		;dc	envelope change
+	dw	sweep			;dd	sweep ON/OFF
+	dw	auto_duty_changer	;de	duty_changer set
+	dw	direct_mode_set		;df	direct_mode ON/OFF
+	dw	portamento		;e0	portament ON
+	dw	vibrato			;e1	vibrato ON/OFF
+	dw	mute_set		;e2	sound mute
+	dw	drum_mode_set		;e3	drum_mode ON/OFF
+	dw	balance_global		;e4	sound_balance global change
+	dw	volume_change		;e5	sound_volume change
+	dw	chorus_set		;e6	chorus ON/OFF
+	dw	code_set		;e7	code set
+	dw	auto_env_changer	;e8	env_changer set
+	dw	tempo_offset		;e9	tempo up_down
+	dw	new_line_set		;ea	new sound_line set
+	dw	new_music_set		;eb	new music set
+	dw	bgm_mode_on		;ec	BGMmode on	
+	dw	bgm_mode_off		;ed	BGMmode off
+	dw	mark_set		;ee	if mark/=0 jump
+	dw	balance_change_S	;ef	balance change (stereo mode)
+	dw	drum_mode_set_se	;f0	drum_mode ON/OFF (for SE)
+	dw	detune_set		;f1	detune set
+	dw	pose_set		;f2	pose set
+	dw	se_clear		;f3	sound effect clear
+	dw	dummy			;f4
+	dw	dummy			;f5
+	dw	dummy			;f6
+	dw	dummy			;f7
+	dw	dummy			;f8
+	dw	soundevent_set		;f9	sound event flag
+	dw	count_set		;fa	counter set
+	dw	count_if		;fb	if counter=X jump
+	dw	sound_jump		;fc	sound_data jump
+	dw	sound_loop		;fd	sound_data loop
+	dw	call_sub		;fe	call   sub_routine
+	dw	call_return		;ff	return sub_routine
+
+dummy:
+	ret
+
+;---------------------------------------;
+;	pose_set			;
+;---------------------------------------;
+pose_set:
+	ld	a,(SoundLineNo)
+	and	00000011b
+	cp	SOUND4
+	ret	nz
+	ld	hl,PoseFlag
+	ld	a,(hl)
+	and	a
+	jr	z,inc$
+	xor	a
+	jr	set$
+inc$
+	inc	a
+set$
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	detune_set			;
+;---------------------------------------;
+detune_set:
+	S_HL	S_STATUS
+	set	DETUNE_MODE,(hl)
+	S_HL	S_DETUNE
+	ld	a,(hl)
+	xor	1
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	se_clear			;
+;---------------------------------------;
+se_clear
+	S_HL	S_STATUS
+	res	DIRECT_MODE,(hl)
+	ret
+
+;---------------------------------------;
+;	call_return			;
+;---------------------------------------;
+call_return:
+	S_HL	S_STATUS
+	res	SUB_JUMP,(hl)
+
+	S_HL	S_STACK
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_ADDRESS
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+	ret
+
+;---------------------------------------;
+;	call_sub			;
+;---------------------------------------;
+call_sub:
+	call	DataLOAD
+	ld	e,a
+	call	DataLOAD
+	ld	d,a
+	push	de
+
+	S_HL	S_ADDRESS
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_STACK
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	pop	de
+	S_HL	S_ADDRESS
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	S_HL	S_STATUS
+	set	SUB_JUMP,(hl)
+	ret
+
+;---------------------------------------;
+;	sound_jump			;
+;---------------------------------------;
+sound_jump:
+	call	DataLOAD
+	ld	e,a
+	call	DataLOAD
+	ld	d,a
+	S_HL	S_ADDRESS
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+	ret
+
+;---------------------------------------;
+;	sound_loop			;
+;---------------------------------------;
+sound_loop:
+	call	DataLOAD
+
+	S_HL	S_STATUS
+	bit	LOOP_ON,(hl)
+	jr	nz,count$
+
+	and	a
+	jr	z,jump$		;0=error pass
+	dec	a
+	set	LOOP_ON,(hl)
+	S_HL	S_LOOP_VAL
+	ld	(hl),a
+count$:
+	S_HL	S_LOOP_VAL
+	ld	a,(hl)
+	and	a
+	jr	z,loop_end$
+
+	dec	(hl)
+jump$:
+	call	DataLOAD
+	ld	e,a
+	call	DataLOAD
+	ld	d,a
+	S_HL	S_ADDRESS
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+	ret
+loop_end$:
+	S_HL	S_STATUS
+	res	LOOP_ON,(hl)
+
+	S_HL	S_ADDRESS
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+	inc	de
+	inc	de
+	ld	(hl),d
+	dec	hl
+	ld	(hl),e
+	ret
+
+;---------------------------------------;
+;	count_set			;
+;---------------------------------------;
+count_set:
+	call	DataLOAD
+	S_HL	S_COUNT
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	count_if			;
+;---------------------------------------;
+count_if:
+	call	DataLOAD
+	S_HL	S_COUNT
+	cp	(hl)
+	jr	z,jump$
+
+	S_HL	S_ADDRESS
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+	inc	de
+	inc	de
+	ld	(hl),d
+	dec	hl
+	ld	(hl),e
+	ret
+jump$:
+	call	DataLOAD
+	ld	e,a
+	call	DataLOAD
+	ld	d,a
+	S_HL	S_ADDRESS
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+	ret
+
+;---------------------------------------;
+;	mark_set			;
+;---------------------------------------;
+mark_set:
+	ld	a,(SoundLineNo)
+	and	00000011b
+	ld	e,a
+	ld	d,00h
+	ld	hl,Sound1MarkFlag
+	add	hl,de
+	ld	a,(hl)
+	and	a
+	jr	nz,change$
+
+	S_HL	S_ADDRESS
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+	inc	de
+	inc	de
+	ld	(hl),d
+	dec	hl
+	ld	(hl),e
+	ret
+change$:
+	ld	(hl),00h
+
+	call	DataLOAD
+	ld	e,a
+	call	DataLOAD
+	ld	d,a
+	S_HL	S_ADDRESS
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+	ret
+
+;---------------------------------------;
+;	soundevent_set			;
+;---------------------------------------;
+soundevent_set:
+	ld	a,1
+	ld	(SoundEventFlag),a
+	ret
+
+;---------------------------------------;
+;	mute				;
+;---------------------------------------;
+mute_set:
+	call	DataLOAD
+	S_HL	S_MUTE_WAIT_B
+	ld	(hl),a
+
+	S_HL	S_EFFECT
+	set	SOUND_MUTE,(hl)
+	ret
+
+;---------------------------------------;
+;	vibrato				;
+;---------------------------------------;
+vibrato:
+	S_HL	S_EFFECT
+	set	VIBRATO_ON,(hl)
+	S_HL	S_EFFECT_STAT
+	res	VIBRATO_STAT,(hl)
+
+	call	DataLOAD
+	S_HL	S_VIB_WAIT_B
+	ld	(hl),a
+	S_HL	S_VIB_WAIT
+	ld	(hl),a
+
+	call	DataLOAD
+	S_HL	S_VIB_WAVE
+	ld	d,a
+	and	11110000b
+	swap	a
+	srl	a
+	ld	e,a
+	adc	a,00h
+	swap	a
+	or	e
+	ld	(hl),a
+
+	S_HL	S_VIB_LENGTH
+	ld	a,d
+	and	00001111b
+	ld	d,a
+	swap	a
+	or	d
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	portamento			;
+;---------------------------------------;
+portamento:
+	call	DataLOAD
+	ld	(Por_length),a
+
+	call	DataLOAD
+	ld	d,a
+	and	00001111b
+	ld	e,a
+	ld	a,d
+	swap	a
+	and	00001111b
+	ld	d,a
+
+	call	ToneGet
+
+	S_HL	S_POREND_L
+	ld	(hl),e
+	S_HL	S_POREND_H
+	ld	(hl),d
+
+	S_HL	S_EFFECT
+	set	PORTAMENT_ON,(hl)
+	ret
+
+;---------------------------------------;
+;	chorus_set			;
+;---------------------------------------;
+chorus_set:
+	S_HL	S_EFFECT
+
+	set	CHORUS_ON,(hl)
+	
+	S_HL	S_CHORUS_OFFS+1
+	call	DataLOAD
+	ld	(hld),a
+	call	DataLOAD
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	code_set			;
+;---------------------------------------;
+code_set:
+	S_HL	S_EFFECT
+	set	CODE_ON,(hl)
+
+	call	DataLOAD
+	S_HL	S_CODE_OFFSET
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	auto_duty_changer		;
+;---------------------------------------;
+auto_duty_changer:
+	S_HL	S_EFFECT
+
+	set	DUTY_CHANGER,(hl)
+
+	call	DataLOAD
+	rrca
+	rrca
+	S_HL	S_DC_VAL
+	ld	(hl),a
+	and	11000000b
+	S_HL	S_DUTY
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	auto_env_changer		;
+;---------------------------------------;
+auto_env_changer:
+	S_HL	S_EFFECT
+
+	set	ENV_CHANGER,(hl)
+
+	call	DataLOAD
+	S_HL	S_EC_NO
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	direct mode			;
+;---------------------------------------;
+direct_mode_set:
+	S_HL	S_STATUS
+	bit	DIRECT_MODE,(hl)
+	jr	z,on$
+off$
+	res	DIRECT_MODE,(hl)
+	ret
+on$
+	set	DIRECT_MODE,(hl)
+	ret
+
+;---------------------------------------;
+;	drum_mode			;
+;---------------------------------------;
+drum_mode_set:
+	S_HL	S_STATUS
+	bit	DRUM_MODE,(hl)
+	jr	z,on$
+off$
+	res	DRUM_MODE,(hl)
+	ret
+on$
+	set	DRUM_MODE,(hl)
+
+	call	DataLOAD
+	ld	(DrumSetting),a
+	ret
+
+;---------------------------------------;
+;	drum_mode_se			;
+;---------------------------------------;
+drum_mode_set_se:
+	S_HL	S_STATUS
+	bit	DRUM_MODE,(hl)
+	jr	z,on$
+off$
+	res	DRUM_MODE,(hl)
+	ret
+on$
+	set	DRUM_MODE,(hl)
+
+	call	DataLOAD
+	ld	(DrumSettingSE),a
+	ret
+ ifn 0
+;---------------------------------------;
+;	sound_initialize		;
+;---------------------------------------;
+sound_initialize:
+	call	DataLOAD
+	S_HL	S_TEMPO2
+	ld	(hl),a
+
+	ld	a,(SoundLineNo)
+	and	00000011b
+	cp	SOUND4
+	ret	z
+
+	call	env_change
+	ret
+ endif
+
+;---------------------------------------;
+;	sweep 				;
+;---------------------------------------;
+sweep:
+	call	DataLOAD
+	ld	(Sweep_value),a
+	S_HL	S_REQ,(HL)
+	set	SWEEP_SET,(HL)
+	ret
+
+;---------------------------------------;
+;	duty_change			;
+;---------------------------------------;
+duty_change:
+	call	DataLOAD
+	rrca
+	rrca
+	and	0c0h
+	S_HL	S_DUTY
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	sound_initialize		;
+;---------------------------------------;
+sound_initialize:
+	call	DataLOAD
+	S_HL	S_TEMPO2
+	ld	(hl),a
+
+	ld	a,(SoundLineNo)
+	and	00000011b
+	cp	SOUND4
+	ret	z
+
+;---------------------------------------;
+;	env_change			;
+;---------------------------------------;
+env_change:
+	call	DataLOAD
+	S_HL	S_ENV
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	tempo_change			;
+;---------------------------------------;
+tempo_change:
+	call	DataLOAD
+	ld	d,a
+	call	DataLOAD
+	ld	e,a
+	call	tempo_set
+	ret
+
+;---------------------------------------;
+;	octove_change			;
+;---------------------------------------;
+octove_change:
+	S_HL	S_OCTOVE
+	ld	a,(SoundData)
+	and	00000111b
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	key_change			;
+;---------------------------------------;
+key_change:
+	call	DataLOAD
+	S_HL	S_KEY
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	balance_change			;
+;---------------------------------------;
+balance_change_S:			;Stereo Mode
+	ld	a,(config)
+	bit	5,a
+	jr	nz,balance_change
+;	call	DataLOAD		;DataAddress Inc
+;	ret
+	S_HL	S_ADDRESS
+	ld	a,(hli)
+	ld	d,(hl)
+	ld	e,a
+	inc	de
+	ld	(hl),d
+	dec	hl
+	ld	(hl),e
+	ret
+
+balance_change:
+	call	BalanceGet
+
+	call	DataLOAD
+	S_HL	S_BALANCE
+	and	(hl)
+	ld	(hl),a
+	ret
+
+;---------------------------------------;
+;	balance_global			;
+;---------------------------------------;
+balance_global:
+	call	DataLOAD
+	ld	e,a
+	ld	hl,config
+	bit	5,(hl)
+	ret	z
+	ld	hl,OnMask
+	ld	a,(SoundLineNo)
+	and	00000100b
+	ld	a,(hli)
+	jr	nz,se$
+	and	e
+	ld	(SOUNDWORK_LEN*1 + S_BALANCE + SoundWork),a
+	ld	a,(hli)
+	and	e
+	ld	(SOUNDWORK_LEN*2 + S_BALANCE + SoundWork),a
+	ld	a,(hli)
+	and	e
+	ld	(SOUNDWORK_LEN*3 + S_BALANCE + SoundWork),a
+	ld	a,(hl)
+	and	e
+	ld	(SOUNDWORK_LEN*4 + S_BALANCE + SoundWork),a
+	ret
+se$
+	and	e
+	ld	(SOUNDWORK_LEN*5 + S_BALANCE + SoundWork),a
+	ld	a,(hli)
+	and	e
+	ld	(SOUNDWORK_LEN*6 + S_BALANCE + SoundWork),a
+	ld	a,(hli)
+	and	e
+	ld	(SOUNDWORK_LEN*7 + S_BALANCE + SoundWork),a
+	ld	a,(hl)
+	and	e
+	ld	(SOUNDWORK_LEN*8 + S_BALANCE + SoundWork),a
+	ret
+
+;---------------------------------------;
+;	volume_change			;
+;---------------------------------------;
+volume_change:
+	call	DataLOAD
+	ld	a,(SoundFade)
+	and	a
+	ret	nz			;fade in/out
+
+	ld	a,(SoundData)
+	ld	(SoundVolume),a
+	ret
+
+;---------------------------------------;
+;	tempo_offset_change		;
+;---------------------------------------;
+tempo_offset:
+	call	DataLOAD
+	ld	e,a
+	cp	80h
+	jr	nc,up$
+down$:
+	ld	d,000h
+	jr	set$
+up$:
+	ld	d,0ffh
+set$:
+	S_HL	S_TEMPO
+	ld	a,(hli)
+	ld	h,(hl)
+	ld	l,a
+	add	hl,de
+	ld	e,l
+	ld	d,h
+	call	tempo_set
+	ret
+
+;---------------------------------------;
+;	bgm_mode_on			;
+;---------------------------------------;
+bgm_mode_on:
+	ld	a,1
+	ld	(BGMmodeFlag),a
+	ret
+
+;---------------------------------------;
+;	bgm_mode_off			;
+;---------------------------------------;
+bgm_mode_off:
+	xor	a
+	ld	(BGMmodeFlag),a
+	ret
+
+;---------------------------------------;
+;	new_line_set			;
+;---------------------------------------;
+new_line_set:
+	S_HL	S_MUSIC_NO
+	ld	a,(hli)
+	ld	(MusNum),a
+	ld	a,(hl)
+	ld	(MusNum+1),a
+
+	S_HL	S_MUSIC_BANK
+	ld	a,(hl)
+	ld	(MusBank),a
+
+	call	DataLOAD
+	ld	l,a
+	call	DataLOAD
+	ld	h,a
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	push	bc
+	call	SoundInitialize
+	call	SoundOn
+	pop	bc
+	ret
+
+;---------------------------------------;
+;	new_music_set			;
+;---------------------------------------;
+new_music_set:
+	call	DataLOAD
+	ld	e,a
+	call	DataLOAD
+	ld	d,a
+
+	push	bc
+	call	MusicSet
+	pop	bc
+	ret
+
+;=======================================;
+;	DataLOAD			;
+;	  OUT A:Sound Data		;
+;=======================================;
+DataLOAD:
+	push	hl
+	push	de
+
+	S_HL	S_ADDRESS
+	ld	a,(hli)
+	ld	e,a
+	ld	d,(hl)
+
+	S_HL	S_MUSIC_BANK
+	ld	a,(hl)
+	call	SoundDataGet
+
+	inc	de
+	S_HL	S_ADDRESS
+	ld	a,e
+	ld	(hli),a
+	ld	(hl),d
+
+	pop	de
+	pop	hl
+	ld	a,(SoundData)
+	ret
+
+;=======================================;
+;	ToneGet				;
+;	  IN  E:Tone No.		;
+;	      D:Tone OctoveOffset	;
+;	  OUT DE:Tone Data		;
+;=======================================;
+ToneGet:
+	S_HL	S_KEY
+	ld	a,(hl)
+	swap	a
+	and	00001111b		;octove
+	add	a,d
+	push	af
+
+	S_HL	S_KEY
+	ld	a,(hl)
+	and	00001111b		;key
+	ld	l,a
+	ld	d,00h
+	ld	h,d
+
+	add	hl,de			;key + tone_no.
+	add	hl,hl
+	ld	de,ToneData
+	add	hl,de
+
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+	pop	af
+oct_set_loop$:
+	cp	oct_init_val
+	jr	nc,ret$
+	sra	d
+	rr	e
+	inc	a
+	jr	oct_set_loop$
+ret$:
+	ld	a,d
+	and	00000111b
+	ld	d,a
+	ret
+
+;=======================================;
+;	Calc Length			;
+;=======================================;
+CalcLength:
+	inc	a		;len = 001h-010h
+	ld	e,a
+	ld	d,000h
+	S_HL	S_TEMPO2
+	ld	a,(hl)
+	ld	l,000h
+	call	multi$		;S_TEMPO2 * len(int) = sound_len
+	ld	a,l
+
+	S_HL	S_TEMPO
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	S_HL	S_LENGTH_FLOW
+	ld	l,(hl)
+	call	multi$			; sound length * tempo = len
+	ld	e,l			; dust float val
+	ld	d,h
+	S_HL	S_LENGTH_FLOW
+	ld	(hl),e
+	S_HL	S_LENGTH
+	ld	(hl),d
+	ret
+
+multi$:				; (i)a = A, (i)de = B, (i)l = float
+	ld	h,000h		; (o)hl = A*B
+calcloop1$:
+	srl	a
+	jr	nc,calcloop2$
+	add	hl,de
+calcloop2$:
+	sla	e
+	rl	d
+	and	a
+	jr	nz,calcloop1$
+	ret
+
+;=======================================;
+;	Tempo Set 			;
+;	  IN  DE:Tempo 			;
+;=======================================;
+tempo_set:
+	push	bc
+	ld	a,(SoundLineNo)
+	cp	SE1
+	jr	nc,se$
+	ld	bc,SOUNDWORK_LEN*0 + SoundWork
+	call	sub$
+	ld	bc,SOUNDWORK_LEN*1 + SoundWork
+	call	sub$
+	ld	bc,SOUNDWORK_LEN*2 + SoundWork
+	call	sub$
+	ld	bc,SOUNDWORK_LEN*3 + SoundWork
+	call	sub$
+	jr	ret$
+se$:
+	ld	bc,SOUNDWORK_LEN*4 + SoundWork
+	call	sub$
+	ld	bc,SOUNDWORK_LEN*5 + SoundWork
+	call	sub$
+	ld	bc,SOUNDWORK_LEN*6 + SoundWork
+	call	sub$
+	ld	bc,SOUNDWORK_LEN*7 + SoundWork
+	call	sub$
+ret$:
+	pop	bc
+	ret
+sub$:
+	S_HL	S_TEMPO
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+	xor	a
+	S_HL	S_LENGTH_FLOW
+	ld	(hl),a
+	ret
+
+;=======================================;
+;	Sound On			;
+;=======================================;
+SoundOn:
+	call	BalanceGet
+	S_HL	S_STATUS
+	set	SOUND_ON,(hl)
+	ret
+
+;=======================================;
+;	Balance Get			;
+;=======================================;
+BalanceGet:
+	push	de
+	ld	a,(SoundLineNo)
+	and	00000011b
+	ld	e,a
+	ld	d,00h
+	ld	hl,OnMask
+;	call	OnMaskSet
+	add	hl,de
+	ld	a,(hl)
+	S_HL	S_BALANCE
+	ld	(hl),a
+	pop	de
+	ret
+
+
+
+
+
+
+
+
+
+
+;************************************************;
+;**						*;
+;**	SOUND PLAY				*;
+;**						*;
+;************************************************;
+;=======================================;
+;	MusicSet			;
+;	   IN DE = Music No.		;
+;=======================================;
+MusicSet:
+	call	MusicDriveOFF
+	ld	hl,MusNum
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	ld	hl,MusicTable
+	add	hl,de
+	add	hl,de
+	add	hl,de
+	ld	a,(hli)
+	ld	(MusBank),a
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	call	InitDataGet
+	rlca
+	rlca
+	and	00000011b		; line_count of sound (2 bits)
+	inc	a
+set_loop$:
+	push	af
+	call	SoundInitialize
+	call	SoundOn
+	pop	af
+	dec	a
+	jr	nz,set_loop$
+	xor	a
+	ld	(SoundEventFlag),a
+	ld	(Sound1MarkFlag),a
+	ld	(Sound2MarkFlag),a
+	ld	(Sound3MarkFlag),a
+	ld	(Sound4MarkFlag),a
+	ld	(DrumAddress+0),a
+	ld	(DrumAddress+1),a
+	ld	(DrumLength),a
+	ld	(DrumSetting),a
+	ld	(PoseFlag),a
+	jp	MusicDriveON
+;	call	MusicDriveON
+;	ret
+
+;=======================================;
+;	VoiceSet			;
+;	   IN DE = Voice No.		;
+;=======================================;
+VoiceSet:
+	call	MusicDriveOFF
+	xor	a
+	ld	(Sweep_value),a
+	ld	hl,MusNum
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	ld	hl,VoiceTable
+	add	hl,de
+	add	hl,de
+	add	hl,de
+	ld	a,(hli)
+	ld	(MusBank),a
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	call	InitDataGet
+	rlca
+	rlca
+	and	00000011b		; line_count of sound (2 bits)
+	inc	a
+set_loop$:
+	push	af
+	call	SoundInitialize
+
+	S_HL	S_STATUS
+	set	MVOICE_MODE,(hl)
+
+	S_HL	S_EFFECT
+	set	CHORUS_ON,(hl)
+	S_HL	S_CHORUS_OFFS
+	ld	a,(MvoiceOffset)	;voice tone offset
+	ld	(hli),a
+	ld	a,(MvoiceOffset+1)	;voice tone offset
+	ld	(hl),a
+
+	ld	a,(SoundLineNo)
+	and	00000011b
+	cp	SOUND4			;sound4 pass
+	jr	nc,pass$
+
+	S_HL	S_TEMPO
+	ld	a,(MvoiceTempo)		;voice speed offset
+	ld	(hli),a
+	ld	a,(MvoiceTempo+1)	;voice speed offset
+	ld	(hl),a
+pass$:
+	call	SoundOn
+	ld	a,(StereoSetWork+0)
+	and	a
+	jr	z,next$			;Monoral(Program)
+	ld	a,(config)
+	bit	5,a
+	jr	z,next$			;Monoral(config)
+stereo$:
+	S_HL	S_BALANCE
+	ld	a,(hl)
+	ld	hl,StereoSetWork+1
+	and	(hl)
+	S_HL	S_BALANCE
+	ld	(hl),a
+next$:
+	pop	af
+	dec	a
+	jr	nz,set_loop$
+
+	ld	a,(VolRec)
+	and	a
+	jr	nz,no_vol_change$
+	ld	a,(SoundVolume)
+;	ld	(VolRec),a
+;	ld	a,077h
+;	ld	(SoundVolume),a
+	cp	077h
+	jr	z,no_vol_change$
+;no_vol_change$:
+	push	af
+	ld	a,1
+	ld	(BGMmodeFlag),a
+	pop	af
+no_vol_change$:
+	ld	(VolRec),a
+	ld	a,077h
+	ld	(SoundVolume),a
+	jp	MusicDriveON
+;	call	MusicDriveON
+;	ret
+
+;=======================================;
+;	SESet				;
+;	   IN DE = SE No.		;
+;=======================================;
+SESet:
+	call	MusicDriveOFF
+
+	ld	hl,SOUNDWORK_LEN*4 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)
+	jr	z,pass1$
+
+	res	SOUND_ON,(hl)		;SE1 OFF
+	xor	a
+	ld	(NR11),a
+	ld	a,SOUND_STOP
+	ld	(NR12),a
+	xor	a
+	ld	(NR13),a
+	ld	a,INITIAL_BIT
+	ld	(NR14),a
+	xor	a
+	ld	(Sweep_value),a
+	ld	(NR10),a
+pass1$:
+	ld	hl,SOUNDWORK_LEN*5 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)		;SE1 OFF
+	jr	z,pass2$
+
+	res	SOUND_ON,(hl)		;SE2 OFF
+	xor	a
+	ld	(NR21),a
+	ld	a,SOUND_STOP
+	ld	(NR22),a
+	xor	a
+	ld	(NR23),a
+	ld	a,INITIAL_BIT
+	ld	(NR24),a
+pass2$:
+	ld	hl,SOUNDWORK_LEN*6 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)
+	jr	z,pass3$
+
+	res	SOUND_ON,(hl)		;SE3 OFF
+	xor	a
+	ld	(NR30),a
+	ld	(NR31),a
+	ld	a,SOUND_STOP
+	ld	(NR32),a
+	xor	a
+	ld	(NR33),a
+	ld	a,INITIAL_BIT
+	ld	(NR34),a
+pass3$:
+	ld	hl,SOUNDWORK_LEN*7 + S_STATUS + SoundWork
+	bit	SOUND_ON,(hl)
+	jr	z,pass4$
+
+	res	SOUND_ON,(hl)		;SE4 OFF
+	xor	a
+	ld	(NR41),a
+	ld	a,SOUND_STOP
+	ld	(NR42),a
+	xor	a
+	ld	(NR43),a
+	ld	a,INITIAL_BIT
+	ld	(NR44),a
+
+	xor	a
+	ld	(DrumAddress+0),a
+	ld	(DrumAddress+1),a
+pass4$:
+	ld	hl,MusNum
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	ld	hl,SETable
+	add	hl,de
+	add	hl,de
+	add	hl,de
+	ld	a,(hli)
+	ld	(MusBank),a
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	call	InitDataGet
+	rlca
+	rlca
+	and	00000011b		; line_count of sound (2 bits)
+	inc	a
+set_loop$:
+	push	af
+	call	SoundInitialize
+
+	S_HL	S_STATUS
+	set	DIRECT_MODE,(hl)
+	call	SoundOn
+	pop	af
+	dec	a
+	jr	nz,set_loop$
+	call	MusicDriveON
+
+	xor	a
+	ld	(BGMmodeFlag),a
+	ret
+
+;=======================================;
+;	WazaSESet			;
+;	   IN DE = SE No.		;
+;=======================================;
+WazaSESet:
+	call	MusicDriveOFF
+	ld	a,(config)
+	bit	5,a
+	jp	z,SESet			;Monoral(config)
+
+	xor	a
+	ld	(Sweep_value),a
+
+	ld	hl,MusNum
+	ld	(hl),e
+	inc	hl
+	ld	(hl),d
+
+	ld	hl,SETable
+	add	hl,de
+	add	hl,de
+	add	hl,de
+	ld	a,(hli)
+	ld	(MusBank),a
+	ld	e,(hl)
+	inc	hl
+	ld	d,(hl)
+
+	call	InitDataGet
+	rlca
+	rlca
+	and	00000011b		; line_count of sound (2 bits)
+	inc	a
+set_loop$:
+	push	af
+	call	SoundInitialize
+
+	S_HL	S_STATUS
+	set	DIRECT_MODE,(hl)
+
+	push	de
+	ld	a,(SoundLineNo)
+	and	00000011b
+	ld	e,a
+	ld	d,00h
+	ld	hl,OnMask
+;	call	OnMaskSet
+	add	hl,de
+	ld	a,(hl)
+	ld	hl,StereoSetWork+0
+	and	(hl)
+	S_HL	S_BALANCE
+	ld	(hl),a
+	S_HL	S_BC_WORK
+	ld	(hl),a
+
+	ld	a,(StereoSetWork+1)
+	cp	2
+	jr	c,pass$
+	ld	a,(StereoSetWork+2)
+	S_HL	S_BC_WAIT
+	ld	(hl),a
+	S_HL	S_BC_WAIT2
+	ld	(hl),a
+ ifn 0
+	S_HL	S_EFFECT
+	set	BC_ON,(hl)
+ endif
+pass$:
+	pop	de
+
+	S_HL	S_STATUS
+	set	SOUND_ON,(hl)
+	pop	af
+	dec	a
+	jr	nz,set_loop$
+	jp	MusicDriveON
+;	call	MusicDriveON
+;	ret
+
+
+;=======================================;
+;	SoundInitialize			;
+;	  IN DE = Data Address		;
+;=======================================;
+SoundInitialize:
+	call	InitDataGet
+	inc	de
+	and	00000111b
+	ld	(SoundLineNo),a
+	ld	c,a
+	ld	b,00h
+	ld	hl,workadrstable
+	add	hl,bc
+	add	hl,bc
+	ld	c,(hl)
+	inc	hl
+	ld	b,(hl)
+
+	S_HL	S_STATUS
+	res	SOUND_ON,(hl)
+	
+;	call	work_initialize$
+	push	de
+	xor	a
+	S_HL	S_MUSIC_NO
+	ld	e,SOUNDWORK_LEN
+clear_loop$:
+	ld	(hli),a
+	dec	e
+	jr	nz,clear_loop$
+
+	S_HL	S_TEMPO
+	xor	a
+	ld	(hli),a
+	inc	a
+	ld	(hl),a
+	S_HL	S_TEMPO2
+	ld	(hl),a
+	pop	de
+
+	S_HL	S_ADDRESS
+	call	InitDataGet
+	ld	(hli),a
+	inc	de
+	call	InitDataGet
+	ld	(hl),a
+	inc	de
+
+	S_HL	S_MUSIC_NO
+	ld	a,(MusNum)
+	ld	(hli),a
+	ld	a,(MusNum+1)
+	ld	(hl),a
+
+	S_HL	S_MUSIC_BANK
+	ld	a,(MusBank)
+	ld	(hl),a
+	ret
+
+work_initialize$:
+;	ret
+
+InitDataGet:
+	ld	a,(MusBank)
+	call	SoundDataGet
+	ld	a,(SoundData)
+	ret
+
+
+
+
+;************************************************;
+;*						*;
+;*	DATA 					*;
+;*						*;
+;************************************************;
+;=======================================;
+;	Tone Data			;
+;=======================================;
+ToneData:
+	dw	00000h	; dummy	
+
+	dw	0f82ch	; c		1111_1000_0010_1100
+	dw	0f89dh	; c#		1111_1000_1001_1101
+	dw	0f907h	; d		1111_1001_0000_0111
+	dw	0f96bh	; d#		1111_1001_0110_1011
+	dw	0f9cah	; e		1111_1001_1100_1010
+	dw	0fa23h	; f 		1111_1010_0010_0011
+	dw	0fa77h	; f#		1111_1010_0111_0111
+	dw	0fac7h	; g		1111_1010_1100_0111
+	dw	0fb12h	; g#		1111_1011_0001_0010
+	dw	0fb58h	; a		1111_1011_0101_1000
+	dw	0fb9bh	; a#		1111_1011_1001_1011
+	dw	0fbdah	; b		1111_1011_1101_1010
+
+	dw	0fc16h	; c		1111_1100_0001_0110
+	dw	0fc4eh	; c#		1111_1100_0100_1110
+	dw	0fc83h	; d		1111_1100_1000_0011
+	dw	0fcb5h	; d#		1111_1100_1011_0101
+	dw	0fce5h	; e		1111_1100_1110_0101
+	dw	0fd11h	; f		1111_1101_0001_0001
+	dw	0fd3bh	; f#		1111_1101_0011_1011
+	dw	0fd63h	; g		1111_1101_0110_0011
+	dw	0fd89h	; g#		1111_1101_1000_1001
+	dw	0fdach	; a		1111_1101_1010_1100
+	dw	0fdcdh	; a#		1111_1101_1100_1101
+	dw	0fdedh	; b		1111_1101_1110_1101
+
+	dw	0fe0bh	; c		1111_1110_0000_1011
+	dw	0fe27h	; c#		1111_1110_0010_0111
+	dw	0fe41h	; d		1111_1110_0100_0001
+
+;=======================================;
+;	Wave Data			;
+;=======================================;
+wavedata:
+wave0$:
+	db	002h,046h,08ah,0ceh
+	db	0ffh,0feh,0edh,0dch
+	db	0cbh,0a9h,087h,065h
+	db	044h,033h,022h,011h
+wave1$:
+	db	002h,046h,08ah,0ceh
+	db	0efh,0ffh,0feh,0eeh
+	db	0ddh,0cbh,0a9h,087h
+	db	065h,043h,022h,011h
+wave2$:
+	db	013h,069h,0bdh,0eeh
+	db	0eeh,0ffh,0ffh,0edh
+	db	0deh,0ffh,0ffh,0eeh
+	db	0eeh,0dbh,096h,031h
+wave3$:
+	db	002h,046h,08ah,0cdh
+	db	0efh,0feh,0deh,0ffh
+	db	0eeh,0dch,0bah,098h
+	db	076h,054h,032h,010h
+wave4$:
+	db	001h,023h,045h,067h
+	db	08ah,0cdh,0eeh,0f7h
+	db	07fh,0eeh,0dch,0a8h
+	db	076h,054h,032h,010h
+wave5$:
+	db	000h,011h,022h,033h		;AOKI
+	db	044h,033h,022h,011h
+	db	0ffh,0eeh,0cch,0aah
+	db	088h,0aah,0cch,0eeh
+wave6$:
+	db	002h,046h,08ah,0ceh		;JUN
+	db	0cbh,0a9h,087h,065h
+	db	0ffh,0feh,0edh,0dch
+	db	044h,033h,022h,011h
+wave7$:
+	db	0c0h,0a9h,087h,0f5h		;JUN
+	db	0ffh,0feh,0edh,0dch
+	db	044h,033h,022h,0f1h
+	db	002h,046h,08ah,0ceh
+wave8$:
+	db	044h,033h,022h,01fh
+	db	000h,046h,08ah,0ceh		;JUN
+	db	0f8h,0feh,0edh,0dch
+	db	0cbh,0a9h,087h,065h
+wave9$:
+	db	011h,000h,000h,008h
+	db	000h,013h,057h,09ah		;JUN
+	db	0b4h,0bah,0a9h,098h
+	db	087h,065h,043h,021h
+waveA$:
+	db	001h,023h,045h,067h
+	db	08ah,0cdh,0eeh,0ffh		;TEN
+	db	0ffh,0eeh,0dch,0a8h
+	db	076h,054h,032h,010h
+waveB$:
+	db	0bbh,0ffh,0ffh,0ffh
+	db	0ffh,0ffh,0ffh,0bbh
+	db	044h,000h,000h,000h
+	db	000h,000h,000h,044h
+waveC$:
+	db	001h,012h,034h,057h
+	db	09bh,0dfh,0feh,0dch
+	db	0bah,098h,076h,054h
+	db	043h,032h,021h,011h
+waveD$:
+	db	088h,099h,0aah,0bbh
+	db	0cch,0bbh,0aah,099h		;TEN
+	db	077h,066h,044h,022h
+	db	000h,022h,044h,066h
+waveE$:
+	db	0aah,0bbh,0ddh,0eeh
+	db	0ffh,0eeh,0ddh,0bbh		;TEN
+	db	099h,088h,055h,033h
+	db	000h,033h,055h,088h
+waveF$:
+	db	000h,000h,000h,000h
+	db	000h,000h,000h,000h
+	db	000h,000h,000h,000h
+	db	000h,000h,000h,000h
+
+
+;=======================================;
+;	WaveChangeTable			;
+;=======================================;
+WaveChangeTable:
+	dw	wave1
+	dw	wave2
+	dw	wave3
+	dw	wave4
+	dw	wave5
+	dw	wave6
+wave1:
+wave2:
+wave3:
+wave4:
+wave5:
+wave6:
+	db	00,01,02,03,04,03,02,01
+	db	0feh				; loop
+
+;=======================================;
+;	EnvChangeTable			;
+;=======================================;
+EnvChangeTable:
+	dw	env1
+	dw	env2
+	dw	env3
+	dw	env4
+	dw	env5
+	dw	env6
+env1:
+	db	011h,021h,031h,041h
+	db	051h,061h,071h,081h
+	db	091h,0a1h,0b1h,0c1h
+	db	0d1h,0e1h,0f1h,0f1h
+	db	0f1h,0f1h,0f1h,0f1h
+	db	0e1h,0e1h,0e1h,0e1h
+	db	0d1h,0d1h,0d1h,0d1h
+	db	0c1h,0c1h,0c1h,0c1h
+	db	0b1h,0b1h,0b1h,0b1h
+	db	0a1h,0a1h,0a1h,0a1h
+	db	091h,091h,091h,091h
+	db	081h,081h,081h,081h
+	db	071h,071h,071h,071h
+	db	061h,061h,061h,061h
+	db	051h,051h,051h,051h
+	db	041h,041h,041h,041h
+	db	031h,031h,031h,031h
+	db	021h,021h,021h,021h
+	db	011h,011h,011h,011h
+	db	0ffh				; end
+env2:
+	db	011h,091h,0d1h,0f1h
+	db	0f1h,0f1h,0f1h,0f1h
+	db	0d1h,0d1h,0d1h,0d1h
+	db	0a1h,0a1h,0a1h,0a1h
+	db	081h,081h,081h,081h
+	db	061h,061h,061h,061h
+	db	041h,041h,041h,041h
+	db	021h,021h,021h,021h
+	db	0ffh				; end
+env3:
+	db	031h,051h,0a1h,051h
+	db	0f1h,051h,0f1h,051h
+	db	0f1h,051h,0f1h,051h
+	db	0d1h,051h,0d1h,051h
+	db	0b1h,051h,0b1h,051h
+	db	091h,051h,091h,051h
+	db	071h,051h,071h,051h
+	db	051h,051h,051h,051h
+	db	031h,051h,031h,051h
+	db	011h,051h,011h,051h
+	db	0ffh				; end
+env4:
+	db	0f0h,0e0h,0d0h,0c0h
+	db	0b0h,0a0h,090h,080h
+	db	070h,060h,050h,040h
+	db	030h,020h,010h,000h
+env5:
+env6:
+	db	0ffh				; end
+
+;=======================================;
+;	Drumset Table			;
+;=======================================;
+DrumsetTable:
+	dw	Drumset0
+	dw	Drumset1
+	dw	Drumset2
+	dw	Drumset3
+	dw	Drumset4
+	dw	Drumset5
+	dw	Drumset6
+	dw	Drumset7
+	dw	Drumset8
+Drumset0:
+	dw	drum0
+	dw	drum1
+	dw	drum2
+	dw	drum3
+	dw	drum4
+	dw	drum5
+	dw	drum6
+	dw	drum7
+	dw	drum8
+	dw	drum9
+	dw	druma
+	dw	drumb
+	dw	drumc
+drum0:						; Branch
+	db	020h,011h,000h
+	db	0FFh
+drum1:						; Snare Drum 
+	db	020h,0c1h,033h
+	db	0FFh
+drum2:						; Snare Drum 
+	db	020h,0b1h,033h
+	db	0FFh
+drum3:						; Snare Drum 
+	db	020h,0a1h,033h
+	db	0FFh
+drum4:						; Snare Drum 
+	db	020h,081h,033h
+	db	0FFh
+drum5:						; SE Snare Drum 
+	db	027h,084h,037h
+	db	026h,084h,036h
+	db	025h,083h,035h
+	db	024h,083h,034h
+	db	023h,082h,033h
+	db	022h,081h,032h
+	db	0FFh
+drum6:						; BEATS Snare Drum 
+	db	020h,051h,02ah
+	db	0FFh
+drum7:						; DOUBLE Snare Drum 
+	db	021h,041h,02bh
+	db	020h,061h,02ah
+	db	0FFh
+drum8:						; CLOSE Hi-Hat
+	db	020h,081h,010h
+	db	0FFh
+drum9:						; HI Tom
+	db	020h,082h,023h
+	db	0FFh
+druma:						; MID Tom
+	db	020h,082h,025h
+	db	0FFh
+drumb:						; LOW Tom
+	db	020h,082h,026h
+	db	0FFh
+drumc:						; CLOSE Hi-Hat
+	db	020h,0a1h,010h
+	db	0FFh
+Drumset1:
+	dw	drum0
+	dw	drum8
+	dw	drum9
+	dw	druma
+	dw	drumb
+	dw	drumc
+	dw	drumd
+	dw	drume
+	dw	drumf
+	dw	drum10
+	dw	drum11
+	dw	drum12
+	dw	drum13
+drumd:						; OPEN Hi-Hat
+	db	020h,0a2h,011h
+	db	0FFh
+drume:						; Snare Drum 
+	db	020h,0a2h,050h
+	db	0FFh
+drumf:						; Rim Shot 
+	db	020h,0a1h,018h
+	db	020h,031h,033h
+	db	0FFh
+drum10:						; Rim Shot 2
+	db	022h,091h,028h
+	db	020h,071h,018h
+	db	0FFh
+drum11:						; Snare Drum 
+	db	020h,091h,022h
+	db	0FFh
+drum12:						; Snare Drum 
+	db	020h,071h,022h
+	db	0FFh
+drum13:						; Snare Drum 
+	db	020h,061h,022h
+	db	0FFh
+Drumset2:
+	dw	drum0
+	dw	drum1
+	dw	drum11
+	dw	drum12
+	dw	drum13
+	dw	drum5
+	dw	drum6
+	dw	drum7
+	dw	drum8
+	dw	drum9
+	dw	druma
+	dw	drumb
+	dw	drumc
+Drumset3:
+	dw	drum000	;0 branch
+	dw	drum001	;1 pa-n!
+	dw	drum002	;2 snare (small)
+	dw	drum003	;3 snare (normal)
+	dw	drum004	;4 bass drum
+	dw	drum006	;5 tombourine
+	dw	drumx	;6 ?
+	dw	drum007	;7 open hi-hat
+	dw	drum008	;8 close hi-hat (normal)
+	dw	drum009	;9 close hi-hat (big)
+	dw	drum000	;a
+	dw	drum019	;b bass drum (big volume)
+	dw	drum010	;c cymbal (small)
+;--- aoki siyou ---;
+drumx:
+	db	020h,011h,011h
+;	db	0ffh
+drum000:					; Branch
+	db	0FFh
+drum001:					; Snare Drum 
+	db	020h,091h,033h			; (pa-n!)
+	db	0FFh
+drum002:					; Snare Drum
+	db	020h,051h,032h			; (small volume)
+	db	0FFh
+drum003:					; Snare Drum
+	db	020h,081h,031h			; (normal volume)
+	db	0FFh
+drum004:					; Bass Drum
+	db	020h,088h,06bh
+	db	020h,071h,000h
+	db	0FFh
+;drum005:
+;	db	030h,082h,04ch			; cowbell ni sitakatta
+;	db	022h,061h,020h
+;	db	0ffh
+drum006:					; tombourine
+	db	030h,091h,018h
+	db	0FFh
+drum007:					; OPEN Hi-Hat
+	db	027h,092h,010h
+	db	0FFh
+drum008:					; CLOSE Hi-Hat
+	db	033h,091h,000h
+	db	033h,011h,000h
+	db	0FFh
+drum009:					; Close Hi-Hat
+	db	033h,091h,011h			; (big volume)
+	db	033h,011h,000h
+	db	0FFh
+drum019:					; Bass Drum (BIG VOLUME)
+	db	020h,0a8h,06bh
+	db	020h,071h,000h
+	db	0FFh
+drum010:					; cymbal (small)
+	db	020h,084h,012h
+	db	0ffh
+Drumset4:
+	dw	drum000	;0 branch
+	dw	drumx	;1 ?
+	dw	drum002	;2 snare (small)
+	dw	drum003	;3 snare (normal)
+	dw	drum004	;4 bass drum
+	dw	drum00f	;5 snare (big)
+	dw	drum006	;6 tombourine
+	dw	drum011	;7 close hi-hat (very small)
+	dw	drum00d	;8 cabassa
+	dw	drum00e	;9 maracas
+	dw	drum018	;a cabassa (big volume)
+	dw	drum019	;b bass drum (big volume)
+	dw	drum00c	;c cymbal
+drum00f:					; Snare Drum
+	db	020h,0a1h,031h			; (big volume)
+	db	0FFh
+drum011:					; CLOSE Hi-Hat
+	db	033h,081h,000h			; (very small)
+	db	033h,011h,000h
+	db	0FFh
+drum00d:					; cabassa
+	db	033h,051h,021h
+	db	033h,011h,011h
+	db	0FFh
+drum00e:					; maracas
+	db	033h,051h,050h
+	db	033h,011h,011h
+	db	0FFh
+drum018:					; cabassa(big volume)
+	db	033h,081h,021h
+	db	033h,011h,011h
+	db	0FFh
+drum00c:					; cymbal
+	db	033h,088h,015h
+	db	020h,065h,012h
+	db	0ffh
+Drumset5:
+	dw	drum0	;0 branch
+	dw	drum11	;1 white snare (big)
+	dw	drum12	;2 white snare (small)
+	dw	drum13	;3 white snare (very small)
+	dw	drum007	;4 open hi-hat
+	dw	drum008	;5 close hi-hat (normal)
+	dw	drum009	;6 close hi-hat (big)
+	dw	drum5	;7 se
+	dw	drum6	;8 beat noise snare
+	dw	drum00c	;9 cymbal
+	dw	drum003	;a snare (normal)
+	dw	drum002	;b snare (small)
+	dw	drum019	;c bass drum (big volume)
+Drumset6:
+	dw	drum0	;0 branch
+	dw	drum100	;1 white kick
+	dw	drum3	;2 snare drum
+	dw	drum101	;3 high tom (big volume)
+	dw	drum102	;4 high tom (small volume)
+	dw	drum103	;5 low tom (mid volume)
+	dw	drum104	;6 low tom (small volume)
+	dw	drum105	;7 white cymbal
+	dw	drum11	;8 white snare (big)
+	dw	drum12	;9 white snare (small)
+	dw	drum13	;a white snare (very small)
+	dw	drum106	;b hi-hat (normal)
+	dw	drum107	;c hi-hat (big)
+drum100:					; white kick
+	db	000h,071h,044h
+	db	0ffh
+drum101:					; high tom (big volume)
+	db	000h,091h,017h
+	db	0ffh
+drum102:					; high tom (small volume)
+	db	000h,061h,017h
+	db	0ffh
+drum103:					; low tom (mid volume)
+	db	000h,071h,034h
+	db	0ffh
+drum104:					; low tom (small volume)
+	db	000h,061h,034h
+	db	0ffh
+drum105:					; white cymbal
+	db	000h,0a3h,013h
+	db	0ffh
+drum106:					; hi-hat (normal)
+	db	000h,062h,030h
+	db	0ffh
+drum107:					; hi-hat (big)
+	db	000h,062h,040h
+	db	0ffh
+Drumset7:
+	dw	drum0	;0 branch
+	dw	drum108	;1 power snare
+	dw	drum3	;2 snare drum
+	dw	drum109	;3 power hat
+	dw	drum13	;4 white snare (very small)
+	dw	drum105	;5 white cymbal
+	dw	drum10a	;6 power tom
+	dw	drum10b	;7 snare drum (micro)
+	dw	drum10c	;8            |
+	dw	drum002	;9            |
+	dw	drum10d	;a            |
+	dw	drum10e	;b            v
+	dw	drum10f	;c            (macro)
+drum108:					; power snare
+	db	000h,0a1h,023h
+	db	0ffh
+drum109:					; power hat
+	db	000h,0a1h,013h
+	db	0ffh
+drum10a:					; power tom
+	db	000h,0a1h,043h
+	db	0ffh
+drum10b:
+	db	000h,031h,032h
+	db	0FFh
+drum10c:
+	db	000h,041h,032h
+	db	0FFh
+drum10d:
+	db	000h,081h,032h
+	db	0FFh
+drum10e:
+	db	000h,091h,032h
+	db	0FFh
+drum10f:
+	db	000h,0a1h,032h
+	db	0FFh
+Drumset8:
+	dw	drum0	;0 branch
+	dw	drum110	;1 power kick
+	dw	drum3	;2 snare drum
+	dw	drum109	;3 power hat
+	dw	drum13	;4 white snare (very small)
+	dw	drum105	;5 white cymbal
+	dw	drum108	;1 power snare
+	dw	drum10b	;7 snare drum (micro)
+	dw	drum10c	;8            |
+	dw	drum002	;9            |
+	dw	drum10d	;a            |
+	dw	drum10e	;b            v
+	dw	drum10f	;c            (macro)
+drum110:
+	db	000h,0a1h,094h
+	db	0FFh
+
+;=======================================;
+;	Sound On Mask 			;
+;=======================================;
+;OnMaskSet:
+;	ld	a,(config)
+;	bit	5,a
+;	jr	nz,stereo$
+;	ld	hl,OnMask
+;	ret
+;stereo$:
+;	ld	hl,StereoMask
+;	ret
+OnMask:
+	db	00010001b
+	db	00100010b
+	db	01000100b
+	db	10001000b
+StereoMask:
+;	db	00010001b
+;	db	00100010b
+;	db	01000100b
+;	db	10001000b
+
+;=======================================;
+;	Work Area Address 		;
+;=======================================;
+workadrstable:
+	dw	SOUNDWORK_LEN*0 + SoundWork
+	dw	SOUNDWORK_LEN*1 + SoundWork
+	dw	SOUNDWORK_LEN*2 + SoundWork
+	dw	SOUNDWORK_LEN*3 + SoundWork
+	dw	SOUNDWORK_LEN*4 + SoundWork
+	dw	SOUNDWORK_LEN*5 + SoundWork
+	dw	SOUNDWORK_LEN*6 + SoundWork
+	dw	SOUNDWORK_LEN*7 + SoundWork
+
+
+
+	public	MUSICreg_init
+MUSICreg_init:
+	ld	hl,NR50			;NR_Control Initialize
+	xor	a
+	ld	(hli),a			;NR50
+	ld	(hli),a			;NR51
+	ld	a,10000000b
+	ld	(hli),a			;NR52
+
+	ld	hl,NR10			;NR_Area Initialize
+	ld	e,4
+NR_clear_loop$:
+	call	MusRegInitMain
+ ifn 0
+	xor	a
+	ld	(hli),a			;NRx0
+	ld	(hli),a			;NRx1
+	ld	a,SOUND_STOP
+	ld	(hli),a			;NRx2
+	xor	a
+	ld	(hli),a			;NRx3
+	ld	a,INITIAL_BIT
+	ld	(hli),a			;NRx4
+ endif
+	dec	e
+	jr	nz,NR_clear_loop$
+	ret
+
+MusRegInitMain:
+	xor	a
+	ld	(hli),a			;NRx0
+	ld	(hli),a			;NRx1
+	ld	a,SOUND_STOP
+	ld	(hli),a			;NRx2
+	xor	a
+	ld	(hli),a			;NRx3
+	ld	a,INITIAL_BIT
+	ld	(hli),a			;NRx4
+	ret
+
+
+
+
+
+
+
+
+

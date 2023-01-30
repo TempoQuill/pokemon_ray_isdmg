@@ -1,0 +1,972 @@
+
+	include	common.def
+	include	group.def
+	include	mustable.h
+	include	macro.h
+	include	ef_macro.h
+	include	mustetsu.h
+
+bank27	group	G_AUDIO
+
+	public	MusicTable
+	public	VoiceTable
+	public	SETable
+
+	public	MUSIC_MAX
+	public	SE_MAX
+
+
+
+;=======================================;
+;	Music Table 			;
+;=======================================;
+MusicTable:
+MUSIC_MAX	equ 66
+	db		G_AUDIO
+	ef_ndw_g	m_stop,musstop		;0
+
+	db		G_MUSIC4
+	ef_ndw_g	title2_4,mustitle4	;1
+	db		G_MUSIC4
+	ef_ndw_g	title2_5,mustitle5	;2
+
+	db		G_MUSIC1
+	ef_ndw_g	title2_6,mustitle6	;3
+
+	db		G_MUSIC4
+	ef_ndw_g	m_main,musm_main	;4
+
+	db		G_MUSIC3
+	ef_ndw_g	m_asa,musasa		;5
+	db		G_MUSIC3
+	ef_ndw_g	m_road11,musfield0775	;6
+
+	db		G_MUSIC2
+	ef_ndw_g	road_02,musroad12	;7
+
+	db		G_MUSIC1
+	ef_ndw_g	road_03,musroad13	;8
+
+	db		G_MUSIC4
+	ef_ndw_g	walk_01,mustsur1	;9
+
+	db		G_MUSIC2
+	ef_ndw_g	m_autowalk,musautowalk	;10
+	db		G_MUSIC2
+	ef_ndw_g	m_naibu,musnaibu	;11
+	db		G_MUSIC2
+	ef_ndw_g	m_pmc,muspmc		;12
+
+	db		G_MUSIC1
+	ef_ndw_g	m_wakaba,muswakaba	;13
+
+	db		G_MUSIC4
+	ef_ndw_g	m_town12,mustown12	;14
+	db		G_MUSIC4
+	ef_ndw_g	m_fight21,musfight11	;15
+	db		G_MUSIC4
+	ef_ndw_g	m_fight23,musfight13	;16
+
+	db		G_MUSIC1
+	ef_ndw_g	m_fight22,musfight12	;17
+	db		G_MUSIC1
+	ef_ndw_g	m_fight25,musfight15	;18
+	db		G_MUSIC1
+	ef_ndw_g	m_fight26,musfight16	;19
+	db		G_MUSIC1
+	ef_ndw_g	m_fight24,musfight14	;20
+
+	db		G_MUSIC2
+	ef_ndw_g	m_dealer3,musdealer3	;21
+	db		G_MUSIC2
+	ef_ndw_g	m_dealer2,musdealer2	;22
+
+	db		G_MUSIC4
+	ef_ndw_g	m_dealer1,musdealer1	;23
+	db		G_MUSIC4
+	ef_ndw_g	m_boy,musdealerboy	;24
+
+	db		G_MUSIC2
+	ef_ndw_g	m_girl,musdealergirl	;25
+
+	db		G_MUSIC4
+	ef_ndw_g	m_victory4,musvictory4	;26
+
+	db		G_MUSIC2
+	ef_ndw_g	m_taimai,mustaimai	;27
+	db		G_MUSIC2
+	ef_ndw_g	m_gotown2,musgotown2	;28
+
+	db		G_MUSIC4
+	ef_ndw_g	m_raibaru1,musraibaru	;29
+
+	db		G_MUSIC1
+	ef_ndw_g	m_labo11,muslabo11	;30
+
+	db		G_MUSIC4
+	ef_ndw_g	m_raibaru2,musraibaru2	;31
+	db		G_MUSIC4
+	ef_ndw_g	m_jackpot112,musjack112	;32
+	db		G_MUSIC4
+	ef_ndw_g	m_jackpot11,musjack11	;33
+
+	db		G_MUSIC1
+	ef_ndw_g	m_jackpot12,musjack12	;34
+
+	db		G_MUSIC4
+	ef_ndw_g	m_jackpot13,musjack3	;35
+	db		G_MUSIC4
+	ef_ndw_g	m_gym,musgym		;36
+
+	db		G_MUSIC2
+	ef_ndw_g	m_asa11,musasa11	;37
+
+
+	db		G_MUSIC2
+	ef_ndw_g	m_casino,muscasino	;38
+	db		G_MUSIC2
+	ef_ndw_g	m_chari,muschari	;39
+
+	db		G_MUSIC3
+	ef_ndw_g	m_dendou,musdendou	;40
+
+	db		G_MUSIC4
+	ef_ndw_g	m_nazanoxa,musnazanoxanonojo	;41
+
+	db		G_MUSIC3
+	ef_ndw_g	m_shinka,musshinka	;42
+	db		G_MUSIC3
+	ef_ndw_g	m_fin2,musending	;43
+
+	db		G_MUSIC1
+	ef_ndw_g	m_kaida,muskaidatsubomori	;44
+	db		G_MUSIC1
+	ef_ndw_g	m_joki,musjookiship	;45
+	db		G_MUSIC1
+	ef_ndw_g	m_undung,musundung	;46
+
+	db		G_MUSIC2
+	ef_ndw_g	m_yasu11,muskatakaketoudai	;47
+	db		G_MUSIC2
+	ef_ndw_g	m_yasu12,musazumanoyasumi	;48
+	db		G_MUSIC2
+	ef_ndw_g	m_fie112,musroadleague	;49
+
+	db		G_MUSIC4
+	ef_ndw_g	m_kouen,muskouen	;50
+	db		G_MUSIC4
+	ef_ndw_g	m_yasu15,muskookooka	;51
+
+	db		G_MUSIC2
+	ef_ndw_g	m_dungeon3,musdungeon3	;52
+
+	db		G_MUSIC4
+	ef_ndw_g	m_gotown1,musgotown1	;53
+
+	db		G_MUSIC1
+	ef_ndw_g	m_port,musportnotakasa	;54
+
+	db		G_MUSIC3
+	ef_ndw_g	m_endafter,musendafter	;55
+	db		G_MUSIC3
+	ef_ndw_g	m_printer,musprinter	;56
+
+	db		G_MUSIC2
+	ef_ndw_g	m_goroad,musgoroad	;57
+
+	db		G_MUSIC4
+	ef_ndw_g	m_rocket,musdealerrocket	;58
+	db		G_MUSIC4
+	ef_ndw_g	m_senkyo,mussenkyo	;59
+	db		G_MUSIC4
+	ef_ndw_g	m_umi11,musumi1	;60
+
+	db		G_MUSIC3
+	ef_ndw_g	m_odori,musodori	;61
+
+	db		G_MUSIC4
+	ef_ndw_g	m_himanuts,mushimanutsnonuma	;62
+	db		G_MUSIC4
+	ef_ndw_g	m_umi12,musumi2		;63
+
+	db		G_MUSIC2
+	ef_ndw_g	m_cacrega,musdaikonrankakrega	;64
+
+	db		G_MUSIC4
+	ef_ndw_g	m_fuemusic,musfuemusic	;65
+	db		G_MUSIC4
+	ef_ndw_g	m_komori,muskomori	;66
+
+;=======================================;
+;	mus STOP 			;
+;=======================================;
+
+m_stop:
+	db	003h
+	dw	m_stop4
+m_stop4:
+	db	$ff
+
+;=======================================;
+;	Voice Table 			;
+;=======================================;
+VoiceTable:
+	db	G_SE1
+	dw	mushariusagi		;MVC01
+	db	G_SE1
+	dw	mushariusagi@		;MVC02
+	db	G_SE1
+	dw	musyaddon		;MVC03
+	db	G_SE1
+	dw	musgarura		;MVC04
+	db	G_SE1
+	dw	muscyhorne		;MVC05
+	db	G_SE1
+	dw	musbettobeter		;MVC06
+	db	G_SE1
+	dw	musbiriridama		;MVC07
+	db	G_SE1
+	dw	musgengar		;MVC08
+	db	G_SE1
+	dw	musfushigiso		;MVC09
+	db	G_SE1
+	dw	musmycor		;MVC10
+	db	G_SE1
+	dw	musmycor@		;MVC11
+	db	G_SE1
+	dw	mustamatama		;MVC12
+	db	G_SE1
+	dw	musbeloringa		;MVC13
+	db	G_SE1
+	dw	musnasshii		;MVC14
+	db	G_SE1
+	dw	muspip			;MVC15
+	db	G_SE1
+	dw	musgyace		;MVC16
+	db	G_SE1
+	dw	musomom			;MVC17
+	db	G_SE1
+	dw	musgagarth		;MVC18
+	db	G_SE1
+	dw	musmonjara		;MVC19
+	db	G_SE1
+	dw	musomega		;MVC20
+	db	G_SE1
+	dw	muscaiross		;MVC21
+	db	G_SE1
+	dw	muswing			;MVC22
+	db	G_SE1
+	dw	musstrike		;MVC23
+	db	G_SE1
+	dw	musgyaradoss		;MVC24
+	db	G_SE1
+	dw	musshellder		;MVC25
+	db	G_SE1
+	dw	muskarakara		;MVC26
+	db	G_SE1
+	dw	musambler		;MVC27
+	db	G_SE1
+	dw	musrapruth		;MVC28
+	db	G_SE1
+	dw	musgouth		;MVC29
+	db	G_SE1
+	dw	muskarabatheo		;MVC30
+	db	G_SE1
+	dw	musmimi			;MVC31
+	db	G_SE1
+	dw	musyaddohogera		;MVC32
+	db	G_SE1
+	dw	mus34			;MVC34
+	db	G_SE1
+	dw	mus36			;MVC35
+	db	G_SE1
+	dw	musdog			;MVC36
+	db	G_SE1
+	dw	muskingthaurus		;MVC37
+	db	G_SE1
+	dw	mussutegon		;MVC38
+	db	G_SE1
+	dw	museleking		;MVC39
+
+;;;VoiceTable:
+
+	db	G_SE1
+	dw	muskarasu		;MVC51
+	db	G_SE1
+	dw	muskawaii4		;MVC52
+	db	G_SE1
+	dw	muskawaii1		;MVC53
+	db	G_SE1
+	dw	musneko			;MVC54
+	db	G_SE1
+	dw	muskaijyuu2		;MVC55
+	db	G_SE1
+	dw	musmee1			;MVC56
+	db	G_SE1
+	dw	muskawaii2		;MVC57
+	db	G_SE1
+	dw	mushoho			;MVC58
+	db	G_SE1
+	dw	muspaon			;MVC59
+	db	G_SE1
+	dw	musyadoking		;MVC60
+	db	G_SE1
+	dw	musgururu		;MVC61
+	db	G_SE1
+	dw	muschiko		;MVC62
+	db	G_SE1
+	dw	muskaijyu60		;MVC63
+	db	G_SE1
+	dw	musmoo			;MVC64
+	db	G_SE1
+	dw	muswataneko		;MVC65
+	db	G_SE1
+	dw	muskapoera		;MVC66
+	db	G_SE1
+	dw	muslediba		;MVC67
+	db	G_SE1
+	dw	mustora			;MVC68
+	db	G_SE1
+	dw	musnyura		;MVC69
+	db	G_SE1
+	dw	mushaneei		;MVC70
+	db	G_SE1
+	dw	muskaijyu10		;MVC71
+	db	G_SE1
+	dw	muskaijyu20		;MVC72
+	db	G_SE1
+	dw	muskaijyu30		;MVC73
+	db	G_SE1
+	dw	muskaijyu40		;MVC74
+	db	G_SE1
+	dw	muskaijyu50		;MVC75
+	db	G_SE1
+	dw	mussui			;MVC76
+	db	G_SE1
+	dw	musnezumi		;MVC77
+	db	G_SE1
+	dw	mushouou		;MVC78
+	db	G_SE1
+	dw	musgulanbull		;MVC79
+	db	G_SE1
+	dw	musdonfan		;MVC80
+
+	db	G_SE1
+	dw	musearthtron		;MVC81
+	db	G_SE1
+	dw	musyossy		;MVC82
+	db	G_SE1
+	dw	musyoyossy		;MVC83
+
+
+;=======================================;
+;	SE Table 			;
+;=======================================;
+SE_MAX		equ	229
+
+SETable:
+	ef_initndw
+	db		G_SE2
+	ef_ndw_g	m_fan211,musfanfare		;0h
+	db		G_SE2
+	ef_ndw_g	m_fan212,musfanfare4
+	db		G_SE2
+	ef_ndw_g	m_fan213,musfanfare5
+	db		G_SE2
+	ef_ndw_g	m_fan214,musfanfare3		;9h
+	db		G_SE2
+	ef_ndw_g	m_fan215,musfanfare6
+	db		G_SE2
+	ef_ndw_g	m_fan216,musfanfare8
+	db		G_SE2
+	ef_ndw_g	m_fan217,musfanfare1		;90h
+	db		G_SE2
+	ef_ndw_g	m_fan218,musfanfare2
+	db		G_SE2
+	ef_ndw_g	m_fan219,musfanfare7
+	db		G_SE2
+	ef_ndw_g	m_reward11,musfanfare10	;93h
+	db		G_SE2
+	ef_ndw_g	m_reward12,musfanfare11
+	db		G_SE2
+	ef_ndw_g	m_reward13,musfanfare12
+	db		G_SE2
+	ef_ndw_g	m_reward14,musfanfare13
+	db		G_SE2
+	ef_ndw_g	m_reward15,musfanfare14
+	db		G_SE2
+	ef_ndw_g	m_reward16,musfanfare15
+	db		G_SE2
+	ef_ndw_g	m_reward17,musfanfare16	;99h
+	db		G_SE2
+	ef_ndw_g	m_reward18,musfanfare17
+	db		G_SE2
+	ef_ndw_g	m_reward19,musfanfare18
+	db		G_SE1
+	ef_ndw_g	m_fanfare19,musfanfare19
+	db		G_SE1
+	ef_ndw_g	m_fanfare20,musfanfare20
+	db		G_SE1
+	ef_ndw_g	m_fan101,musfan101
+	db		G_SE1
+	ef_ndw_g	m_fan105,musfan105
+	db		G_SE1
+	ef_ndw_g	m_fan106,musfan106
+	db		G_SE1
+	ef_ndw_g	m_fan107,musfan107
+	db		G_SE1
+	ef_ndw_g	m_fan108,musfan108
+
+	db		G_SE1
+	ef_ndw_g	m_wngo,muswngo
+	db		G_SE1
+	ef_ndw_g	m_kusuri,muskusuri
+	db		G_SE1
+	ef_ndw_g	m_itemuse,musitemuse
+	db		G_SE1
+	ef_ndw_g	m_syu,mussyu	
+	db		G_SE1
+	ef_ndw_g	m_rinrin,musrinrin
+	db		G_SE1
+	ef_ndw_g	m_pi,muspi
+	db		G_SE1
+	ef_ndw_g	m_warai,muswarai
+	db		G_SE1
+	ef_ndw_g	m_taberu,mustaberu
+	db		G_SE1
+	ef_ndw_g	m_computer,muscomputer
+	db		G_SE1
+	ef_ndw_g	m_poweroff,muspoweroff
+	db		G_SE1
+	ef_ndw_g	m_networks,musnetworks
+	db		G_SE1
+	ef_ndw_g	m_syowan,mussyowan		;10h
+	db		G_SE1
+	ef_ndw_g	m_switch,musswitch		;11h
+	db		G_SE1
+	ef_ndw_g	m_poko,muspoko			;12h
+	db		G_SE1
+	ef_ndw_g	m_warpup,muswarpup		;13h
+	db		G_SE1
+	ef_ndw_g	m_warpdown,muswarpdown		;14h
+	db		G_SE1
+	ef_ndw_g	m_turnup,musturnup		;15h
+	db		G_SE1
+	ef_ndw_g	m_jump,musjump			;16h
+	db		G_SE1
+	ef_ndw_g	m_sucha,mussucha		;17h
+	db		G_SE1
+	ef_ndw_g	m_bird,musbird			;18h
+	db		G_SE1
+	ef_ndw_g	m_boboo,musboboo		;19h
+	db		G_SE1
+	ef_ndw_g	m_pyun,muspyun			;1ah
+	db		G_SE1
+	ef_ndw_g	m_iwa,musiwa			;1bh
+	db		G_SE1
+	ef_ndw_g	m_ship,musship			;1ch
+	db		G_SE1
+	ef_ndw_g	m_get,musget			;1dh
+	db		G_SE1
+	ef_ndw_g	m_go,musgo			;1eh
+	db		G_SE1
+	ef_ndw_g	m_door,musdoor			;1fh
+	db		G_SE1
+	ef_ndw_g	m_kon,muskon			;20h
+	db		G_SE1
+	ef_ndw_g	m_cha,muscha			;21h
+	db		G_SE1
+	ef_ndw_g	m_chikin,muschikin		;22h
+	db		G_SE1
+	ef_ndw_g	m_zazaza,muszazaza		;24h
+	db		G_SE1
+	ef_ndw_g	m_boo,musboo			;23h
+	db		G_SE1
+	ef_ndw_g	m_save,mussave			;25h
+	db		G_SE1
+	ef_ndw_g	m_fue,musfue			;26h
+	db		G_SE1
+	ef_ndw_g	m_pinpon,muspinpon		;27h
+
+	db		G_SE1
+	ef_ndw_g	m_piew,muspiew			;28h
+	db		G_SE1
+	ef_ndw_g	m_powan,muspowan		;29h
+	db		G_SE1
+	ef_ndw_g	m_bashi,musbashi		;2ah
+	db		G_SE1
+	ef_ndw_g	m_nigeru,musnigeru		;2bh
+	db		G_SE1
+	ef_ndw_g	m_zukan,muszukan		;2ch
+
+	db		G_SE1
+	ef_ndw_g	m_sasaru,mussasaru		;2eh
+	db		G_SE1
+	ef_ndw_g	m_ochiru,musochiru		;2fh
+	db		G_SE1
+	ef_ndw_g	m_agaru,musagaru
+	db		G_SE1
+	ef_ndw_g	m_hataku,mushataku
+	db		G_SE1
+	ef_ndw_g	m_punch,muspunch
+	db		G_SE1
+	ef_ndw_g	m_punch2,muspunch2
+	db		G_SE1
+	ef_ndw_g	m_punch3,muspunch3
+	db		G_SE1
+	ef_ndw_g	m_hikkaki,mushikkaki
+	db		G_SE1
+	ef_ndw_g	m_hasami,mushasami
+	db		G_SE1
+	ef_ndw_g	m_kama,muskama	
+	db		G_SE1
+	ef_ndw_g	m_kiru,muskiru
+	db		G_SE1
+	ef_ndw_g	m_tsubasa,mustsubasa
+	db		G_SE1
+	ef_ndw_g	m_fukitobashi,musfukitobashi
+	db		G_SE1
+	ef_ndw_g	m_shime,musshime
+	db		G_SE1
+	ef_ndw_g	m_muchi2,musmuchi2
+	db		G_SE1
+	ef_ndw_g	m_kick,muskick	
+	db		G_SE1
+	ef_ndw_g	m_kick2,muskick2
+	db		G_SE1
+	ef_ndw_g	m_zutsuki,muszutsuki
+	db		G_SE1
+	ef_ndw_g	m_tsuno,mustsuno		;40h
+	db		G_SE1
+	ef_ndw_g	m_taiatari,mustaiatari
+	db		G_SE1
+	ef_ndw_g	m_hari,mushari	
+	db		G_SE1
+	ef_ndw_g	m_kona,muskona
+	db		G_SE1
+	ef_ndw_g	m_binta,musbinta
+	db		G_SE1
+	ef_ndw_g	m_kamitsuki,muskamitsuki
+	db		G_SE1
+	ef_ndw_g	m_tobigeri,mustobigeri
+	db		G_SE1
+	ef_ndw_g	m_fumitsuke,musfumitsuke
+	db		G_SE1
+	ef_ndw_g	m_sippo,mussippo
+	db		G_SE1
+	ef_ndw_g	m_choppu,muschoppu
+	db		G_SE1
+	ef_ndw_g	m_seoinage,musseoinage	
+	db		G_SE1
+	ef_ndw_g	m_suitori,mussuitori
+	db		G_SE1
+	ef_ndw_g	m_kiai,muskiai	
+	db		G_SE1
+	ef_ndw_g	m_kaminari,muskaminari
+	db		G_SE1
+	ef_ndw_g	m_onpa,musonpa	
+	db		G_SE1
+	ef_ndw_g	m_beam,musbeam
+	db		G_SE1
+	ef_ndw_g	m_fire,musfire			;50h
+	db		G_SE1
+	ef_ndw_g	m_water,muswater
+	db		G_SE1
+	ef_ndw_g	m_screw,musscrew
+	db		G_SE1
+	ef_ndw_g	m_kouzui,muskouzui
+	db		G_SE1
+	ef_ndw_g	m_saike,mussaike
+	db		G_SE1
+	ef_ndw_g	m_soura,mussoura	
+	db		G_SE1
+	ef_ndw_g	m_denki,musdenki
+	db		G_SE1
+	ef_ndw_g	m_psycho,muspsycho
+	db		G_SE1
+	ef_ndw_g	m_iya,musiya	
+	db		G_SE1
+	ef_ndw_g	m_hone,mushone
+	db		G_SE1
+	ef_ndw_g	m_toumei,mustoumei
+	db		G_SE1
+	ef_ndw_g	m_jibaku,musjibaku
+	db		G_SE1
+	ef_ndw_g	m_utau,musutau	
+	db		G_SE1
+	ef_ndw_g	m_beam2,musbeam2
+	db		G_SE1
+	ef_ndw_g	m_syakin,mussyakin
+	db		G_SE1
+	ef_ndw_g	m_psycho2,muspsycho2
+
+	db		G_SE1
+	ef_ndw_g	m_nidojump,musnidojump		;60h
+	db		G_SE1
+	ef_ndw_g	m_nidopyon1,musnidopyon1
+	db		G_SE1
+	ef_ndw_g	m_nidopyon2,musnidopyon2
+	db		G_SE1
+	ef_ndw_g	m_gengerhand,musgengerhand
+	db		G_SE1
+	ef_ndw_g	m_gengerpunch,musgengerpunch
+	db		G_SE1
+	ef_ndw_g	m_logoin,muslogoin	
+	db		G_SE1
+	ef_ndw_g	m_slotstop,musslotstop
+	db		G_SE1
+	ef_ndw_g	m_payout,muspayout
+	db		G_SE1
+	ef_ndw_g	m_coin,muscoin	
+	db		G_SE1
+	ef_ndw_g	m_star,musstar
+
+	db		G_SE1
+	ef_ndw_g	m_telephone,mustelephone	;6ah
+	db		G_SE1
+	ef_ndw_g	m_telstop1,mustelstop1
+	db		G_SE1
+	ef_ndw_g	m_telstop2,mustelstop2
+	db		G_SE1
+	ef_ndw_g	m_gasagasa,musgasagasa
+	db		G_SE1
+	ef_ndw_g	m_elev,muselev
+
+	db		G_SE1
+	ef_ndw_g	m_waza02,musshinpi		;6fh
+	db		G_SE1
+	ef_ndw_g	m_waza03,mussketch
+	db		G_SE1
+	ef_ndw_g	m_waza04,musamagoi
+	db		G_SE1
+	ef_ndw_g	m_waza05,musaero
+	db		G_SE1
+	ef_ndw_g	m_waza06,muskorogaru
+	db		G_SE1
+	ef_ndw_g	m_waza07,musdamasi
+	db		G_SE1
+	ef_ndw_g	m_waza08,mushagane
+	db		G_SE1
+	ef_ndw_g	m_waza09,musdorobou1
+	db		G_SE1
+	ef_ndw_g	m_waza0a,musdorobou2
+	db		G_SE1
+	ef_ndw_g	m_waza0b,muskumonosu
+	db		G_SE1
+	ef_ndw_g	m_waza0c,muskokoro
+	db		G_SE1
+	ef_ndw_g	m_waza0d,musakumu
+	db		G_SE1
+	ef_ndw_g	m_waza0e,musibiki
+	db		G_SE1
+	ef_ndw_g	m_waza0f,mustenshi1
+	db		G_SE1
+	ef_ndw_g	m_waza10,mustenshi2
+	db		G_SE1
+	ef_ndw_g	m_waza11,musharadaiko
+	db		G_SE1
+	ef_ndw_g	m_waza12,mushedoro
+	db		G_SE1
+	ef_ndw_g	m_waza13,musokutan		;80h
+	db		G_SE1
+	ef_ndw_g	m_waza14,musmiyaburu
+	db		G_SE1
+	ef_ndw_g	m_waza15,musurami
+	db		G_SE1
+	ef_ndw_g	m_waza16,musgekirin
+	db		G_SE1
+	ef_ndw_g	m_waza17,mushorobi
+	db		G_SE1
+	ef_ndw_g	m_waza18,musgigadrein
+	db		G_SE1
+	ef_ndw_g	m_waza19,musamaeru
+	db		G_SE1
+	ef_ndw_g	m_waza1a,musibaru
+	db		G_SE1
+	ef_ndw_g	m_waza1b,musspark
+	db		G_SE1
+	ef_ndw_g	m_waza1c,musstoker
+	db		G_SE1
+	ef_ndw_g	m_waza1d,mussuzu
+	db		G_SE1
+	ef_ndw_g	m_waza1e,musongaesi
+	db		G_SE1
+	ef_ndw_g	m_waza1f,musexp
+	db		G_SE1
+	ef_ndw_g	m_waza20,musmilk
+	db		G_SE1
+	ef_ndw_g	m_waza21,muspresent
+	db		G_SE1
+	ef_ndw_g	m_waza22,mushizasi
+
+	db		G_SE1
+	ef_ndw_g	m_se28,museggburn		;9eh
+
+	db		G_SE1
+	ef_ndw_g	m_se29,musshinkaburn		;a4h
+	db		G_SE1
+	ef_ndw_g	m_se30,musmasterball		;a5h
+	db		G_SE1
+	ef_ndw_g	m_se31,museggend		;a6h
+	db		G_SE1
+	ef_ndw_g	m_se32,musopeningfire		;a7h
+	db		G_SE1
+	ef_ndw_g	m_se33,musopeningsyu		;a8h
+	db		G_SE1
+	ef_ndw_g	m_se34,musflash			;a9h
+	db		G_SE1
+	ef_ndw_g	m_se35,musopeningstar		;aah
+
+	db		G_SE1
+	ef_ndw_g	m_se37,mus_f_hit1		;abh
+	db		G_SE1
+	ef_ndw_g	m_se38,mus_f_hit2		;ach
+	db		G_SE1
+	ef_ndw_g	m_se39,mus_f_hit3		;adh
+	db		G_SE1
+	ef_ndw_g	m_se3a,musmonsball		;afh
+
+	db		G_SE1
+	ef_ndw_g	m_waza23,mustukihikari		;b0h
+	db		G_SE1
+	ef_ndw_g	m_waza24,musencore		;b1h
+	db		G_SE1
+	ef_ndw_g	m_waza25,musfukurodataki	;b2h
+	db		G_SE1
+	ef_ndw_g	m_waza27,musbatontatti		;b3h
+	db		G_SE1
+	ef_ndw_g	m_wngo2,musballguga		;b4h
+	db		G_SE1
+	ef_ndw_g	m_waza26,musamai1		;b5h
+	db		G_SE1
+	ef_ndw_g	m_waza3b,musamai2		;b6h
+	db		G_SE1
+	ef_ndw_g	m_se3c,musexpmax		;b7h
+	db		G_SE1
+	ef_ndw_g	m_se3d,mustrade1		;b8h
+	db		G_SE1
+	ef_ndw_g	m_se3e,mustrade2		;b9h
+	db		G_SE1
+	ef_ndw_g	m_se3f,musliner			;bah
+	db		G_SE1
+	ef_ndw_g	m_slot1,musslot1		;bbh
+	db		G_SE1
+	ef_ndw_g	m_se40,museggsoon		;bch
+
+	db		G_SE2
+	ef_ndw_g	m_mailpin,musmailpin		;bdh
+	db		G_SE2
+	ef_ndw_g	m_mailpin2,musmailpin2		;beh
+	db		G_SE2
+	ef_ndw_g	m_opsuikun01,musopsuikun01	;bfh
+	db		G_SE2
+	ef_ndw_g	m_opsuikun02,musopsuikun02	;bfh
+	db		G_SE2
+	ef_ndw_g	m_opsuikun03,musopsuikun03	;c0h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun04,musopsuikun04	;c1h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun05,musopsuikun05	;c2h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun06,musopsuikun06	;c3h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun07,musopsuikun07	;c4h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun08,musopsuikun08	;c5h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun09,musopsuikun09	;c6h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun0a,musopsuikun0a	;c7h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun0b,musopsuikun0b	;c8h
+	db		G_SE2
+	ef_ndw_g	m_opsuikun0c,musopsuikun0c	;c9h
+	db		G_SE2
+	ef_ndw_g	m_kururin,muskururin		;cah
+	db		G_SE2
+	ef_ndw_g	m_logoin2,muslogoin2		;cbh
+	db		G_SE2
+	ef_ndw_g	m_ptpwarn,musptpwarn		;cch
+	db		G_SE2
+	ef_ndw_g	m_ptpfend,musptpfend		;cdh
+	db		G_SE2
+	ef_ndw_g	m_folopen,musfolopen		;ceh
+
+	db		G_SE2
+	ef_ndw_g	m_bluestar,musgreenstar		;cfh
+	db		G_SE2
+	ef_ndw_g	m_bluesing,musgreensing		;d0h
+	db		G_SE2
+	ef_ndw_g	m_fue3,musfue3		;d1h
+
+	db		G_SE2
+	ef_ndw_g	m_bidbid,muslockon		;d2h
+	db		G_SE2
+	ef_ndw_g	m_wriggle,muswriggle		;d3h
+	db		G_SE2
+	ef_ndw_g	m_wah,muswah		;d4h
+	db		G_SE2
+	ef_ndw_g	m_won,muswon		;d5h
+	db		G_SE2
+	ef_ndw_g	m_bua,musdowasle		;d6h
+	db		G_SE2
+	ef_ndw_g	m_tamabig,musexpmax2		;d7h
+	db		G_SE2
+	ef_ndw_g	m_tama1,musmonomane1		;d8h
+	db		G_SE2
+	ef_ndw_g	m_tama2,musmonomane2		;d9h
+	db		G_SE2
+	ef_ndw_g	m_tama3,musmonomane3		;dah
+	db		G_SE2
+	ef_ndw_g	m_tama4,musmonomane4		;dbh
+	db		G_SE2
+	ef_ndw_g	m_tama5,musmonomane5		;dch
+	db		G_SE2
+	ef_ndw_g	m_tama6,musmonomane6		;ddh
+	db		G_SE2
+	ef_ndw_g	m_tama7,musmonomane7		;deh
+	db		G_SE2
+	ef_ndw_g	m_batontatti,musgaragara		;dfh
+	db		G_SE2
+	ef_ndw_g	m_waiki,musatsuen		;e0h
+	db		G_SE2
+	ef_ndw_g	m_kaasaa,musenmuc		;e1h
+	db		G_SE2
+	ef_ndw_g	m_bekesmall,musmakibishi1		;e2h
+	db		G_SE2
+	ef_ndw_g	m_bekebig,musmakibishi2		;e3h
+	db		G_SE2
+	ef_ndw_g	m_tamago,musrikabaa		;e4h
+	db		G_SE2
+	ef_ndw_g	m_kyushi,muskoban		;e5h
+	db		G_SE2
+	ef_ndw_g	m_fue4,musfue4		;e6h
+
+bank29	group	G_MUSIC1
+;=======================================;
+;	MUSIC DATA 			;
+;=======================================;
+road_03:
+m_fight25:
+m_fight26:
+;	include	..\effect\m_figh5.dat
+m_labo11:
+m_kaida:
+m_fight22:
+m_fight24:
+;	include	..\effect\m_figh14.dat
+m_joki:
+;	include	..\effect\flower.dat
+m_wakaba:
+m_port:
+title2_6:
+;	include	..\effect\m_title3.dat
+m_undung:
+m_victory1:
+;	include	..\effect\victory1.dat
+
+
+bank2a	group	G_MUSIC2
+
+m_pmc:
+;	include	..\effect\m_pmc.dat
+m_dealer2:
+;	include	..\effect\m_deal2.dat
+m_dealer3:
+;	include	..\effect\m_deal3.dat
+m_yasu12:
+m_dungeon3:
+;	include	..\effect\digda01.dat
+m_autowalk:
+;	include	..\effect\m_tsur2.dat
+m_casino:
+;	include	..\effect\m_casino.dat
+m_chari:
+;	include	..\effect\m_bicycl.dat
+m_yasu11:
+;	include	..\effect\hoshi.dat
+m_fie112:
+;	include	..\effect\m_fie112.dat
+m_cacrega:
+m_girl:
+m_goroad:
+m_gotown2:
+m_asa11:
+;	include	..\music\m_asa11.dat
+m_naibu:
+;	include	..\effect\koukan11.dat
+m_taimai:
+road_02:
+
+
+bank2b	group	G_MUSIC4
+
+m_yasu15:
+m_jackpot11:
+;	include	..\effect\victory2.dat
+m_jackpot112:
+;	include ..\effect\vic22.dat
+m_jackpot13:
+;	include	..\effect\victory3.dat
+m_victory4:
+m_gym:
+;	include	..\effect\m_gym.dat
+m_nazanoxa:
+m_raibaru1:
+;	include	..\effect\m_riva11.dat
+m_raibaru2:
+;	include	..\effect\m_riva12.dat
+m_umi12:
+;	include	..\effect\m_nami.dat
+m_kouen:
+m_gotown1:
+;	include	..\effect\gotown1.dat
+m_town12:
+;	include	..\music\m_ryoko.dat
+m_himanuts:
+m_fight21:
+m_fight23:
+m_boy:
+;	include	..\effect\boy.dat
+walk_01:
+;	include	..\effect\m_tsur1.dat
+m_fuemusic:
+;	include ..\effect\m_chari.dat
+m_komori:
+;	include ..\effect\m_taikai.dat
+m_umi11:
+;	include	..\effect\m_sea.dat
+title2_4:
+title2_5:
+m_dealer1:
+;	include	..\effect\m_deal1.dat
+m_rocket:
+m_senkyo:
+m_main:
+;	include	..\effect\m_start.dat
+;m_fuemusic:
+;	include	..\effect\m_fue2.dat
+;m_komori:
+;	include	..\effect\m_komori.dat
+
+
+bank27	group	G_MUSIC3
+m_odori:
+;	include	..\effect\shiai.dat
+;m_field0775:
+;	include	..\music\m_fie775.dat
+m_road11:
+m_dendou:
+;	include	..\effect\m_dendou.dat
+m_asa:
+	include	..\effdata\m_asa.dat
+m_shinka:
+;	include	..\effect\m_shinka.dat
+m_printer:
+;	include	..\effect\m_print.dat
+m_fin2:
+;	include	..\effect\m_finale.dat
+m_endafter:
+;	include	..\effect\m_end2.dat
+
+

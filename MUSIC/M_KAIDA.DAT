@@ -1,0 +1,284 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	kaida_tsubo_mori
+;	;
+;	;	Converting on Tue Nov 05 08:09:42 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	musm_kaida
+;musm_kaida:;					jagetsu
+	db	0c0h
+	dw	m_kaida1
+	db	001h
+	dw	m_kaida2
+	db	002h
+	dw	m_kaida3
+	db	003h
+	dw	m_kaida4
+;----------------------------------------
+m_kaida1:
+;----------------------------------------
+	db	$da,$00,$a0
+	db	$e5,$77
+	db	$db,$02
+loop$:
+; P1-1
+	db	$d8,$c,$a2
+	db	$0f
+; P1-2
+	db	$fd,8
+	dw	loop$
+; P1-3
+; P1-4
+; P1-5
+; P1-6
+; P1-7
+; P1-8
+; P1-9
+loop9_10$:
+	db	$fe
+	dw	m_kaidasub9_10
+; P1-11
+	db	$fd,7
+	dw	loop9_10$
+; P1-13
+; P1-15
+; P1-17
+; P1-19
+; P1-21
+; P1-23
+	db	$0f
+; P1-24
+	db	$0f
+; P1-25
+loop25_26$:
+	db	$fe
+	dw	m_kaidasub9_10
+; P1-27
+	db	$fd,4
+	dw	loop25_26$
+; P1-29
+; P1-31
+; P1-33
+	db	$fc
+	dw	loop$
+m_kaidasub9_10:
+; P1-9
+	db	$d6,$30
+	db	$d5,$30
+	db	$d4,$30
+	db	$d5,$32
+	db	$d6,$30
+	db	$d5,$30
+	db	$d4,$30
+	db	$d5,$30
+	db	$d7,$a0
+	db	$d6,$a0
+	db	$d5,$a0
+	db	$d6,$10
+	db	$d5,$10
+	db	$d4,$10
+; P1-10
+	db	$d7,$80
+	db	$d6,$80
+	db	$d5,$80
+	db	$d6,$82
+	db	$d7,$80
+	db	$d6,$80
+	db	$d5,$80
+	db	$d6,$80
+	db	$10
+	db	$d5,$10
+	db	$d4,$10
+	db	$d7,$80
+	db	$d6,$80
+	db	$d5,$80
+	db	$ff
+;----------------------------------------
+m_kaida2:
+;----------------------------------------
+; P2-1
+	db	$d8,$c,$d1
+loop$:
+	db	$0f
+; P2-2
+	db	$0f
+; P2-3
+	db	$0f
+; P2-4
+	db	$0f
+; P2-5
+	db	$db,$03
+	db	$fe
+	dw	m_kaidasub9_10
+; P2-7
+	db	$fe
+	dw	m_kaidasub9_10
+loop9_10$:
+; P2-9
+	db	$fe
+	dw	mero9_10$
+; P2-11
+	db	$fd,7
+	dw	loop9_10$
+; P2-13
+; P2-15
+; P2-17
+; P2-19
+; P2-21
+; P2-23
+	db	$fe
+	dw	m_kaidasub9_10
+loop25_26$:
+; P2-25
+	db	$e1,$8,$74
+	db	$dc,$0f
+	db	$37
+	db	$dc,$7f
+	db	$37
+; P2-26
+	db	$dc,$d7
+	db	$37
+	db	$dc,$77
+	db	$37
+; P2-27
+	db	$fd,3
+	dw	loop25_26$
+; P2-29
+; P2-31
+	db	$e1,$0,$00
+	db	$dc,$d1
+	db	$fe
+	dw	mero9_10$
+; P2-33
+	db	$fc
+	dw	loop$
+mero9_10$:
+; P2-9
+	db	$d4,$11
+	db	$31
+	db	$61
+	db	$51
+	db	$31
+	db	$13
+	db	$3f
+; P2-10 -tie
+	db	$01
+	db	$ff
+;----------------------------------------
+m_kaida3:
+;----------------------------------------
+; P3-1
+	db	$e1,$c,$93
+	db	$d8,$c,$14
+loop$:
+	db	$d5,$33
+	db	$01
+	db	$31
+	db	$01
+	db	$d6,$a1
+	db	$00
+	db	$d5,$12
+; P3-2
+	db	$d6,$83
+	db	$01
+	db	$81
+	db	$01
+	db	$d5,$11
+	db	$00
+	db	$d6,$82
+; P3-3
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_kaida4:
+;----------------------------------------
+	db	$e3,$005
+loop$:
+loop1_4$:
+; P4-1
+	db	$fe
+	dw	dr1_2$
+	db	$11
+; P4-3
+	db	$fe
+	dw	dr1_2$
+; P4-4
+	db	$10
+	db	$10
+; P4-5
+	db	$fd,4
+	dw	loop1_4$
+; P4-9
+; P4-13
+loop17$:
+; P4-17
+	db	$0f
+	db	$0f
+; P4-18
+	db	$fd,8
+	dw	loop17$
+; P4-19
+; P4-20
+; P4-21
+; P4-22
+; P4-23
+; P4-24
+loop25_28$:
+; P4-25
+	db	$fe
+	dw	dr1_2$
+	db	$11
+; P4-27
+	db	$fe
+	dw	dr1_2$
+	db	$10
+	db	$10
+; P4-29
+	db	$fd,2
+	dw	loop25_28$
+; P4-33
+	db	$fc
+	dw	loop$
+dr1_2$:
+; P4-1
+	db	$d8,$6
+	db	$c1
+	db	$51
+	db	$51
+	db	$c1
+	db	$11
+	db	$51
+	db	$c1
+	db	$51
+	db	$51
+	db	$50
+	db	$50
+	db	$c1
+	db	$51
+	db	$11
+	db	$c1
+	db	$51
+	db	$11
+; P4-2
+	db	$c1
+	db	$51
+	db	$51
+	db	$c1
+	db	$11
+	db	$51
+	db	$c1
+	db	$11
+	db	$51
+	db	$10
+	db	$50
+	db	$c1
+	db	$51
+	db	$11
+	db	$c1
+	db	$51
+	db	$ff
+
+

@@ -1,0 +1,475 @@
+;	include	group.def
+;bank29	group	G_MUSIC1
+;	;
+;	;	m_kogane
+;	;
+;	;	Converting on Mon Jun 14 03:27:09 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_kogane
+;musm_kogane:
+		mushdr	c0,m_kogane1
+		mushdr	01,m_kogane2
+		mushdr	02,m_kogane3
+		mushdr	03,m_kogane4
+;----------------------------------------
+m_kogane1:
+;----------------------------------------
+		bal_s 0f
+		speed 00 b0
+		vol 77
+; P1-1
+		init c 97
+; P1-2
+		tempo 16 		r
+; P1-3
+					r
+; P1-4
+					r
+; P1-5
+					r
+loop$:
+; P1-6
+		duty 0
+		call sub2_5$
+		tempo 1 	oct 5	g#
+				oct 4	c
+					d#
+					f#
+					d#
+					f#
+					g#
+				oct 3	c
+; P1-10
+		env 71
+		duty 0
+		call sub10_13$
+		env 77
+		tempo 2 		d#
+					f
+					f#
+		tempo 4 		g#
+; P1-14
+		env 71
+		call sub10_13$
+		tempo 1 		d#
+					f#
+		env 77
+		tempo 2 	oct 3	c
+				oct 4	g#
+					f#
+					d#
+; P1-18
+; P1-2
+		duty 2
+		env 97
+		call sub2_5$
+; P1-5
+		tempo 4 		c
+		tempo 2 	oct 5	g#
+				oct 4	c
+		jump loop$
+sub2_5$:
+		tempo 2 	oct 4	c#
+		tempo 1 	oct 5	g#
+		tempo 3 		r
+		tempo 1 		g#
+					r
+		tempo 2 	oct 4	c
+		tempo 1 	oct 5	g#
+		tempo 3 		r
+		tempo 1 		g#
+					r
+; P1-3
+		tempo 2 		a#
+		tempo 1 		f
+					r
+		tempo 2 		c#
+		tempo 1 		f
+					r
+		tempo 2 		d#
+					c
+					c#
+					d#
+; P1-4
+					f#
+		tempo 1 		c#
+		tempo 3 		r
+		tempo 1 		c#
+					r
+		tempo 2 		f#
+		tempo 1 		c#
+					r
+		tempo 2 		f#
+					a#
+; P1-5
+		tempo 2 		c#
+					d#
+					g#
+				oct 4	c#
+		return
+sub10_13$:
+		tempo 1 	oct 4	f
+					c#
+				oct 5	g#
+				oct 4	c#
+					f
+					g#
+					f
+					g#
+					c#
+				oct 5	g#
+					f
+					g#
+				oct 4	c#
+					f
+					c#
+					f
+; P1-11
+					d#
+					c
+				oct 5	g#
+				oct 4	c
+					d#
+					f#
+					d#
+					f#
+					c
+				oct 5	g#
+					f#
+					g#
+				oct 4	c
+					d#
+					c
+					d#
+; P1-12
+					c#
+				oct 5	a#
+					f#
+					a#
+				oct 4	c#
+					f
+					c#
+					f
+				oct 5	a#
+					f#
+					c#
+					f#
+					a#
+				oct 4	c#
+				oct 5	a#
+				oct 4	c#
+; P1-13
+					d#
+					c
+				oct 5	g#
+				oct 4	c
+					d#
+					f#
+		return
+;----------------------------------------
+m_kogane2:
+;----------------------------------------
+		bal_s f0
+; P2-1
+		vib 12 23
+		duty 2
+		init c 97
+; P2-2
+loop$:
+		env 97
+		call mero2_4$
+; P2-5
+		tempo 2 	oct 4	f
+					f#
+					g#
+					f
+		tempo 8 		d#
+; P2-6
+		call mero2_4$
+; P2-9
+		tempo 2 		g#
+					a#
+				oct 3	c
+					c#
+		tempo 8 		d#
+; P2-10
+		duty 2
+		env 77
+		call mero10_13$
+; P2-13
+		tempo 2 	oct 4	g#
+					a#
+					b
+		tempo 4 	oct 3	c
+; P2-14
+		duty 3
+		env 77
+		call mero10_13$
+		tempo 2 		f
+					d#
+					c#
+					c
+				oct 4	g#
+; P2-18
+		jump loop$
+mero2_4$:
+		tempo 4 	oct 4	f
+					c#
+					d#
+					c
+; P2-3
+		tempo 2 		c#
+					c
+				oct 5	a#
+				oct 4	c
+		tempo 6 	oct 5	g#
+		tempo 1 	oct 5	g#
+				oct 5	a
+; P2-4
+		tempo 4 		a#
+				oct 4	c#
+		tempo 2 	oct 5	a#
+				oct 4	a#
+					g#
+					f#
+		duty 1
+		return
+mero10_13$:
+		tempo 6 		c#
+					f
+		tempo 4 		c#
+; P2-11
+		tempo 6 		c
+					d#
+		tempo 2 		c
+		tempo 1 	oct 4	g#
+					a
+; P2-12
+		tempo 6 		a#
+				oct 3	c#
+		tempo 4 	oct 4	a#
+; P2-13
+				oct 3	c
+		tempo 2 		d#
+		return
+;----------------------------------------
+m_kogane3:
+;----------------------------------------
+		bal_s ff
+; P3-1
+		vib 08 23
+		init c 25
+; P3-2
+loop$:
+		call bass2_5$
+; P3-6
+		call bass2_5$
+; P3-10
+		call bass10_13$
+; P3-13
+		tempo 3 		r
+		tempo 1 	oct 5	c
+					d#
+					g
+					g#
+		tempo 2 		d#
+; P3-14
+		call bass10_13$
+		tempo 1 		r
+		tempo 2 	oct 5	g#
+					f#
+					d#
+				oct 6	g#
+; P3-18
+		jump loop$
+bass2_5$:
+		tempo 4 	oct 5	c#
+		tempo 2 		r
+		tempo 1 		c#
+					r
+		tempo 4 		c
+		tempo 2 		r
+		tempo 1 		c
+					r
+; P3-3
+		tempo 4 	oct 6	a#
+		tempo 2 		r
+		tempo 1 		a#
+					r
+		tempo 4 		g#
+		tempo 2 		r
+		tempo 1 		g#
+					r
+; P3-4
+		tempo 4 		f#
+		tempo 2 		r
+		tempo 1 		f#
+					r
+		tempo 4 	oct 5	d#
+		tempo 2 		r
+		tempo 1 		d#
+					r
+; P3-5
+		tempo 4 		g#
+		tempo 2 		r
+		tempo 1 		g#
+					r
+				oct 6	g#
+					r
+		tempo 3 		g#
+		tempo 1 		r
+				oct 5	g#
+					r
+		return
+bass10_13$:
+		tempo 1 		c#
+					r
+				oct 4	c#
+				oct 5	c#
+		tempo 2 		r
+		tempo 1 		c#
+		tempo 5 		r
+		tempo 1 	oct 4	c
+					c#
+		tempo 2 	oct 5	g#
+; P3-11
+		tempo 1 		c
+					r
+				oct 4	c
+				oct 5	c
+		tempo 2 		r
+		tempo 1 		c
+		tempo 5 		r
+		tempo 1 		b
+				oct 4	c
+		tempo 2 	oct 5	g#
+; P3-12
+		tempo 1 	oct 6	a#
+					r
+				oct 5	a#
+				oct 6	a#
+		tempo 2 		r
+		tempo 1 		a#
+		tempo 5 		r
+		tempo 1 	oct 5	a
+					a#
+		tempo 2 		f#
+; P3-13
+		tempo 1 	oct 6	g#
+					r
+				oct 5	g#
+				oct 6	g#
+		tempo 2 		r
+		tempo 1 		g#
+		return
+;----------------------------------------
+m_kogane4:
+;----------------------------------------
+		drum_mode 03
+; P4-1
+		init c
+; P4-2
+		tempo 16 		r
+; P4-3
+					r
+; P4-4
+					r
+; P4-5
+		tempo 8 		r
+		tempo 2 		drum 3
+					drum 7
+		tempo 1 		drum 3
+					drum 3
+		tempo 2 		drum 7
+loop$:
+; P4-6
+drum4$:
+		tempo 2 		drum 4
+					drum 7
+					drum 3
+					drum 7
+					drum 4
+					drum 7
+					drum 3
+					drum 7
+		loop 3,drum4$
+; P4-7
+; P4-8
+; P4-9
+		call drum9$
+; P4-10
+		call drum10$
+		tempo 1 		drum 8
+					drum 8
+		tempo 2 		drum 7
+; P4-11
+		call drum10$
+		tempo 2 		drum 3
+					drum 7
+; P4-12
+		call drum10$
+		tempo 1 		drum 3
+					drum 3
+		tempo 2 		drum 7
+; P4-13
+		call drum10$
+		tempo 2 		drum 3
+		tempo 1 		drum 3
+					drum 3
+; P4-14
+		call drum10$
+		tempo 1 		drum 8
+					drum 8
+		tempo 2 		drum 7
+; P4-15
+		call drum10$
+		tempo 2 		drum 3
+					drum 7
+; P4-16
+		call drum10$
+		tempo 1 		drum 3
+					drum 3
+		tempo 2 		drum 7
+; P4-17
+		call drum10$
+		tempo 2 		drum 3
+		tempo 1 		drum 3
+					drum 3
+; P4-18
+drum18$:
+		tempo 2 		drum 4
+					drum 7
+					drum 3
+					drum 7
+					drum 4
+					drum 7
+					drum 3
+					drum 7
+		loop 3,drum18$
+		call drum9$
+		jump loop$
+drum9$:
+		tempo 2 		drum 4
+					drum 7
+					drum 3
+					drum 7
+					drum 4
+					drum 7
+		tempo 1 		drum 3
+					drum 3
+		tempo 2 		drum 7
+		return
+drum10$:
+		tempo 2 		drum 4
+		tempo 1 		drum 3
+		tempo 3 		drum 4
+		tempo 2 		drum 4
+		tempo 1 		drum 8
+					drum 8
+					drum 8
+					drum 8
+		return
+
+

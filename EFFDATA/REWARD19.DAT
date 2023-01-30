@@ -1,0 +1,96 @@
+;	include	group.def
+;bank28	group	G_SE1
+;	public	m_reward19
+;m_reward19:
+	db	084h
+	dw	m_reward191
+	db	005h
+	dw	m_reward192
+	db	006h
+	dw	m_reward193
+;----------------------------------------
+m_reward191:
+;----------------------------------------
+	db	$f3
+	db	$da,$00,$ef
+	db	$e5,$77
+	db	$e6,$ff,$ff
+	db	$db,$01
+; P1-1
+	db	$d8,$6,$b1
+	db	$d5,$60
+	db	$50
+	db	$60
+	db	$80
+	db	$a1
+	db	$d4,$11
+	db	$d5,$61
+	db	$a1
+	db	$b1
+	db	$d4,$11
+; P1-2
+	db	$31
+	db	$51
+	db	$61
+	db	$81
+	db	$a3
+	db	$ff
+;----------------------------------------
+m_reward192:
+;----------------------------------------
+	db	$f3
+	db	$db,$02
+	db	$e1,$6,$32
+; P2-1
+	db	$d8,$6,$c3
+	db	$d6,$60
+	db	$00
+	db	$10
+	db	$00
+	db	$60
+	db	$00
+	db	$a3
+	db	$10
+	db	$00
+	db	$30
+	db	$00
+	db	$50
+	db	$00
+; P2-2
+	db	$62
+	db	$a0
+	db	$b1
+	db	$81
+	db	$63
+	db	$ff
+;----------------------------------------
+m_reward193:
+;----------------------------------------
+	db	$f3
+	db	$e1,$9,$13
+; P3-1
+	db	$d8,$3,$10
+	db	$d3,$62
+	db	$00
+	db	$60
+	db	$00
+	db	$60
+	db	$00
+	db	$67
+	db	$03
+	db	$61
+	db	$01
+	db	$81
+	db	$01
+	db	$a1
+	db	$01
+; P3-2
+	db	$b3
+	db	$01
+	db	$d3,$11
+	db	$33
+	db	$53
+	db	$67
+	db	$ff
+
+

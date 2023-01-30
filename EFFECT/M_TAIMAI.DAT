@@ -1,0 +1,186 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_taimai
+;	;
+;	;	Converting on Fri Aug 13 14:08:05 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_taimai
+;musm_taimai:
+	db	0c0h
+	dw	m_taimai1
+	db	001h
+	dw	m_taimai2
+	db	002h
+	dw	m_taimai3
+	db	003h
+	dw	m_taimai4
+;----------------------------------------
+m_taimai1:
+;----------------------------------------
+	db	$da,$00,$90
+	db	$e5,$77
+; P1-1
+	db	$d8,$c,$51
+loop$:
+; P1-2
+	db	$01
+	db	$d6,$80
+	db	$02
+	db	$80
+	db	$02
+	db	$80
+	db	$02
+	db	$80
+	db	$00
+; P1-3
+	db	$01
+	db	$a0
+	db	$02
+	db	$a0
+	db	$02
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+; P1-4
+	db	$01
+	db	$a0
+	db	$02
+	db	$a0
+	db	$02
+	db	$a0
+	db	$02
+	db	$a0
+	db	$00
+; P1-5
+	db	$01
+	db	$c0
+	db	$02
+	db	$b0
+	db	$02
+	db	$a0
+	db	$02
+	db	$80
+	db	$00
+; P1-6
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_taimai2:
+;----------------------------------------
+; P2-1
+	db	$d8,$c,$61
+loop$:
+; P2-2
+	db	$d6,$11
+	db	$d5,$50
+	db	$00
+	db	$d7,$81
+	db	$d5,$50
+	db	$00
+	db	$d7,$a1
+	db	$d5,$50
+	db	$00
+	db	$d7,$c1
+	db	$d5,$50
+	db	$00
+; P2-3
+	db	$d6,$31
+	db	$d5,$60
+	db	$00
+	db	$d7,$a1
+	db	$d5,$60
+	db	$00
+	db	$d7,$c1
+	db	$d5,$60
+	db	$00
+	db	$d6,$21
+	db	$d5,$60
+	db	$00
+; P2-4
+mero2$:
+	db	$d6,$31
+	db	$d5,$60
+	db	$00
+	db	$d7,$a1
+	db	$d5,$60
+	db	$00
+	db	$fd,2
+	dw	mero2$
+; P2-5
+	db	$d6,$81
+	db	$d5,$80
+	db	$00
+	db	$d6,$31
+	db	$d5,$70
+	db	$00
+	db	$d6,$81
+	db	$d5,$60
+	db	$00
+	db	$d6,$31
+	db	$d5,$30
+	db	$00
+; P2-6
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_taimai3:
+;----------------------------------------
+; P3-1
+	db	$e1,$08,$24
+	db	$d8,$c,$23
+loop$:
+; P3-2
+	db	$d4,$54
+	db	$00
+	db	$50
+	db	$60
+	db	$83
+	db	$d3,$13
+; P3-3
+	db	$d4,$c7
+	db	$a7
+; P3-4
+	db	$34
+	db	$00
+	db	$30
+	db	$50
+	db	$63
+	db	$c3
+; P3-5
+	db	$a7
+	db	$87
+; P3-6
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_taimai4:
+;----------------------------------------
+	db	$e3,$004
+; P4-1
+	db	$d8,$6
+loop$:
+; P4-2
+	db	$23
+	db	$23
+	db	$21
+	db	$21
+	db	$21
+	db	$21
+	db	$23
+	db	$23
+	db	$80
+	db	$80
+	db	$80
+	db	$80
+	db	$80
+	db	$80
+	db	$80
+	db	$80
+	db	$fc
+	dw	loop$
+
+

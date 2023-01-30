@@ -1,0 +1,60 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;
+	;	Converting on Mon Mar  1 06:40:12 1999
+	;
+	;				by ver 1.02
+	;
+;	public	musunknowndungeon
+;musunknowndungeon:
+	db	080h
+	dw	UnknownD01
+	db	001h
+	dw	UnknownD02
+	db	002h
+	dw	UnknownD03
+;----------------------------------------
+UnknownD01:
+;----------------------------------------
+	db	$da,$00,$e0
+	db	$e5,$77
+	db	$db,$00
+	db	$ef,$f0
+	db	$d8,$c,$44
+	db	$00
+	db	$fc
+	dw	UNloop20
+;----------------------------------------
+UnknownD02:
+;----------------------------------------
+	db	$e6,$00,$02
+	db	$db,$00
+	db	$ef,$0f
+	db	$d8,$c,$a4
+UNloop20:
+	db	$d4,$13
+	db	$d5,$b3
+	db	$d4,$21
+	db	$41
+	db	$11
+	db	$d5,$b1
+; P2-2
+	db	$d4,$13
+	db	$d5,$b3
+	db	$fc
+	dw	UNloop20
+;----------------------------------------
+UnknownD03:
+;----------------------------------------
+; P3-1
+	db	$d8,$c,$10
+loop30$:
+	db	$d6,$91
+	db	$d5,$21
+	db	$51
+	db	$09
+	db	$fc
+	dw	loop30$
+
+

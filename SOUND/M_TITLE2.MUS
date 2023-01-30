@@ -1,0 +1,247 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	title2_2
+	;
+	;	Converting on Fri Jul 30 18:29:35 1999
+	;
+	;				by ver 1.01
+	;
+;	public	mustitle2
+;mustitle2:
+		mushdr	c0,title2_21
+		mushdr	01,title2_22
+		mushdr	02,title2_23
+		mushdr	03,title2_24
+;----------------------------------------
+title2_21:
+;----------------------------------------
+		speed 00 5c
+		vol 00 77
+		duty 3
+		chorus 00 02
+		bal_s 0f
+; P1-2
+		init c 3d
+		tempo 8 	oct 5	d#
+loop101$:
+		init c c1
+		tempo 2 	oct 5	d
+					d
+					d
+		env b7
+		tempo 10 		d#
+; P1-3
+		env c1
+		tempo 2 		d
+					d
+					d
+		env b7
+		tempo 4 		f
+					d#
+		tempo 2 		c
+; P1-4
+		loop 2,loop101$
+; P1-6
+		env c1
+		tempo 2 		d
+					d
+					d
+		env b7
+		tempo 10 		d#
+; P1-7
+		env c1
+		tempo 2 		d
+					d
+					d
+		env b7
+		tempo 4 		f
+					d#
+		tempo 2 		a#
+; P1-8
+		env b0
+		tempo 16 		a
+; P1-9
+					a
+; P1-10
+		env b2
+		tempo 16 	oct 4	d
+		end
+;----------------------------------------
+title2_22:
+;----------------------------------------
+; P2-1
+		duty 3
+		vib 14 14
+		bal_s f0
+; P2-2
+		init c 3f
+		tempo 8 	oct 5	a#
+		init c d1
+		tempo 2 	oct 5	a
+					a
+					a
+		env c7
+		tempo 10 		a#
+; P2-3
+		env d1
+		tempo 2 		a
+					a
+					a
+		env c7
+		tempo 4 	oct 4	c
+				oct 5	a#
+		tempo 2 		g
+; P2-4
+		env d1
+		tempo 2 		a
+					a
+					a
+		env c7
+		tempo 10 		a#
+; P2-5
+		env d1
+		tempo 2 		a
+					a
+					a
+		env c7
+		tempo 4 	oct 4	c
+					c#
+		tempo 2 		d#
+; P2-6
+		env c7
+		tempo 8 		d
+					d#
+; P2-7
+					f
+					a#
+; P2-8
+		env b0
+		tempo 16 	oct 3	d
+; P2-9
+					d
+; P2-10
+		env c2
+		tempo 16 		d
+		end
+;----------------------------------------
+title2_23:
+;----------------------------------------
+; P3-1
+		init c 17
+		tempo 8 		r
+; P3-2
+		tempo 1 	oct 6	a
+					r
+					a
+					r
+					a
+					r
+		tempo 8 		a#
+		tempo 2 		r
+; P3-3
+		tempo 1 		a
+					r
+					a
+					r
+					a
+					r
+		tempo 4 		d
+					f
+		tempo 2 		a
+; P3-4
+					d
+					a
+					d
+					a
+					g#
+					e
+					g
+					f
+; P3-5
+					d
+					a
+					g#
+					e
+					g
+					f
+					c
+					d#
+; P3-6
+					d
+					a
+					d
+					a
+					g#
+					e
+					g
+					f
+; P3-7
+					d
+					a
+					g#
+					e
+					g
+					f
+					c
+					d#
+; P3-8
+					d
+					f#
+					a#
+				oct 5	d
+				oct 6	a#
+					a
+					f#
+					d#
+; P3-9
+					d
+					f#
+					a#
+				oct 5	d
+				oct 6	a#
+					f#
+					a#
+				oct 5	c#
+; P3-10
+					d
+		tempo 14 		r
+		end
+;----------------------------------------
+title2_24:
+;----------------------------------------
+		drum_mode 00
+		init 6
+; P4-2
+		tempo 2 		drum 4
+					drum 4
+					drum 4
+					drum 4
+					drum 4
+					drum 3
+					drum 3
+					drum 3
+		init c
+loop40$:
+		tempo 2 		drum 3
+					drum 3
+					drum 3
+		tempo 4 		drum 2
+		tempo 2 		drum 4
+					drum 4
+					drum 4
+					drum 3
+					drum 3
+					drum 3
+		tempo 6 		drum 2
+		init 6
+		tempo 2 		drum 4
+					drum 4
+					drum 4
+					drum 4
+		init c
+		loop 4,loop40$
+		tempo 16 		drum 1
+		end
+
+

@@ -1,0 +1,132 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	havoc
+;	;
+;	;	Converting on Sun Nov 10 22:51:52 2019
+;	;
+;	;				by ver 1.01
+;	;
+;	public	mushavoc
+;mushavoc:;					uian
+	db	0c0h
+	dw	havoc1
+	db	001h
+	dw	havoc2
+	db	002h
+	dw	havoc3
+	db	003h
+	dw	havoc4
+;----------------------------------------
+havoc1:
+;----------------------------------------
+	db	$da,$00,$f5
+	db	$e5,$77
+loop$:
+	db	$d9,$02
+; P1-0
+	db	$fe
+	dw	dun212sub0_1
+; P1-2
+	db	$fe
+	dw	dun212sub2_10
+; P1-10
+	db	$fe
+	dw	dun212sub10_17
+	db	$fc
+	dw	loop$
+;----------------------------------------
+havoc2:
+;----------------------------------------
+; P2-0
+	db	$d9,$02
+	db	$fe
+	dw	dun212base0_1
+; P2-2
+	db	$fe
+	dw	dun212base2_3
+; P2-4
+	db	$fe
+	dw	dun212base4
+; P2-5
+	db	$fe
+	dw	dun212base4
+; P2-6
+	db	$fe
+	dw	dun212base2_3
+; P2-8
+	db	$fe
+	dw	dun212base8_9
+; P2-10
+	db	$fe
+	dw	dun212base4
+; P2-11
+	db	$fe
+	dw	dun212base4
+; P2-12
+	db	$fe
+	dw	dun212base12_13
+; P2-14
+	db	$fe
+	dw	dun212base2_3
+; P2-16
+	db	$fe
+	dw	dun212base4
+; P2-17
+	db	$fe
+	dw	dun212base17
+	db	$fc
+	dw	havoc2
+;----------------------------------------
+havoc3:
+;----------------------------------------
+; P3-0
+	db	$d9,$02
+	db	$fe
+	dw	dun212melo0_3
+; P3-4
+	db	$7f
+; P3-5
+	db	$0d
+	db	$e1,$9,$14
+	db	$fe
+	dw	dun212melo5_7
+; P3-8
+	db	$fe
+	dw	dun212melo8_17
+	db	$fc
+	dw	havoc3
+;----------------------------------------
+havoc4:
+;----------------------------------------
+	db	$e3,$005
+loop$:
+; P4-0
+	db	$fe
+	dw	dun212dr0_2
+loop3$:
+; P4-3
+	db	$fe
+	dw	dun212dr3
+; P4-4
+	db	$fd,14
+	dw	loop3$
+; P4-5
+; P4-6
+; P4-7
+; P4-8
+; P4-9
+; P4-10
+; P4-11
+; P4-12
+; P4-13
+; P4-14
+; P4-15
+; P4-16
+; P4-17
+	db	$fe
+	dw	dun212dr17
+	db	$fc
+	dw	loop$
+
+

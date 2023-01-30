@@ -1,0 +1,145 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	warui
+;	;
+;	;	Converting on Sat Aug 21 01:18:41 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	muswarui
+;muswarui:
+	db	0c0h
+	dw	warui1
+	db	001h
+	dw	warui2
+	db	002h
+	dw	warui3
+	db	003h
+	dw	warui4
+;----------------------------------------
+warui1:
+;----------------------------------------
+	db	$da,$00,$84
+	db	$e5,$77
+	db	$f1
+	db	$e1,$12,$24
+	db	$db,$02
+	db	$ef,$0f
+; P1-1
+	db	$d8,$c,$68
+	db	$d5,$71
+	db	$61
+; P1-2
+	db	$77
+loop$:
+	db	$31
+	db	$41
+	db	$51
+	db	$61
+; P1-3
+	db	$71
+	db	$03
+	db	$71
+	db	$03
+	db	$71
+	db	$01
+; P1-4
+	db	$71
+	db	$05
+	db	$fc
+	dw	loop$
+;----------------------------------------
+warui2:
+;----------------------------------------
+; P2-1
+	db	$db,$00
+	db	$d8,$c,$a1
+	db	$03
+; P2-2
+	db	$d7,$c0
+	db	$c4
+	db	$d6,$70
+	db	$74
+	db	$d7,$c0
+	db	$d6,$30
+	db	$70
+	db	$30
+; P2-3
+	db	$dc,$a1
+loop$:
+	db	$d7,$c0
+	db	$c1
+	db	$d6,$30
+	db	$31
+	db	$70
+	db	$71
+	db	$b0
+	db	$b1
+	db	$d7,$c0
+	db	$d6,$30
+	db	$70
+	db	$30
+	db	$fc
+	dw	loop$
+;----------------------------------------
+warui3:
+;----------------------------------------
+	db	$e1,$12,$24
+	db	$ef,$f0
+; P3-1
+	db	$d8,$c,$14
+	db	$d4,$c1
+	db	$b1
+; P3-2
+	db	$c7
+loop$:
+	db	$d3,$41
+	db	$31
+	db	$21
+	db	$11
+; P3-3-4
+	db	$fe
+	dw	sub3$
+	db	$81
+	db	$91
+	db	$a1
+	db	$b1
+; P3-5-6
+	db	$fe
+	dw	sub3$
+	db	$fc
+	dw	loop$
+sub3$:
+	db	$d4,$c1
+	db	$03
+	db	$c1
+	db	$03
+	db	$c1
+	db	$01
+; P3-4
+	db	$c1
+	db	$05
+	db	$ff
+;----------------------------------------
+warui4:
+;----------------------------------------
+	db	$e3,$003
+; P4-1
+	db	$d8,$c
+	db	$63
+; P4-2
+	db	$0f
+; P4-3
+loop$:
+	db	$41
+	db	$81
+	db	$31
+	db	$81
+	db	$fc
+	dw	loop$
+;loop$
+;		tempo 1 		drum 4
+;					drum 8
+;		tempo 2			drum 7
+;		loop 0,loop$

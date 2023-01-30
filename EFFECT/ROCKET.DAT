@@ -1,0 +1,431 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	rocket
+;	;
+;	;	Converting on Mon Jun 07 09:55:22 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musrocket
+;musrocket:
+	db	0c0h
+	dw	rocket1
+	db	001h
+	dw	rocket2
+	db	002h
+	dw	rocket3
+	db	003h
+	dw	rocket4
+;----------------------------------------
+rocket1:
+;----------------------------------------
+	db	$da,$00,$7b
+	db	$e5,$77
+	db	$d9,$02
+; P1-1
+	db	$ef,$0f
+	db	$db,$03
+	db	$e1,$05,$64
+	db	$d8,$c,$a8
+	db	$d4,$10
+	db	$30
+; P1-2
+	db	$fe
+	dw	rockt_sub2
+	db	$db,$01
+loop$:
+	db	$dc,$a8
+; P1-3
+	db	$fe
+	dw	rockt_sub3
+; P1-5
+	db	$fe
+	dw	mero3_4
+	db	$d4,$70
+	db	$00
+; P1-7
+	db	$dc,$53
+	db	$fe
+	dw	rockt_sub7
+; P1-8
+	db	$dc,$c3
+	db	$fe
+	dw	rockt_sub7
+; P1-9
+	db	$dc,$e3
+	db	$fe
+	dw	rockt_sub7
+; P1-10
+	db	$0f
+; P1-11
+	db	$fc
+	dw	loop$
+;--------------------------------
+;	sub ruuuuuu
+;--------------------------------
+rockt_sub2:
+	db	$40
+	db	$00
+	db	$30
+	db	$00
+	db	$20
+	db	$00
+	db	$10
+	db	$02
+	db	$d6,$60
+	db	$90
+	db	$c0
+	db	$d5,$30
+	db	$60
+	db	$90
+	db	$ff
+rockt_sub3:
+	db	$01
+	db	$d5,$40
+	db	$04
+	db	$43
+	db	$d6,$a1
+	db	$d5,$40
+	db	$60
+; P1-4
+	db	$75
+	db	$40
+	db	$02
+	db	$70
+	db	$00
+	db	$40
+	db	$00
+	db	$d4,$70
+	db	$00
+	db	$ff
+rockt_sub7:
+	db	$01
+	db	$d6,$c0
+	db	$06
+	db	$d5,$10
+	db	$04
+	db	$ff
+;----------------------------------------
+rocket2:
+;----------------------------------------
+	db	$d9,$02
+; P2-1
+	db	$e1,$04,$64
+	db	$db,$03
+	db	$d8,$c,$b7
+	db	$ef,$ff
+	db	$d3,$10
+	db	$30
+	db	$fe
+	dw	rockt_mero2
+; P2-2
+loop$:
+	db	$dc,$b7
+; P2-3
+	db	$fe
+	dw	mero3_4
+	db	$d3,$10
+	db	$00
+	db	$fe
+	dw	rockt_mero56
+; P2-7
+	db	$dc,$53
+	db	$fe
+	dw	mero7
+; P2-8
+	db	$dc,$c3
+	db	$fe
+	dw	mero7
+; P2-9
+	db	$dc,$e3
+	db	$fe
+	dw	mero7
+; P2-10
+	db	$fe
+	dw	rockt_mero10
+; P2-11
+	db	$fc
+	dw	loop$
+;--------------------------------
+;	sub ruuuuuu
+;--------------------------------
+rockt_mero2:
+	db	$40
+	db	$00
+	db	$30
+	db	$00
+	db	$20
+	db	$00
+	db	$10
+	db	$02
+	db	$d5,$c5
+	db	$db,$00
+	db	$ff
+rockt_mero56:
+; P2-5
+	db	$01
+	db	$d4,$40
+	db	$04
+	db	$63
+	db	$10
+	db	$30
+	db	$40
+	db	$60
+; P2-6
+	db	$75
+	db	$40
+	db	$02
+	db	$70
+	db	$00
+	db	$40
+	db	$00
+	db	$d3,$40
+	db	$00
+	db	$ff
+mero7:
+	db	$01
+	db	$d5,$60
+	db	$06
+	db	$70
+	db	$04
+	db	$ff
+rockt_mero10:
+	db	$dc,$63
+	db	$90
+	db	$60
+	db	$30
+	db	$d6,$c0
+	db	$dc,$a3
+	db	$d5,$a0
+	db	$70
+	db	$40
+	db	$10
+	db	$dc,$c3
+	db	$b0
+	db	$80
+	db	$50
+	db	$20
+	db	$dc,$f3
+	db	$c0
+	db	$90
+	db	$60
+	db	$30
+	db	$ff
+mero3_4:
+	db	$d5,$01
+	db	$80
+	db	$04
+	db	$a7
+; P2-4
+	db	$b5
+	db	$a0
+	db	$02
+	db	$b0
+	db	$00
+	db	$a0
+	db	$00
+	db	$ff
+;----------------------------------------
+rocket3:
+;----------------------------------------
+	db	$d9,$02
+; P3-1
+	db	$e1,$04,$22
+	db	$d8,$c,$14
+	db	$ef,$f0
+	db	$01
+; P3-2
+	db	$fe
+	dw	ro_bass2
+loop$:
+; P3-3
+	db	$fe
+	dw	bass3_4
+; P3-5
+	db	$fe
+	dw	bass3_4
+; P3-7
+	db	$dc,$24
+	db	$fe
+	dw	bass7
+	db	$dc,$14
+; P3-8
+	db	$fe
+	dw	ro_bass8
+; P3-9
+	db	$fe
+	dw	bass7
+; P3-10
+	db	$fe
+	dw	ro_bass10
+; P3-11
+	db	$fc
+	dw	loop$
+;--------------------------------
+;	sub ruuuuuuu
+;--------------------------------
+ro_bass2:
+	db	$d5,$60
+	db	$00
+	db	$90
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$30
+	db	$02
+	db	$d5,$35
+	db	$ff
+ro_bass8:
+	db	$d6,$90
+	db	$00
+	db	$d5,$90
+	db	$00
+	db	$d6,$90
+	db	$00
+	db	$90
+	db	$00
+	db	$a0
+	db	$00
+	db	$d5,$a0
+	db	$00
+	db	$10
+	db	$00
+	db	$70
+	db	$00
+	db	$ff
+ro_bass10:
+	db	$dc,$24
+	db	$d6,$90
+	db	$00
+	db	$d5,$60
+	db	$00
+	db	$d6,$a0
+	db	$00
+	db	$d5,$70
+	db	$00
+	db	$dc,$14
+	db	$d6,$b0
+	db	$00
+	db	$d5,$80
+	db	$00
+	db	$d6,$c0
+	db	$00
+	db	$d5,$90
+	db	$00
+	db	$ff
+bass3_4:
+	db	$10
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$10
+	db	$00
+	db	$d4,$10
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$40
+	db	$00
+	db	$80
+	db	$00
+; P3-4
+	db	$10
+	db	$00
+	db	$10
+	db	$00
+	db	$10
+	db	$00
+	db	$10
+	db	$00
+	db	$10
+	db	$00
+	db	$10
+	db	$00
+	db	$70
+	db	$00
+	db	$a0
+	db	$00
+	db	$ff
+bass7:
+	db	$d6,$90
+	db	$00
+	db	$d5,$90
+	db	$00
+	db	$d6,$90
+	db	$00
+	db	$90
+	db	$00
+	db	$a0
+	db	$00
+	db	$d5,$a0
+	db	$00
+	db	$90
+	db	$70
+	db	$40
+	db	$10
+	db	$ff
+;----------------------------------------
+rocket4:
+;----------------------------------------
+	db	$e3,$003
+; P4-1
+	db	$d8,$c
+	db	$01
+; P4-2
+	db	$fe
+	dw	ro_drum2
+loop$:
+; P4-3
+	db	$fe
+	dw	ro_drum3
+; P4-4
+	db	$fe
+	dw	ro_drum3
+; P4-5
+	db	$fe
+	dw	ro_drum3
+; P4-6
+	db	$fe
+	dw	ro_drum3
+; P4-7
+	db	$fe
+	dw	ro_drum3
+; P4-8
+	db	$fe
+	dw	ro_drum3
+; P4-9
+	db	$fe
+	dw	ro_drum3
+; P4-10
+	db	$fe
+	dw	ro_drum2
+; P4-11
+	db	$fc
+	dw	loop$
+;----------------------------------
+;	sub ruuuu
+;----------------------------------
+ro_drum2:
+	db	$17
+	db	$31
+	db	$41
+	db	$20
+	db	$20
+	db	$30
+	db	$30
+	db	$ff
+ro_drum3:
+	db	$41
+	db	$71
+	db	$31
+	db	$71
+	db	$41
+	db	$71
+	db	$31
+	db	$71
+	db	$ff
+
+

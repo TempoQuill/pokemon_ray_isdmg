@@ -1,0 +1,204 @@
+;	include	group.def
+;bank27	group	G_MUSIC3
+;	;
+;	;	finale_3
+;	;
+;	;	Converting on Mon Sep 29 00:04:46 2019
+;	;
+;	;				by ver 1.02
+;	;
+;	public	musm_fin3
+;musm_fin3:
+	db	040h
+	dw	m_fin31
+	db	001h
+	dw	m_fin32
+;----------------------------------------
+m_fin31:
+;----------------------------------------
+	db	$da,$00,$8b
+	db	$e5,$77
+	db	$db,$02
+; P1-1
+	db	$d8,$c,$83
+	db	$0f
+loop$:
+	db	$ef,$ff
+; P1-2
+	db	$dc,$83
+	db	$d5,$23
+	db	$fe
+	dw	sub2_3$
+; P1-4
+	db	$d6,$b3
+	db	$fe
+	dw	sub2_3$
+; P1-6
+	db	$d5,$23
+	db	$b3
+	db	$d4,$23
+	db	$73
+	db	$b3
+	db	$ef,$f0
+	db	$dc,$46
+	db	$b3
+	db	$dc,$27
+	db	$b3
+	db	$dc,$17
+	db	$b3
+; P1-7
+	db	$fe
+	dw	sub7$
+; P1-8
+	db	$d5,$23
+	db	$fe
+	dw	sub2_3$
+; P1-10
+	db	$fc
+	dw	loop$
+sub2_3$:
+	db	$d5,$93
+	db	$d4,$23
+	db	$63
+	db	$93
+	db	$ef,$f0
+	db	$dc,$46
+	db	$93
+	db	$dc,$27
+	db	$93
+	db	$dc,$17
+	db	$93
+sub7$:
+	db	$ef,$ff
+; P1-3
+	db	$dc,$83
+	db	$d5,$13
+	db	$93
+	db	$d4,$13
+	db	$43
+	db	$93
+	db	$ef,$f0
+	db	$dc,$46
+	db	$93
+	db	$dc,$27
+	db	$93
+	db	$dc,$17
+	db	$93
+	db	$dc,$83
+	db	$ef,$ff
+	db	$ff
+;----------------------------------------
+m_fin32:
+;----------------------------------------
+	db	$ef,$ff
+	db	$db,$02
+; P2-1
+	db	$d8,$c,$c2
+	db	$d3,$23
+	db	$ef,$0f
+	db	$dc,$64
+	db	$23
+	db	$ef,$ff
+	db	$dc,$c2
+	db	$43
+	db	$ef,$0f
+	db	$dc,$64
+	db	$43
+loop$:
+; P2-2
+	db	$fe
+	dw	melo2$
+	db	$63
+	db	$ef,$ff
+	db	$dc,$c2
+	db	$23
+	db	$63
+	db	$73
+; P2-3
+	db	$fe
+	dw	melo3$
+	db	$63
+	db	$73
+; P2-4
+	db	$93
+	db	$ef,$0f
+	db	$dc,$64
+	db	$93
+	db	$dc,$37
+	db	$93
+	db	$ef,$ff
+	db	$dc,$c2
+	db	$73
+	db	$63
+	db	$73
+	db	$93
+	db	$b3
+; P2-5
+	db	$d9,$05
+	db	$fe
+	dw	melo3$
+	db	$d9,$00
+	db	$23
+	db	$ef,$0f
+	db	$dc,$64
+	db	$23
+; P2-6
+	db	$d9,$07
+	db	$fe
+	dw	melo3$
+	db	$d9,$00
+	db	$73
+	db	$63
+; P2-7
+	db	$fe
+	dw	melo3$
+	db	$23
+	db	$43
+; P2-8
+	db	$fe
+	dw	melo2$
+	db	$6f
+; P2-9
+	db	$0f
+	db	$07
+	db	$ef,$ff
+	db	$dc,$c2
+	db	$23
+	db	$43
+; P2-10
+	db	$fc
+	dw	loop$
+melo2$:
+	db	$ef,$ff
+	db	$dc,$c2
+	db	$63
+	db	$ef,$0f
+	db	$dc,$64
+	db	$63
+	db	$dc,$37
+	db	$63
+	db	$dc,$27
+	db	$63
+	db	$dc,$17
+	db	$ff
+melo3$:
+	db	$ef,$ff
+	db	$dc,$c2
+	db	$43
+	db	$ef,$0f
+	db	$dc,$64
+	db	$43
+	db	$dc,$37
+	db	$43
+	db	$dc,$27
+	db	$43
+	db	$dc,$17
+	db	$47
+	db	$ef,$ff
+	db	$dc,$c2
+	db	$ff
+;----------------------------------------
+m_fin33:
+;----------------------------------------
+
+

@@ -1,0 +1,246 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	win1
+;	;
+;	;	Converting on Mon Aug 16 21:36:08 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	muswin1
+;muswin1:
+	db	080h
+	dw	win11
+	db	001h
+	dw	win12
+	db	002h
+	dw	win13
+;----------------------------------------
+win11:
+;----------------------------------------
+	db	$da,$00,$78
+	db	$e5,$77
+	db	$db,$02
+	db	$f1
+; P1-2
+	db	$d8,$8,$b1
+	db	$d4,$51
+	db	$51
+	db	$51
+	db	$51
+	db	$71
+	db	$81
+	db	$dc,$b6
+	db	$ab
+; P1-3-6
+	db	$ef,$0f
+loop$:
+	db	$dc,$72
+	db	$fe
+	dw	sub3$
+; P1-4
+	db	$dc,$51
+	db	$21
+	db	$51
+	db	$71
+	db	$a1
+	db	$c1
+	db	$d4,$21
+	db	$dc,$72
+	db	$d5,$a1
+	db	$01
+	db	$d4,$21
+	db	$55
+	db	$fd,2
+	dw	loop$
+; P1-7
+	db	$fe
+	dw	sub3$
+; P1-8
+	db	$a1
+	db	$01
+	db	$61
+	db	$a5
+	db	$b1
+	db	$01
+	db	$81
+	db	$b5
+; P1-9
+loop9$:
+	db	$dc,$72
+	db	$d4,$31
+	db	$21
+	db	$d5,$a1
+	db	$fd,3
+	dw	loop9$
+	db	$71
+	db	$a1
+	db	$d4,$31
+; P1-10
+loop10$:
+	db	$d4,$21
+	db	$d5,$c1
+	db	$a1
+	db	$fd,3
+	dw	loop10$
+	db	$51
+	db	$71
+	db	$81
+; P1-11
+	db	$fc
+	dw	loop$
+sub3$:
+	db	$d5,$71
+	db	$01
+	db	$31
+	db	$75
+	db	$81
+	db	$01
+	db	$51
+	db	$85
+	db	$ff
+;----------------------------------------
+win12:
+;----------------------------------------
+	db	$e1,$12,$34
+	db	$db,$03
+; P2-2
+	db	$d8,$8,$d1
+	db	$d4,$a1
+	db	$a1
+	db	$a1
+	db	$a1
+	db	$c1
+	db	$d3,$21
+	db	$dc,$d6
+	db	$3b
+; P2-3-6
+	db	$ef,$f0
+loop$:
+	db	$d8,$8,$82
+	db	$fe
+	dw	melo3$
+; P2-4
+	db	$71
+	db	$01
+	db	$81
+	db	$a5
+	db	$51
+	db	$01
+	db	$71
+	db	$85
+	db	$fd,2
+	dw	loop$
+; P2-7
+	db	$fe
+	dw	melo3$
+; P2-8
+	db	$61
+	db	$01
+	db	$11
+	db	$65
+	db	$81
+	db	$01
+	db	$31
+	db	$85
+; P2-9
+	db	$d8,$c,$88
+	db	$7f
+; P2-10
+	db	$5f
+; P2-11
+	db	$fc
+	dw	loop$
+melo3$:
+	db	$d4,$31
+	db	$01
+	db	$d5,$a1
+	db	$d4,$35
+	db	$51
+	db	$01
+	db	$d5,$c1
+	db	$d4,$55
+	db	$ff
+;----------------------------------------
+win13:
+;----------------------------------------
+; P3-2
+	db	$d8,$8,$25
+	db	$d5,$85
+	db	$80
+	db	$00
+	db	$80
+	db	$00
+	db	$80
+	db	$00
+	db	$75
+	db	$31
+	db	$21
+	db	$d6,$c1
+; P3-3-6
+loop$:
+	db	$fe
+	dw	base3$
+; P3-4
+	db	$d5,$21
+	db	$01
+	db	$21
+	db	$a1
+	db	$71
+	db	$21
+	db	$d6,$a1
+	db	$01
+	db	$d5,$a0
+	db	$00
+	db	$a5
+	db	$fd,2
+	dw	loop$
+; P3-7
+	db	$fe
+	dw	base3$
+; P3-8
+	db	$d5,$11
+	db	$01
+	db	$11
+	db	$a1
+	db	$61
+	db	$11
+	db	$31
+	db	$01
+	db	$31
+	db	$d4,$31
+	db	$d5,$b1
+	db	$81
+; P3-9
+	db	$31
+	db	$71
+	db	$a1
+	db	$d4,$3b
+	db	$d5,$a1
+	db	$71
+	db	$31
+; P3-10
+	db	$d6,$a1
+	db	$d5,$31
+	db	$51
+	db	$ab
+	db	$81
+	db	$51
+	db	$21
+; P3-11
+	db	$fc
+	dw	loop$
+base3$:
+	db	$d6,$a1
+	db	$01
+	db	$a1
+	db	$d5,$71
+	db	$31
+	db	$d6,$a1
+	db	$c1
+	db	$01
+	db	$c1
+	db	$d5,$81
+	db	$51
+	db	$d6,$c1
+	db	$ff

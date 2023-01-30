@@ -1,0 +1,315 @@
+;	include	group.def
+;bank2a	group	G_MUSIC2
+	;
+	;	yasu_02
+	;
+	;	Converting on Sat Apr 17 15:54:00 2021
+	;
+	;				by ver 1.01
+	;
+;	public	musyasu12
+;musyasu12:
+	db	0c0h
+	dw	yasu_021
+	db	001h
+	dw	yasu_022
+	db	002h
+	dw	yasu_023
+	db	003h
+	dw	yasu_024
+;----------------------------------------
+yasu_021:
+;----------------------------------------
+	db	$da,$00,$c0
+	db	$e5,$77
+	db	$e4,$be
+	db	$e6,$00,$02
+	db	$db,$01
+	db	$e1,$5,$63
+loop$:
+; P1-1
+	db	$d8,$c,$74
+	db	$d7,$a1
+	db	$d6,$50
+	db	$a1
+	db	$50
+	db	$c1
+	db	$50
+	db	$a1
+	db	$50
+; P1-2
+	db	$fd,12
+	dw	loop$
+; P1-3
+; P1-4
+; P1-5
+; P1-6
+; P1-7
+; P1-8
+; P1-9
+; P1-10
+; P1-11
+; P1-12
+loop13_14$:
+; P1-13
+	db	$fe
+	dw	sub13$
+; P1-14
+	db	$d7,$a1
+	db	$d6,$52
+	db	$50
+	db	$d7,$a1
+	db	$d6,$50
+	db	$d7,$a1
+	db	$d6,$50
+; P1-15
+	db	$fd,3
+	dw	loop13_14$
+; P1-17
+; P1-19
+	db	$fe
+	dw	sub13$
+; P1-20
+	db	$d7,$51
+	db	$c2
+	db	$c0
+	db	$51
+	db	$c0
+	db	$51
+	db	$c0
+	db	$fc
+	dw	loop$
+sub13$:
+	db	$d7,$71
+	db	$d6,$42
+	db	$40
+	db	$d7,$71
+	db	$d6,$40
+	db	$d7,$71
+	db	$d6,$40
+	db	$ff
+;----------------------------------------
+yasu_022:
+;----------------------------------------
+	db	$f1
+loop$:
+	db	$db,$03
+	db	$e1,$9,$42
+; P2-1
+	db	$d8,$6,$a4
+	db	$0b
+	db	$0b
+; P2-2
+	db	$0b
+	db	$0b
+; P2-3
+	db	$0b
+	db	$0b
+; P2-4
+	db	$0b
+	db	$09
+	db	$d4,$11
+; P2-5
+	db	$fe
+	dw	mero5$
+; P2-6
+	db	$75
+	db	$53
+	db	$25
+	db	$d5,$c1
+	db	$a3
+	db	$c1
+; P2-7
+	db	$d4,$23
+	db	$d5,$c1
+	db	$a3
+	db	$71
+	db	$a3
+	db	$c1
+	db	$a3
+	db	$a5
+; P2-8	-tie
+	db	$0f
+	db	$01
+	db	$d4,$11
+; P2-9
+	db	$fe
+	dw	mero5$
+; P2-10
+	db	$75
+	db	$a3
+	db	$75
+	db	$51
+	db	$23
+	db	$d5,$c1
+; P2-11
+	db	$a3
+	db	$01
+	db	$c3
+	db	$00
+	db	$d4,$10
+	db	$25
+	db	$d5,$c3
+	db	$a5
+; P2-12	-tie
+	db	$0b
+	db	$a1
+	db	$c3
+	db	$a1
+; P2-13
+	db	$fe
+	dw	mero13$
+; P2-14
+	db	$fe
+	dw	mero14$
+	db	$d5,$a1
+; P2-15
+	db	$fe
+	dw	mero13$
+; P2-16
+	db	$dc,$a2
+	db	$73
+	db	$a5
+	db	$5b
+	db	$dc,$b1
+	db	$a1
+; P2-17
+	db	$fe
+	dw	mero13$
+; P2-18
+	db	$fe
+	dw	mero14$
+	db	$dc,$a3
+	db	$25
+; P2-19	-tie
+	db	$d5,$c1
+	db	$a3
+	db	$71
+	db	$a3
+	db	$c1
+	db	$a3
+	db	$dc,$a7
+	db	$cf
+; P2-20	-tie
+	db	$09
+	db	$fc
+	dw	loop$
+mero5$:
+	db	$23
+	db	$51
+	db	$23
+	db	$d5,$c1
+	db	$a3
+	db	$c1
+	db	$d4,$23
+	db	$51
+	db	$ff
+mero13$:
+	db	$dc,$a2
+	db	$d4,$11
+	db	$d5,$c1
+	db	$dc,$b1
+	db	$a1
+	db	$fd,4
+	dw	mero13$
+	db	$ff
+mero14$:
+	db	$d4,$10
+	db	$dc,$a2
+	db	$22
+	db	$dc,$b1
+	db	$55
+	db	$75
+	db	$55
+	db	$ff
+;----------------------------------------
+yasu_023:
+;----------------------------------------
+; P3-1
+	db	$d9,$00
+	db	$d8,$c,$24
+	db	$d6,$a1
+	db	$d5,$50
+	db	$a1
+	db	$50
+	db	$c1
+	db	$50
+	db	$d4,$21
+	db	$d5,$50
+; P3-2
+	db	$fd,12
+	dw	yasu_023
+; P3-3
+; P3-4
+; P3-5
+; P3-6
+; P3-7
+; P3-8
+; P3-9
+; P3-10
+; P3-11
+; P3-12
+loop13_14$:
+; P3-13
+	db	$fe
+	dw	bass13$
+; P3-14
+	db	$fe
+	dw	bass14$
+; P3-15
+	db	$fd,3
+	dw	loop13_14$
+; P3-17
+; P3-19
+	db	$fe
+	dw	bass13$
+; P3-20
+	db	$d9,$17
+	db	$fe
+	dw	bass14$
+	db	$fc
+	dw	yasu_023
+bass13$:
+	db	$d6,$71
+	db	$d5,$a0
+	db	$dc,$34
+	db	$a0
+	db	$00
+	db	$dc,$24
+	db	$a0
+	db	$d6,$71
+	db	$d5,$a0
+	db	$d6,$71
+	db	$d5,$a0
+	db	$ff
+bass14$:
+	db	$d6,$a1
+	db	$d5,$a0
+	db	$dc,$34
+	db	$a0
+	db	$00
+	db	$dc,$24
+	db	$a0
+	db	$d6,$a1
+	db	$d5,$a0
+	db	$d6,$a1
+	db	$d5,$a0
+	db	$ff
+;----------------------------------------
+yasu_024:
+;----------------------------------------
+	db	$e3,$003
+; P4-1
+	db	$d8,$c
+loop$:
+	db	$21
+	db	$82
+	db	$80
+	db	$21
+	db	$80
+	db	$21
+	db	$80
+	db	$fc
+	dw	loop$
+
+

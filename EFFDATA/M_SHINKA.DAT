@@ -1,0 +1,175 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	public	musshinka
+;musshinka:
+	db	0c0h
+	dw	Shinka1
+	db	001h
+	dw	Shinka2
+	db	002h
+	dw	Shinka3
+	db	003h
+	dw	Shinka4
+;----------------------------------------
+Shinka1:
+;----------------------------------------
+	db	$da,$00,$84
+	db	$e5,$77
+	db	$e1,$6,$34
+	db	$f1
+	db	$db,$02
+	db	$d8,$c,$92
+il$:
+	db	$d5
+	db	$e0,$00,$4a,$10
+	db	$e0,$00,$4a,$80
+	db	$fd,2
+	dw	il$
+	db	$03
+	db	$db,$03
+;		bal_s 0f
+	db	$e4,$ed
+loop10$:
+	db	$e7,$00
+	db	$fe
+	dw	sub11$
+; P1-2
+	db	$fd,4
+	dw	loop10$
+	db	$e7,$02
+	db	$fe
+	dw	sub11$
+	db	$fe
+	dw	sub11$
+; P1-2
+	db	$fc
+	dw	loop10$
+sub11$:
+	db	$d8,$c,$a2
+	db	$d5,$13
+	db	$83
+	db	$13
+	db	$83
+	db	$13
+	db	$83
+	db	$13
+	db	$d8,$c,$a4
+	db	$73
+	db	$ff
+sub12$:
+;----------------------------------------
+Shinka2:
+;----------------------------------------
+	db	$db,$02
+	db	$e1,$8,$25
+	db	$d8,$c,$a2
+	db	$d4,$80
+	db	$30
+	db	$80
+	db	$30
+	db	$03
+	db	$db,$03
+;		bal_s f0
+loop20$:
+	db	$e7,$00
+	db	$fe
+	dw	sub21$
+	db	$a3
+	db	$fe
+	dw	sub21$
+	db	$c3
+	db	$fd,2
+	dw	loop20$
+	db	$e7,$02
+	db	$fe
+	dw	sub21$
+	db	$a3
+	db	$fe
+	dw	sub21$
+	db	$c3
+	db	$fc
+	dw	loop20$
+sub21$:
+	db	$d8,$c,$b2
+	db	$d5,$83
+	db	$33
+	db	$83
+	db	$33
+	db	$83
+	db	$33
+	db	$83
+	db	$d8,$c,$b5
+	db	$ff
+sub22$:
+;----------------------------------------
+Shinka3:
+;----------------------------------------
+	db	$d8,$c,$1c
+	db	$07
+loop30$:
+	db	$e7,$00
+	db	$fe
+	dw	sub31$
+	db	$d4,$a3
+	db	$fe
+	dw	sub31$
+	db	$d4,$c3
+	db	$fd,2
+	dw	loop30$
+	db	$e7,$02
+	db	$fe
+	dw	sub31$
+	db	$d4,$a3
+	db	$fe
+	dw	sub31$
+	db	$d4,$c3
+	db	$fc
+	dw	loop30$
+sub31$:
+	db	$d5,$a1
+	db	$01
+	db	$d4,$31
+	db	$01
+	db	$fd,3
+	dw	sub31$
+	db	$d5,$a1
+	db	$01
+	db	$ff
+sub32$:
+;----------------------------------------
+Shinka4:
+;----------------------------------------
+;		drum_mode 05
+	db	$e3,$007
+	db	$d8,$c
+; P4-1
+	db	$07
+loop40$:
+; P4-2
+;		bal_s f0
+;		tempo 6 		drum b
+;		tempo 4 		drum b
+;		bal_s 0f
+;		tempo 2 		drum 5
+;					drum 5
+;					drum 5
+	db	$a7
+	db	$90
+	db	$90
+	db	$90
+	db	$90
+	db	$a7
+	db	$33
+	db	$97
+; P4-3
+	db	$ab
+	db	$a7
+	db	$a3
+loop43$
+	db	$90
+	db	$fd,8
+	dw	loop43$
+	db	$fc
+	dw	loop40$
+
+

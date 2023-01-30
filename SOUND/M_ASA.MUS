@@ -1,0 +1,115 @@
+;	include	group.def
+;bank2a	group	G_MUSIC2
+	;
+	;	Asa
+	;
+	;	Converting on Tue Oct 16 18:11:48 1990
+	;
+	;				by ver 1.02
+	;
+;	public	m_asa
+;m_asa:
+		mushdr	80,Asa1
+		mushdr	01,Asa2
+		mushdr	02,Asa3
+
+;----------------------------------------
+Asa1
+;----------------------------------------
+
+		speed 00 90
+		vol 77
+;		vib 08 24
+		duty 2
+		chorus
+
+;		init c 81
+; P1-1
+;		tempo 2 	oct 4	b
+;					a
+;					g#
+;					e
+;		duty 3
+;		init c c5
+;		tempo 2 	oct 5	g#
+;					e
+;					f#
+;					d#
+; P1-2
+;		tempo 8 		e
+
+; New Asa (Wait A Minits)
+
+		init c 81
+		tempo 2			r
+		porta		00 4 b	b
+		porta		00 5 e	b
+		porta		00 4 e	e
+		tempo 4			r
+		porta		00 3 b	e
+		porta		00 4 b	b
+
+		end
+
+;----------------------------------------
+Asa2
+;----------------------------------------
+
+;		vib 05 15
+		duty 2
+;		init c d4
+; P2-1
+;		tempo 2 	oct 4	b
+;					a
+;					g#
+;					e
+;				oct 3	e
+;				oct 4	c#
+;				oct 5	b
+;					a
+; P2-2
+;		tempo 8 		g#
+
+; New Asa (Wait A Minits)
+
+		init c c3
+		tempo 4 	oct 4	b
+					b
+		tempo 2			b
+					g#
+		init c c4
+		tempo 8 	oct 3	e
+		end
+
+;----------------------------------------
+Asa3
+;----------------------------------------
+
+;		init c 10
+; P3-1
+;		tempo 2 	oct 4	e
+;					f#
+;					g#
+;					a
+;		tempo 4 		g#
+;		tempo 2 		e
+;					f#
+; P3-2
+;		tempo 6 		e
+;		tempo 2			r
+
+; New Asa (Wait A Minits)
+
+		init c 10
+		tempo 2 	oct 4	e
+					r
+					e
+					r
+					e
+					g#
+		tempo 6			e
+		tempo 2			r
+
+		end
+
+

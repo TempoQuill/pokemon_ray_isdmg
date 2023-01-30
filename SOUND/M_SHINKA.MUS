@@ -1,0 +1,177 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	public	musshinka
+;musshinka:
+		mushdr	c0,shinka1
+		mushdr	01,shinka2
+		mushdr	02,shinka3
+		mushdr	03,shinka4
+;----------------------------------------
+Shinka1:
+;----------------------------------------
+		speed 00 84
+		vol 77
+		vib 6 34
+		chorus
+		duty 2
+		init c 92
+		tempo 1 	oct 5
+		porta		00 4 a	c
+		porta		00 4 a	g
+		porta		00 4 a	c
+		porta		00 4 a	g
+		tempo 4			r
+		duty 3
+		bal_s 0f
+loop10$:
+		call sub11$
+		init c a4
+		tempo 4 		f#
+; P1-2
+		call sub11$
+		init c a4
+		tempo 4 		f#
+		loop 2,loop10$
+		call sub12$
+		init c a4
+		tempo 4 		g#
+; P1-2
+		call sub12$
+		init c a4
+		tempo 4 		g#
+		jump loop10$
+sub11$:
+		init c a2
+		tempo 4 	oct 5	c
+					g
+					c
+					g
+					c
+					g
+					c
+		return
+sub12$:
+		init c a2
+		tempo 4 	oct 5	d
+					a
+					d
+					a
+					d
+					a
+					d
+		return
+;----------------------------------------
+Shinka2:
+;----------------------------------------
+		duty 2
+		vib 8 25
+		init c a2
+		tempo 1 	oct 4	g
+					d
+		tempo 1 		g
+					d
+		tempo 4			r
+		duty 3
+		bal_s f0
+loop20$:
+		call sub21$
+		init c b5
+		tempo 4 		a
+		call sub21$
+		init c b5
+		tempo 4 		b
+		loop 2,loop20$
+		call sub22$
+		init c b5
+		tempo 4 		b
+		call sub22$
+		init c b5
+		tempo 4 	oct 4	c#
+				oct 5
+		jump loop20$
+sub21$:
+		init c b2
+		tempo 4 	oct 5	g
+					d
+					g
+					d
+					g
+					d
+					g
+		return
+sub22$:
+		init c b2
+		tempo 4 	oct 5	a
+					e
+					a
+					e
+					a
+					e
+					a
+		return
+;----------------------------------------
+Shinka3:
+;----------------------------------------
+		init c 16
+		tempo 8			r
+loop30$:
+		call sub31$
+		tempo 4 	oct 5	a
+		call sub31$
+		tempo 4 	oct 5	b
+		loop 2,loop30$
+		call sub32$
+		tempo 4 	oct 5	b
+		call sub32$
+		tempo 4 	oct 4	c#
+		jump loop30$
+sub31$:
+		tempo 2 	oct 6	a
+					r
+				oct 5	d
+					r
+				oct 6	a
+					r
+				oct 5	d
+					r
+				oct 6	a
+					r
+				oct 5	d
+					r
+				oct 6	a
+					r
+		return
+sub32$:
+		tempo 2 	oct 6	b
+					r
+				oct 5	e
+					r
+				oct 6	b
+					r
+				oct 5	e
+					r
+				oct 6	b
+					r
+				oct 5	e
+					r
+				oct 6	a
+					r
+		return
+;----------------------------------------
+Shinka4:
+;----------------------------------------
+		drum_mode 05
+		init c
+; P4-1
+		tempo 8			r
+loop40$:
+		bal_s f0
+		tempo 6 		drum b
+		tempo 4 		drum b
+		bal_s 0f
+		tempo 2 		drum 5
+					drum 5
+					drum 5
+		jump loop40$
+
+

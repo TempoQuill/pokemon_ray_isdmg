@@ -1,0 +1,230 @@
+	extern	sub_item
+	extern	get_daze
+	extern	mul_any
+
+	public	TOOLSERCH
+	public	TOOLGIV
+
+;*****************************************************************
+;**								**
+;**								**
+;**		POCKET MONSTERS 3: MAIN TOOLS ROUTINE		**
+;**								**
+;**								**
+;*****************************************************************
+
+TOOLCOPY:	;kopii
+	ld	hl,0
+	ld	de,10
+	ld	a,(tl_proj_no)
+	and	a
+	jr	z,copy$
+loop$
+	add	hl,de
+	dec	a
+	jr	nz,loop$
+copy$
+	ld	de,item_mons
+	add	hl,de
+	ld	de,tl_proj_layout
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hli)			;��������...
+	ld	(de),a
+	inc	de
+	ld	a,(hl)			;��������...
+	ld	(de),a
+	ret
+
+TOOLCHECK:	;chekk
+	ld	hl,tl_proj_layout
+loop1$:
+	ld	a,(my_tool_tbl)
+	ld	e,a
+	ld	d,0
+	ld	bc,my_tool_tbl+1
+	inc	hl
+	inc	hl
+loop2$:
+	call	TOOLLOAD
+	ret	z		;GOSA: ������
+	ret	c		;GOSA: ��������
+	cp	(hl)
+	jr	nz,loop2$
+	inc	hl
+	ld	a,(hld)
+	cp	d
+	jr	z,loop2$
+	jr	c,loop2$
+	ld	a,<tl_proj_noEnd
+	cp	l
+	ret	z
+	jr	loop1$
+
+TOOLLOAD:	;road
+	ld	a,e
+	and	a
+	jr	z,rej$
+	ld	a,(hl)
+	and	a
+	jr	z,rej$
+	ld	a,(bc)
+	inc	bc
+	push	af
+	ld	a,(bc)
+	ld	d,a
+	pop	af
+	inc	bc
+	ccf
+	ret
+rej$
+	scf
+	ret
+
+TOOLSERCH:	;sach
+	xor	a
+	ld	(tl_proj_no),a
+loop$
+	ld	a,(tl_proj_search)
+	and	a
+	jr	nz,skip$
+	call	TOOLCOPY
+	call	TOOLCHECK
+	call	z,TOOLRES
+	ld	a,TOOL_PROJ_MAX
+	ld	hl,tl_proj_no
+	inc	(hl)
+	cp	(hl)
+	jr	z,skip$
+	jr	nc,loop$
+skip$
+	ld	a,TOOL_PROJ_MAX
+	ld	(tl_proj_no),a
+	ld	a,(my_tool_tbl)
+	and	a
+	ld	a,1
+	ld	(EventFlagWork),a
+	ret	z
+	ld	a,(tl_proj_search)
+	and	a
+	ld	a,2
+	jr	z,varget$
+	ld	a,3
+varget$
+	ld	(EventFlagWork),a
+	ret
+
+TOOLRES:	;rezalt
+	ld	hl,tl_proj_search
+	ld	a,(tl_proj_no)
+	scf
+	ld	d,0
+loop$
+	sla	d
+	and	a
+	jr	z,copy$
+	dec	a
+	jr	loop$
+copy$
+	ld	(hl),d
+	ret
+
+TOOLGIV:	;give
+	push	de
+	push	af
+	push	hl
+	ld	a,(tl_proj_search)
+	ld	hl,0
+	ld	de,TOOL_PROJ_AREA
+loop1$
+	add	hl,de
+	sra	a
+	jr	nz,loop1$
+	ld	de,item_mons
+	add	hl,de
+	ld	e,TOOL_PROJ_AREA/2
+	ld	a,(hli)
+	ld	(tl_proj_mon_no),a
+	ld	a,(hli)
+	ld	(tl_proj_mon_no+1),a
+	dec	e
+loop2$
+	ld	a,(hli)
+	and	a
+	jr	z,load$
+	ld	(sel_item_no),a
+	ld	a,(hli)
+	ld	(item_kosuu),a
+	push	de
+	push	hl
+	ld	hl,my_tool_tbl
+	call	sub_item
+	pop	hl
+	pop	de
+	dec	e
+	jr	z,loop2$
+load$
+	ld	a,(tl_proj_mon_no)
+	ld	(sel_mons_no),a
+	ld	a,(tl_proj_mon_no+1)
+	ld	(sel_mons_no+1),a
+	ld	hl,my_badge
+	ld	d,(hl)
+	xor	a
+lev$
+	rr	d
+	jr	z,test$
+	add	5
+	jr	lev$
+test$
+	and	a
+	jr	nz,scs$
+	ld	a,5
+scs$
+	ld	(mons_level),a
+	xor	a
+	ld	(sel_item_no),a
+	BCALL	G_BANK03,get_daze
+	pop	hl
+	pop	af
+	pop	de
+	ld	a,(sel_mons_pos)
+	ld	hl,my_cap_data+NC_MISC
+	ld	bc,NCDATA_LEN
+	call	mul_any
+	set	0,(hl)
+	ret
+
+item_mons:
+	dw	0051h,035ah,026ch,016fh,0000h	;monster <- tools (coil)
+	dw	0078h,0584h,016eh,0183h,0119h	;monster <- tools (hitodeman)
+	dw	002eh,0256h,012dh,0000h,0000h	;monster <- tools (paras)
+	dw	014ah,0c4bh,068eh,023ch,0000h	;monster <- tools (metabeek)
+	dw	0139h,0ab4h,0386h,0000h,0000h	;monster <- tools (kurikaseki)
+	dw	0114h,0156h,012dh,0000h,0000h	;monster <- tools (pala)
+	dw	0126h,01b2h,0125h,0000h,0000h	;monster <- tools (nolowala)
+	dw	0127h,0132h,0125h,0000h,0000h	;monster <- tools (kyonpan)
+
+

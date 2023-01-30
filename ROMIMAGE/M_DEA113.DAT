@@ -1,0 +1,149 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	kyojin
+;	;
+;	;	Converting on Thu Sep 19 21:50:10 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	muskyojin
+;muskyojin:;					jumasu
+	db	080h
+	dw	deal131
+	db	001h
+	dw	deal132
+	db	002h
+	dw	deal133
+	db	003h
+;----------------------------------------
+deal131:
+;----------------------------------------
+	db	$da,$01,$0b
+	db	$e5,$77
+	db	$e4,$eb
+	db	$e6,$ff,$ff
+	db	$db,$02
+	db	$e1,$7,$52
+; P1-1
+	db	$d8,$6,$a3
+	db	$d5,$71
+	db	$61
+; P1-2
+	db	$37
+loop$:
+	db	$71
+	db	$61
+	db	$51
+	db	$41
+; P1-3-4
+	db	$fe
+	dw	sub3_4$
+	db	$51
+	db	$61
+	db	$71
+	db	$81
+; P1-5-6
+	db	$fe
+	dw	sub3_4$
+	db	$fc
+	dw	loop$
+sub3_4$:
+; P1-3
+	db	$30
+	db	$02
+	db	$30
+	db	$02
+	db	$70
+	db	$02
+	db	$20
+	db	$50
+	db	$70
+	db	$d4,$20
+; P1-4
+	db	$d5,$30
+	db	$02
+	db	$30
+	db	$02
+	db	$ff
+;----------------------------------------
+deal132:
+;----------------------------------------
+	db	$db,$03
+: P2-1
+	db	$d8,$6,$a5
+	db	$05
+: P2-2	-tie
+	db	$d7,$30
+	db	$70
+	db	$c1
+	db	$70
+	db	$c0
+	db	$d6,$73
+	db	$c3
+: P2-3
+loop$:
+	db	$d7,$c0
+	db	$00
+	db	$d6,$30
+	db	$00
+	db	$70
+	db	$00
+	db	$c0
+	db	$00
+	db	$d7,$70
+	db	$00
+	db	$d6,$20
+	db	$00
+	db	$50
+	db	$00
+	db	$b0
+	db	$00
+: P2-4
+	db	$fc
+	dw	loop$
+;----------------------------------------
+deal133:
+;----------------------------------------
+	db	$e1,$a,$23
+; P3-1
+	db	$d8,$3,$1c
+	db	$d4,$b0
+	db	$c2
+	db	$b3
+; P3-2
+	db	$cf
+loop$:
+	db	$d3,$43
+	db	$33
+	db	$23
+	db	$13
+; P3-3-4
+	db	$fe
+	dw	mero3_4$
+	db	$83
+	db	$93
+	db	$a3
+	db	$b3
+; P3-5-6
+	db	$fe
+	dw	mero3_4$
+	db	$fc
+	dw	loop$
+mero3_4$:
+; P3-3
+	db	$d4,$c1
+	db	$05
+	db	$c1
+	db	$05
+	db	$c1
+	db	$05
+	db	$b7
+; P3-4
+	db	$c1
+	db	$05
+	db	$c1
+	db	$05
+	db	$ff
+
+

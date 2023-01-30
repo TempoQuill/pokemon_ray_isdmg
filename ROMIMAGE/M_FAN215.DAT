@@ -1,0 +1,126 @@
+;	include	group.def
+;bank28	group	G_SE1
+;	public	m_fan215
+;m_fan215
+	db	$84
+	dw	m_fan2151
+	db	$05
+	dw	m_fan2152
+	db	$06
+	dw	m_fan2153
+;----------------------------------------
+m_fan2151:
+;----------------------------------------
+	db	$f3
+	db	$da,$01,$00
+	db	$e5,$77
+	db	$db,$02
+	db	$e1,$c,$44
+; P1-1
+	db	$d8,$5,$a4
+	db	$d4,$11
+	db	$d5,$10
+	db	$00
+	db	$a1
+	db	$10
+	db	$00
+	db	$61
+	db	$10
+	db	$00
+	db	$60
+	db	$00
+	db	$10
+	db	$00
+; P1-2
+	db	$d4,$20
+	db	$00
+	db	$20
+	db	$00
+	db	$60
+	db	$00
+	db	$20
+	db	$00
+	db	$d5,$b0
+	db	$00
+	db	$d4,$20
+	db	$00
+	db	$17
+; P1-3 -tie
+	db	$ff
+;----------------------------------------
+m_fan2152:
+;----------------------------------------
+	db	$f3
+	db	$db,$03
+	db	$e1,$5,$72
+; P2-1
+	db	$d8,$5,$c3
+	db	$d7,$61
+	db	$dc,$a3
+	db	$d6,$a0
+	db	$00
+	db	$dc,$c3
+	db	$11
+	db	$dc,$a3
+	db	$a0
+	db	$00
+	db	$dc,$c3
+	db	$61
+	db	$dc,$a3
+	db	$a0
+	db	$00
+	db	$d5,$10
+	db	$00
+	db	$d6,$a0
+	db	$00
+; P2-2
+	db	$dc,$c3
+	db	$d7,$b1
+	db	$dc,$a3
+	db	$d6,$b0
+	db	$00
+	db	$d5,$20
+	db	$00
+	db	$60
+	db	$00
+	db	$20
+	db	$00
+	db	$d6,$b0
+	db	$00
+	db	$dc,$c3
+	db	$d7,$67
+; P2-3 -tie
+	db	$ff
+;----------------------------------------
+m_fan2153:
+;----------------------------------------
+	db	$f3
+	db	$e1,$7,$13
+; P3-1
+	db	$d8,$5,$10
+	db	$d3,$a3
+	db	$63
+	db	$16
+	db	$00
+; P3-2
+	db	$b0
+	db	$00
+	db	$b0
+	db	$00
+	db	$b0
+	db	$00
+	db	$80
+	db	$00
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$a5
+; P3-3 -tie
+	db	$dc,$20
+	db	$a0
+	db	$dc,$30
+	db	$a0
+	db	$ff
+
+

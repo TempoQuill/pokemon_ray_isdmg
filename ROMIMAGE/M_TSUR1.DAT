@@ -1,0 +1,124 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_tsur1
+;	;
+;	;	Converting on Tue Jul 13 12:42:31 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_tsur1
+;musm_tsur1:
+	db	081h
+	dw	m_tsur12
+	db	002h
+	dw	m_tsur13
+	db	003h
+	dw	m_tsur14
+;----------------------------------------
+m_tsur12:
+;----------------------------------------
+	db	$da,$00,$90
+	db	$e5,$77
+; P2-1
+	db	$ef,$0f
+	db	$db,$02
+	db	$d8,$6,$b3
+	db	$d5,$c0
+	db	$d4,$50
+	db	$90
+	db	$a0
+	db	$c7
+; P2-2
+loop$:
+	db	$d8,$c,$b1
+; P1-2
+	db	$03
+	db	$d5,$25
+	db	$33
+	db	$11
+; P1-3
+	db	$01
+	db	$25
+	db	$d6,$53
+	db	$b1
+	db	$c1
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_tsur13:
+;----------------------------------------
+; P3-1
+	db	$ef,$f0
+	db	$d8,$6,$25
+	db	$d5,$50
+	db	$30
+	db	$d6,$c0
+	db	$90
+	db	$57
+; P3-2
+	db	$dc,$23
+loop$:
+	db	$d6,$a1
+	db	$05
+	db	$d4,$51
+	db	$01
+	db	$d6,$a1
+	db	$01
+	db	$d5,$31
+	db	$01
+	db	$d4,$77
+	db	$41
+	db	$01
+; P3-3
+	db	$d6,$a1
+	db	$01
+	db	$d4,$51
+	db	$05
+	db	$d6,$a1
+	db	$01
+	db	$d4,$31
+	db	$05
+	db	$23
+	db	$31
+	db	$01
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_tsur14:
+;----------------------------------------
+	db	$e3,$003
+; P4-1
+	db	$d8,$c
+	db	$05
+; P4-2
+loop$:
+	db	$40
+	db	$00
+	db	$71
+	db	$30
+	db	$00
+	db	$80
+	db	$00
+	db	$80
+	db	$00
+	db	$73
+	db	$30
+	db	$00
+; P4-3
+	db	$40
+	db	$00
+	db	$73
+	db	$30
+	db	$00
+	db	$80
+	db	$00
+	db	$80
+	db	$00
+	db	$31
+	db	$40
+	db	$00
+	db	$fc
+	dw	loop$
+
+

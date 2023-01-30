@@ -1,0 +1,362 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_tsur2
+;	;
+;	;	Converting on Tue Jul 13 12:43:02 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_tsur2
+;musm_tsur2:
+		mushdr	c0,m_tsur21
+		mushdr	01,m_tsur22
+		mushdr	02,m_tsur23
+		mushdr	03,m_tsur24
+;----------------------------------------
+m_tsur21:
+;----------------------------------------
+		speed 00 90
+		vol 77
+; P1-1
+		bal_s 0f
+		duty 2
+		init c b1
+; P1-2
+		tempo 2 	oct 4	b
+					a
+					g#
+					a
+					g#
+					f#
+					e
+					d
+; P1-3
+		tempo 4 	oct 5	b
+		tempo 1 		g#
+					b
+				oct 4	d
+					e
+		tempo 8 		g#
+; P1-4
+loop$:
+		tempo 16 		r
+; P1-5
+					r
+; P1-6
+					r
+; P1-7
+					r
+; P1-8
+		call mero4_5
+; P1-10
+		call sub10_11$
+; P1-12
+		call mero4_5
+; P1-14
+		call sub10_11$
+; P1-16
+		jump loop$
+sub10_11$:
+		tempo 4 		r
+		tempo 1 	oct 5	c#
+		tempo 5 		r
+		tempo 4 		d
+		tempo 1 		c
+					r
+; P1-11
+		tempo 4 		r
+		tempo 1 	oct 6	e
+					r
+					g#
+					r
+				oct 4	e
+					r
+					e
+					r
+					e
+		tempo 3 		r
+		return
+;----------------------------------------
+m_tsur22:
+;----------------------------------------
+; P2-1
+		bal_s ff
+		duty 2
+		init c b1
+; P2-2
+		tempo 2 	oct 3	e
+					d
+					c#
+					d
+					c#
+				oct 4	b
+					a
+					g#
+; P2-3
+		tempo 4 		e
+		tempo 1 		e
+					g#
+					b
+				oct 3	d
+		tempo 8 		e
+;P2-4
+		duty 1
+loop$:
+		call mero4_5
+; P2-6
+		call mero4_5
+; P2-8
+		call mero8$
+		tempo 4 		a
+; P2-9
+		tempo 2 	oct 5	a
+				oct 4	c#
+		tempo 4 		e
+		tempo 2 		d
+					c#
+		tempo 4 	oct 5	b
+; P2-10
+		call mero8$
+		tempo 2 		a
+					a
+; P2-11
+					g#
+					e
+					f#
+					g#
+					a
+					a
+		tempo 4 		a
+; P2-12
+		call mero12$
+		tempo 4 		a
+; P2-13
+		tempo 2 	oct 3	c#
+				oct 4	a
+		tempo 4 		a
+		tempo 1 		g#
+					g
+					f#
+					f
+					e
+					r
+					d#
+					e
+; P2-14
+		call mero12$
+		tempo 2 		a
+				oct 3	e
+; P2-15
+					d
+				oct 4	b
+					a
+					g#
+					a
+					a
+		tempo 4 		a
+; P2-16
+		jump loop$
+mero8$:
+		tempo 2 	oct 5	a
+				oct 4	c#
+		tempo 4 		e
+		tempo 2 		d
+					f#
+		return
+mero12$:
+		tempo 2 	oct 3	c#
+				oct 4	a
+		tempo 4 		a
+		tempo 2 	oct 3	f#
+				oct 4	a
+		return
+mero4_5:
+		tempo 4 		r
+		tempo 1 	oct 5	c#
+		tempo 5 		r
+		tempo 4 		d
+		tempo 1 		c
+					r
+; P2-5
+		tempo 2 		r
+		tempo 1 		c#
+		tempo 5 		r
+		tempo 1 	oct 6	e
+		tempo 3 		r
+		tempo 2 		a#
+		tempo 1 		b
+					r
+		return
+;----------------------------------------
+m_tsur23:
+;----------------------------------------
+; P3-1
+		bal_s f0
+		vib 10 22
+; P3-2
+		init 6 25
+		tempo 1 	oct 6	b
+		tempo 3 		r
+		tempo 1 	oct 5	d
+		tempo 3 		r
+		tempo 1 		e
+		tempo 3 		r
+		tempo 1 		g#
+		tempo 3 		r
+		tempo 1 		b
+		tempo 3 		r
+		tempo 1 	oct 4	d
+		tempo 3 		r
+		tempo 1 		e
+		tempo 3 		r
+		tempo 1 		g#
+		tempo 3 		r
+; P3-3
+		tempo 2 		d
+		tempo 6 		r
+		tempo 2 		d
+				oct 5	b
+					g#
+					b
+					e
+		tempo 6 		r
+		env 14
+		tempo 1 	oct 6	b
+					a#
+					a
+					g#
+					g
+					f
+		tempo 2 		e
+		env 14
+loop$:
+		call bass4_5$
+; P3-6
+		call bass4_5$
+; P3-8
+		call bass4_5$
+; P3-10
+		call bass10_11$
+; P3-12
+		call bass4_5$
+; P3-14
+		call bass10_11$
+; P3-16
+		jump loop$
+bass4_5$:
+; P3-4
+		tempo 2 	oct 6	a
+		tempo 6 		r
+		tempo 2 	oct 4	e
+					r
+				oct 6	a
+					r
+				oct 5	d
+					r
+		tempo 8 	oct 4	f#
+		tempo 2 		d#
+					r
+; P3-5
+				oct 6	a
+					r
+				oct 4	e
+		tempo 6 		r
+		tempo 2 	oct 6	a
+					r
+		tempo 2 	oct 4	d
+		tempo 6 		r
+		tempo 4 		c#
+		tempo 2 		d
+					r
+		return
+bass10_11$:
+		tempo 2 	oct 6	a
+		tempo 6 		r
+		tempo 2 	oct 4	e
+					r
+				oct 6	a
+					r
+				oct 5	d
+					r
+		tempo 8 	oct 4	f#
+		tempo 2 		d#
+					r
+; P3-11
+		tempo 2 	oct 6	g#
+		tempo 6 		r
+		tempo 2 	oct 4	d
+					r
+				oct 5	b
+					r
+					c#
+					r
+					e
+					r
+				oct 6	a
+		tempo 6 		r
+		return
+;----------------------------------------
+m_tsur24:
+;----------------------------------------
+		drum_mode 03
+; P4-1
+		init c
+; P4-2
+		tempo 16 		r
+; P4-3
+		tempo 8 		r
+		tempo 2 		drum 3
+					drum 4
+		tempo 4 		drum 7
+; P4-4
+loop$:
+		call drum4_5$
+; P4-6
+		call drum4_5$
+; P4-8
+		call drum4_5$
+; P4-10
+		call drum10_11$
+; P4-12
+		call drum4_5$
+; P4-14
+		call drum10_11$
+; P4-16
+		jump loop$
+drum4_5$:
+		tempo 2 		drum 4
+					drum 7
+					drum 3
+					drum 8
+					drum 8
+		tempo 4 		drum 7
+		tempo 2 		drum 3
+; P4-5
+					drum 4
+		tempo 4 		drum 7
+		tempo 2 		drum 3
+					drum 8
+					drum 8
+					drum 3
+					drum 4
+		return
+drum10_11$:
+		tempo 2 		drum 4
+					drum 7
+					drum 3
+					drum 8
+					drum 8
+		tempo 4 		drum 7
+		tempo 2 		drum 3
+; P4-11
+					drum 4
+		tempo 4 		drum 7
+		tempo 2 		drum 3
+					drum 3
+					drum 3
+					drum 3
+					drum 7
+		return
+
+

@@ -1,0 +1,478 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	field05
+	;
+	;	Converting on Thu May 27 07:58:57 1999
+	;
+	;				by ver 1.00
+	;
+;	public	musfield15
+;musfield15:
+		mushdr	c0,field051
+		mushdr	01,field052
+		mushdr	02,field053
+		mushdr	03,field054
+;----------------------------------------
+field051:
+;----------------------------------------
+		speed 00 92
+		vol 77
+		duty 3
+		chorus
+		vib 10 15
+		bal_s 0f
+; P1-1
+		init c b2
+		tempo 2 		r
+loop10$:
+; P1-2
+		tempo 2 		r
+				oct 4	c
+					e
+		tempo 4 		c
+		tempo 2 	oct 5	a
+				oct 4	c
+		tempo 4 	oct 5	g
+; P1-3- tie
+		tempo 2 		a
+					f#
+		tempo 4 		c
+		tempo 2 	oct 4	d
+				oct 5	b
+		tempo 4 		d
+; P1-4- tie
+		tempo 2 	oct 4	c
+					e
+		tempo 4 		c
+		tempo 2 	oct 5	a
+				oct 4	c
+		tempo 4 	oct 5	a
+; P1-5
+		tempo 2 		a
+					c
+					d
+					g
+					c
+		tempo 4 		c
+; P1-6
+		tempo 2 		g
+				oct 4	c
+					e
+					c
+				oct 5	e
+					a
+				oct 4	c
+				oct 5	g
+; P1-7
+		tempo 1 		f
+					g
+		tempo 2 		a
+					c
+					f#
+					d
+				oct 4	d
+		tempo 4 	oct 5	b
+; P1-8
+		tempo 2 		e
+				oct 4	c
+					e
+					e
+				oct 5	e
+					g
+				oct 4	c
+				oct 5	g
+; P1-9
+		tempo 1 		d
+					g
+		tempo 2 	oct 4	c
+				oct 5	b
+					g
+		tempo 1 		e
+					f
+		tempo 2 		g
+					g
+		tempo 8 		f
+; P1-10- tie
+		env b4
+		tempo 4 		a
+		tempo 2 	oct 4	c
+		tempo 10 	oct 5	a
+; P1-11-tie
+		tempo 4 		e
+		tempo 2 		g
+					e
+		env b2
+		tempo 6 		g
+; P1-12-tie
+		env b4
+		tempo 4 		f
+		tempo 2 		a
+					g
+					f
+		env b2
+		tempo 4 		a
+; P1-13
+		env b4
+		tempo 4 		c#
+		tempo 2 		e
+		tempo 4 		g
+		env b3
+		tempo 8 		e
+; P1-14
+		env b4
+		tempo 2 		a
+					g
+					a
+		tempo 4 	oct 4	c
+		env b2
+		tempo 6 	oct 5	a
+; P1-15
+		env b4
+		tempo 2 		g
+					e
+					g
+		tempo 4 	oct 4	c
+		tempo 2 	oct 5	g
+; P1-16
+				oct 4	d
+					c
+				oct 5	b
+					a
+		env b2
+		tempo 4 		g
+					b
+; P1-17
+		env b4
+		tempo 2 		g
+					e
+				oct 4	c
+		tempo 4 	oct 5	e
+		tempo 2 		e
+				oct 4	c
+				oct 5	e
+; P1-18
+		tempo 4 		g
+		tempo 2 	oct 4	c
+				oct 5	e
+		env b2
+		tempo 2 		c
+					g
+		tempo 4 		g
+		jump loop10$
+;----------------------------------------
+field052:
+;----------------------------------------
+		duty 3
+		vib 12 36
+; P2-1
+		init c c2
+		tempo 1 	oct 4	c
+					d
+loop20$:
+		call sub21$
+; P2-5
+		tempo 1 		f
+					e
+		tempo 2 		d
+					d
+				oct 5	b
+				oct 4	c
+				oct 5	e
+					e
+		tempo 1 	oct 4	c
+					d
+; P2-6
+		call sub21$
+; P2-9
+		tempo 1 		f
+					e
+		tempo 2 		d
+					d
+				oct 5	b
+		env c4
+		tempo 8 	oct 4	c
+; P2-10
+		tempo 2 	oct 5	a
+					a
+				oct 4	c
+					c
+					f
+					a
+					g
+					f
+; P2-11
+				oct 5	g
+					g
+				oct 4	c
+					c
+					e
+					g
+					f
+					e
+; P2-12
+				oct 5	f
+					f
+					a
+					a
+				oct 4	d
+					f
+					e
+					d
+; P2-13
+					e
+					d
+					c#
+					d
+					c#
+				oct 5	a#
+					a
+					g
+; P2-14
+					a
+					a
+				oct 4	c
+					c
+					f
+					a
+					g
+					f
+; P2-15
+				oct 5	g
+					g
+				oct 4	c
+					c
+					e
+					g
+					f
+					e
+; P2-16
+					f
+					e
+					d
+					f
+		env c2
+		tempo 4 		e
+					d
+; P2-17
+		env c4
+		tempo 2 		c
+				oct 5	g
+				oct 4	e
+				oct 5	g
+				oct 4	c
+				oct 5	g
+				oct 4	e
+				oct 5	g
+; P2-18
+				oct 4	c
+				oct 5	g
+				oct 4	e
+				oct 5	g
+		env c2
+		tempo 2 	oct 4	c
+					c
+					c
+		tempo 1 	oct 4	c
+					d
+		jump loop20$
+sub21$:
+; P2-2
+		tempo 2 		e
+					e
+					g
+					g
+					c
+					d
+					e
+					c
+; P2-3
+		tempo 1 		f
+					e
+		tempo 2 		d
+				oct 5	b
+					a
+					g
+				oct 4	a
+					g
+		tempo 1 		c
+					d
+; P2-4
+		tempo 2 		e
+					e
+					g
+					g
+					c
+					d
+					e
+					c
+		return
+;----------------------------------------
+field053:
+;----------------------------------------
+		bal_s f0
+; P3-1
+		init c 25
+		vib 09 27
+		tempo 2 		r
+loop30$:
+; P3-2
+		tempo 2 		r
+		tempo 1 	oct 5	g
+					r
+				oct 4	c
+					r
+					e
+		tempo 3 		r
+		tempo 1 		e
+					r
+				oct 5	a
+					r
+				oct 4	e
+					r
+; P3-3
+				oct 5	f
+					r
+				oct 4	c
+		tempo 3 		r
+		tempo 1 	oct 5	a
+					r
+					g
+					r
+				oct 4	c
+					r
+				oct 5	b
+					r
+					g
+					r
+; P3-4
+				oct 4	c
+					r
+				oct 5	g
+					r
+				oct 4	c
+					r
+					e
+		tempo 3 		r
+		tempo 1 		c
+					r
+					e
+					r
+					e
+					r
+; P3-5
+				oct 5	f
+					r
+				oct 4	c
+					r
+				oct 5	g
+					r
+					b
+					r
+				oct 4	e
+					r
+				oct 5	g
+					r
+					g
+		tempo 3 		r
+; P3-6
+		tempo 4 		e
+					g
+				oct 4	c
+				oct 5	g
+; P3-7
+					f
+					f#
+				oct 4	c
+				oct 5	b
+; P3-8
+					e
+					g
+				oct 4	c
+		tempo 2 	oct 5	g
+					e
+; P3-9
+					g
+				oct 4	c
+				oct 5	b
+					g
+				oct 4	c
+				oct 5	b
+				oct 4	c
+					d
+; P3-10
+		tempo 6 		c
+				oct 5	f
+		tempo 4 		a
+; P3-11
+		tempo 6 	oct 4	c
+				oct 5	g
+		tempo 2 		a
+					a#
+; P3-12
+		tempo 6 		b
+					g
+		tempo 2 	oct 4	d
+					f
+; P3-13
+		tempo 6 	oct 5	a
+		tempo 2 		e
+				oct 4	e
+					c#
+				oct 5	a
+					g
+; P3-14
+		tempo 6 		a
+				oct 4	c
+		tempo 4 	oct 5	a
+; P3-15
+		tempo 6 		g
+				oct 4	c
+		tempo 2 		f
+					e
+; P3-16
+		tempo 6 		f
+		tempo 2 		f
+					e
+					r
+					d
+				oct 5	b
+; P3-17
+		tempo 6 	oct 4	c
+				oct 5	g
+		tempo 4 	oct 4	c
+; P3-18
+		tempo 4 		e
+					c
+		tempo 1 	oct 5	g
+					r
+				oct 4	c
+					r
+					c
+		tempo 3 		r
+		jump loop30$
+;----------------------------------------
+field054:
+;----------------------------------------
+		bal_s 0f
+		drum_mode 00
+; P4-1
+		init c
+		tempo 2 		r
+loop40$:
+; P4-2
+		tempo 2 		r
+					drum 6
+		tempo 6 		drum 6
+		tempo 2 		drum 6
+					drum 6
+					drum 6
+; P4-3
+					r
+		tempo 4 		drum 6
+					drum 6
+		tempo 2 		drum 6
+		tempo 4 		drum 6
+		jump loop40$
+
+

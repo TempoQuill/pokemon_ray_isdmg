@@ -1,0 +1,371 @@
+;	include group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	Himanuts_Warking_With_Eps
+	;
+	;	Converting on Tue Jun 22 13:09:00 2021
+	;
+	;				by ver 1.01
+	;
+;	public	mushimanuts
+;mushimanuts:;					jagetsu
+	db	0c0h
+	dw	himanuts1
+	db	001h
+	dw	himanuts2
+	db	002h
+	dw	himanuts3
+	db	003h
+	dw	himanuts4
+;----------------------------------------
+himanuts1:
+;----------------------------------------
+	db	$da,$00,$9e
+	db	$e5,$77
+	db	$db,$02
+loop$:
+; P1-1
+	db	$d8,$c,$00
+	db	$0f
+; P1-2
+	db	$fd,6
+	dw	loop$
+; P1-3
+; P1-4
+; P1-5
+; P1-6
+; P1-7
+	db	$03
+	db	$fe
+	dw	himanutssub29_32
+loop11_14$:
+; P1-11
+	db	$33
+	db	$fe
+	dw	himanutssub29_32
+; P1-15
+	db	$fd,3
+	dw	loop11_14$
+; P1-19
+; P1-23
+	db	$3f
+loop24$:
+; P1-24
+	db	$0f
+; P1-25
+	db	$fd,9
+	dw	loop24$
+; P1-26
+; P1-27
+; P1-28
+; P1-29
+; P1-30
+; P1-31
+; P1-32
+; P1-33
+	db	$fc
+	dw	loop$
+;----------------------------------------
+himanuts2:
+;----------------------------------------
+	db	$db,$02
+; P2-1
+	db	$d8,$c,$00
+	db	$0f
+; P2-2
+loop$:
+	db	$0f
+; P2-3
+loop3$:
+	db	$fe
+	dw	himanutssub3
+; P2-4
+	db	$fd,20
+	dw	loop3$
+; P2-5
+; P2-6
+; P2-7
+; P2-8
+; P2-9
+; P2-10
+; P2-11
+; P2-12
+; P2-13
+; P2-14
+; P2-15
+; P2-16
+; P2-17
+; P2-18
+; P2-19
+; P2-20
+; P2-21
+; P2-22
+; P2-23
+	db	$0f
+; P2-24
+	db	$0f
+loop25$:
+; P2-25
+	db	$fe
+	dw	himanutssub3
+; P2-26
+	db	$fd,4
+	dw	loop25$
+; P2-27
+; P2-28
+; P2-29
+	db	$03
+	db	$fe
+	dw	himanutssub29_32
+; P2-33
+	db	$3f
+	db	$fc
+	dw	loop$
+himanutssub29_32:
+	db	$d8,$6,$64
+	db	$d3,$a7
+	db	$d2,$17
+	db	$37
+; P2-30
+	db	$d3,$a7
+	db	$a0
+	db	$dc,$54
+	db	$a0
+	db	$a0
+	db	$a4
+	db	$dc,$64
+	db	$d2,$17
+	db	$37
+; P2-31
+	db	$d3,$a7
+	db	$a0
+	db	$dc,$54
+	db	$a0
+	db	$a0
+	db	$a4
+	db	$dc,$64
+	db	$d2,$17
+	db	$37
+; P2-32
+	db	$d3,$87
+	db	$67
+	db	$87
+	db	$a7
+	db	$d8,$c,$64
+	db	$ff
+himanutssub3:
+	db	$dc,$72
+	db	$d5,$a0
+	db	$d4,$10
+	db	$30
+	db	$d5,$a2
+	db	$a2
+	db	$a2
+	db	$a0
+	db	$a2
+	db	$ff
+;----------------------------------------
+himanuts3:
+;----------------------------------------
+; P3-1
+	db	$d8,$c,$10
+loop$:
+	db	$d3,$30
+	db	$02
+	db	$fd,112
+	dw	loop$
+; P3-2
+; P3-3
+; P3-4
+; P3-5
+; P3-6
+; P3-7
+; P3-8
+; P3-9
+; P3-10
+; P3-11
+; P3-12
+; P3-13
+; P3-14
+; P3-15
+; P3-16
+; P3-17
+; P3-18
+; P3-19
+; P3-20
+; P3-21
+; P3-22
+; P3-23
+; P3-24
+; P3-25
+; P3-26
+; P3-27
+; P3-28
+; P3-29
+	db	$0f
+; P3-30
+	db	$0f
+; P3-31
+	db	$0f
+; P3-32
+	db	$0f
+; P3-33
+	db	$fc
+	dw	loop$
+;----------------------------------------
+himanuts4:
+;----------------------------------------
+	db	$e3,$006
+loop$:
+; P4-1
+	db	$d8,$c
+	db	$0f
+; P4-2
+	db	$fd,14
+	dw	loop$
+; P4-3
+; P4-4
+; P4-5
+; P4-6
+; P4-7
+; P4-8
+; P4-9
+; P4-10
+; P4-11
+; P4-12
+; P4-13
+; P4-14
+; P4-15
+	db	$fe
+	dw	dr15_1$
+loop15$:
+	db	$fe
+	dw	dr15_2$
+	db	$fe
+	dw	dr15_3$
+; P4-16
+	db	$fd,6
+	dw	loop15$
+; P4-17
+; P4-18
+	db	$fe
+	dw	dr15_2$
+	db	$20
+	db	$a0
+	db	$30
+	db	$a0
+; P4-19
+	db	$fe
+	dw	dr15_1$
+loop19$:
+	db	$fe
+	dw	dr15_2$
+	db	$fe
+	dw	dr15_3$
+; P4-20
+	db	$fd,2
+	dw	loop19$
+	db	$fe
+	dw	dr15_2$
+	db	$20
+	db	$a0
+	db	$b0
+	db	$50
+; P4-21
+loop21$:
+	db	$fe
+	dw	dr15_2$
+	db	$fe
+	dw	dr15_3$
+	db	$fd,3
+	dw	loop21$
+; P4-22
+	db	$10
+	db	$50
+	db	$21
+	db	$21
+	db	$20
+	db	$20
+; P4-23
+	db	$fe
+	dw	dr15_1$
+loop23$:
+	db	$fe
+	dw	dr15_2$
+	db	$fe
+	dw	dr15_3$
+; P4-24
+	db	$fd,2
+	dw	loop23$
+	db	$fe
+	dw	dr15_2$
+	db	$20
+	db	$a0
+	db	$10
+	db	$a0
+; P4-25
+	db	$fe
+	dw	dr15_2$
+	db	$fe
+	dw	dr15_3$
+	db	$fe
+	dw	dr15_2$
+	db	$20
+	db	$a0
+	db	$10
+	db	$a0
+; P4-26
+loop26$:
+	db	$fe
+	dw	dr15_2$
+	db	$fe
+	dw	dr15_3$
+	db	$fd,3
+	dw	loop26$
+; P4-27
+	db	$fe
+	dw	dr15_2$
+	db	$20
+	db	$a0
+	db	$10
+	db	$a0
+; P4-28
+	db	$fe
+	dw	dr15_2$
+	db	$fe
+	dw	dr15_3$
+	db	$fe
+	dw	dr15_2$
+	db	$20
+	db	$a0
+	db	$50
+	db	$20
+; P4-29
+	db	$0f
+; P4-30
+	db	$0f
+; P4-31
+	db	$0f
+; P4-32
+	db	$0f
+; P4-33
+	db	$fc
+	dw	loop$
+dr15_1$:
+	db	$71
+	db	$b0
+	db	$a0
+dr15_3$:
+	db	$20
+	db	$a0
+	db	$b0
+	db	$a0
+	db	$ff
+dr15_2$:
+	db	$10
+	db	$a0
+	db	$b0
+	db	$a0
+	db	$ff
+
+

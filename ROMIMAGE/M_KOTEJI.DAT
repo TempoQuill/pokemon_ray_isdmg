@@ -1,0 +1,345 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_koteji
+;	;
+;	;	Converting on Fri Jul 26 18:20:00 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	musm_koteji
+;musm_koteji:
+	db	080h
+	dw	m_koteji1
+	db	001h
+	dw	m_koteji2
+	db	002h
+	dw	m_koteji3
+;----------------------------------------
+m_koteji1:
+;----------------------------------------
+	db	$da,$00,$af
+	db	$e5,$77
+	db	$ef,$f0
+	db	$db,$02
+	db	$e1,$9,$32
+; P1-0
+	db	$d8,$6,$a5
+	db	$03
+loop$:
+; P1-1
+	db	$d5,$63
+	db	$73
+	db	$93
+	db	$d4,$17
+	db	$d5,$43
+	db	$63
+	db	$73
+; P1-2
+	db	$63
+	db	$43
+	db	$23
+	db	$97
+	db	$b3
+	db	$d4,$13
+	db	$d5,$93
+; P1-3
+	db	$77
+	db	$97
+	db	$67
+	db	$63
+	db	$93
+; P1-4
+	db	$d4,$23
+	db	$d5,$97
+	db	$61
+	db	$91
+	db	$d4,$17
+	db	$03
+	db	$d5,$91
+	db	$71
+; P1-5
+	db	$db,$03
+	db	$dc,$4f
+	db	$9f
+	db	$7f
+; P1-6
+	db	$6f
+	db	$4f
+; P1-7
+	db	$db,$00
+	db	$dc,$7f
+	db	$23
+	db	$b7
+	db	$97
+	db	$73
+	db	$63
+	db	$43
+; P1-8
+	db	$67
+	db	$b7
+	db	$d4,$27
+	db	$63
+	db	$db,$02
+	db	$dc,$a5
+	db	$d5,$61
+	db	$41
+; P1-9
+	db	$2b
+	db	$77
+	db	$93
+	db	$73
+	db	$67
+; P1-10 -tie
+	db	$d4,$20
+	db	$02
+	db	$60
+	db	$0a
+	db	$20
+	db	$02
+	db	$60
+	db	$06
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_koteji2:
+;----------------------------------------
+	db	$db,$03
+; P2-0
+	db	$d8,$6,$c6
+	db	$03
+loop$:
+; P2-1
+	db	$fe
+	dw	base1$
+; P2-2
+; P2-3
+	db	$d7,$73
+	db	$ef,$0f
+	db	$d6,$b0
+	db	$02
+	db	$d5,$70
+	db	$02
+	db	$d6,$b0
+	db	$02
+	db	$ef,$ff
+	db	$d7,$b3
+	db	$fe
+	dw	base3$
+; P2-4
+	db	$d7,$93
+	db	$fe
+	dw	base3$
+	db	$d7,$93
+	db	$ef,$0f
+	db	$d5,$10
+	db	$02
+	db	$70
+	db	$02
+	db	$90
+	db	$02
+; P2-5
+	db	$fe
+	dw	base1$
+; P2-6
+; P2-7
+	db	$d6,$43
+	db	$ef,$0f
+	db	$d5,$20
+	db	$02
+	db	$b0
+	db	$02
+	db	$20
+	db	$02
+	db	$ef,$ff
+	db	$d6,$13
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$70
+	db	$02
+	db	$40
+	db	$02
+	db	$ef,$ff
+; P2-8
+	db	$d7,$b3
+	db	$ef,$0f
+	db	$d5,$60
+	db	$02
+	db	$90
+	db	$02
+	db	$60
+	db	$02
+	db	$ef,$ff
+	db	$d7,$93
+	db	$fe
+	dw	base3$
+; P2-9
+	db	$d7,$a3
+	db	$ef,$0f
+	db	$d5,$20
+	db	$02
+	db	$60
+	db	$02
+	db	$20
+	db	$02
+	db	$ef,$ff
+	db	$d7,$c3
+	db	$ef,$0f
+	db	$d5,$40
+	db	$02
+	db	$70
+	db	$02
+	db	$40
+	db	$02
+	db	$ef,$ff
+; P2-10
+	db	$d6,$23
+	db	$ef,$0f
+	db	$d5,$60
+	db	$02
+	db	$90
+	db	$02
+	db	$ef,$ff
+	db	$d6,$20
+	db	$02
+	db	$23
+	db	$ef,$0f
+	db	$d5,$60
+	db	$02
+	db	$90
+	db	$02
+	db	$ef,$ff
+	db	$d7,$93
+	db	$fc
+	dw	loop$
+base1$:
+; P2-1
+	db	$ef,$ff
+	db	$d6,$23
+	db	$ef,$0f
+	db	$90
+	db	$02
+	db	$d5,$60
+	db	$02
+	db	$d6,$90
+	db	$02
+	db	$ef,$ff
+	db	$13
+	db	$ef,$0f
+	db	$90
+	db	$02
+	db	$d5,$70
+	db	$02
+	db	$d6,$90
+	db	$02
+	db	$ef,$ff
+; P2-2
+	db	$d7,$b3
+	db	$ef,$0f
+	db	$d5,$20
+	db	$02
+	db	$90
+	db	$02
+	db	$20
+	db	$02
+	db	$ef,$ff
+	db	$d7,$93
+	db	$ef,$0f
+	db	$d5,$10
+	db	$02
+	db	$90
+	db	$02
+	db	$10
+	db	$02
+	db	$ef,$ff
+	db	$ff
+base3$:
+	db	$ef,$0f
+	db	$d5,$20
+	db	$02
+	db	$90
+	db	$02
+	db	$20
+	db	$02
+	db	$ef,$ff
+	db	$ff
+;----------------------------------------
+m_koteji3:
+;----------------------------------------
+	db	$ef,$ff
+; P3-0
+	db	$e1,$d,$13
+loop$:
+	db	$d8,$6,$13
+	db	$d4,$91
+	db	$d3,$11
+; P3-1
+	db	$23
+	db	$43
+	db	$63
+	db	$80
+	db	$9a
+	db	$27
+; P3-2
+	db	$10
+	db	$22
+	db	$43
+	db	$63
+	db	$17
+	db	$23
+	db	$43
+	db	$23
+; P3-3
+	db	$a0
+	db	$ba
+	db	$2b
+	db	$10
+	db	$22
+	db	$63
+; P3-4
+	db	$4f
+	db	$0b
+	db	$dc,$11
+	db	$d4,$91
+	db	$d3,$41
+; P3-5
+	db	$6b
+	db	$80
+	db	$92
+	db	$97
+	db	$d4,$93
+	db	$d3,$27
+; P3-6 -tie
+	db	$13
+	db	$23
+	db	$43
+	db	$63
+	db	$93
+	db	$73
+	db	$63
+; P3-7
+	db	$7b
+	db	$67
+	db	$43
+	db	$23
+	db	$13
+; P3-8
+	db	$2f
+	db	$0b
+	db	$21
+	db	$41
+; P3-9
+	db	$50
+	db	$6a
+	db	$47
+	db	$23
+	db	$13
+	db	$d8,$c,$11
+	db	$29
+; P3-10 -tie
+	db	$05
+	db	$fc
+	dw	loop$
+
+

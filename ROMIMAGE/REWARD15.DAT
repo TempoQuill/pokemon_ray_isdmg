@@ -1,0 +1,187 @@
+;	include	group.def
+;bank28	group	G_SE1
+;	public	m_reward15
+;m_reward15:
+	db	0c4h
+	dw	m_reward151
+	db	005h
+	dw	m_reward152
+	db	006h
+	dw	m_reward153
+	db	007h
+	dw	m_reward154
+;----------------------------------------
+m_reward151:
+;----------------------------------------
+	db	$f3
+	db	$da,$00,$c0
+	db	$e5,$77
+	db	$e6,$ff,$ff
+	db	$db,$02
+	db	$e1,$9,$42
+; P1-0
+	db	$d8,$6,$95
+	db	$d5,$c0
+	db	$a0
+	db	$80
+	db	$c0
+; P1-1
+	db	$d4,$33
+	db	$d5,$60
+	db	$02
+	db	$60
+	db	$02
+	db	$d4,$10
+	db	$30
+	db	$10
+	db	$d5,$b0
+; P1-2
+	db	$a2
+	db	$80
+	db	$60
+	db	$02
+	db	$60
+	db	$02
+	db	$60
+	db	$80
+	db	$a0
+	db	$60
+; P1-3
+	db	$b3
+	db	$d4,$41
+	db	$d5,$b1
+	db	$d8,$8,$97
+	db	$80
+	db	$00
+	db	$b0
+	db	$00
+	db	$b0
+	db	$00
+; P1-4
+	db	$a8
+	db	$ff
+;----------------------------------------
+m_reward152:
+;----------------------------------------
+	db	$f3
+	db	$db,$03
+	db	$e1,$16,$84
+; P2-0
+	db	$d8,$6,$c7
+	db	$03
+; P2-1
+	db	$d7,$b3
+	db	$d5,$30
+	db	$01
+	db	$d6,$60
+	db	$d5,$30
+	db	$02
+	db	$d6,$61
+	db	$d7,$b1
+; P2-2
+	db	$63
+	db	$d5,$10
+	db	$01
+	db	$d6,$60
+	db	$d5,$10
+	db	$02
+	db	$d7,$61
+	db	$d6,$11
+; P2-3
+	db	$41
+	db	$b1
+	db	$d5,$81
+	db	$d6,$b1
+	db	$d8,$8,$c7
+	db	$40
+	db	$00
+	db	$40
+	db	$00
+	db	$40
+	db	$00
+; P2-4
+	db	$38
+	db	$ff
+;----------------------------------------
+m_reward153:
+;----------------------------------------
+	db	$f3
+	db	$e1,$d,$23
+; P3-0
+	db	$d8,$6,$1e
+	db	$d3,$80
+	db	$30
+	db	$50
+	db	$80
+; P3-1
+	db	$65
+	db	$05
+	db	$50
+	db	$60
+	db	$50
+	db	$30
+; P3-2
+	db	$12
+	db	$d4,$c0
+	db	$a5
+	db	$01
+	db	$a0
+	db	$c0
+	db	$d3,$10
+	db	$30
+; P3-3
+	db	$45
+	db	$01
+	db	$d8,$8,$1e
+	db	$80
+	db	$00
+	db	$80
+	db	$00
+	db	$80
+	db	$00
+; P3-4
+	db	$78
+	db	$ff
+;----------------------------------------
+m_reward154:
+;----------------------------------------
+	db	$f3
+	db	$f0,$007
+; P4-0
+	db	$d8,$6
+	db	$80
+	db	$90
+	db	$a0
+	db	$b0
+; P4-1
+	db	$53
+	db	$c2
+	db	$90
+	db	$c3
+	db	$91
+	db	$a1
+; P4-2
+	db	$53
+	db	$c2
+	db	$90
+	db	$c3
+	db	$80
+	db	$90
+	db	$a0
+	db	$b0
+; P4-3
+	db	$53
+	db	$c3
+	db	$70
+	db	$80
+	db	$90
+	db	$90
+	db	$a0
+	db	$a0
+	db	$b0
+	db	$b0
+; P4-4
+	db	$5b
+	db	$ff
+
+

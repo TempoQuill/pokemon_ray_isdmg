@@ -1,0 +1,175 @@
+;	include	group.def
+;bank29	group	G_MUSIC1
+	;
+	;	PC011_2
+	;
+	;	Converting on Wed Oct 19 23:00:14 2019
+	;
+	;				by ver 1.00
+	;
+;	public	muspmc11
+;muspmc11:
+	db	080h
+	dw	PMC111
+	db	001h
+	dw	PMC112
+	db	002h
+	dw	PMC113
+;----------------------------------------
+PMC111:
+;----------------------------------------
+	db	$da,$00,$f5
+	db	$e5,$77
+	db	$ef,$f0
+	db	$d8,$6,$3f
+	db	$00
+; P1-1
+	db	$db,$03
+PMCLoop:
+	db	$d6,$53
+	db	$93
+	db	$53
+	db	$93
+	db	$53
+	db	$93
+	db	$b3
+	db	$93
+; P1-2
+loop2$:
+	db	$d6,$73
+	db	$d5,$13
+	db	$fd,7
+	dw	loop2$
+; P1-3
+	db	$d6,$b3
+	db	$d5,$13
+; P1-4
+loop4$:
+	db	$d6,$93
+	db	$d5,$13
+	db	$fd,3
+	dw	loop4$
+	db	$d6,$b3
+	db	$d5,$13
+	db	$fc
+	dw	PMCLoop
+;----------------------------------------
+PMC112:
+;----------------------------------------
+	db	$ef,$0f
+	db	$db,$02
+	db	$e1,$c,$92
+; P2-1
+	db	$d8,$6,$4f
+	db	$fc
+	dw	PMCLoop
+;----------------------------------------
+PMC113:
+;----------------------------------------
+loop30$:
+; P3-1
+	db	$fe
+	dw	mero1$
+; P3-2
+; P3-3
+; P3-4
+	db	$dc,$10
+	db	$90
+	db	$dc,$20
+	db	$90
+	db	$dc,$30
+	db	$90
+	db	$0a
+; P3-5
+	db	$fe
+	dw	mero1$
+; P3-6
+; P3-7
+; P3-8
+	db	$dc,$30
+	db	$50
+	db	$0c
+	db	$fc
+	dw	loop30$
+mero1$:
+	db	$d8,$c,$10
+	db	$d3,$50
+	db	$dc,$20
+	db	$50
+	db	$dc,$10
+	db	$10
+	db	$dc,$20
+	db	$10
+	db	$dc,$10
+	db	$50
+	db	$dc,$20
+	db	$50
+	db	$dc,$10
+	db	$d2,$10
+	db	$dc,$20
+	db	$10
+	db	$dc,$30
+	db	$10
+	db	$00
+	db	$dc,$10
+	db	$d3,$b0
+	db	$dc,$20
+	db	$b0
+	db	$dc,$30
+	db	$b0
+	db	$00
+	db	$dc,$10
+	db	$90
+	db	$dc,$20
+	db	$90
+; P3-2
+	db	$dc,$10
+	db	$70
+	db	$dc,$20
+	db	$70
+	db	$dc,$10
+	db	$40
+	db	$dc,$20
+	db	$40
+	db	$dc,$30
+	db	$40
+	db	$0a
+; P3-3
+	db	$dc,$10
+	db	$40
+	db	$dc,$20
+	db	$40
+	db	$dc,$10
+	db	$10
+	db	$dc,$20
+	db	$10
+	db	$dc,$10
+	db	$40
+	db	$dc,$20
+	db	$40
+	db	$dc,$10
+	db	$90
+	db	$dc,$20
+	db	$90
+	db	$dc,$30
+	db	$90
+	db	$00
+	db	$dc,$10
+	db	$70
+	db	$dc,$20
+	db	$70
+	db	$dc,$30
+	db	$70
+	db	$00
+	db	$dc,$10
+	db	$40
+	db	$dc,$20
+	db	$40
+; P3-4
+	db	$dc,$10
+	db	$50
+	db	$dc,$20
+	db	$50
+	db	$ff
+
+

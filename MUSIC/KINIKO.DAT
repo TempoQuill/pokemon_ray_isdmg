@@ -1,0 +1,1587 @@
+;	;
+;	;	kiniko
+;	;
+;	;	Converting on ??? ??? ?? ??:??:?? 1991
+;	;
+;	;				by ver 1.01
+;	;
+	db	0c0h+000h
+	dw	kiniko1
+	db	001h
+	dw	kiniko2
+	db	002h
+	dw	kiniko3
+	db	003h
+	dw	kiniko4
+	db	0c0h+000h
+	dw	kiniko12
+	db	001h
+	dw	kiniko22
+	db	002h
+	dw	kiniko32
+	db	003h
+	dw	kiniko42
+;----------------------------------------
+kiniko1:
+;----------------------------------------
+	db	$da,$00,$92
+	db	$e5,$77
+	db	$db,$02
+	db	$f1
+; P1-1
+	db	$d8,$8,$b2
+	db	$d5,$83
+	db	$c1
+	db	$a3
+	db	$c1
+	db	$d4,$15
+	db	$31
+	db	$51
+	db	$31
+; P1-2
+	db	$d5,$81
+	db	$d4,$31
+	db	$11
+	db	$d5,$c1
+	db	$a1
+	db	$c1
+	db	$85
+	db	$35
+;----------------------------------------
+kiniko12:
+;----------------------------------------
+	db	$da,$00,$92
+	db	$e5,$77
+	db	$db,$02
+	db	$f1
+; P1-3
+	db	$d8,$8,$b2
+loop$:
+	db	$d5,$85
+	db	$73
+	db	$31
+	db	$85
+	db	$a1
+	db	$71
+	db	$a1
+; P1-4
+	db	$85
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$71
+	db	$a1
+; P1-5
+	db	$85
+	db	$73
+	db	$31
+	db	$85
+	db	$a1
+	db	$71
+	db	$a1
+; P1-6
+	db	$85
+	db	$c3
+	db	$d4,$31
+	db	$11
+	db	$d5,$c1
+	db	$a1
+	db	$81
+	db	$a1
+	db	$c1
+; P1-7
+	db	$83
+	db	$a1
+	db	$c3
+	db	$a1
+	db	$d4,$13
+	db	$d5,$a1
+	db	$d4,$11
+	db	$d5,$c1
+	db	$a1
+; P1-8
+	db	$83
+	db	$a1
+	db	$c3
+	db	$a1
+	db	$d4,$15
+	db	$d5,$c5
+; P1-9
+	db	$53
+	db	$c1
+	db	$a3
+	db	$81
+	db	$c1
+	db	$a1
+	db	$81
+	db	$c1
+	db	$a1
+	db	$81
+; P1-10
+	db	$53
+	db	$c1
+	db	$a3
+	db	$81
+	db	$c5
+	db	$a5
+; P1-11
+	db	$d8,$8,$83
+	db	$35
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$a1
+	db	$83
+	db	$71
+; P1-12
+	db	$35
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$a1
+	db	$c1
+	db	$a1
+	db	$71
+; P1-13
+	db	$d8,$8,$93
+	db	$35
+	db	$c3
+	db	$81
+	db	$a1
+	db	$c1
+	db	$a1
+	db	$83
+	db	$71
+; P1-14
+	db	$35
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$71
+	db	$c1
+	db	$d4,$11
+	db	$d5,$c1
+; P1-15
+	db	$d8,$8,$b2
+	db	$a5
+	db	$c5
+	db	$a3
+	db	$d4,$31
+	db	$35
+; P1-16
+	db	$d5,$a5
+	db	$55
+	db	$a3
+	db	$d4,$31
+	db	$35
+; P1-17
+	db	$d8,$8,$83
+	db	$d5,$33
+	db	$31
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$a1
+	db	$83
+	db	$71
+; P1-18
+	db	$31
+	db	$31
+	db	$31
+	db	$c3
+	db	$81
+	db	$a1
+	db	$c1
+	db	$a1
+	db	$71
+	db	$81
+	db	$a1
+; P1-19
+	db	$d8,$8,$92
+	db	$c1
+	db	$c1
+	db	$c1
+	db	$c1
+	db	$a1
+	db	$81
+	db	$51
+	db	$51
+	db	$51
+	db	$83
+	db	$71
+; P1-20
+	db	$c1
+	db	$c1
+	db	$c1
+	db	$c1
+	db	$a1
+	db	$81
+	db	$51
+	db	$51
+	db	$51
+	db	$c1
+	db	$a1
+	db	$71
+; P1-21
+	db	$d8,$8,$75
+	db	$8b
+	db	$ab
+; P1-22
+	db	$cf
+	db	$05
+	db	$d8,$8,$a2
+	db	$81
+; P1-23
+	db	$a5
+	db	$85
+	db	$75
+	db	$53
+	db	$71
+; P1-24
+	db	$85
+	db	$a5
+	db	$c5
+	db	$d6,$cb
+; P1-25	-tie
+	db	$d8,$8,$b3
+	db	$d3,$3b
+	db	$8b
+; P1-26	-tie
+	db	$3b
+	db	$8b
+; P1-27	-tie
+	db	$d4,$ab
+	db	$d3,$5b
+; P1-28	-tie
+	db	$7b
+	db	$35
+; P1-29
+	db	$e1,$0,$00
+	db	$d8,$8,$b2
+	db	$d5,$83
+	db	$d4,$81
+	db	$35
+	db	$d5,$c3
+	db	$d4,$31
+	db	$85
+; P1-30
+	db	$d5,$83
+	db	$d4,$51
+	db	$35
+	db	$d5,$83
+	db	$c1
+	db	$d4,$35
+; P1-31
+	db	$d5,$73
+	db	$a1
+	db	$d4,$35
+	db	$d5,$83
+	db	$c1
+	db	$d4,$55
+; P1-32
+	db	$d5,$a3
+	db	$d4,$71
+	db	$83
+	db	$31
+	db	$a5
+	db	$d5,$79
+; P1-33	-tie
+	db	$c1
+	db	$c9
+	db	$c1
+	db	$c9
+; P1-34	-tie
+	db	$c1
+	db	$c5
+	db	$d4,$33
+	db	$d5,$a1
+	db	$a9
+; P1-35	-tie
+	db	$d4,$51
+	db	$59
+	db	$51
+	db	$55
+; P1-36
+	db	$31
+	db	$21
+	db	$31
+	db	$51
+	db	$31
+	db	$17
+	db	$3b
+; P1-37	-tie
+	db	$d8,$8,$a1
+	db	$d5,$31
+	db	$31
+	db	$31
+	db	$35
+	db	$51
+	db	$51
+	db	$51
+; P1-38
+	db	$5b
+	db	$d8,$8,$b2
+	db	$75
+	db	$1b
+; P1-39	-tie
+	db	$d8,$8,$a1
+	db	$31
+	db	$31
+	db	$31
+	db	$35
+	db	$51
+	db	$51
+	db	$51
+; P1-40
+	db	$5b
+	db	$d8,$8,$b2
+	db	$75
+	db	$15
+; P1-41
+	db	$db,$01
+	db	$d8,$8,$92
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+	db	$31
+	db	$d6,$c1
+	db	$d5,$31
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+; P1-42
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+	db	$31
+	db	$d6,$c1
+	db	$d5,$31
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+	db	$d6,$c1
+	db	$d5,$31
+	db	$51
+; P1-43
+	db	$d6,$a1
+	db	$d5,$31
+	db	$71
+	db	$31
+	db	$d6,$a1
+	db	$d5,$31
+	db	$d6,$a1
+	db	$d5,$31
+	db	$71
+	db	$d6,$a1
+	db	$d5,$31
+	db	$71
+; P1-44
+	db	$d6,$a1
+	db	$d5,$31
+	db	$71
+	db	$31
+	db	$d6,$a1
+	db	$d5,$31
+	db	$d6,$a1
+	db	$d5,$31
+	db	$71
+	db	$31
+	db	$d6,$a1
+	db	$d5,$31
+; P1-45
+	db	$d8,$8,$92
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+	db	$31
+	db	$d6,$c1
+	db	$d5,$31
+	db	$33
+	db	$81
+	db	$33
+	db	$11
+; P1-46
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+	db	$d6,$c1
+	db	$d5,$31
+	db	$81
+	db	$33
+	db	$81
+	db	$33
+	db	$11
+; P1-47
+	db	$d8,$8,$a2
+	db	$35
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$a1
+	db	$83
+	db	$71
+; P1-48
+	db	$35
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$a1
+	db	$c1
+	db	$a1
+	db	$71
+; P1-49
+	db	$d8,$8,$b2
+	db	$31
+	db	$31
+	db	$31
+	db	$c3
+	db	$81
+	db	$a1
+	db	$51
+	db	$71
+	db	$83
+	db	$71
+; P1-50
+	db	$81
+	db	$81
+	db	$81
+	db	$c3
+	db	$81
+	db	$a1
+	db	$81
+	db	$a1
+	db	$81
+	db	$a3
+; P1-51
+	db	$db,$02
+	db	$d8,$8,$b2
+	db	$fd,0
+	dw	loop$
+;----------------------------------------
+kiniko2:
+;----------------------------------------
+	db	$db,$02
+; P2-1
+	db	$d8,$8,$c2
+	db	$d4,$31
+	db	$81
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$c3
+	db	$a1
+; P2-2
+	db	$83
+	db	$71
+	db	$53
+	db	$71
+	db	$85
+	db	$d5,$85
+;----------------------------------------
+kiniko22:
+;----------------------------------------
+	db	$db,$02
+; P2-3
+	db	$d8,$8,$c2
+loop$:
+	db	$d4,$31
+	db	$31
+	db	$31
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$55
+	db	$73
+	db	$51
+; P2-4
+	db	$31
+	db	$81
+	db	$71
+	db	$81
+	db	$71
+	db	$81
+	db	$53
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$21
+; P2-5
+	db	$31
+	db	$31
+	db	$31
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$55
+	db	$73
+	db	$51
+; P2-6
+	db	$31
+	db	$81
+	db	$71
+	db	$81
+	db	$71
+	db	$81
+	db	$a3
+	db	$81
+	db	$73
+	db	$31
+; P2-7
+	db	$c1
+	db	$b1
+	db	$c1
+	db	$d3,$11
+	db	$d4,$c1
+	db	$a1
+	db	$85
+	db	$53
+	db	$80
+	db	$a0
+; P2-8
+	db	$c1
+	db	$b1
+	db	$c1
+	db	$d3,$11
+	db	$d4,$c1
+	db	$a1
+	db	$81
+	db	$a1
+	db	$81
+	db	$51
+	db	$71
+	db	$81
+; P2-9
+	db	$a1
+	db	$91
+	db	$a1
+	db	$c1
+	db	$a1
+	db	$81
+	db	$75
+	db	$33
+	db	$50
+	db	$70
+; P2-10
+	db	$a1
+	db	$91
+	db	$a1
+	db	$51
+	db	$71
+	db	$51
+	db	$31
+	db	$51
+	db	$71
+	db	$31
+	db	$51
+	db	$71
+; P2-11
+	db	$e1,$2,$22
+	db	$d8,$8,$b3
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+; P2-12
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$31
+; P2-13
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+; P2-14
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$11
+	db	$81
+	db	$71
+	db	$85
+; P2-15
+	db	$e1,$0,$00
+	db	$d8,$8,$c2
+	db	$a1
+	db	$91
+	db	$a1
+	db	$83
+	db	$51
+	db	$33
+	db	$d3,$31
+	db	$33
+	db	$d4,$70
+	db	$80
+; P2-16
+	db	$a1
+	db	$91
+	db	$a1
+	db	$83
+	db	$51
+	db	$33
+	db	$d3,$31
+	db	$35
+; P2-17
+	db	$e1,$2,$22
+	db	$d8,$8,$b3
+	db	$d4,$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+; P2-18
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$31
+; P2-19
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+; P2-20
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$55
+	db	$83
+	db	$71
+; P2-21
+	db	$e1,$0,$00
+	db	$d8,$8,$c2
+	db	$d5,$31
+	db	$31
+	db	$31
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$51
+	db	$51
+	db	$d4,$11
+	db	$d5,$c1
+	db	$a1
+; P2-22
+	db	$71
+	db	$71
+	db	$71
+	db	$d4,$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+	db	$53
+	db	$31
+; P2-23
+	db	$71
+	db	$51
+	db	$71
+	db	$51
+	db	$71
+	db	$51
+	db	$73
+	db	$51
+	db	$33
+	db	$71
+; P2-24
+	db	$81
+	db	$71
+	db	$81
+	db	$71
+	db	$81
+	db	$71
+	db	$85
+	db	$d5,$85
+; P2-25
+	db	$db,$03
+	db	$d8,$8,$b2
+	db	$d4,$31
+	db	$21
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c5
+	db	$d4,$35
+; P2-26
+	db	$31
+	db	$21
+	db	$31
+	db	$53
+	db	$11
+	db	$d5,$c5
+	db	$85
+; P2-27
+	db	$a1
+	db	$91
+	db	$a1
+	db	$d4,$33
+	db	$11
+	db	$d5,$c1
+	db	$b1
+	db	$c1
+	db	$d4,$53
+	db	$31
+	db	$71
+; P2-28
+	db	$61
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$35
+	db	$73
+; P2-29
+	db	$db,$02
+	db	$d8,$8,$c2
+	db	$c0
+	db	$d3,$10
+	db	$31
+	db	$21
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d4,$c5
+	db	$d3,$35
+; P2-30
+	db	$31
+	db	$21
+	db	$31
+	db	$53
+	db	$11
+	db	$d4,$c5
+	db	$85
+; P2-31
+	db	$a1
+	db	$91
+	db	$a1
+	db	$d3,$33
+	db	$11
+	db	$d4,$c1
+	db	$b1
+	db	$c1
+	db	$d3,$53
+	db	$31
+; P2-32
+	db	$71
+	db	$61
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$a5
+	db	$db,$03
+	db	$d8,$8,$c3
+	db	$d4,$31
+	db	$51
+	db	$71
+; P2-33
+	db	$83
+	db	$71
+	db	$83
+	db	$a1
+	db	$c5
+	db	$a3
+	db	$81
+; P2-34
+	db	$c5
+	db	$a3
+	db	$81
+	db	$a3
+	db	$31
+	db	$33
+	db	$a0
+	db	$c0
+; P2-35
+	db	$d3,$15
+	db	$d4,$c3
+	db	$a1
+	db	$d3,$15
+	db	$d4,$c3
+	db	$a1
+; P2-36
+	db	$d8,$8,$c5
+	db	$8b
+	db	$7b
+; P2-37
+	db	$db,$02
+	db	$d8,$8,$c2
+	db	$31
+	db	$31
+	db	$31
+	db	$35
+	db	$51
+	db	$51
+	db	$51
+	db	$55
+; P2-38
+	db	$71
+	db	$71
+	db	$71
+	db	$71
+	db	$51
+	db	$31
+	db	$15
+	db	$55
+; P2-39
+	db	$31
+	db	$31
+	db	$31
+	db	$35
+	db	$51
+	db	$51
+	db	$51
+	db	$55
+; P2-40
+	db	$71
+	db	$71
+	db	$71
+	db	$71
+	db	$51
+	db	$31
+	db	$13
+	db	$d5,$c1
+	db	$a3
+	db	$81
+; P2-41
+	db	$db,$01
+	db	$e1,$2,$24
+	db	$d8,$8,$c4
+	db	$d4,$81
+	db	$71
+	db	$81
+	db	$a1
+	db	$81
+	db	$71
+	db	$55
+	db	$33
+	db	$50
+	db	$70
+; P2-42
+	db	$81
+	db	$71
+	db	$81
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$71
+	db	$51
+	db	$31
+	db	$51
+	db	$61
+; P2-43
+	db	$71
+	db	$61
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$35
+	db	$75
+; P2-44
+	db	$71
+	db	$61
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$31
+	db	$51
+	db	$71
+	db	$31
+	db	$51
+	db	$71
+; P2-45
+	db	$e1,$2,$22
+	db	$d8,$8,$b3
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+; P2-46
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$31
+; P2-47
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+; P2-48
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$31
+; P2-49
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$d4,$11
+	db	$31
+; P2-50
+	db	$83
+	db	$71
+	db	$83
+	db	$31
+	db	$11
+	db	$81
+	db	$71
+	db	$83
+	db	$db,$02
+	db	$d8,$8,$c2
+	db	$e1,$0,$00
+	db	$d5,$c0
+	db	$d4,$10
+; P2-51
+	db	$fd,0
+	dw	loop$
+;----------------------------------------
+kiniko3:
+;----------------------------------------
+; P3-1
+	db	$d8,$8,$12
+	db	$0f
+	db	$05
+	db	$d4,$11
+; P3-2
+	db	$31
+	db	$03
+	db	$11
+	db	$03
+	db	$d5,$c1
+	db	$03
+	db	$c1
+	db	$03
+;----------------------------------------
+kiniko32:
+;----------------------------------------
+; P3-3
+	db	$d8,$8,$12
+loop$:
+	db	$d4,$31
+	db	$03
+	db	$d5,$c1
+	db	$03
+	db	$d4,$51
+	db	$03
+	db	$13
+	db	$51
+; P3-4
+	db	$31
+	db	$03
+	db	$d5,$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$21
+	db	$03
+; P3-5
+	db	$31
+	db	$03
+	db	$d5,$c1
+	db	$03
+	db	$d4,$51
+	db	$03
+	db	$13
+	db	$51
+; P3-6
+	db	$31
+	db	$03
+	db	$81
+	db	$71
+	db	$31
+	db	$51
+	db	$03
+	db	$31
+	db	$01
+	db	$11
+; P3-7
+	db	$d5,$c1
+	db	$03
+	db	$d4,$41
+	db	$03
+	db	$51
+	db	$03
+	db	$81
+	db	$03
+; P3-8
+	db	$d5,$c1
+	db	$03
+	db	$d4,$41
+	db	$03
+	db	$51
+	db	$03
+	db	$81
+	db	$01
+	db	$d5,$c1
+; P3-9
+	db	$a1
+	db	$03
+	db	$d4,$21
+	db	$03
+	db	$31
+	db	$03
+	db	$71
+	db	$03
+; P3-10
+	db	$d5,$a1
+	db	$03
+	db	$d4,$21
+	db	$03
+	db	$31
+	db	$03
+	db	$11
+	db	$01
+	db	$51
+; P3-11
+	db	$d5,$81
+	db	$0f
+	db	$05
+; P3-12
+	db	$81
+	db	$0f
+	db	$05
+; P3-13
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-14
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$d4,$21
+; P3-15
+	db	$31
+	db	$03
+	db	$d5,$a1
+	db	$03
+	db	$d4,$31
+	db	$01
+	db	$d5,$31
+	db	$31
+	db	$03
+; P3-16
+	db	$d4,$31
+	db	$03
+	db	$d5,$a1
+	db	$03
+	db	$d4,$31
+	db	$01
+	db	$d5,$31
+	db	$31
+	db	$03
+; P3-17
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-18
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-19
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-20
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-21
+	db	$c1
+	db	$09
+	db	$d4,$11
+	db	$09
+; P3-22
+	db	$31
+	db	$0f
+	db	$03
+	db	$11
+; P3-23
+	db	$31
+	db	$03
+	db	$11
+	db	$03
+	db	$d5,$c1
+	db	$03
+	db	$a1
+	db	$03
+; P3-24
+	db	$81
+	db	$03
+	db	$d4,$31
+	db	$03
+	db	$81
+	db	$03
+	db	$d5,$81
+	db	$07
+; P3-25	-tie
+	db	$d4,$31
+	db	$d5,$c1
+	db	$07
+	db	$d4,$81
+	db	$31
+	db	$07
+; P3-26	-tie
+	db	$31
+	db	$d5,$c1
+	db	$07
+	db	$d4,$51
+	db	$31
+	db	$07
+; P3-27	-tie
+	db	$31
+	db	$d5,$a1
+	db	$07
+	db	$d4,$51
+	db	$31
+	db	$07
+; P3-28	-tie
+	db	$71
+	db	$81
+	db	$03
+	db	$a1
+	db	$03
+	db	$71
+	db	$03
+; P3-29
+	db	$31
+	db	$03
+	db	$d5,$c1
+	db	$03
+	db	$d4,$81
+	db	$03
+	db	$31
+	db	$03
+; P3-30
+	db	$31
+	db	$03
+	db	$d5,$c1
+	db	$03
+	db	$d4,$51
+	db	$03
+	db	$31
+	db	$03
+; P3-31
+	db	$31
+	db	$03
+	db	$d5,$a1
+	db	$03
+	db	$d4,$51
+	db	$03
+	db	$31
+	db	$03
+; P3-32
+	db	$71
+	db	$03
+	db	$81
+	db	$03
+	db	$a1
+	db	$03
+	db	$31
+	db	$03
+; P3-33
+	db	$81
+	db	$03
+	db	$31
+	db	$03
+	db	$81
+	db	$03
+	db	$31
+	db	$03
+; P3-34
+	db	$81
+	db	$03
+	db	$31
+	db	$03
+	db	$a1
+	db	$01
+	db	$31
+	db	$31
+	db	$03
+; P3-35
+	db	$d3,$11
+	db	$03
+	db	$d4,$51
+	db	$03
+	db	$d3,$11
+	db	$03
+	db	$d4,$51
+	db	$03
+; P3-36
+	db	$a1
+	db	$03
+	db	$31
+	db	$03
+	db	$a1
+	db	$03
+	db	$31
+	db	$03
+; P3-37
+	db	$d3,$71
+	db	$09
+	db	$81
+	db	$09
+; P3-38
+	db	$a1
+	db	$09
+	db	$71
+	db	$03
+	db	$a1
+	db	$03
+; P3-39
+	db	$71
+	db	$09
+	db	$81
+	db	$09
+; P3-40
+	db	$a1
+	db	$09
+	db	$71
+	db	$03
+	db	$a1
+	db	$0f
+; P3-41	-tie
+	db	$0f
+; P3-42	-tie
+	db	$0f
+	db	$0f
+; P3-43	-tie
+	db	$0f
+; P3-44	-tie
+	db	$0f
+	db	$03
+; P3-45
+	db	$d5,$81
+	db	$0f
+	db	$05
+; P3-46
+	db	$81
+	db	$0f
+	db	$03
+	db	$a1
+; P3-47
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-48
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-49
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$03
+	db	$d5,$c1
+	db	$01
+	db	$a1
+; P3-50
+	db	$81
+	db	$03
+	db	$c1
+	db	$03
+	db	$d4,$11
+	db	$31
+	db	$01
+	db	$31
+	db	$01
+	db	$51
+; P3-51
+	db	$fd,0
+	dw	loop$
+;----------------------------------------
+kiniko4:
+;----------------------------------------
+; P4-1
+	db	$d8,$8
+	db	$0f
+	db	$07
+; P4-2
+	db	$07
+	db	$0f
+;----------------------------------------
+kiniko42:
+;----------------------------------------
+; P4-3
+	db	$d8,$8
+	db	$f2,$04
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+loop$:
+; P4-4
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+; P4-5
+	db	$fd,7
+	dw	loop$
+; P4-6
+; P4-7
+; P4-8
+; P4-9
+; P4-10
+loop11$:
+; P4-11
+	db	$f2,$0b
+	db	$f2,$0b
+; P4-12
+	db	$fd,2
+	dw	loop11$
+loop13$:
+; P4-13
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+; P4-14
+	db	$fd,2
+	dw	loop13$
+loop15$:
+; P4-15
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$03
+	db	$f2,$00
+	db	$f2,$00
+	db	$f2,$00
+	db	$f2,$04
+	db	$d8,$8
+; P4-16
+	db	$fd,2
+	dw	loop15$
+loop17$:
+; P4-17
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+; P4-18
+	db	$fd,4
+	dw	loop17$
+; P4-19
+; P4-20
+; P4-21
+	db	$f2,$0b
+	db	$f2,$0b
+; P4-22
+	db	$f2,$0b
+	db	$09
+	db	$f2,$01
+loop23$:
+; P4-23
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+; P4-24
+	db	$fd,2
+	dw	loop23$
+loop25$:
+; P4-25
+	db	$f2,$0b
+	db	$f2,$0b
+; P4-26
+	db	$fd,4
+	dw	loop25$
+; P4-27
+; P4-28
+loop29$:
+; P4-29
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+; P4-30
+	db	$fd,8
+	dw	loop29$
+; P4-31
+; P4-32
+; P4-33
+; P4-34
+; P4-35
+; P4-36
+loop37_38$:
+; P4-37
+	db	$f2,$0b
+	db	$f2,$0b
+; P4-38
+	db	$f2,$0b
+	db	$f2,$05
+	db	$f2,$05
+; P4-39
+	db	$fd,2
+	dw	loop37_38$
+; P4-41
+loop41$:
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+; P4-42
+	db	$fd,4
+	dw	loop41$
+; P4-43
+; P4-44
+loop45$:
+; P4-45
+	db	$f2,$0b
+	db	$f2,$0b
+; P4-46
+	db	$fd,2
+	dw	loop45$
+loop47$:
+; P4-47
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+; P4-48
+	db	$fd,4
+	dw	loop47$
+; P4-49
+; P4-50
+; P4-51
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$f2,$05
+	db	$fd,0
+	dw	loop$
+
+

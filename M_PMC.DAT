@@ -1,0 +1,420 @@
+;	include		group.def
+;bank29	group	G_MUSIC1
+	;
+	;	PC011
+	;
+	;	Converting on Wed Sep 27 17:34:34 1995
+	;
+	;				by ver 1.02
+	;
+;	public	PMC111
+;	public	PMC112
+;	public	PMC113
+	db	080h+000h
+	dw	PMC111
+	db	001h
+	dw	PMC112
+	db	002h
+	dw	PMC113
+;----------------------------------------
+PMC111:
+;----------------------------------------
+	db	$da,$00,$90
+	db	$e5,$77
+	db	$db,$03
+	db	$e1,$a,$22
+	db	$f1
+; P1-1
+loop10$:
+	db	$d8,$c,$a3
+	db	$d5,$61
+	db	$61
+	db	$71
+	db	$d8,$c,$b5
+	db	$d4,$23
+	db	$21
+	db	$d5,$b1
+	db	$a1
+; P1-2
+	db	$c1
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-3
+	db	$d8,$c,$a3
+	db	$a1
+	db	$51
+	db	$a1
+	db	$d8,$c,$b5
+	db	$d4,$13
+	db	$d5,$b1
+	db	$a1
+	db	$81
+; P1-4
+	db	$71
+	db	$a1
+	db	$c1
+	db	$d4,$11
+	db	$31
+	db	$21
+	db	$d5,$b1
+	db	$a1
+; P1-5
+	db	$d8,$c,$a3
+	db	$71
+	db	$61
+	db	$71
+	db	$d8,$c,$b5
+	db	$d4,$23
+	db	$21
+	db	$d5,$b1
+	db	$a1
+; P1-6
+	db	$c1
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-7
+	db	$d8,$c,$a3
+	db	$a1
+	db	$51
+	db	$a1
+	db	$d8,$c,$b5
+	db	$d4,$13
+	db	$d5,$b1
+	db	$a1
+	db	$81
+; P1-8
+	db	$71
+	db	$51
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+	db	$c1
+; P1-9
+	db	$71
+	db	$51
+	db	$33
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-10
+	db	$c1
+	db	$a1
+	db	$83
+	db	$51
+	db	$71
+	db	$81
+	db	$a1
+; P1-11
+	db	$81
+	db	$71
+	db	$53
+	db	$21
+	db	$31
+	db	$51
+	db	$81
+; P1-12
+	db	$71
+	db	$81
+	db	$a1
+	db	$c1
+	db	$a7
+; P1-13
+	db	$d4,$21
+	db	$21
+	db	$d5,$b3
+	db	$a1
+	db	$c1
+	db	$d4,$11
+	db	$31
+; P1-14
+	db	$51
+	db	$31
+	db	$23
+	db	$d5,$b1
+	db	$d4,$11
+	db	$31
+	db	$51
+; P1-15
+	db	$21
+	db	$d5,$b1
+	db	$a3
+	db	$81
+	db	$a1
+	db	$c1
+	db	$81
+; P1-16
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$31
+	db	$51
+	db	$71
+	db	$81
+	db	$fd,0
+	dw	loop10$
+;----------------------------------------
+PMC112:
+;----------------------------------------
+	db	$e1,$8,$25
+; P2-1
+loop20$:
+	db	$fe
+	dw	d_a_d$
+	db	$db,$03
+	db	$d8,$c,$a5
+	db	$d5,$93
+	db	$53
+; P2-3
+	db	$fe
+	dw	cs_a_cs$
+; P2-4
+	db	$31
+	db	$75
+	db	$db,$03
+	db	$d8,$c,$a5
+	db	$d5,$93
+	db	$53
+; P2-5
+	db	$fe
+	dw	d_a_d$
+	db	$db,$03
+	db	$d8,$c,$a5
+	db	$d5,$93
+	db	$53
+; P2-7
+	db	$fe
+	dw	cs_a_cs$
+; P2-8
+	db	$37
+	db	$db,$03
+	db	$d8,$c,$a5
+	db	$d5,$23
+	db	$53
+; P2-9
+	db	$db,$02
+	db	$d8,$c,$c6
+	db	$d4,$67
+	db	$a7
+; P2-10
+	db	$81
+	db	$a1
+	db	$81
+	db	$71
+	db	$57
+; P2-11
+	db	$27
+	db	$57
+; P2-12
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$37
+; P2-13
+	db	$77
+	db	$a7
+; P2-14
+	db	$81
+	db	$71
+	db	$81
+	db	$a1
+	db	$c7
+; P2-15
+	db	$a3
+	db	$81
+	db	$71
+	db	$87
+; P2-16
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$37
+	db	$fd,0
+	dw	loop20$
+d_a_d$:
+	db	$db,$02
+	db	$d8,$c,$c2
+	db	$d4,$21
+	db	$d5,$91
+	db	$d4,$21
+	db	$d8,$c,$c3
+	db	$a3
+	db	$83
+	db	$71
+; P2-2
+	db	$51
+	db	$25
+	db	$ff
+cs_a_cs$:
+	db	$db,$02
+	db	$d8,$c,$c2
+	db	$d4,$11
+	db	$d5,$91
+	db	$d4,$11
+	db	$d8,$c,$c3
+	db	$73
+	db	$53
+	db	$21
+	db	$ff
+;----------------------------------------
+PMC113:
+;----------------------------------------
+	db	$d8,$c,$10
+; P3-1
+loop30$:
+	db	$d4,$21
+	db	$71
+	db	$31
+	db	$71
+	db	$31
+	db	$71
+	db	$81
+	db	$71
+; P3-2
+	db	$fe
+	dw	e_a_e_a$
+; P3-3
+	db	$fe
+	dw	e_a_g_a$
+; P3-4
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$81
+	db	$a1
+; P3-5
+	db	$31
+	db	$71
+	db	$31
+	db	$71
+	db	$31
+	db	$71
+	db	$81
+	db	$71
+; P3-6
+	db	$fe
+	dw	e_a_e_a$
+; P3-7
+	db	$fe
+	dw	e_a_g_a$
+; P3-8
+	db	$31
+	db	$71
+	db	$31
+	db	$71
+	db	$31
+	db	$c1
+	db	$a1
+	db	$81
+; P3-9
+	db	$fe
+	dw	fs_a_fs_a$
+; P3-10
+	db	$81
+	db	$c1
+	db	$81
+	db	$c1
+	db	$81
+	db	$c1
+	db	$81
+	db	$c1
+; P3-11
+	db	$51
+	db	$81
+	db	$51
+	db	$81
+	db	$51
+	db	$81
+	db	$51
+	db	$81
+; P3-12
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$91
+	db	$a1
+; P3-13
+	db	$fe
+	dw	fs_a_fs_a$
+; P3-14
+	db	$81
+	db	$c1
+	db	$81
+	db	$c1
+	db	$81
+	db	$c1
+	db	$81
+	db	$c1
+; P3-15
+	db	$51
+	db	$81
+	db	$51
+	db	$81
+	db	$51
+	db	$81
+	db	$51
+	db	$81
+; P3-16
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$71
+	db	$81
+	db	$71
+	db	$51
+	db	$fd,0
+	dw	loop30$
+e_a_e_a$:
+	db	$51
+	db	$a1
+	db	$51
+	db	$a1
+	db	$51
+	db	$a1
+	db	$51
+	db	$a1
+	db	$ff
+e_a_g_a$:
+	db	$51
+	db	$a1
+	db	$51
+	db	$a1
+	db	$51
+	db	$a1
+	db	$81
+	db	$a1
+	db	$ff
+fs_a_fs_a$:
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$71
+	db	$a1
+	db	$ff
+
+

@@ -1,0 +1,354 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	masara
+;	;
+;	;	Converting on Thu Aug 19 14:58:07 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musmasara
+;musmasara:
+		mushdr	80,masara1
+		mushdr	01,masara2
+		mushdr	02,masara3
+;----------------------------------------
+masara1:
+;----------------------------------------
+		speed 00 bc
+		vol 77
+		vib 12 24
+		chorus
+		bal_s 0f
+; P1-2
+loop$:
+		duty 2
+		init c 78
+		tempo 12 	oct 5	b
+		tempo 1 		a
+					d
+					f#
+					a
+; P1-3
+		tempo 12 		b
+		tempo 1 		d#
+					g
+					b
+				oct 4	d#
+; P1-4
+		tempo 4 		e
+					d
+					c
+				oct 5	a
+; P1-5
+		env 77
+		tempo 8 		g
+		env 78
+		tempo 4 		f#
+					a
+; P1-6
+		tempo 12 		b
+		tempo 1 		a
+					d
+					f#
+					a
+; P1-7
+		tempo 2 		g
+					b
+				oct 4	e
+		tempo 4 		g
+		tempo 2 		f#
+					g
+					a
+; P1-8
+					e
+					d
+					c
+					e
+					f#
+					e
+					d
+					c
+; P1-9
+		tempo 8 	oct 5	b
+		env 77
+		tempo 8 		b
+; P1-10-13
+loop10$:
+		duty 3
+		env 92
+		tempo 2 		g
+					e
+					g
+					e
+					g
+					d#
+					g
+					d#
+; P1-11
+		env 5f
+		tempo 1 		g
+					a
+					b
+				oct 4	c
+		tempo 2 		d
+		tempo 4 		g
+		tempo 2 		d
+					c
+				oct 5	b
+		loop 2,loop10$
+; P1-14
+		env 3f
+		tempo 4 	oct 4	c
+				oct 5	b
+					a
+					g
+; P1-15
+					f#
+					d
+					e
+		env 72
+		tempo 1 		c
+					e
+					g
+				oct 4	c
+; P1-16
+					d
+					a
+		tempo 2 	oct 3	d
+		env 62
+		tempo 2 		d
+		env 22
+		tempo 2 		d
+		env 2f
+		tempo 4 	oct 5	d
+					e
+; P1-17
+		tempo 6 		g
+		tempo 1 		a
+					g
+		env 1f
+		tempo 8 		f#
+		jump loop$
+;----------------------------------------
+masara2:
+;----------------------------------------
+		vib 12 44
+		duty 2
+		bal_s f0
+; P2-2
+loop$:
+		init c 88
+		tempo 2 	oct 7	g
+					b
+				oct 6	d
+		tempo 6 		g
+		tempo 4 		f#
+; P2-3
+		tempo 2 	oct 7	g
+					b
+				oct 6	d
+		tempo 6 		g
+		tempo 4 	oct 7	b
+; P2-4
+		tempo 2 	oct 6	c
+				oct 7	g
+					b
+		tempo 4 	oct 6	c
+		tempo 2 		d
+					e
+					f#
+; P2-5
+					g
+					d
+		tempo 4 		r
+					d
+					f#
+; P2-6
+		tempo 2 	oct 7	g
+					b
+				oct 6	d
+		tempo 6 		g
+		tempo 4 		f#
+; P2-7
+		tempo 2 		e
+					d
+					e
+		tempo 4 	oct 7	b
+		tempo 2 	oct 6	d
+					e
+					f#
+; P2-8
+		tempo 8 		g
+					a
+; P2-9
+		tempo 2 		g
+					d
+					g
+		tempo 4 	oct 5	d
+		tempo 2 	oct 6	b
+				oct 5	c
+					d
+; P2-10
+loop10$:
+		env a2
+		tempo 2 	oct 5	e
+				oct 6	c
+				oct 5	e
+				oct 6	c
+				oct 5	d#
+				oct 6	c
+				oct 5	d#
+				oct 6	c
+; P2-11
+		env 93
+		tempo 6 		g
+		tempo 1 		g
+		tempo 3 		g
+		tempo 2 		d
+		tempo 4 		g
+		loop 2,loop10$
+; P2-14
+		tempo 2 		c
+		tempo 4 	oct 5	e
+		tempo 1 	oct 6	c
+		tempo 3 	oct 5	c
+		tempo 2 	oct 6	c
+					e
+					c
+; P2-15
+		tempo 2 		d
+		tempo 4 	oct 5	d
+		tempo 1 	oct 6	d
+		tempo 3 		g
+		tempo 2 		e
+					g
+					e
+; P2-16
+		env 1f
+		tempo 4 		f#
+		env 88
+		tempo 4 		f#
+					b
+					g
+; P2-17
+		tempo 2 		a
+					d
+					g
+		tempo 4 		d
+		tempo 2 		c
+				oct 7	b
+					a
+		jump loop$
+;----------------------------------------
+masara3:
+;----------------------------------------
+		vib 14 24
+; P3-2
+loop$:
+		init c 10
+		tempo 2 	oct 2	d
+					c
+				oct 3	b
+					a
+				oct 2	g
+					e
+					f#
+					e
+; P3-3
+		tempo 6 		d
+		tempo 2 	oct 3	b
+		tempo 1 		g
+					r
+					g
+					r
+					a
+					r
+					b
+					r
+; P3-4
+		tempo 8 	oct 2	c
+		tempo 2 		r
+				oct 3	f#
+					g
+					a
+; P3-5
+		tempo 6 		b
+		tempo 1 	oct 2	c
+				oct 3	b
+		tempo 8 		a
+; P3-6
+		tempo 2 	oct 2	d
+					c
+				oct 3	b
+				oct 2	d
+		tempo 1 		g
+					r
+					f#
+					r
+					f#
+					r
+					g
+					r
+; P3-7
+		tempo 6 		e
+		tempo 1 		d
+					r
+		tempo 8 		d
+; P3-8
+		tempo 2 		c
+				oct 3	b
+					a
+					g
+				oct 2	d
+					c
+				oct 3	b
+					a
+; P3-9
+		tempo 8 		g
+		tempo 2 		r
+					g
+					a
+					b
+; P3-10
+		tempo 8 	oct 2	c
+		tempo 6 		d
+		tempo 2 		c
+; P3-11
+		tempo 8 	oct 3	b
+		tempo 2 		r
+					g
+					a
+					b
+; P3-12
+		tempo 2 	oct 2	c
+					r
+		tempo 4 		c
+		tempo 6 		d
+		tempo 1 		c
+					d
+; P3-13
+		tempo 8 	oct 3	b
+		tempo 2 		r
+					b
+					a
+					g
+; P3-14
+		tempo 8 		a
+		tempo 4 		e
+					b
+; P3-15
+		tempo 8 		a
+		tempo 4 		g
+					e
+; P3-16
+		tempo 7 		f#
+		tempo 1 		r
+		tempo 3 		g
+		tempo 1 		r
+		tempo 3 		b
+		tempo 1 		r
+; P3-17
+		tempo 8 		b
+					a
+		jump loop$

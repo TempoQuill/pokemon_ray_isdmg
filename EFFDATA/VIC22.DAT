@@ -1,0 +1,41 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	win2
+;	;
+;	;	Converting on Mon Aug 16 22:58:35 1999
+;	;
+;	;				by ver 1.01
+;	;
+;
+;	extern	win21_start
+;	extern	win22_start
+;	extern	win23_start
+;
+;	public	muswin22
+;muswin22:
+	db	080h
+	dw	win221
+	db	001h
+	dw	win222
+	db	002h
+	dw	win223
+win221:
+	db	$da,$00,$7e
+	db	$e5,$77
+	db	$db,$03
+	db	$f1
+	db	$d8,$c,$a1
+	db	$fc
+	dw	win21_start
+win222:
+	db	$e1,$12,$24
+	db	$d8,$c,$c1
+	db	$db,$02
+	db	$fc
+	dw	win22_start
+win223:
+	db	$d8,$c,$25
+	db	$fc
+	dw	win23_start
+

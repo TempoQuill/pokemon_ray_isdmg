@@ -1,0 +1,320 @@
+;	include	group.def
+;bank2a	group	G_MUSIC2
+;	;
+;	;	josay
+;	;
+;	;	Converting on Sat Aug 24 20:40:52 2019
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musjosay
+;musjosay:
+	db	0c0h
+	dw	josay1
+	db	001h
+	dw	josay2
+	db	002h
+	dw	josay3
+	db	003h
+	dw	josay4
+;----------------------------------------
+josay1:
+;----------------------------------------
+	db	$da,$01,$00
+	db	$e5,$77
+	db	$db,$02
+; P1-1
+	db	$d8,$3,$a4
+	db	$07
+loop$:
+; P1-2
+	db	$dc,$a4
+	db	$d4,$27
+	db	$dc,$a1
+	db	$d5,$c3
+	db	$a3
+	db	$dc,$a4
+	db	$93
+	db	$dc,$a1
+	db	$a3
+	db	$93
+	db	$73
+; P1-3
+	db	$dc,$a4
+	db	$5b
+	db	$dc,$a1
+	db	$a3
+	db	$d4,$23
+	db	$53
+	db	$d5,$53
+	db	$93
+; P1-4
+	db	$dc,$a4
+	db	$d4,$53
+	db	$dc,$a1
+	db	$d5,$a3
+	db	$53
+	db	$a3
+	db	$dc,$a4
+	db	$d4,$33
+	db	$dc,$a1
+	db	$23
+	db	$d5,$c3
+	db	$d4,$23
+; P1-5
+	db	$dc,$a4
+	db	$d5,$cb
+	db	$dc,$a1
+	db	$d4,$53
+	db	$93
+	db	$c3
+	db	$d3,$57
+; P1-6
+	db	$dc,$a4
+	db	$d5,$a7
+	db	$dc,$a1
+	db	$73
+	db	$a3
+	db	$73
+	db	$a3
+	db	$53
+	db	$73
+; P1-7
+	db	$dc,$a4
+	db	$57
+	db	$dc,$a1
+	db	$a3
+	db	$c3
+	db	$dc,$a4
+	db	$d4,$27
+	db	$dc,$a1
+	db	$d5,$a7
+; P1-8
+	db	$dc,$a4
+	db	$73
+	db	$dc,$a1
+	db	$a3
+	db	$d4,$23
+	db	$d5,$c3
+	db	$a3
+	db	$93
+	db	$73
+	db	$53
+; P1-9
+	db	$23
+	db	$53
+	db	$a3
+	db	$53
+	db	$23
+	db	$53
+	db	$93
+	db	$c3
+	db	$fc
+	dw	loop$
+;----------------------------------------
+josay2:
+;----------------------------------------
+	db	$db,$03
+; P2-1
+	db	$d8,$3,$e1
+	db	$07
+loop$:
+; P2-2
+	db	$fe
+	dw	bass2$
+	db	$fe
+	dw	bass2$
+; P2-3
+	db	$fe
+	dw	bass2$
+	db	$d7,$a3
+	db	$d6,$50
+	db	$02
+	db	$d7,$93
+	db	$d6,$50
+	db	$02
+; P2-4
+	db	$fe
+	dw	bass4$
+	db	$fe
+	dw	bass4$
+; P2-5
+	db	$fe
+	dw	bass5$
+	db	$fe
+	dw	bass5$
+; P2-6
+	db	$fe
+	dw	bass6$
+	db	$fe
+	dw	bass6$
+; P2-7
+	db	$fe
+	dw	bass7$
+	db	$fe
+	dw	bass7$
+; P2-8
+	db	$fe
+	dw	bass6$
+	db	$fe
+	dw	bass5$
+; P2-9
+	db	$fe
+	dw	bass2$
+	db	$d7,$a3
+	db	$d6,$50
+	db	$02
+	db	$d7,$c3
+	db	$d6,$51
+	db	$01
+	db	$fc
+	dw	loop$
+bass2$:
+	db	$d7,$a3
+basssub2$:
+	db	$d6,$50
+	db	$02
+	db	$a0
+	db	$d5,$20
+	db	$01
+	db	$d6,$50
+	db	$02
+	db	$ff
+bass4$:
+	db	$d7,$73
+	db	$fc
+	dw	basssub2$
+bass5$:
+	db	$d7,$53
+	db	$d6,$50
+	db	$02
+	db	$90
+	db	$c0
+	db	$01
+	db	$50
+	db	$02
+	db	$ff
+bass6$:
+	db	$d7,$33
+	db	$d6,$70
+	db	$02
+	db	$a0
+	db	$d5,$30
+	db	$01
+	db	$d6,$70
+	db	$02
+	db	$ff
+bass7$:
+	db	$d7,$23
+	db	$fc
+	dw	basssub2$
+;----------------------------------------
+josay3:
+;----------------------------------------
+	db	$e1,$0,$14
+loop$:
+; P3-1
+	db	$d8,$3,$1a
+	db	$d3,$40
+	db	$52
+	db	$91
+	db	$01
+; P3-2
+	db	$a7
+	db	$93
+	db	$73
+	db	$53
+	db	$73
+	db	$53
+	db	$33
+; P3-3
+	db	$26
+	db	$40
+	db	$5b
+	db	$03
+	db	$a3
+	db	$c2
+	db	$d2,$10
+; P3-4
+	db	$27
+	db	$d3,$c3
+	db	$a3
+	db	$c3
+	db	$a3
+	db	$93
+	db	$a3
+; P3-5
+	db	$9f
+	db	$0b
+	db	$52
+	db	$60
+; P3-6
+	db	$77
+	db	$53
+	db	$73
+	db	$53
+	db	$33
+	db	$23
+	db	$33
+; P3-7
+	db	$2b
+	db	$33
+	db	$57
+	db	$a3
+	db	$c2
+	db	$d2,$10
+; P3-8
+	db	$27
+	db	$53
+	db	$33
+	db	$23
+	db	$d3,$c3
+	db	$a3
+	db	$93
+; P3-9
+	db	$d8,$6,$1a
+	db	$a9
+	db	$01
+	db	$fc
+	dw	loop$
+;----------------------------------------
+josay4:
+;----------------------------------------
+	db	$e3,$004
+; P4-1
+	db	$d8,$6
+	db	$20
+	db	$20
+	db	$20
+	db	$20
+loop$:
+; P4-2
+	db	$b1
+	db	$71
+	db	$51
+	db	$71
+	db	$b1
+	db	$40
+	db	$b0
+	db	$51
+	db	$71
+; P4-3
+	db	$fd,7
+	dw	loop$
+; P4-4
+; P4-5
+; P4-6
+; P4-7
+; P4-8
+; P4-9
+	db	$c3
+	db	$51
+	db	$c3
+	db	$40
+	db	$b0
+	db	$51
+	db	$21
+	db	$fc
+	dw	loop$
+
+

@@ -1,0 +1,275 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	Dungeon072
+	;
+	;	Converting on Mon Mar  1 06:40:12 1999
+	;
+	;				by ver 1.02
+	;
+;	public	musdungeon17
+;musdungeon17:
+		mushdr	c0,Dungeon0721
+		mushdr	01,Dungeon0722
+		mushdr	02,Dungeon0723
+		mushdr	03,Dungeon0724
+;----------------------------------------
+Dungeon0721:
+;----------------------------------------
+		speed 00 a0
+		vol 77
+		duty 1
+		chorus 00 02
+		vib 18 34
+		bal_s 0f
+; P1-1
+loop10$:
+		init c b3
+loop101$:
+		call sub11$
+		loop 4,loop101$
+loop11$:
+; P1-5
+		tempo 2 	oct 6	g#
+				oct 5	c#
+		tempo 4 		e
+		tempo 2 		c#
+					e
+		tempo 4 		f
+		loop 8,loop11$
+loop12$:
+; P1-13
+		tempo 2 	oct 6	a
+				oct 5	d
+		tempo 4 		f
+		tempo 2 		d
+					f
+		tempo 4 		f#
+		loop 4,loop12$
+; P1-17
+		tempo 4 		r	; 4bu yasumu
+		env 80
+		tempo 16 		f
+; P1-18
+					f#
+; P1-19
+					g
+; P1-20
+					f#
+; P1-21
+		tempo 8 		g
+					f#
+; P1-22
+					f
+					e
+; P1-23
+					g
+					f#
+; P1-24
+				oct 4	c
+				oct 5	a
+; P1-25
+		env 95
+loop13$:
+		chorus 00 04
+		call sub11$
+		chorus 00 08
+		call sub11$
+		chorus 00 0c
+		call sub11$
+		chorus 00 10
+		call sub11$
+		chorus 00 02
+		jump loop10$
+sub11$:
+		tempo 2 	oct 6	g#
+				oct 5	c#
+		tempo 12 		e
+		return
+;----------------------------------------
+Dungeon0722:
+;----------------------------------------
+		duty 3
+		vib 08 24
+; P2-1
+loop20$:
+		init c c4
+		call sub21$
+; P2-5
+		env c5
+		call sub21$
+; P2-9
+		env c7
+		call sub21$
+; P2-13
+		env c4
+		tempo 4 		c#
+				oct 5	b
+		tempo 2 	oct 4	d
+					e
+					c#
+				oct 5	b
+; P2-14
+		tempo 4 	oct 4	c#
+				oct 5	b
+		tempo 8 	oct 4	d
+; P2-15
+		tempo 4 	oct 5	b
+		tempo 4 	oct 4	d
+		tempo 2 		f#
+					f
+					c#
+				oct 5	b
+; P2-16
+		tempo 8 	oct 4	c#
+		tempo 4 		d
+					c#
+; P2-17
+					r	; 4bu yasumu
+		env a0
+		tempo 16 		c
+; P2-18
+					c#
+; P2-19
+					d
+; P2-20
+					c#
+; P2-21
+					e
+; P2-22
+					d#
+; P2-23
+					a#
+; P2-24
+					a
+; P2-25
+		env a5
+loop21$:
+		vib 06 44
+		call sub22$
+		vib 04 33
+		call sub22$
+		vib 02 22
+		call sub22$
+		vib 01 41
+		call sub22$
+		vib 08 24
+		jump loop20$
+sub21$:
+		tempo 4 	oct 4	c
+				oct 5	a#
+		tempo 2 	oct 4	c#
+					d#
+					c
+				oct 5	a#
+; P2-2
+		tempo 4 	oct 4	c
+				oct 5	a#
+		tempo 8 	oct 4	c#
+; P2-3
+		tempo 4 	oct 5	a#
+				oct 4	c#
+		tempo 2 		f
+					e
+					c
+				oct 5	a#
+; P2-4
+		tempo 8 	oct 4	c
+		tempo 4 		c#
+					c
+		return
+sub22$:
+		tempo 2 	oct 6	g#
+				oct 5	c#
+		tempo 12 		e
+		return
+;----------------------------------------
+Dungeon0723:
+;----------------------------------------
+		init c 16
+; P3-1
+		bal_s f0
+loop30$:
+		tempo 16 		r
+		loop 7,loop30$
+; P3-8
+		tempo 14 		r
+		tempo 2 	oct 4	c
+; P3-9
+loop31$:
+		tempo 2 		r
+				oct 5	e
+					r
+					e
+					g#
+					e
+					r
+				oct 4	c
+		loop 4,loop31$
+; P3-13
+loop32$:
+		tempo 2 		r
+				oct 5	f
+					r
+					f
+					a
+					f
+					r
+				oct 4	c#
+		loop 4,loop32$
+; P3-17
+		tempo 4 		r		; 4bu yasumi
+		tempo 8 		c
+				oct 5	b
+; P3-18
+					a#
+					a
+; P3-19
+				oct 4	c#
+					c
+; P3-20
+				oct 5	b
+					a#
+; P3-21
+loop33$:
+		tempo 4 		a
+					g
+		tempo 2 		a#
+				oct 4	c
+				oct 5	a
+					g
+		loop 3,loop33$
+; P3-24
+		tempo 4 		a
+					g
+		tempo 8 		a#
+; P3-25
+loop34$:
+		tempo 16 		r
+		loop 4,loop34$
+		jump loop30$
+;----------------------------------------
+Dungeon0724:
+;----------------------------------------
+		drum_mode 01
+		init c
+; P4-1 -
+loop40$:
+		bal_s f0
+		tempo 4 		drum 5
+		bal_s ff
+		tempo 4 		drum 6
+		bal_s 0f
+		tempo 4 		drum 9
+		tempo 8 		r
+		bal_s 0f
+		tempo 4 		drum 5
+		bal_s ff
+		tempo 4 		drum 6
+		bal_s f0
+		tempo 4 		drum 9
+		tempo 8 		r
+		jump loop40$
+		jump loop40$
+
+

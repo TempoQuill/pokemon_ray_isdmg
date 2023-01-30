@@ -1,0 +1,561 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	title2_1
+	;
+	;	Converting on Fri Jul 30 18:29:35 1999
+	;
+	;				by ver 1.01
+	;
+;	public	mustitle1
+;mustitle1:
+		mushdr	80,title2_11
+		mushdr	01,title2_12
+		mushdr	01,title2_13
+;----------------------------------------
+title2_11:
+;----------------------------------------
+		speed 01 00
+		vol 77
+		chorus
+		duty 2
+		bal_s f0
+; P1-2
+		init c b7
+		tempo 16 	oct 7	g#
+; P1-3
+					g#
+		speed 00 a8
+		duty 3
+; P1-4
+		init 6 c7
+		tempo 12 	oct 5	f
+		tempo 4 		a
+		tempo 12 	oct 4	c
+		tempo 2 	oct 5	b
+					a#
+; P1-5
+		tempo 12 		g
+		tempo 4 		a#
+		tempo 12 	oct 4	d#
+		tempo 2 		d
+					c#
+; P1-6
+		init 6 b5
+		tempo 8 		c
+				oct 5	f
+					a
+		tempo 4 		b
+				oct 4	c
+; P1-7
+		init 6 b3
+		tempo 8 	oct 5	a#
+					c#
+				oct 6	f#
+				oct 7	b
+; P1-8
+		init 6 b2
+		tempo 4 		r
+				oct 5	a#
+		tempo 8 		a#
+		tempo 4 		g#
+		tempo 8 		g#
+		tempo 4 		g
+; P1-9
+		tempo 8 		g
+		tempo 4 		f#
+		tempo 8 		f#
+		tempo 4 	oct 6	a#
+		tempo 8 		a#
+; P1-10
+		tempo 4 		g#
+		tempo 8 		g#
+		tempo 4 		g
+		tempo 8 		g
+		tempo 4 		f#
+		tempo 8 		a
+; P1-11
+		tempo 4 		a
+		tempo 8 		a
+		tempo 6 		g#
+					g#
+		tempo 4 		f#
+; P1-12
+					g
+					f
+		init 8 b3
+		tempo 1 	oct 4	f
+					g
+					a
+					a#
+					b
+				oct 3	c
+		duty 2
+		init c b3
+		tempo 1 		d
+					c#
+		tempo 4 		d
+		tempo 1 		a
+					g#
+; P1-13
+		tempo 4 		a
+		tempo 2 	oct 4	a#
+				oct 3	d
+					f
+		tempo 6 		g
+; P1-14
+		tempo 2 		d#
+					d
+					c
+		tempo 4 		d#
+		tempo 2 		f#
+		duty 3
+		init 8 92
+		tempo 1 		a
+					f
+					d#
+					c
+				oct 4	a
+					g
+; P1-15
+					f
+					d#
+					c
+		tempo 3 	oct 5	a
+		init c b2
+		tempo 2 		a#
+					b
+				oct 4	c
+					d
+					d#
+		env c2
+		tempo 2 		f
+; P1-16
+					g
+		tempo 16 		a
+		end
+;----------------------------------------
+title2_12:
+;----------------------------------------
+		chorus
+		bal_s 0f
+; P2-1
+		init c b7
+		duty 2
+; P2-2
+		tempo 16 	oct 6	c
+; P2-3
+					c
+; P2-4
+		duty 3
+		init c b2
+		tempo 2 		r
+		init 6 62
+		tempo 2 	oct 7	f
+					a
+				oct 6	c
+					e
+					f
+					a
+				oct 5	c
+					e
+					f
+					a
+				oct 4	c
+					e
+					f
+					a
+; P2-5
+				oct 3	c
+					e
+				oct 7	d#
+					g
+					a#
+				oct 6	d
+					d#
+					g
+					a#
+				oct 5	d
+					d#
+					g
+					a#
+				oct 4	d
+					d#
+					g
+; P2-6
+		init c b7
+		tempo 16 	oct 7	f
+; P2-7
+		env 83
+		tempo 2 	oct 4	f
+		env 81
+		tempo 2 		d
+		env 93
+		tempo 2 		g#
+		env 91
+		tempo 2 		f
+		env a3
+		tempo 2 	oct 3	c#
+		env a1
+		tempo 2 	oct 4	a#
+		env b3
+		tempo 2 	oct 3	f#
+		env c1
+		tempo 2 		d#
+; P2-8
+		env b3
+		tempo 2 	oct 7	a#
+		init 6 b2
+		tempo 4 	oct 4	d
+					d
+				oct 7	f
+				oct 4	d
+					d
+				oct 6	c
+				oct 4	d#
+; P2-9
+					d#
+				oct 7	f
+				oct 4	d#
+					d#
+				oct 7	a#
+				oct 5	d
+					d
+				oct 7	b
+; P2-10
+				oct 5	d
+					d
+				oct 6	c
+				oct 5	d#
+					d#
+				oct 7	b
+				oct 5	d#
+					f#
+; P2-11
+				oct 7	a#
+				oct 5	d
+					d
+				oct 7	b
+		tempo 6 	oct 5	d
+		tempo 2 		d
+		tempo 4 	oct 6	c
+				oct 5	d#
+; P2-12
+		tempo 16 		d#
+		tempo 2 	oct 6	d#
+		tempo 4 	oct 5	g
+					g
+		tempo 2 		g
+		tempo 4 	oct 6	d#
+; P2-13
+				oct 5	f#
+					f#
+		tempo 2 	oct 6	d
+		tempo 4 	oct 5	f
+					f
+		tempo 2 		f
+		tempo 4 	oct 6	8
+				oct 5	b
+					b
+; P2-14
+				oct 6	c
+				oct 5	d#
+					d#
+				oct 6	c
+				oct 5	d#
+		tempo 16 		d#
+; P2-15-tie
+		init 6 a2
+		tempo 4 		f
+					g
+					g#
+		init 6 c2
+		tempo 4 		a
+					a#
+				oct 4	c
+		init 6 d2
+		tempo 4 		a
+; P2-16
+				oct 4	c
+		tempo 16 		d#
+		end
+;----------------------------------------
+title2_13:
+;----------------------------------------
+; P3-2
+		init 6 10
+		tempo 4 	oct 6	d
+		init 6 20
+		tempo 4			d
+		init 6 30
+		tempo 4			d
+		tempo 12 		r
+		tempo 8 		r
+;		init 6 10
+;		tempo 8			d
+;		init 6 20
+;		tempo 4			d
+;		init 6 30
+;		tempo 4			d
+; P3-3
+		init 6 10
+		tempo 1 		d#
+					r
+					g
+					r
+					a#
+					r
+				oct 5	d
+					r
+					d#
+					r
+					g
+					r
+					a#
+					r
+				oct 4	d
+					r
+					d#
+					r
+					g
+					r
+					a#
+					r
+				oct 3	d
+					r
+					d#
+					r
+					g
+					r
+					a#
+					r
+				oct 2	d
+					r
+; P3-4
+				oct 6	f
+					r
+					a
+					r
+				oct 5	c
+					r
+					e
+					r
+					f
+					r
+					a
+					r
+				oct 4	c
+					r
+					e
+					r
+					f
+					r
+					a
+					r
+				oct 3	c
+					r
+					e
+					r
+					f
+					r
+					a
+					r
+				oct 2	c
+					r
+					e
+					r
+; P3-5
+				oct 6	d#
+					r
+					g
+					r
+					a#
+					r
+				oct 5	d
+					r
+					d#
+					r
+					g
+					r
+					a#
+					r
+				oct 4	d
+					r
+					d#
+					r
+					g
+					r
+					a#
+					r
+				oct 3	d
+					r
+					d#
+					r
+					g
+					r
+					a#
+					r
+				oct 2	d
+					r
+; P3-6
+		init 8 10
+		tempo 1 		f
+				oct 3	b
+					a
+					b
+					a
+					f
+					a
+					f
+				oct 4	b
+				oct 3	f
+				oct 4	b
+					a
+					b
+					a
+					f
+					a
+					f
+				oct 5	b
+				oct 4	f
+				oct 5	b
+					a
+					b
+					a
+					f
+; P3-7
+		tempo 3 	oct 3	a
+		init c 10
+		tempo 1 		g
+					r
+		tempo 2 	oct 2	c
+		tempo 1 	oct 3	a#
+					r
+		tempo 2 	oct 2	f
+		tempo 1 		d#
+					r
+		tempo 2 		a#
+		tempo 1 		g#
+					r
+; P3-8
+		tempo 16 		r
+; P3-9
+		tempo 4 		r
+		init 6 10
+		tempo 1 	oct 6	g
+		tempo 3 		r
+		tempo 2 		a
+					r
+		tempo 12 	oct 3	f
+		tempo 4 		d
+; P3-10 -tie
+		tempo 6 		d
+		tempo 2 		f
+		tempo 12 		d#
+		tempo 2 		g#
+					r
+		tempo 6 		f#
+		tempo 2 		d#
+; P3-11
+		tempo 12 		f
+		tempo 2 		d
+					r
+		tempo 6 		d#
+		tempo 2 		f
+					g
+					r
+					f#
+					r
+; P3-12
+					g
+					r
+		tempo 4 		a
+					d#
+		tempo 2 		f
+					r
+		tempo 1 	oct 4	a#
+					r
+				oct 3	d
+					r
+				oct 4	a#
+					r
+				oct 3	d
+					r
+				oct 4	a#
+					r
+				oct 3	d
+					r
+				oct 4	a#
+					r
+				oct 3	c
+					r
+; P3-13
+				oct 4	a#
+					r
+				oct 3	c
+					r
+				oct 4	a#
+					r
+				oct 3	c
+					r
+				oct 4	a#
+					r
+				oct 3	d
+					r
+				oct 4	a#
+					r
+				oct 3	d
+					r
+				oct 4	a#
+					r
+				oct 3	d
+					r
+				oct 4	a#
+					r
+				oct 3	c
+					r
+					d
+					r
+					f
+					r
+					d
+					r
+					f
+					r
+; P3-14
+					g
+					r
+					a#
+					r
+					g
+					r
+					a#
+					r
+					g
+					r
+					a#
+					r
+					f#
+					r
+					a#
+					r
+					f#
+					r
+					a#
+					r
+					f#
+					r
+					a#
+					r
+; P3-15
+		init c 10
+		tempo 14 		r
+		tempo 2 	oct 5	f
+; P3-16
+		tempo 1 		d#
+					r
+					c
+		tempo 13 		r
+		end
+
+

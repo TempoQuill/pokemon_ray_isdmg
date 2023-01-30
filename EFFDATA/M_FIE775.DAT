@@ -1,0 +1,313 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	field05
+	;
+	;	Converting on Wed Jul 31 09:37:12 2019
+	;
+	;				by ver 1.01
+	;
+;	public	musm_field0775
+;musm_field0775:
+	db	0c0h
+	dw	m_field07751
+	db	001h
+	dw	m_field07752
+	db	002h
+	dw	m_field07753
+	db	003h
+	dw	m_field07754
+;----------------------------------------
+m_field07751:
+;----------------------------------------
+	db	$da,$00,$95
+	db	$e5,$77
+; P1-1
+	db	$f1
+	db	$db,$02
+	db	$d8,$c,$72
+	db	$03
+; P1-2 -tie
+loop$:
+	db	$fe
+	dw	sub2_5$
+	db	$35
+; P1-6 -tie
+	db	$fe
+	dw	sub2_5$
+	db	$33
+; P1-10
+	db	$fe
+	dw	sub10_11$
+; P1-12
+	db	$d6,$c1
+	db	$d5,$31
+	db	$31
+	db	$81
+	db	$81
+	db	$c1
+	db	$a1
+	db	$81
+; P1-13
+	db	$a1
+	db	$81
+	db	$71
+	db	$51
+	db	$71
+	db	$a1
+	db	$81
+	db	$71
+; P1-14
+	db	$fe
+	dw	sub10_11$
+; P1-16
+	db	$d5,$c1
+	db	$a1
+	db	$81
+	db	$c1
+	db	$a1
+	db	$c1
+	db	$d4,$21
+	db	$d5,$a1
+; P1-17
+	db	$71
+	db	$31
+	db	$a1
+	db	$31
+	db	$a1
+	db	$a1
+	db	$a5
+	db	$fc
+	dw	loop$
+sub2_5$:
+; P1-2 -tie
+	db	$d5,$a1
+	db	$71
+	db	$31
+	db	$01
+	db	$81
+	db	$a1
+	db	$71
+; P1-3
+	db	$01
+	db	$c1
+	db	$a1
+	db	$51
+	db	$81
+	db	$d4,$31
+	db	$21
+	db	$d5,$a1
+; P1-4
+	db	$01
+	db	$a1
+	db	$71
+	db	$31
+	db	$01
+	db	$81
+	db	$a1
+	db	$71
+; P1-5
+	db	$01
+	db	$81
+	db	$c1
+	db	$a1
+	db	$71
+	db	$31
+	db	$ff
+sub10_11$:
+; P1-10
+	db	$31
+	db	$81
+	db	$81
+	db	$c1
+	db	$c1
+	db	$d4,$31
+	db	$21
+	db	$d5,$c1
+; P1-11
+	db	$31
+	db	$71
+	db	$71
+	db	$a1
+	db	$a1
+	db	$d4,$31
+	db	$51
+	db	$31
+	db	$ff
+;----------------------------------------
+m_field07752:
+;----------------------------------------
+	db	$db,$02
+	db	$d8,$c,$c2
+loop$:
+loop1_5$:
+; P2-1
+	db	$d4,$30
+	db	$50
+; P2-2
+	db	$fe
+	dw	mero1$
+; P2-3
+	db	$21
+	db	$d5,$c1
+	db	$a1
+	db	$d4,$c1
+	db	$a1
+	db	$30
+	db	$50
+; P2-4
+	db	$fe
+	dw	mero1$
+; P2-5
+	db	$51
+	db	$21
+	db	$31
+	db	$d5,$a1
+	db	$71
+	db	$fd,2
+	dw	loop1_5$
+	db	$31
+; P2-10
+	db	$fe
+	dw	mero10_11$
+; P2-12
+	db	$d5,$81
+	db	$81
+	db	$c1
+	db	$c1
+	db	$d4,$31
+	db	$81
+	db	$71
+	db	$51
+; P2-13
+	db	$71
+	db	$51
+	db	$31
+	db	$21
+	db	$31
+	db	$21
+	db	$d5,$c1
+	db	$a1
+; P2-14
+	db	$fe
+	dw	mero10_11$
+; P2-16
+	db	$81
+	db	$71
+	db	$51
+	db	$81
+	db	$73
+	db	$53
+; P2-17
+	db	$d4,$31
+	db	$d5,$a1
+	db	$d4,$71
+	db	$d5,$a1
+	db	$d4,$31
+	db	$31
+	db	$31
+	db	$fc
+	dw	loop$
+mero1$:
+; P2-2
+	db	$71
+	db	$71
+	db	$a1
+	db	$a1
+	db	$31
+	db	$51
+	db	$71
+	db	$31
+; P2-3
+	db	$80
+	db	$70
+	db	$51
+	db	$ff
+mero10_11$:
+; P2-10
+	db	$c1
+	db	$c1
+	db	$d4,$31
+	db	$31
+	db	$81
+	db	$c1
+	db	$a1
+	db	$81
+; P2-11
+	db	$d5,$a1
+	db	$a1
+	db	$d4,$31
+	db	$31
+	db	$71
+	db	$a1
+	db	$81
+	db	$71
+	db	$ff
+;----------------------------------------
+m_field07753:
+;----------------------------------------
+; P3-1
+	db	$e1,$b,$33
+	db	$d8,$c,$13
+loop$:
+	db	$01
+; P3-2
+loop2_5$:
+	db	$d4,$37
+	db	$d5,$a7
+; P3-3
+	db	$83
+	db	$93
+	db	$a3
+	db	$d4,$23
+; P3-4
+	db	$37
+	db	$d5,$a7
+; P3-5
+	db	$83
+	db	$a3
+	db	$d4,$37
+; P3-6
+	db	$fd,2
+	dw	loop2_5$
+loop10_11$:
+; P3-10
+	db	$d5,$8f
+; P3-11
+	db	$d4,$3f
+; P3-12
+	db	$fd,3
+	dw	loop10_11$
+; P3-14
+; P3-16
+	db	$d5,$87
+	db	$a7
+; P3-17
+	db	$d4,$38
+	db	$00
+	db	$30
+	db	$00
+	db	$30
+	db	$00
+	db	$fc
+	dw	loop$
+;----------------------------------------
+m_field07754:
+;----------------------------------------
+	db	$e3,$000
+; P4-1
+	db	$d8,$c
+	db	$03
+; P4-2 -tie
+loop$:
+	db	$73
+	db	$fd,6
+	dw	loop$
+; P4-3
+	db	$71
+	db	$71
+	db	$73
+	db	$fc
+	dw	loop$
+
+

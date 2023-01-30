@@ -1,0 +1,2019 @@
+;=======================================================================;
+; Category	: Pocket Monsters 2 backup ram-work
+; Author	: Takenori Ohta
+; Bank-No.	: common
+; Infomation	: 1997/07/24
+;=======================================================================;
+
+		include	pm_debug.def
+
+		puball
+
+; pm_test./ohsawa/DebugRoom �f�o�b�N�c�[��
+test_debug_room		equ	1
+
+; us_spec./ohsawa/�{�b�N�X �T���`�F�b�N
+test_box_sumcheck	equ	1
+
+
+;===============================================;
+; Category	: for system
+; address	: common
+; Infomation	:
+;===============================================;
+req_int		equ	01fh		; int code
+
+
+;===============================================;
+; Category	: for VRAM access
+; address	: common
+; Infomation	:
+;===============================================;
+CHAR_DATA	equ	08000h		; Character data(OBJ)
+CHAR_SIG	equ	08800h		; OBJ & BG
+CHAR_BG		equ	09000h		; BG
+CHAR_BACK1	equ	09800h		; BackGround data choose 1
+CHAR_BACK2	equ	09c00h		; BackGround data choose 2
+EX_RAM		equ	0a000h		; Ex-work RAM
+WORK_RAM	equ	0c000h		; Work RAM
+OAM_RAM		equ	0fe00h		; OAM-RAM (4byte unit OBJ * 40)
+
+
+;===============================================;
+; Category	: control register for hard ware
+; address	: common
+; Infomation	:
+;===============================================;
+IFL		equ	0ff0fh		; warikomi youkyu 
+IE		equ	0ffffh		; warikomi kyoka
+P1		equ	0ff00h		; Port ( P10 - P15 )
+SB		equ	0ff01h		; SIO Data
+SC		equ	0ff02h		; SIO Control
+DIV		equ	0ff04h		; debaidaa register
+TIMA		equ	0ff05h		; TIMER Counter
+TMA		equ	0ff06h		; TIMER mojyuro
+TAC		equ	0ff07h		; TIMER Control
+LCDC		equ	0ff40h		; LCD Controler
+STAT		equ	0ff41h		; LCDC status info.
+SCY		equ	0ff42h		; Scroll point Y
+SCX		equ	0ff43h		; Scroll point X
+LY		equ	0ff44h		; LCDC point Y
+LYC		equ	0ff45h		; LCDC compair
+DMA		equ	0ff46h		; DMA tensou OR Address
+BGP		equ	0ff47h		; BG side pattern
+OBP0		equ	0ff48h		; OBJ side pallet data 0 
+OBP1		equ	0ff49h		; OBJ side pallet data 1
+WY		equ	0ff4ah		; Window open address Y
+WX		equ	0ff4bh		; Window open address X
+
+KEY1		equ	0ff4dh		; CPU����؂�ւ����W�X�^(CGB)
+VBK		equ	0ff4fh		; �\���p�o���N�w�背�W�X�^(CGB)
+RP		equ	0ff56h		; �ԊO���ʐM�|�[�g(CGB)
+BCPS		equ	0ff68h		; BG�J���[�������ݎw�背�W�X�^(CGB)
+BCPD		equ	0ff69h		; BG�J���[�������݃f�[�^���W�X�^(CGB)
+OCPS		equ	0ff6ah		; OBJ�J���[�������ݎw�背�W�X�^(CGB)
+OCPD		equ	0ff6bh		; OBJ�J���[�������݃f�[�^���W�X�^(CGB)
+SVBK		equ	0ff70h		; ���[�N�����o���N�w�背�W�X�^(CGB)
+
+;===============================================;
+; Category	: for SOUND
+; address	: common
+; Infomation	:
+;===============================================;
+NR10		equ	0ff10h
+NR11		equ	0ff11h
+NR12		equ	0ff12h
+NR13		equ	0ff13h
+NR14		equ	0ff14h
+NR21		equ	0ff16h
+NR22		equ	0ff17h
+NR23		equ	0ff18h
+NR24		equ	0ff19h
+NR30		equ	0ff1ah
+NR31		equ	0ff1bh
+NR32		equ	0ff1ch
+NR33		equ	0ff1dh
+NR34		equ	0ff1eh
+NR41		equ	0ff20h
+NR42		equ	0ff21h
+NR43		equ	0ff22h
+NR44		equ	0ff23h
+NR50		equ	0ff24h
+NR51		equ	0ff25h
+NR52		equ	0ff26h
+waveram		equ	0ff30h
+
+MUSIC_BANK1_NO	equ	03ah		; MUSIC bank change area 1
+MUSIC_BANK2_NO	equ	03bh		; MUSIC bank change area 2
+MUSIC_BANK3_NO	equ	03ch		; MUSIC bank change area 2
+
+oct_init_val	equ	07h
+
+
+;===============================================;
+; Category	: for RAM access
+; address	: common
+; Infomation	:
+;===============================================;
+RAMCS		equ	00000h		; RAM CS Gate data
+ROMBANK		equ	02000h		; ROM bank select 01H to 0fH
+RAMBANK		equ	04000h		; RAM bank select 0 to 3
+ROMRAM		equ	06000h		; ROM/RAM select 0 to 1
+TM_DATA		equ	0a000h
+
+;CheckSumHand	equ	0bffdh
+;CheckSumGame	equ	0bffeh
+;CheckSum	equ	0bfffh
+
+EXRAM_LIMIT_0	equ	0b800h		; G_EXRAM0 "window status area"
+;VERIFY		equ	0bc00h		; G_EXRAM3 "verify save data"
+
+
+;===============================================;
+; Category	: for user program
+; address	: common
+; Infomation	: assigned by authors
+;===============================================;
+
+;===============================================;
+; Category	: for terminal mode
+; address	: common
+; Infomation	:
+;===============================================;
+OYA		equ	01h
+KO		equ	02h
+CONNECT		equ	03h
+
+
+;===============================================;
+; Category	: for observed actor system
+; address	: common
+; Infomation	:
+;===============================================;
+ACT_DATA_LEN	equ	028h		; "actor_table" unit length
+MAIN_ACT_MAX	equ	00ah + 3	; "actor_table" unit lots
+SUBACT_LEN	equ	006h
+SUBACT_MAX	equ	004h
+CAST_DATA_LEN	equ	010h
+CAST_MAX	equ	010h
+
+HERO_CAST_NUMBER	equ	00h
+PET_CAST_NUMBER		equ	01h
+NORMAL_CAST_NUMBER	equ	02h
+
+NOT_ENTRY_CODE		equ	0ffh	; indicate cast data is not entry
+
+
+;===============================================;
+; Category	: for GB system
+; address	: common
+; Infomation	:
+;===============================================;
+BT_A		equ	001h		; A Button	= bit 0
+BT_B		equ	002h		; B Button	= bit 1
+BT_SE		equ	004h		; Select Button = bit 2
+BT_ST 		equ	008h		; Start  Button	= bit 3
+BT_R		equ	010h		; Right Key	= bit 4
+BT_L 		equ	020h		; Left	Key	= bit 5
+BT_U		equ	040h		; Up	Key	= bit 6
+BT_D		equ	080h		; Down  key	= bit 7
+
+
+
+;===============================================;
+; Category	: for controled system data
+; address	: common
+; Infomation	: assigned table number
+;===============================================;
+ASGN_MONS_NAME	equ	1		; Get Monster Name
+ASGN_WAZA_NAME	equ	2		; Get Skill Name
+ASGN_BADGE	equ	3		; Get Badge Name
+ASGN_ITEM_NAME	equ	4		; Get Item Name 
+ASGN_CAP_NAME	equ	5		; Get Capusle Name(I have Monster)
+ASGN_GEIN_NAME	equ	6		; Get gein_cap_name (Data)
+ASGN_DEALER	equ	7		; dealer_name_tbl
+ASGN_RANK_NAME  equ 	8		; Monster Trainer Name 
+
+MONS_CHR1_BANK	equ	09h		; Monster Number  1 -  26
+MONS_CHR2_BANK	equ	0ah		; Monster Number 27 -  52
+MONS_CHR3_BANK	equ	0bh		; Monster Number 53 -  74
+MONS_CHR4_BANK	equ	0ch		; Monster Number 75 - 104
+MONS_CHR5_BANK	equ	0dh		; Monster Number105 - 132
+MONS_CHR6_BANK	equ	10h		; Monster Number133 - 149
+MONS_CHR7_BANK	equ	11h		; Monster Number150 - 175
+MONS_CHR8_BANK	equ	12h		; Monster Number176 - 200
+DEALERCHR1_BANK	equ	13h		; Dealer  Number  1 - 43
+DEALERCHR2_BANK	equ	14h		; Dealer  Number
+MONS_DATA_BANK	equ	0eh		; Monster Name & Data
+FIGHT_WAZA_BANK equ	0fh		; Fight & Skill Data
+
+TABLE_END	equ	0ffh		; end of element for searching
+
+;MAPIMGBANK0	equ	006h
+;MAPIMGBANK1	equ	008h
+;MAPIMGBANK2	equ	009h
+
+
+
+
+;===============================================;
+; Category	: for item control
+; address	: common
+; Infomation	:
+;===============================================;
+SAVE_CAP	equ	1
+ITEM_SEAL	equ	2		; item    uru
+ITEM_BUY 	equ 	3		; item    kau
+CAP_SEAL	equ	4		; capsule uru
+CAP_BUY		equ	5		; capsule kau
+
+MAX_SCR_X	equ	20		; CELL_UNIT_X * 5(MAP)
+MAX_SCR_Y	equ	18		; CELL_UNIT_Y * 4.5(MAP)
+PLANE_SIZE	equ	392		; Uncompress area size
+
+; New cursor & window system by tama
+WIN_DATA_SIZE	equ	0010h
+
+
+;===============================================;
+; Category	: for monsters data
+; address	: common
+; Infomation	:
+;===============================================;
+MONSTER_NO_MAX		equ	251
+OLD_MONSTERS		equ	0
+NEW_MONSTERS		equ	1
+NEW_MONSTER_NO_MAX	equ	251 + 133
+
+CAP_MAX		equ	6		; Lots of taking capsules
+ITEM_MAX	equ	20		; Lots of taking items (New)
+
+; us_spec./ohsawa/MONS_MAX �{�b�N�X������̃����X�^�[��
+MONS_MAX	equ	20		; 30 -> 20
+
+CAPDATA_LEN	equ	48		; Save monster data length
+MONSDATA_LEN	equ	32		; Save monster data length
+NCDATA_LEN	equ	44		; Save new monster data length
+NMDATA_LEN	equ	29		; Save new monster data length
+
+; us_spec./ohsawa/MONS_NAME_LEN �����X�^�[���̒���
+;	�g���[�i�[���ɂ������p����
+MONS_NAME_LEN	equ	11		; 6 -> 11
+
+CTRL_BYTE	equ	2		; Array controll bytes length
+MONS_TBL_SIZE	equ	32		; Monster data table size (ROM)
+NM_TBL_SIZE	equ	26		; New Monster data table size
+MONS_NO		equ	11		; 'mymons_data' & 'enemy_data'
+WAZA_DATA_LEN	equ	7		; Length of waza data
+HOLDER_MAX	equ	50
+WAZA_FIELD_LEN	equ	1
+BALL_MAX	equ	12
+EV_ITEM_MAX	equ	25
+ASA_ITEM_MAX	equ	18
+KAJITS_ITEM_MAX	equ	10
+TOOL_ITEM_MAX	equ	20
+SHINKA_ITEM_MAX	equ	20
+STOCK_DATA_MAX	equ	50
+TOOL_PROJ_AREA	equ	4 * 2 + CTRL_BYTE
+TOOL_PROJ_MAX	equ	8
+MACHINE_NO_START equ	200
+HIDEN_NO_START	equ	250
+
+TAMAGO_NO	equ	0fdh
+TAMAGO_NEW_NO	equ	0fffdh
+UNKNOWNNO	equ	201
+
+MONS_HP		equ	1
+MONS_ATTACK	equ	2
+MONS_DEFENCE	equ	3
+MONS_QUICK	equ	4
+MONS_SATTACK	equ	5
+MONS_SDEFENCE	equ	6
+MONS_ZOKUSEI1	equ	7
+MONS_ZOKUSEI2	equ	8
+MONS_CATCH	equ	9
+MONS_EXP 	equ	10
+MONS_ITEM1	equ	11
+MONS_ITEM2	equ	12
+MONS_SEX_RATE	equ	13
+MONS_SEISYOKU	equ	14
+MONS_HATCH	equ	15
+MONS_NATSUKI	equ	16
+MONS_SIZE_POS	equ	17		; Monster's image (X,Y)
+F_IMG_ADRS_POS	equ	18		; Byte pos of monster's flont image
+B_IMG_ADRS_POS	equ	20		; Byte pos of monster's back image
+MONS_EXP_PTN	equ	22
+MONS_GROUP	equ	23
+MONS_WAZA_FLG	equ	24
+
+NM_HP		equ	2
+NM_ATTACK	equ	3
+NM_DEFENCE	equ	4
+NM_QUICK	equ	5
+NM_SATTACK	equ	6
+NM_SDEFENSE	equ	7
+NM_ZOKUSEI1	equ	8
+NM_ZOKUSEI2	equ	9
+NM_CATCH	equ	10
+NM_EXP		equ	11
+NM_ITEM1	equ	12
+NM_ITEM2	equ	13
+NM_SEX_RATE	equ	14
+NM_HATCH	equ	15
+NM_SIZE_POS	equ	16
+NM_EXP_PTN	equ	17
+NM_GROUP	equ	18
+NM_WAZA_FLG	equ	19
+
+CAP_NO		equ	0
+CAP_ITEM	equ	1
+CAP_WAZA1	equ	2
+CAP_WAZA2	equ	3
+CAP_WAZA3	equ	4
+CAP_WAZA4	equ	5
+CAP_ID		equ	6
+CAP_EXP		equ	8
+CAP_HP_EXP	equ	11
+CAP_ATTACK_EXP	equ	13
+CAP_DEFFENCE_EXP equ	15
+CAP_QUICK_EXP	equ	17
+CAP_SPECIAL_EXP	equ	19
+CAP_POWER_RND	equ	21
+CAP_WAZA1_POINT	equ	23
+CAP_WAZA2_POINT	equ	24
+CAP_WAZA3_POINT	equ	25
+CAP_WAZA4_POINT equ	26
+CAP_FRIENDLY	equ	27
+CAP_VIRUS	equ	28
+CAP_LEVEL	equ	31
+CAP_CONDITION	equ	32
+CAP_NOW_HP	equ	34
+CAP_MAX_HP	equ	36
+CAP_ATTACK	equ	38
+CAP_DEFFENCE	equ	40
+CAP_QUICK	equ	42
+CAP_SATTACK	equ	44
+CAP_SDEFFENCE	equ	46
+
+NC_NO		equ	0
+NC_ITEM		equ	2
+NC_WASA1	equ	3
+NC_WASA2	equ	4
+NC_WASA3	equ	5
+NC_WASA4	equ	6
+NC_ID		equ	7
+NC_EXP		equ	9
+NC_HP_EFT	equ	12
+NC_ATTACK_EFT	equ	13
+NC_DEFFENCE_EFT	equ	14
+NC_QUICK_EFT	equ	15
+NC_SPECIAL_EFT	equ	16
+NC_POWER_RND	equ	17
+NC_WASA1_POINT	equ	19
+NC_WASA2_POINT	equ	20
+NC_WASA3_POINT	equ	21
+NC_WASA4_POINT	equ	22
+NC_FRIENDLY	equ	23
+NC_VIRUS	equ	24
+NC_MISC		equ	25
+NC_SAFETY	equ	26
+NC_CATCH	equ	27
+NC_CONDITION	equ	28
+NC_LEVEL	equ	29
+NC_NOW_HP	equ	30
+NC_MAX_HP	equ	32
+NC_ATTACK	equ	34
+NC_DEFFENCE	equ	36
+NC_QUICK	equ	38
+NC_SATTACK	equ	40
+NC_SDEFFENCE	equ	42
+
+;������������������������������������������ USA�p��`(new)
+; us_spec./ohsawa/USA�p��`(new)
+
+ITEM_NAME_LEN		equ	12+1
+MAP_NAME_LEN		equ	16+1	; 15+1?
+DEALER_INPUT_LEN	equ	7	; �g���[�i�[�� ���͉\�Ȓ���
+DECORATE_NAME_LEN	equ	MAX_SCR_X-2+1	; �͗l�ւ��̒����P��p
+
+;������������������������������������������
+
+IR_TRANER_SIZE		equ	50	; us_spec./ohsawa/ ���ʐM �g���[�i�[�f�[�^ �o�b�t�@�T�C�Y
+
+
+PM_TBL_SIZE	equ	MONS_MAX + CTRL_BYTE		; Mons number(home) 22
+PM_DATA_SIZE	equ	MONSDATA_LEN * MONS_MAX		; Mons data(home) 640
+PM_OYA_SIZE	equ	MONS_NAME_LEN * MONS_MAX	; Mons name(home) 220
+PM_NAME_SIZE	equ	MONS_NAME_LEN * MONS_MAX	; Mons name(home) 220
+PM_BOX_SIZE	equ	PM_TBL_SIZE+PM_DATA_SIZE+PM_OYA_SIZE+PM_NAME_SIZE	;1102/44eh
+NPM_TBL_SIZE	equ	MONS_MAX*2 + CTRL_BYTE		; Mons number(home) 42
+NPM_DATA_SIZE	equ	NMDATA_LEN * MONS_MAX		; New Mons data(home) 580
+NPM_BOX_SIZE	equ	NPM_TBL_SIZE+NPM_DATA_SIZE+PM_OYA_SIZE+PM_NAME_SIZE ;1062/426h
+
+
+; us_spec./ohsawa/�{�b�N�X��������
+PM_BOX_NAME_LEN	equ	8 + 1		; 8+1 -> 8+1 �a��{�b�N�X�̖��O�{�d�n�l
+PM_BOX_NO_MAX	equ	14		; 9 -> 14 �a��{�b�N�X�̐�
+PM_BOX_NEW_MAX	equ	21		; 14 -> 21
+
+
+;===============================================;
+; Category	: for Debug Control
+; address	: common
+; Infomation	: debug
+;===============================================;
+;-----------------------------------------------------------------------;
+; DebugMode+000h �̃r�b�g��`
+;-----------------------------------------------------------------------;
+DEBUG_FIGHT_BIT		equ	0
+DEBUG_GAME_BIT		equ	1
+
+
+
+
+;------------------------------------------------------
+;
+; �t�B�[���h���̃J���[�]������
+;
+;------------------------------------------------------
+NORMAL_WINCOL_MODE	equ	0
+FIELD_WINCOL_MODE	equ	1
+
+
+
+
+
+
+
+
+
+
+
+
+;=======================================================================;
+; Category	: Pocket Monsters 3 Music work ram
+; Bank-No.	: 0c000h
+; Infomation	: system
+;=======================================================================;
+workram0	group	0
+
+	org	0c000h
+
+
+
+DriveOn		ds	1	;c000
+
+SoundWorkArea_Top:
+
+SoundWork	ds	50*8	;c001
+
+PoseFlag	ds	1	;c191
+
+Set_duty	ds	1	;c192
+Set_env		ds	1	;c193
+Set_tone	ds	2	;c194
+Set_time	ds	1	;c196
+
+Por_length	ds	1	;c197
+SoundData	ds	1	;c198
+SoundLineNo	ds	1	;c199
+SoundVolume	ds	1	;c19a
+BalanceMask	ds	1	;c19b
+Sweep_value	ds	1	;c19c
+
+MusNum		ds	2	;c19d
+MusBank		ds	1	;c19f
+
+DrumAddress	ds	2	;c1a0
+DrumLength	ds	1	;c1a2
+DrumLevel	ds	1	;c1a3
+DrumSetting	ds	1	;c1a4
+DrumSettingSE	ds	1	;c1a5
+
+PinchFlag	ds	1	;c1a6
+SoundFade	ds	1	;c1a7
+FadeWork	ds	1	;c1a8
+MusicNext	ds	2	;c1a9
+BalanceChange	ds	1	;c1ab
+BC_Work		ds	1	;c1ac
+TempoOffset	ds	2	;c1ad
+
+SoundOperate	ds	1	;c1af
+MvoiceOffset	ds	2	;c1b0
+MvoiceTempo	ds	2	;c1b2
+VolRec		ds	1	;c1b4
+SoundEventFlag	ds	1	;c1b5
+BGMmodeFlag	ds	1	;c1b6
+SoundLineWork	ds	1	;c1b7
+
+Sound1MarkFlag	ds	1	;c1b8
+Sound2MarkFlag	ds	1	;c1b9
+Sound3MarkFlag	ds	1	;c1ba
+Sound4MarkFlag	ds	1	;c1bb
+
+StereoSetWork	ds	3	;c1bc
+
+SE_Num		ds	1	;c1bf
+
+SoundWorkArea_End:
+
+MusicStatus	ds	1	;c1c0
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: FieldMusicMode
+;===============================================;
+FieldMusicMode	ds	1	;c1c1
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1c2)
+; Infomation	: Decode
+;===============================================;
+decodeAdrs	ds	2		;���k�f�[�^�A�h���X
+decodeBank	ds	1		;���k�f�[�^�o���N
+decodeCouter	ds	1		;�f�R�[�h��p�J�E���^
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1c6)
+; Infomation	: KeyMode
+;===============================================;
+KeyMode		ds	1		;0=�ʏ� 0ffh=�w��f�[�^
+KeyDataAddress	ds	2		;�w��f�[�^�A�h���X
+KeyDataBank	ds	1		;�w��f�[�^�o���N
+KeyDataWait	ds	1		;�f�[�^�擾�E�F�C�g
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1cb)
+; Infomation	: DebugMode Information
+;===============================================;
+DebugMode		ds	1	;�f�o�b�O���[�h���
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1cc)
+; Infomation	: DebugMode Information
+;===============================================;
+SRAMmodeFlag		ds	1	;�Z�[�u���t���O
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1cd)
+; Infomation	: DebugMode Information
+;===============================================;
+WinColorFlag		ds	1	;�E�C���h�E�J���[�]���X�e�[�^�X�t���O
+WinColorData		ds	1	;�E�C���h�E�J���[�]���f�[�^�i���o�[
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1cf)
+; Infomation	: DebugMode Information
+;===============================================;
+FieldColorStatus	ds	1	;�t�B�[���h�J���[�]���X�e�[�^�X
+ColorStatus		ds	1
+ColorHeader		ds	2
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1d3)
+; Infomation	: Printer Mode
+;===============================================;
+ext_system	ds	2		;�v�����^�f�[�^�]���p
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1d5)
+; Infomation	: Zukan Mode Pos
+;===============================================;
+ZukanRocate	ds	1		;�}�Ӄ��X�g�|�W�V�����i��Z�[�u�j
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1d6)
+; Infomation	: Key Mode Flag
+;===============================================;
+KeySkipFlag	ds	1		;���b�Z�[�W�j�d�x����n�m�^�n�e�e
+
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common (c1d7)
+; Infomation	: tools
+; �{���͑��̃J�[�\���ʒu�ۑ��p���[�N�G���A�Ɠ����ꏊ�ɂ���ׂ�����
+;�@work�̃A�h���X���ł������ύX���Ȃ��悤�ɂ����ɂ����@1999/10/06
+;===============================================;
+allow_sv_bnk_item		ds	1	;c1d7
+scroll_sv_bnk_item		ds	1	;c1d8
+
+
+
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: system
+;===============================================;
+workram		group	0
+
+
+	org	0c200h
+
+PaletteBuf	ds	80h	;c200
+PaletteBufWork	ds	80h	;c280
+
+WORK_START:
+;=============== Don't realocate start ========;
+oam_buf		ds	0a0h			; c300h
+dmy_vram	ds	MAX_SCR_X * MAX_SCR_Y	; 168h (c3a0)
+dmy_map		ds	1e0h			; 24*20 (c508)
+event_flag	ds	18h			; no saving area (c6e8)
+ram_map		ds	514h			; adrs = 0600h 1300 (c700)
+
+; us_spec./ohsawa/ram_map�T�C�Y�g��
+; FIGHT2.RAM ���̒�`�ŁA�����X�^�[���ƃg���[�i�[�������ӂ�邽�߁B
+; RAM�}�b�v�̃X�^�[�g�ʒu��ς��Ă�OK�Ȃ�A����Ȃ��B�v��́B
+		ds	5+5+2	;cc14
+
+
+;=============== Don't realocate end ========;
+
+haji_buf	ds	002h * 014h	;cc20
+haji_buf2	ds	002h * 014h	;cc48
+haji_buf3	ds	002h * 014h	;cc70
+
+;=============== Don't realocate Block  ========;
+sgbatr_buf	ds	1	;cc98
+sgbcol_buf	ds	16	;cc99
+sgb_work	ds	48	;cca9
+attr_vram	ds	MAX_SCR_X * MAX_SCR_Y	; 168h (ccd9)
+;=============== Don't realocate Block ========;
+
+wave_chr_buf	ds	010h	;ce41
+
+read_buf	ds	4	;ce51
+send_buf	ds	4	;ce55
+send_send_cnt	ds	2	;ce59
+send_byte_cnt	ds	2	;ce5b
+my_or_gein	ds	1	;ce5d
+
+tbl_pos		ds	2		; the positon of each tables (ce5e)
+tbl_number	ds	1		; asign table number (ce60)
+tbl_bank	ds	1		; the beleave in some bank (ce61)
+seq_work	ds	5		; extra sequence work(caution!) (ce62)
+
+chr_mv_buf	ds	5		; Character Data Move Buffer (ce67)
+fnt_mv_buf	ds	5		; Font Data Move Buffer (ce6c)
+
+timer_work	ds	4		; ���Ԑ���p�e���|����	99/04/15 (ce71)
+
+title_clock	ds	3		; Title Screen puppet (ce75)
+
+cagiti_entry	ds	1		; Casino Ticket WORK (ce78)
+cagiti_reward	ds	2
+		ds	6
+
+actor_basis_x	ds	1		; �A�N�^�[����̂��߂̂w��l (ce81)
+actor_basis_y	ds	1		; �A�N�^�[����̂��߂̂x��l (ce82)
+scroll_step_x	ds	1	;ce83
+scroll_step_y	ds	1	;ce84
+scroll_flg	ds	1		; scroll request from actor routine (ce85)
+scroll_site	ds	1		; ffh == no scroll (ce86)
+
+ANM_WORK0	ds	4	;ce87
+ANM_WORK1	ds	4	;ce8b
+ANM_WORK2	ds	4	;ce8f
+DEMO_ACT_WORK	ds	10h	;ce93
+HERO_ATR_DOWN	ds	1	;cea3
+HERO_ATR_UP	ds	1	;cea4
+HERO_ATR_LEFT	ds	1	;cea5
+HERO_ATR_RIGHT	ds	1	;cea6
+
+WalkEnableFlag	ds	1	;cea7
+
+
+;sv_ram_map	ds	6 * 5		; save ram_map data inside screen
+
+; us_spec./ohsawa/sub_win_vram�폜
+;	�X�^�b�N�̈�m�ۂ̂��ߍ폜(���̃��[�N�̓f�o�b�O�p�̂���)
+;sub_win_vram	ds	40h		; radio window dmy_vram area
+
+window_work	ds	10h	;cea8
+win_data_work	ds	10h	;ceb8
+content_work	ds	10h	;cec8
+cursor_work	ds	0eh	;ced8
+muslink_work	ds	2	;cee5
+
+ev_vb_count	ds	1		; ���C�����[�v����p�^�C�~���O�J�E���^ (cee8)
+
+vb_count	ds	1	;cee9
+vb_sw		ds	1	;ceea
+
+opening_type	ds	1	;ceeb
+op_map_no	ds	1			; starting(opening) map number (ceec)
+usr_buf		ds	50		; org = 80 (ceed)
+; us_spec./ohsawa/usr_buf�T�C�Y�g��
+; COM_TEST/MONS_LIST�Ń����X�^�[���A�g���[�i���̃G���A�Ƃ��Ďg�p�B
+; 50�ŏ\���Ȃ炢��Ȃ��B�v��́B
+		ds	10
+
+
+ev_usr_buf	ds	16			; limited use for event (cf29)
+
+move_flg	ds	1	;cf39
+push_pet_count	ds	1	;cf3a
+
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: system(uncomp)
+;===============================================;
+;dot_cou_x       ds      1
+;dot_cou_y       ds      1
+;dot_x           ds      1
+;dot_y           ds      1
+;data_buff       ds      1
+;bit_cou         ds      1
+;byte_pos        ds      1
+;plane_fg	ds	1
+;comp_type	ds	1
+reverse_fg	ds	1	;cf3b
+ 
+comp_data_adrs  ds      2	;cf3c
+;img_area_adrs   ds      2
+;area_pos_adrs   ds      2
+;xor0_tbl_adrs	ds	2
+;xor1_tbl_adrs	ds	2
+
+
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: each effects
+;===============================================;
+effect_no	ds	2			; number of effect kind (cf3e)
+effect_x	ds	1			; pattern left-upper X (cf40)
+effect_y	ds	1			; pattern left-upper Y (cf41)
+;pinchi_flg	ds	1
+ef_element	ds	1	;cf42
+;ef_count1	ds	1
+;ef_adr4_h	ds	1
+;ef_adr4_l	ds	1
+;el_c		ds	1			; element count
+
+b_bgp		ds	1	;cf43
+b_obp0		ds	1	;cf44
+b_obp1		ds	1	;cf45
+
+ef_shake_flag	ds	1		 ;cf46
+window_shake_flag	ds	1		; Window Used Flag (cf47)
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: copy baffer(using scenario)
+;===============================================;
+name_copy_buf	ds	MONS_NAME_LEN	;cf48
+; pm_cmnt./ohsawa/ ���g�p�H(name_copy_buf���炠�ӂ�Ďg�p����Ă�)
+mons_name	ds	MONS_NAME_LEN	;cf53
+
+    ifn		0
+item_name	ds	8 + 1
+table_data	ds	11
+str_buf		ds	11
+ev_str_buf0	ds	10+1		; �C�x���g�p������ێ��G���A
+ev_str_buf1	ds	10+1		; 
+ev_str_buf2	ds	10+1		;
+    endif
+
+; us_spec./ohsawa/���[�N�G���A�̊g��
+item_name	ds	ITEM_NAME_LEN		; cf5e
+table_data	ds	DECORATE_NAME_LEN	; �͗l�ւ��Œ����������g���̂� (cf6b)
+str_buf		ds	DECORATE_NAME_LEN	; �͗l�ւ��Œ����������g���̂� (cf7e)
+ev_str_buf0	ds	DECORATE_NAME_LEN	; �͗l�ւ��Œ����������g���̂� (cf91)
+ev_str_buf1	ds	DECORATE_NAME_LEN	; �͗l�ւ��Œ����������g���̂� (cfa4)
+ev_str_buf2	ds	ITEM_NAME_LEN		; cfb7
+
+
+
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: tools
+;===============================================;
+allow_sv_sys	ds	1	;cfc4
+allow_sv_debug	ds	1	;cfc5
+allow_sv_fight	ds	1	;cfc6
+allow_sv_waza	ds	1	;cfc7
+allow_sv_itempage	ds	1	;cfc8
+
+allow_sv_mons	ds	1	;cfc9
+allow_sv_hitem	ds	1	;cfca
+allow_sv_sitem	ds	1	;cfcb
+allow_sv_ball	ds	1	;cfcc
+allow_sv_holder	ds	1	;cfcd
+allow_sv_asa	ds	1	;cfce
+allow_sv_kajits ds	1	;cfcf
+allow_sv_tool	ds	1	;cfd0
+allow_sv_shinka ds	1	;cfd1
+
+;scroll_sv_mons	ds	1	;cfcf
+scroll_sv_hitem	ds	1	;cfd2
+scroll_sv_sitem	ds	1	;cfd3
+scroll_sv_ball	ds	1	;cfd4
+scroll_sv_holder ds	1	;cfd5
+scroll_sv_asa	ds	1	;cfd6
+scroll_sv_kajits ds	1	;cfd7
+scroll_sv_tool	ds	1	;cfd8
+scroll_sv_shinka ds	1	;cfd9
+
+select_allow	ds	1	;cfda
+scloll_sv	ds	1	;cfdb
+msg_bank	ds	1			; message bank save area (cfdc)
+msg_sv		ds	2			; message address save area (cfdd)
+
+sub_bank	ds	1			; store sub routine bank number (cfdf)
+sub_address	ds	2			; store sub routine address (cfe0)
+
+
+function_id	ds	1			; "bank2bank" using (cfe2)
+sv_adrs1_h	ds	1			; "bank2bank" using (cfe3)
+sv_adrs1_l	ds	1			; "bank2bank" using (cfe4)
+sv_adrs2_h	ds	1			; "bank2bank" using (cfe5)
+sv_adrs2_l	ds	1			; "bank2bank" using (cfe6)
+sv_adrs3_h	ds	1			; "bank2bank" using (cfe7)
+sv_adrs3_l	ds	1			; "bank2bank" using (cfe8)
+
+para_work	ds	1	;cfe9
+work_event	ds	1			; for each event scene(timely) (cfea)
+obs_actor	ds	1			; using actor observe routine (cfeb)
+kachi_make	ds	1			; battle winner (cfec)
+event_check	ds	1			; Use in map event only one (cfed)
+
+shop_item_tbl	ds	16		; shop item table Max 10 item's (cfee)
+item_list_adrs	ds	2		; from my_cap_tbl (cffe)
+;item_name_adrs	ds	2		; from my_cap_name
+item_gold_adrs	ds	2		; change !! (d000)
+sel_item_no	ds	1		; select in window item number (d002)
+sel_item_pos	ds	1		; select in window item position (d003)
+sel_mons_no	ds	2		; select in window mons number (d004)
+sel_mons_pos	ds	1		; select in window mons position	(d006)
+;gold_req	ds	1	;d006
+mons_or_item	ds	1		; Monster or Item ninsiki flag (d007)
+cap_or_mons	ds	1		; temoti or azuke ninshiki flag (d008)
+item_kosuu	ds	1		; eranda item no kosuu (d009)
+take_item_kosuu	ds	1		; motte iru item no kosuu (d00a)
+monsdata_dmy	ds	NCDATA_LEN (d00b)
+talking_flg	ds	1		; obj control flag(objset.dmg) (d037)
+;chat_flag	ds	2		; chat status(chat.dmg)
+scroll_cnt	ds	1	;d038
+;flont_chr	ds	1
+;fade_play_fg	ds	1		; music fadeout function
+;fade_play_wait	ds	1
+;fade_play_cou	ds	1
+;now_music	ds	1		; Now Playing Music number
+msg_kind	ds	1		; cap_list message type (d039)
+
+check_flg	ds	1		; Item Seal Check flag (1.Can't 0.Can) (d03a)
+mons_level	ds	1		; monster level save (d03b)
+tbl_max		ds	1		; Table Max Number (d03c)
+tuushin_flg	ds	1		; 1 or 2 = tuushinchuu (d03d)
+
+setmap_work	ds	6		; �}�b�v�J�ڃV�X�e���p���[�N (d03e)
+
+
+;d044
+  ifn	1
+
+;===============================================;
+; PM2 WORK AREA for MAP
+;===============================================;
+
+; us_spec./ohsawa/�}�b�v��(���g�p�H)
+
+
+map_obj_type	ds	1		; map object type (d044)
+mapvramadr	ds	2		; Map Vram Address (d045)
+entry_chr_data	ds	18h		; map object setdata (d047)
+		ds	10h		;d05f
+
+mapadr2		ds	2	;d06f
+mapscloll_y4	ds	1	;d071
+mapscloll_x4	ds	1	;d072
+
+map_bank	ds	1		; map header data bank number (d073)
+chr_type	ds	1		; �L�����o���N�R�[�h (d074)
+img_type	ds	1		; �C���[�W�^�C�v�R�[�h (d075)
+map_data_adr	ds	2		; map header data address (d076)
+
+
+MapHeadStart:	;d078
+outrangecell	ds	1		; �͈͊O�Z���u���b�N�R�[�h
+mapysize	ds	1		; Map Y Size (d079)
+mapxsize	ds	1		; Map X Size (d07a)
+scrndatabank	ds	1		; �}�b�v�X�N���[���f�[�^�̃o���N (d07b)
+scrndataadr	ds	2		; �}�b�v�X�N���[���f�[�^�̃A�h���X (d07c)
+evdatabank	ds	1		; �C�x���g�f�[�^�̃o���N (d07e)
+evdataadr	ds	2		; �C�x���g�f�[�^�̃A�h���X (d07f)
+sxydataadr	ds	2		; �r�w�x�f�[�^�̃A�h���X (d081)
+map_link_flg	ds	1		; Map Link Flag	 Bit 3/U 2/D 1/L 0/R (d083)
+MapHeadEnd:
+
+mapcat_up_zone	ds	1		; Up Side (d084)
+mapcat_up	ds	1		; Up Side (d085)
+mapcat_up_adr	ds	2		; map no address (d086)
+mapcat_up_adr2	ds	2		; Ram map address (d088)
+mapcat_up_siz	ds	1		; X size(haba) (d08a)
+mapcat_up_siz2	ds	1		; hontai no X size (d08b)
+mapcat_up_y	ds	1		; Y (d08c)
+mapcat_up_x	ds	1		; X (d08d)
+mapcat_up_adr3	ds	2		; Ram Map Address (d08e)
+
+mapcat_dw_zone	ds	1		; Down Side (d090)
+mapcat_dw	ds	1		; Down Side (d091)
+mapcat_dw_adr	ds	2		; sita no map no address (d092)
+mapcat_dw_adr2	ds	2		; Ram map Address (d094)
+mapcat_dw_siz	ds	1		; X Size(haba) (d096)
+mapcat_dw_siz2	ds	1		; hontai no X size (d097)
+mapcat_dw_y	ds	1		; Y (d098)
+mapcat_dw_x	ds	1	 	; X (d099)
+mapcat_dw_adr3	ds	2		; Ram Map Address (d09a)
+
+mapcat_l_zone	ds	1		; Left Side (d09c)
+mapcat_l	ds	1		; Left Side (d09d)
+mapcat_l_adr	ds	2		; hidari no map no Address (d09e)
+mapcat_l_adr2	ds	2		; Ram Map Address (d0a0)
+mapcat_l_siz	ds	1		; Y Size(haba) (d0a2)
+mapcat_l_siz2	ds	1		; hontai no Y size (d0a3)
+mapcat_l_y	ds	1		; Y (d0a4)
+mapcat_l_x	ds	1		; X (d0a5)
+mapcat_l_adr3	ds	2		; Ram Map Address (d0a6)
+
+mapcat_r_zone	ds	1		; Right Side (d0a8)
+mapcat_r	ds	1		; Right Side (d0a9)
+mapcat_r_adr	ds	2		; migi no map no Address (d0aa)
+mapcat_r_adr2	ds	2		; Ram Map Address (d0ac)
+mapcat_r_siz	ds	1		; Y Size(haba) (d0ae)
+mapcat_r_siz2	ds	1		; hontai no Y size (d0af)
+mapcat_r_y	ds	1		; Y (d0b0)
+mapcat_r_x	ds	1		; X (d0b1)
+mapcat_r_adr3	ds	2		; Ram Map Address (d0b2)
+
+
+ChrInfoStart:	;d0c2
+mapimgbank	ds	1		; map CGX data bank
+mapimgadr	ds	2		; map CGX data address (d0b5)
+mapcellbank	ds	1		; map cell-chr data (bank) (d0b7)
+mapcelladr	ds	2		; map cell-chr data (adrs) (d0b8)
+mapatrbank	ds	1		; map attribute code(bank) (d0ba)
+mapatradr	ds	2		; map attribute code(adrs) (d0bb)
+wavetbladr	ds	2		; wave program data (d0bd)
+
+map_color_attr	ds	2	;d0bf
+ChrInfoEnd:
+  endif
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: monster-making tools
+;===============================================;
+tl_proj_no	ds	1	;d0c1
+tl_proj_layout	ds	TOOL_PROJ_AREA	;d0c2
+tl_proj_search	ds	1	;d0cc
+tl_proj_mon_no	ds	2	;d0cd
+
+;===============================================;
+; Category	: PM2 work area
+; address	: common
+; Infomation	: battles
+;===============================================;
+shinka_make_flg	ds	1	;d0cf
+cancel_ok_flg	ds	1		; 1 = shinka chancel ok	(d0d0)
+new_work	ds	16		; every using, every broken (d0d1)
+rnd_table	ds	10		; random numbers for terminal fight (d0e1)
+enemy_no	ds	2		; enemy monster number (d0eb)
+mymons_no	ds	2		; my    monster number (d0ed)
+enemy_data	ds	2bh		; enemy monster data (d0ef)
+fighting_flg	ds	1		; case of battle (0-2) (d11a)
+event_fight_no	ds	2		; number = monster No (d11a)
+event_dealer_no	ds	1		; number = dealer No (d11c)
+demo_fight_no	ds	1		; case of demo fight (d11d)
+take_mons_ptn	ds	1		; dealer no motte iru monster pattern (d11e)
+mogura_flg	ds	1		; 1 = dungeon kara escape (d11f)
+dealer_no	ds	1		; (d120)
+unknown_no	ds	1		; unknown kind 1 = a ~ 26 = z (d121)
+
+; pm_cmnt./ohsawa/ 1:monomane �� ���� �ł͎g�p����Ă��Ȃ����悤(�O�̃|�P�����̎c�[�H)
+waza_select_mode ds	1		; 0 = normal 1 = monomane 2 = pp item (d122)
+
+mons_data	ds	NM_TBL_SIZE	;d123
+		ds	6
+;efect_turn	ds	1		; Continue of efect
+;attack_flag	ds	1		; Allowed attack 
+power_value1	ds	2		;d143
+mon_work_no	ds	2		;d145
+;musiyoke_flg	ds	1		; no encount counter
+encount_rate	ds	4		; �G���J�E���g�����q�n�l����R�s�[ (d147)
+
+waza_swap	ds	5		; data + eod (d14b)
+
+;map_type_sv	ds	1		; map type save area     
+set_data_flg	ds	1		; Table Data Set Pattern Flag (d150)
+tukamae_flg	ds	2		; catch monster (d151)
+fightbegin_flg	ds	1		; 1 = syujinkou ga gamen ni deteiru (d153)
+in_dat		ds	1		; monster/item number table work (d154)
+nigerarenai_flg	ds	1		; 1 = nigerunoni shippai (d155)
+nige_cnt	ds	1		; nigeru wo erabu gotoni count up (d156)
+shinka_flg	ds	1		; 0 = shinka shitenai (d157)
+
+bank_vblank	ds	1		; vblank.src only use bank number area (d158)
+bank_stack	ds	1		; Bank Number Save Area (Moved)    (d159)
+
+time_gauge	ds	1		; 000h:morning, 001h:day, 002h:night (d15a)
+;d15b
+
+
+;===============================================;
+; �C�x���g�E�X�N���v�g��̓V�X�e��
+;===============================================;
+;control_event_work	ds	40h	; �C�x���g�V�X�e�����䃏�[�N�G���A
+
+control_event_work:
+
+MAIN_MODE		ds	1	; ���C���V�[�P���X�̐��� (d15b)
+F_MODE			ds	1	; �C�x���g���[�h�^�X�N���[�����[�h�̐؂�ւ� (d15c)
+
+EventCtrlFlag		ds	2	; �C�x���g�R���g���[���̂��߂̃t���O�G���A (d15d)
+EventStepFlag		ds	1	; ������̃C�x���g���� (d15f)
+EventModeSeq		ds	1	; �C�x���g���߃��[�`���̃��[�h (d160)
+EventNo			ds	1	; ���ݎ��s���̃C�x���g�̃i���o�[ (d161)
+
+EvScriptBank		ds	1	; ���ǂ�ł���C�x���g�X�N���v�g�̃o���N (d162)
+EvScriptAddress		ds	2	; ���ǂ�ł���C�x���g�X�N���v�g�̃A�h���X (d163)
+
+EventStackPntr		ds	1	; �C�x���g�p�X�^�b�N�|�C���^ (d165)
+EventStackArea		ds	15	; �C�x���g�p�X�^�b�N (d166)
+
+EventFlagWork		ds	2	; �C�x���g�X�N���v�g�ėp���[�N (d175)
+EventCtrlCounter	ds	1	; �C�x���g�X�N���v�g�ėp�J�E���^�[ (d177)
+EventWorkArea		ds	3	; �C�x���g�X�N���v�g�ėp���[�N (d178)
+
+ctrl_ev_work		ds	20	;d17b
+
+control_event_work_end:	;d18f
+
+
+WORK_END:
+; us_spec./ohsawa/no_init_area �폜
+;	�X�^�b�N�m�ۂ̂��ߍ폜(�v���O��������̎Q�ƂȂ�)
+;no_init_area	ds	020h
+
+
+
+;=======================================================================;
+; Category	: Pocket Monsters 3 backup ram-work
+; Author	: Nori
+; Infomation	: save data only 
+;=======================================================================;
+;===============================================;
+; Category	: system
+; address	: G_EXRAM0
+; Infomation	:
+;===============================================;
+SV_SYSTEM_STATUS:
+
+config		ds	1		; config value(bit status) (d18f)
+f_save_data	ds	1		; save & load status flag set (d190)
+window_type	ds	1		; window frame type (d191)
+msg_speed	ds	1		; msg spd(0:high) (d192)
+PrintContrast	ds	1		;�v�����^�[�Z�x	(d193)
+game_mode	ds	1		; control mode (d194)
+
+SV_SYSTEM_STATUS_BTM:	;d195
+
+;===============================================;
+; Category	: game system
+; address	: G_EXRAM0
+; Infomation	:
+;===============================================;
+SV_SYSTEM:
+gb_no		ds	2		; GameBoy ID number (d195)
+
+;    ifn	0
+;my_name		ds	5 + 1		; hero name + EOM
+;my_mama		ds	5 + 1		; mother's name + EOM
+;rival_name     	ds	5 + 1		; rival name + EOM
+;old_hero	ds	5 + 1		; pm1 hero's name + EOM
+;old_rival	ds	5 + 1		; pm1 rival's name + EOM
+;    endif
+
+; us_spec./ohsawa/�l�����̒���
+my_name		ds	MONS_NAME_LEN	; hero name + EOM (d197)
+rival_name     	ds	MONS_NAME_LEN	; rival name + EOM (d1a2)
+		ds	33
+
+; pm_cmnt./ohsawa/my_mama �}�}�̖��O�Ƃ��Ă͎g���Ă��Ȃ�
+;	�{�[���f���Ńo�b�t�@�Ƃ��Ďg���Ă��邾��
+;	mama@���g���Ă���`�ՂȂ�
+
+
+
+
+SRAMinitFlag	ds	1		;SRAM�������ς݃t���O (d1ce)
+
+start_status	ds	1		; �Q�[���X�^�[�g�E�ĊJ���̃`�F�b�N�p�t���O (d1cf)
+
+;sv_hour		ds	1		; �v���C�^�C���i���ԁj
+;sv_minute	ds	1		; �v���C�^�C���i���j
+
+diff_time_day	ds	1		; ���ԍ��� �� (d1d0)
+diff_time_hour	ds	1		; ���ԍ��� �� (d1d1)
+diff_time_min	ds	1		; ���ԍ��� �� (d1d2)
+diff_time_sec	ds	1		; ���ԍ��� �b (d1d3)
+
+last_time_day	ds	1		; �Z�[�u�������� �� (d1d4)
+last_time_hour	ds	1		; �Z�[�u�������� �� (d1d5)
+last_time_min	ds	1		; �Z�[�u�������� �� (d1d6)
+last_time_sec	ds	1		; �Z�[�u�������� �b (d1d7)
+
+; us_spec./murakawa/ �T�}�[�^�C������p
+last_dst_set_time_day	ds	1	;d1d8
+last_dst_set_time_hour	ds	1	;d1d9
+last_dst_set_time_min	ds	1	;d1da
+last_dst_set_time_sec	ds	1	;d1db
+dst_ctrl		ds	1	;d1dc
+
+catch_buff		ds	1	;d1dd
+
+play_time_ctrl	ds	1		; �v���C�^�C������t���O (d1de)
+;play_time_d	ds	2		; day counter
+play_time_h	ds	2		; playing time count hour(000--999) (d1df)
+play_time_m	ds	1		; playing time count minute(000--059) (d1e1)
+play_time_s	ds	1		; second count(000 - 059) (d1e2)
+play_time_ms	ds	1		; v sync count(000--059) (d1e3)
+week		ds	1		; day of week (d1e4)
+
+lead_actor	ds	1		; Actor number of leading other actor (d1e5)
+follow_actor	ds	1		; Following actor number (d1e6)
+scroll_actor	ds	1		; Actor number of scroll center (d1e7)
+anime_pointer	ds	1		; follower's move command pointer (d1e8)
+anime_buffer	ds	5		; follower's move command buffer (d1e9)
+
+actor_table	ds	ACT_DATA_LEN * MAIN_ACT_MAX	;d1ee 28h * 0dh
+sub_act_table	ds	SUBACT_LEN * SUBACT_MAX		;d3f6 18h
+cast_table	ds	CAST_DATA_LEN * CAST_MAX	;d40e 100h
+
+vanish_work	ds	CAST_MAX	; actor vanish/appear work (d50e)
+
+DefineOBJcode	ds	16		; �ύX�\�Ȃn�a�i��`�ێ��G���A (d51e)
+
+radio_sw	ds	1		; info window on/off (d52e)
+
+map_music	ds	1		; Map Music (d52f)
+map_music_bank	ds	1		; Map Music Bank (d530)
+base_color	ds	1	;d531
+
+season_work	ds	1		; morning, day, night... +0:req (d532)
+;d533
+SV_SYSTEM_BTM:
+
+
+;===============================================;
+; Category	: game
+; address	: G_EXRAM0
+; Infomation	:
+;===============================================;
+SV_GAME:
+;my_status	ds	2		;���@ �Q�[���i�s�X�e�[�^�X
+my_status	ds	1		;���@ �Q�[���i�s�X�e�[�^�X (d533)
+scenario_status	ds	1		;���@ �V�i���I�󋵃X�e�[�^�X (d534)
+
+my_gold		ds	3		;������ (d535)
+coin		ds	2		;�����R�C�� (d538)
+my_badge	ds	1		;�o�b�W�擾�X�e�[�^�X (d53a)
+my_holder_tbl	ds	HOLDER_MAX + WAZA_FIELD_LEN	;�Z�}�V���t�H���_ (d53b)
+my_item_tbl	ds	ITEM_MAX * 2 + CTRL_BYTE	;����t�H���_ (d56e)
+ev_item_tbl	ds	EV_ITEM_MAX + CTRL_BYTE		;�厖�ȓ���t�H���_ (d598)
+my_ball_tbl	ds	BALL_MAX * 2 + CTRL_BYTE	;�{�[���t�H���_ (d5b3)
+my_asa_tbl	ds	ASA_ITEM_MAX * 2 + CTRL_BYTE	;d5cd
+my_kajits_tbl	ds	KAJITS_ITEM_MAX * 2 + CTRL_BYTE	;d5f3
+my_tool_tbl	ds	TOOL_ITEM_MAX * 2 + CTRL_BYTE	;d609
+my_shinka_tbl	ds	SHINKA_ITEM_MAX * 2 + CTRL_BYTE	;d633
+my_stock_item	ds	STOCK_DATA_MAX * 2 + CTRL_BYTE	;�a������t�H���_ (d65d)
+T_Gear_Status	ds	2		;�g���[�i�[�M�A �擾�@�\�t���O (d6c3)
+ZukanMode	ds	1		;�}�Ӄ��[�h�t���O (d6c5)
+benri_btn	ds	2		;�֗��{�^���o�^�A�C�e���iPOS+NO.) (d6c6)
+
+oresama_status	ds	1		; hero's form (d6c8)
+;rival_name    	ds	6		; rival name
+;junior_name	ds	6		; terminal work
+;hero_monster	ds	1		; present monster
+;rival_monster	ds	1		; present monster
+;okido_monster	ds	1		; present monster
+dendou_no	ds	1	;d6c9
+
+trade_person	ds	1		; pokemon trade person flag (d6ca)
+seq_ctrl_buf	ds	292		; �}�b�v�C�x���g�V�[�P���X���[�N (d6cb)
+map_event_flag	ds	221		; �}�b�v�C�x���g�t���O (d7ef)
+;save_event_flg	ds	10
+
+
+event_flg	ds	1		; each event work flag set (d8cc)
+obs_player	ds	1		; player status observe (d8cd)
+obs_system	ds	1		; system status observe (d8ce)
+;ev_special	ds	2		; special commands & invoke events
+;obs_door	ds	1		; observe door some system
+;obs_walk_flag	ds	1		; palyer stepping observe
+;obs_map_step	ds	1		; observe action in "mapper"
+;comment_flag	ds	4
+
+pm_box_no	ds	1		; box-number (d8cf)
+
+box_name1	ds	PM_BOX_NAME_LEN	;d8d0
+box_name2	ds	PM_BOX_NAME_LEN	;d8d9
+box_name3	ds	PM_BOX_NAME_LEN	;d8e2
+box_name4	ds	PM_BOX_NAME_LEN	;d8eb
+box_name5	ds	PM_BOX_NAME_LEN	;d8f4
+box_name6	ds	PM_BOX_NAME_LEN	;d8fd
+box_name7	ds	PM_BOX_NAME_LEN	;d906
+box_name8	ds	PM_BOX_NAME_LEN	;d90f
+box_name9	ds	PM_BOX_NAME_LEN	;d918
+
+; us_spec./ohsawa/�{�b�N�X��(�{�b�N�X10-14)�̒ǉ�
+box_name10	ds	PM_BOX_NAME_LEN	;d921
+box_name11	ds	PM_BOX_NAME_LEN	;d92a
+box_name12	ds	PM_BOX_NAME_LEN	;d933
+box_name13	ds	PM_BOX_NAME_LEN	;d93c
+box_name14	ds	PM_BOX_NAME_LEN	;d945
+
+box_name15	ds	PM_BOX_NAME_LEN	;d94e
+box_name16	ds	PM_BOX_NAME_LEN	;d957
+box_name17	ds	PM_BOX_NAME_LEN	;d960
+box_name18	ds	PM_BOX_NAME_LEN	;d969
+box_name19	ds	PM_BOX_NAME_LEN	;d972
+box_name20	ds	PM_BOX_NAME_LEN	;d97b
+box_name21	ds	PM_BOX_NAME_LEN	;d984
+
+
+save_event_work	ds	30h		; �C�x���g�V�X�e���p�Z�[�u���[�N (d98d)
+;ram_map_id	ds	1		; ram_map Number
+;ie_cnt		ds	1		; exntrance lots
+;ie_tbl		ds	005h * 020h	; entrance struct ( Y , X , ID , No )
+;bg_event_cnt	ds	1
+;bg_event_tbl	ds	4 * 16
+;murabito_cnt	ds	1		; murabito no kazu
+;hito_tbl	ds	4 * 8
+;obj_attribute	ds	2 * 16	
+;eventloop_mode	ds	1		; "maploop" event sequence switch
+;sv_loop_mode	ds	1		; "maploop" event sequence save 
+; Total 296 bytes hooked by tama 98/12/15
+
+pbl_counter	ds	4	;d9bd
+friendly_cnt	ds	1	;d9c1
+sea_board	ds	1	;d9c2
+
+SafariBallCount	ds	1		; �T�t�@���{�[���ێ��� (d9c3)
+SafariStepCount	ds	2		; �T�t�@���ł̕����J�E���g (d9c4)
+
+TelephoneList	ds	33		;�d�b���X�g�i�a�h�s�j (d9c6)
+
+
+takarakuzi_flg	ds	2		; �h�c�����̐���t���O (d9e7)
+takarakuzi_no	ds	2		; �h�c�����̓��I�i���o�[ (d9e9)
+
+musiyoke_flg	ds	1		; �������X�v���[�̌��ʎ����J�E���^ (d9eb)
+
+BicycleStepCnt	ds	2		; ���]�Ԃɏ���Ă���Ƃ��̕����J�E���g (d9ec)
+
+SV_GAME_BTM:
+
+;d9ee
+;===============================================;
+; Category	: map
+; address	: G_EXRAM0
+; Infomation	:
+;===============================================;
+SV_MAP:
+;map_name	ds	8 + 1
+;map_obj_type	ds	1		; map object type
+;mapvramadr	ds	2		; Map Vram Address
+;entry_chr_data	ds	20h		; map object setdata
+
+;zone_stack	ds	1
+;mapno_stack	ds	1		; Map Number Stack Area
+;arrive_map	ds	4		; arrive in town, road.....
+
+ArrivePoint	ds	4		; ���B�^�E�� �t���O (d9ee)
+entrance	ds	3		; ���ʂ���ێ��G���A (d9f2)
+exit_work	ds	6		; ����ڑ���ێ��G���A(+�\���j (d9f5)
+warp_map	ds	2		; �e���|�[�g���ێ��G���A (d9fb)
+jump_map	ds	2	;d9fd
+
+;=============== Don't realocate start ========;
+exit_no		ds	1		; �o�����h�c (d9ff)
+zone_no		ds	1		; �]�[���h�c (da00)
+mapno		ds	1		; �}�b�v�h�c (da01)
+
+;mapadr2		ds	2
+mapscloll_y	ds	1	;da02
+mapscloll_x	ds	1	;da03
+;mapscloll_y4	ds	1
+;mapscloll_x4	ds	1
+;mapno_stack	ds	1		; Map Number Stack Area
+
+  ifn	0
+
+map_bank	ds	1		; map header data bank number
+chr_type	ds	1		; �L�����o���N�R�[�h
+img_type	ds	1		; �C���[�W�^�C�v�R�[�h
+map_data_adr	ds	2		; map header data address
+
+
+MapHeadStart:
+outrangecell	ds	1		; �͈͊O�Z���u���b�N�R�[�h
+mapysize	ds	1		; Map Y Size
+mapxsize	ds	1		; Map X Size
+scrndatabank	ds	1		; �}�b�v�X�N���[���f�[�^�̃o���N
+scrndataadr	ds	2		; �}�b�v�X�N���[���f�[�^�̃A�h���X
+evdatabank	ds	1		; �C�x���g�f�[�^�̃o���N
+evdataadr	ds	2		; �C�x���g�f�[�^�̃A�h���X
+sxydataadr	ds	2		; �r�w�x�f�[�^�̃A�h���X
+map_link_flg	ds	1		; Map Link Flag	 Bit 3/U 2/D 1/L 0/R
+MapHeadEnd:
+
+mapcat_up_zone	ds	1		; Up Side
+mapcat_up	ds	1		; Up Side
+mapcat_up_adr	ds	2		; map no address
+mapcat_up_adr2	ds	2		; Ram map address
+mapcat_up_siz	ds	1		; X size(haba)
+mapcat_up_siz2	ds	1		; hontai no X size
+mapcat_up_y	ds	1		; Y
+mapcat_up_x	ds	1		; X
+mapcat_up_adr3	ds	2		; Ram Map Address
+
+mapcat_dw_zone	ds	1		; Down Side
+mapcat_dw	ds	1		; Down Side
+mapcat_dw_adr	ds	2		; sita no map no address
+mapcat_dw_adr2	ds	2		; Ram map Address
+mapcat_dw_siz	ds	1		; X Size(haba)
+mapcat_dw_siz2	ds	1		; hontai no X size
+mapcat_dw_y	ds	1		; Y
+mapcat_dw_x	ds	1	 	; X
+mapcat_dw_adr3	ds	2		; Ram Map Address
+
+mapcat_l_zone	ds	1		; Left Side
+mapcat_l	ds	1		; Left Side
+mapcat_l_adr	ds	2		; hidari no map no Address
+mapcat_l_adr2	ds	2		; Ram Map Address
+mapcat_l_siz	ds	1		; Y Size(haba)
+mapcat_l_siz2	ds	1		; hontai no Y size
+mapcat_l_y	ds	1		; Y
+mapcat_l_x	ds	1		; X
+mapcat_l_adr3	ds	2		; Ram Map Address
+
+mapcat_r_zone	ds	1		; Right Side
+mapcat_r	ds	1		; Right Side
+mapcat_r_adr	ds	2		; migi no map no Address
+mapcat_r_adr2	ds	2		; Ram Map Address
+mapcat_r_siz	ds	1		; Y Size(haba)
+mapcat_r_siz2	ds	1		; hontai no Y size
+mapcat_r_y	ds	1		; Y
+mapcat_r_x	ds	1		; X
+mapcat_r_adr3	ds	2		; Ram Map Address
+
+
+ChrInfoStart:
+mapimgbank	ds	1		; map CGX data bank
+mapimgadr	ds	2		; map CGX data address
+mapcellbank	ds	1		; map cell-chr data (bank)
+mapcelladr	ds	2		; map cell-chr data (adrs)
+mapatrbank	ds	1		; map attribute code(bank)
+mapatradr	ds	2		; map attribute code(adrs)
+wavetbladr	ds	2		; wave program data
+kusamura_chr	ds	2		; (reserve area)
+
+map_color_attr	ds	2
+ChrInfoEnd:
+  endif
+
+;=============== Don't realocate end ========;
+
+sv_ram_map	ds	6 * 5		; save ram_map data inside screen (da04)
+
+SV_MAP_BTM:
+
+
+;da22
+;===============================================;
+; Category	: pokemon data
+; address	: G_EXRAM2, G_EXRAM3
+; Infomation	:
+;===============================================;
+SV_POKE:
+pm_cap_start:
+;my_cap_tbl	ds	CAP_MAX + CTRL_BYTE		; Mons number(take) (d922)
+;my_cap_data	ds	CAPDATA_LEN * CAP_MAX		; Mons data(take) (d92a)
+;my_cap_oya	ds	MONS_NAME_LEN * CAP_MAX		; Mons name(take) (da4a)
+;my_cap_name	ds	MONS_NAME_LEN * CAP_MAX		; Mons name(take) (da8c)
+;pm_cap_end: (dace)
+
+my_cap_tbl	ds	CAP_MAX * 2 + CTRL_BYTE		; Mons number(take) (da22)
+my_cap_data	ds	NCDATA_LEN * CAP_MAX		; Mons data(take) (da30)
+my_cap_oya	ds	MONS_NAME_LEN * CAP_MAX		; Mons name(take) (db38)
+my_cap_name	ds	MONS_NAME_LEN * CAP_MAX		; Mons name(take) (db7a)
+pm_cap_end:
+
+		ds	8
+
+zukan_flg	ds	48				; 256 bit capture (dbc4)
+zukan_flg2	ds	48				; 256 bit discovery (dbf4)
+unknown_flag	ds	26				; for unknown pokemon (dc24)
+unknown_enc_flg	ds	1				; �A���m�[���̏o���I���I�t�t���O (dc3e)
+unknown_1st_see	ds	1				; �ŏ��Ɍ����A���m�[�� (dc3f)
+
+
+benriya_flg	ds	1	;dc40
+benri_mons_name	ds	MONS_NAME_LEN	;dc41
+benri_mons_oya	ds	MONS_NAME_LEN	;dc4c
+benri_mons_data	ds	NMDATA_LEN	;dc57
+		ds	3
+
+kozukuri_flg	ds	1	;dc77
+whos_in_egg	ds	1	;dc78
+which_mother	ds	1		; �a�����|�P�����̂ǂ��炪��e�� 0 = benri mons  1 = oya mons (dc79)
+oya_mons_name	ds	MONS_NAME_LEN	;dc7a
+oya_mons_oya	ds	MONS_NAME_LEN	;dc85
+oya_mons_data	ds	NMDATA_LEN	;dc90
+		ds	3
+oya_mons_name2	ds	MONS_NAME_LEN	;dcb0
+oya_mons_oya2	ds	MONS_NAME_LEN	;dcbb
+oya_mons_data2	ds	NMDATA_LEN	;dcc6
+		ds	31h
+
+sp_enc_zone_no	ds	1		; �d�b�ɂ����ʃG���J�E���g�̊Ǘ��t���O (dd14)
+sp_enc_map_no	ds	1		; �d�b�ɂ����ʃG���J�E���g�̊Ǘ��t���O (dd15)
+sp_fishing_flg	ds	1		; �d�b�ɂ����ʃG���J�E���g�i��j�̊Ǘ��t���O (dd16)
+
+s_enc_monster	ds	2		; �ړ��|�P�����̃i���o�[ (dd17)
+s_enc_level	ds	1		; �ړ��|�P�����̃��x�� (dd19)
+s_enc_zone	ds	1		; �ړ��|�P�����̌��݂���]�[���i���o�[ (dd1a)
+s_enc_map	ds	1		; �ړ��|�P�����̌��݂���}�b�v�i���o�[ (dd1b)
+s_enc_hp	ds	1		; �ړ��|�P�����̂g�o�c�� (dd1c)
+s_enc_rnd	ds	2		; �ړ��|�P�����̃p���[���� (dd1d)
+s_enc_monster2	ds	2		; �ړ��|�P�����̃i���o�[ (dd1f)
+s_enc_level2	ds	1		; �ړ��|�P�����̃��x�� (dd21)
+s_enc_zone2	ds	1		; �ړ��|�P�����̌��݂���]�[���i���o�[ (dd22)
+s_enc_map2	ds	1		; �ړ��|�P�����̌��݂���}�b�v�i���o�[ (dd23)
+s_enc_hp2	ds	1		; �ړ��|�P�����̂g�o�c�� (dd24)
+s_enc_rnd2	ds	2		; �ړ��|�P�����̃p���[���� (dd25)
+s_enc_monster3	ds	2		; �ړ��|�P�����̃i���o�[ (dd27)
+s_enc_level3	ds	1		; �ړ��|�P�����̃��x�� (dd29)
+s_enc_zone3	ds	1		; �ړ��|�P�����̌��݂���]�[���i���o�[ (dd2a)
+s_enc_map3	ds	1		; �ړ��|�P�����̌��݂���}�b�v�i���o�[ (dd2b)
+s_enc_hp3	ds	1		; �ړ��|�P�����̂g�o�c�� (dd2c)
+s_enc_rnd3	ds	2		; �ړ��|�P�����̃p���[���� (dd2d)
+last_map1	ds	1		; �v���[���[���O�񂢂��}�b�v (dd2f)
+last_zone1	ds	1		; �v���[���[���O�񂢂��]�[�� (dd30)
+last_map2	ds	1		; �v���[���[���O�X�񂢂��}�b�v (dd31)
+last_zone2	ds	1		; �v���[���[���O�X�񂢂��]�[�� (dd32)
+
+		ds	13	;dd33
+
+gein_name	ds	21	;dd40
+gein_cap_tbl	ds	CAP_MAX + CTRL_BYTE	;dd55
+gein_cap_data	ds	NCDATA_LEN * CAP_MAX	;dd5d
+gein_cap_oya	ds	MONS_NAME_LEN * CAP_MAX	;de65
+gein_cap_name	ds	MONS_NAME_LEN * CAP_MAX ;dea7
+;dee9
+		ds	24
+gein_dmy:
+; us_spec./ohsawa/gein data ����
+;	mons2_to_mons2�łP�o�C�g����Ȃ��Ȃ�
+;	����ɒʐM�I�[�f�[�^��1�o�C�g�������܂��
+;	���̂��Ƃɕϐ������蓖�Ă�ꍇ�́Agein_dmy��2�o�C�g���蓖�Ă邱��
+
+SV_POKE_BTM:	;df01
+
+SV_ALL_BTM:
+
+SAVE_DATA_LENGTH	equ	SV_ALL_BTM-SV_SYSTEM_STATUS	; us_spec./ohsawa/���̃��x���͖��g�p
+
+
+		ds	2		; ��L���ӎQ��
+
+
+stack_min_addr:
+
+
+
+;=======================================================================;
+; Category	: Pocket Monsters 2 backup ram-work
+; Author	: Nori
+; Bank-No.	: common : 0ff80h origin
+; In		: Nothing
+; Out		: Nothing
+; Infomation	: for system
+;=======================================================================;
+workram2	group	0
+
+
+	org	0ff80h
+
+
+dmasub		ds	0ah
+
+check_sum_code	ds	1
+check_sum_game	ds	1
+check_sum_hand	ds	1
+
+;play_time_h	ds	1		; playing time as hour(000--999)
+;play_time_m	ds	1		; playing time as minute(000--059)
+;play_time_s	ds	1		; second count(0000 - 1000)
+;play_time_d	ds	2		; day counter
+;time_gate	ds	2
+;week		ds	2		; day of week
+;play_hour	ds	2		; playing time as hour(000--999)
+;play_minute	ds	1		; playing time as minute(000--059)
+
+
+tm_count	ds	2		; work counter as watching times
+
+realtime_day_h	ds	1
+realtime_day_l	ds	1
+realtime_hour	ds	1
+realtime_min	ds	1
+realtime_sec	ds	1
+
+cmp_time_d	ds	2
+cmp_time_h	ds	2
+cmp_time_m	ds	2
+cmp_time_s	ds	2
+
+seq_viewer	ds	1		; use only map-viewer
+
+blanking_counter	ds	1	; used by sound driver
+
+clr_bg_req	ds	1
+
+rombankno	ds	1		; Now Rom Bank Number 
+
+init_mode	ds	1		; "vblank" sequence loop switch
+maploop_mode	ds	1		; "maploop" mapping sequence switch
+invoke_req	ds	2		; "system menu" and "debug menu"
+
+cont_off	ds	1		; edge off status
+cont_on		ds	1		; edge on status
+cont_status	ds	1		; press status
+cont_watcher	ds	1		; observe touch any key
+joy_off		ds	1		; Key Off this time
+joy_on		ds	1		; Key On this time
+joy_status	ds	1		; Key Status
+joy_repeat	ds	1
+cont_joy_flg	ds	1		; 1:repeat press observe
+
+obs_repeat	ds	1		; for original key request
+;DA_BUF		ds	6		; direct access buffer
+DA_BUF		ds	1		; direct access buffer
+
+dmy_box1	ds	1		; Work area but not use other
+dmy_box4	ds	1		; Work area but not use other
+
+work0		ds	1		; No other using
+work1		ds	1
+work2		ds	1
+work3		ds	1
+
+calc_work0	ds	1		; No other using
+calc_work1	ds	1
+calc_work2	ds	1
+calc_work3	ds	1
+calc_work4	ds	1
+calc_work5	ds	1
+calc_work6	ds	1
+calc_work7	ds	1
+calc_work8	ds	1
+calc_work9	ds	1
+
+;temp_box5	ds	1		; not allow using
+;temp_box6	ds	1		; not allow using
+
+;sv_box01	ds	1		; not allow using
+;sv_box02	ds	1		; not allow using
+;sv_box03	ds	1		; not allow using
+;sv_box04	ds	1		; not allow using
+;sv_box05	ds	1		; not allow using
+;sv_box06	ds	1		; not allow using
+;sv_box07	ds	1		; not allow using
+;sv_box08	ds	1		; not allow using
+
+actwork0	ds	1		; No other using
+actwork1	ds	1
+actwork2	ds	1
+actwork3	ds	1
+actwork4	ds	1
+actwork5	ds	1
+
+divwk1		ds	3		; all ways
+
+LasterReq	ds	1		; Laster using(lcdc.dmg)
+LasterSTART	ds	1		; Laster using
+LasterEND	ds	1		; Laster using
+
+sio_req		ds	1
+sio_flg		ds	1
+sio_oya_ko	ds	1	
+sio_init_flg	ds	1
+TD		ds	1
+RD		ds	1
+
+headerx		ds	1
+headery		ds	1
+window_x	ds	1	; Display start window Y position
+window_y	ds	1	; Display start window Y position
+wipe		ds	1
+
+all_put_req	ds	1	; all put flag 0:Don't put 1:All put
+all_put_cnt	ds	1
+all_putadr_l	ds	1
+all_putadr_h	ds	1
+
+OAMaccessFlag	ds	1
+
+stack_sv	ds	2	; stack pointer address save area
+
+haji_put_buf	ds	3	; Screen Side Data Buffer
+
+wave_flg	ds	1	; Flg
+wave_cnt	ds	1	; Count
+target_obj	ds	1	; check & targetting(OBJ)
+;target_bg	ds	4	; check & targetting(BG)
+random		ds	2
+seed		ds	1	; random seed
+
+attack_turn	ds	1	; 0 = my turn : 1 = enemy turn
+
+;target_obj_adrs	ds	2	; saving cast table address
+
+ColorTransReq	ds	1	; �J���[�p���b�g�]�����N�G�X�g
+CGBflag		ds	1	; 0 = GB : 1 = CGB
+sgb_flg		ds	1	; SuperGameBoy check flag 99/01/04 �����Ɉړ�
+
+
+; us_spec./murakawa/ DST�֘A�ǉ�
+bRoundClock	ds	1		; ���v�J�E���^�[�̊ۂ߂��s���Ȃ������ꍇ "0"
+						; ���v�J�E���^�[�̒l(140�`255)���ۂ߂�ꂽ�ꍇ "1"
+						; ���v�J�E���^�[�̒l(256�ȏ�)���ۂ߂�ꂽ�ꍇ "2"
+before_round	ds	1	; �ۂߑO��realtime_day_l �̒l
+after_round		ds	1	; �ۂߌ��realtime_day_l �̒l
+
+
+;=======================================================================;
+; Category	: Pocket Monsters 3 backup ram
+; Author	: Nori
+; Bank-No.	: 00h -- 07h : 0a000h origin
+; In		: Nothing
+; Out		: Nothing
+; Infomation	: for system
+;=======================================================================;
+;===============================================;
+; Category	: Extra RAM mapping
+; address	: G_EXRAM0
+; Infomation	: CheckSum address is 0bfffh
+;===============================================;
+extram		group	0
+
+
+	org	0a000h
+
+CGXdecodeArea:		;�|�P�����b�f�W�J�e���|�����G���A(0600h)
+
+plane2_area		ds	PLANE_SIZE	;a000
+plane0_area		ds	PLANE_SIZE	;a188
+plane1_area		ds	PLANE_SIZE	;a310
+
+segment_area		ds	0168h	;a498
+
+CGXdecodeAreaEnd:	;a600
+
+
+
+	org	0a600h
+
+MailDataArea:		;���[�����[�N�E�Z�[�u�G���A(0550h)
+
+; us_spec./ohsawa/���[���f�[�^�T�C�Y�̊g��(�l�������̕ύX�ɔ���)
+MAIL_SIZE		equ	48	; 43 -> 48
+
+MailBoxStart:
+mail_box		ds	MAIL_SIZE * 6	;a600
+MailBoxEnd:
+
+MailBoxSaveStart:
+mail_box_save		ds	MAIL_SIZE * 6	;a720
+MailBoxSaveEnd:
+
+MailStockStart:
+mail_stock_cnt		ds	1	;a840
+mail_box_stock		ds	MAIL_SIZE * 10	;a841
+MailStockEnd:
+
+MailStockSaveStart:
+mail_stock_cnt_s	ds	1	;aa21
+mail_box_stock_s	ds	MAIL_SIZE * 10	;aa22
+MailStockSaveEnd:
+
+mail_btm:
+;ac02
+MailDataAreaEnd:
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0ab50h
+
+
+I_R_DataArea:		;�ԊO���E�Z�[�u�G���A(00b0h)
+
+IR_masaki_bit		ds	2	;ac02
+IR_masaki_bit_s		ds	2	;ac04
+IR_masaki_id_stk	ds	10	;ac06
+IR_decorate_bit		ds	10	;ac10
+IR_date			ds	3	;ac1a
+
+IR_traner_flg		ds	1	;ac1d
+IR_traner		ds	IR_TRANER_SIZE	;ac1e
+
+I_R_DataAreaEnd:
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0ac00h
+
+		ds	10h	;ac50
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0b000h
+
+
+TimerSRAMArea:		;���v�@�\�p�e���|�����G���A
+
+TimerSRAM:		ds	8	;ac60
+
+TimerSRAMAreaEnd:
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0b100h
+
+
+KuziSRAMArea:		;���v�@�\�p�e���|�����G���A
+
+KuziDayStock:		ds	1	;ac68
+KuziNoStock:		ds	2	;ac69
+
+KuziSRAMAreaEnd:
+
+; us_spec./ohsawa/BACKUP�f�[�^���U(SV_GAME,SV_POKE)
+sv_game_dt_X		ds	SV_GAME_BTM - SV_GAME	;ac6b
+sv_poke_dt_X		ds	SV_POKE_BTM - SV_POKE	;b126
+
+; us_spec./ohsawa/BACKUP���U sv_system_dt_X �O��550�o�C�g
+SV_SYSTEM_HI		equ	SV_SYSTEM
+SYS_DT_X_HI_SIZE	equ	547
+sv_system_dt_X_hi	ds	SYS_DT_X_HI_SIZE	;b605
+
+; us_spec./ohsawa/�X�^�b�N �I�[�o�[�t���[ �`�F�b�N�p ���[�N
+stack_reach_addr:	ds	2	;b828
+
+; us_spec./ohsawa/MBC3 RTC HALT �`�F�b�N
+; 1234h �� �������܂�Ă����� HALT ���Ă������Ƃ�����
+rtc_halt_check:		ds	2	;b82a
+
+	org	0b82ch
+
+WindowWorkArea:		;�E�C���h�E�p�e���|�����G���A(07d4h)
+not_access:					; 0b82ch
+
+
+
+;===============================================;
+; Category	: Extra RAM mapping
+; address	: G_EXRAM1
+; Infomation	: 
+;===============================================;
+extram1		group	1
+
+
+	org	0a000h
+
+SaveSystemDataArea:		;�|�P�����V�X�e���f�[�^�Z�[�u�G���A(0008h)
+
+sv_status		ds	008h
+
+SaveSystemDataAreaEnd:
+
+
+
+SvDistinguishFlag1	ds	1	;�Z�[�u�f�[�^�L���̔��ʃt���O(0001h)
+
+SaveGameDataArea:			;�|�P�����Q�[���f�[�^�Z�[�u�G���A(0d00h)
+
+sv_my_dt		ds	SV_GAME_BTM - SV_SYSTEM	; 0a600h (a009)
+sv_map_dt		ds	SV_MAP_BTM - SV_MAP	;a862
+sv_poke_dt		ds	SV_POKE_BTM - SV_POKE	;a896
+sv_my_btm:
+
+SaveGameDataAreaEnd:	;ad75
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0ad0dh
+
+
+SaveGameSumCheck	ds	2	;�Z�[�u�f�[�^�T���`�F�b�N(0002h) (ad75)
+
+SvDistinguishFlag2	ds	1	;�Z�[�u�f�[�^�L���̔��ʃt���O(0001h) (ad77)
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0ad10h
+
+
+MonsBoxTempArea:			;�a����a�n�w�e���|�����G���A(054ch) (ad78)
+
+pm_box_start:
+my_mons_tbl		ds	PM_TBL_SIZE*2-CTRL_BYTE	;ad78
+my_mons_data		ds	NPM_DATA_SIZE	;ada2
+my_mons_oya		ds	PM_OYA_SIZE	;afe6
+my_mons_name		ds	PM_NAME_SIZE	;b0c2
+
+pm_box_end:
+MonsBoxTempAreaEnd:	;b19e
+
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0b260h
+
+
+BattleRecordArea:			;�ΐ퐬�уf�[�^�G���A(0047h)
+
+; pm_cmnt./ohsawa/13*5+6 term_recodechk�Q��
+battle_record		ds	47h
+; us_spec./ohsawa/�ΐ�L�^ �ǉ�(MONS_LEN�g����)
+			ds	5*5
+
+
+BattleRecordAreaEnd:	;b1fe
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0b2b0h
+
+
+BiographyArea:				;�a������f�[�^�G���A(0d48h)
+
+; us_spec./ohsawa/�a������f�[�^�T�C�Y
+PM_CROWN_SIZE	equ	5*6+68+6	; 68 -> 5*6+68 -> 104
+PM_MAX_CROWN	equ	30		; 50 -> 30
+sv_crown	ds	PM_CROWN_SIZE*PM_MAX_CROWN	;b1fe
+
+
+BiographyAreaEnd:
+
+; us_spec./ohsawa/BACKUP���U sv_system_dt_X �㔼 ���悻400�o�C�g
+SV_SYSTEM_LOW		=	SV_SYSTEM_HI + SYS_DT_X_HI_SIZE
+SYS_DT_X_LOW_SIZE	=	SV_SYSTEM_BTM - SV_SYSTEM - SYS_DT_X_HI_SIZE
+sv_system_dt_X_low	ds	SYS_DT_X_LOW_SIZE	;be2e
+
+
+;===============================================;
+; Category	: Extra RAM mapping
+; address	: G_EXRAM2
+; Infomation	: 
+;===============================================;
+extram2		group	1
+
+
+	org	0a000h
+
+pm_box01	ds	NPM_BOX_SIZE	;a000
+
+pm_box02	ds	NPM_BOX_SIZE	;a426
+
+pm_box03	ds	NPM_BOX_SIZE	;a84c
+
+pm_box04	ds	NPM_BOX_SIZE	;ac72
+
+pm_box05	ds	NPM_BOX_SIZE	;b098
+
+pm_box06	ds	NPM_BOX_SIZE	;b4be
+
+pm_box07	ds	NPM_BOX_SIZE	;b8e4
+
+
+;bd0a
+;===============================================;
+; Category	: Extra RAM mapping
+; address	: G_EXRAM3
+; Infomation	: 
+;===============================================;
+extram3		group	1
+
+
+	org	0a000h
+
+pm_box08	ds	NPM_BOX_SIZE
+
+pm_box09	ds	NPM_BOX_SIZE
+
+pm_box10	ds	NPM_BOX_SIZE
+
+pm_box11	ds	NPM_BOX_SIZE
+
+pm_box12	ds	NPM_BOX_SIZE
+
+pm_box13	ds	NPM_BOX_SIZE
+
+pm_box14	ds	NPM_BOX_SIZE
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0b200h
+
+			;�|�P�����V�X�e���f�[�^�Z�[�u�G���A(0008h)
+sv_status_X		ds	006h	;bd0a
+
+SvDistinguishFlag1_X	ds	1	;�Z�[�u�f�[�^�L���̔��ʃt���O(0001h) (bd10)
+
+			;�|�P�����Q�[���f�[�^�Z�[�u�G���A(0d00h)
+; us_spec./ohsawa/BACKUP���U USA�� SV_GAME���� bank0 ��
+;sv_my_dt_X		ds	SV_GAME_BTM - SV_SYSTEM	; 0a600h
+
+; us_spec./ohsawa/BACKUP���U
+;  �f�[�^�𕪊�
+;   sv_system_dt_X_hi  : �O�� 550�o�C�g         bank0 �w
+;   sv_system_dt_X_low : �㔼 ���悻400�o�C�g   bank1 ��
+;sv_system_dt_X		ds	SV_SYSTEM_BTM - SV_SYSTEM
+
+sv_map_dt_X		ds	SV_MAP_BTM - SV_MAP	;bd11
+
+; us_spec./ohsawa/BACKUP���U USA�� bank0��
+;sv_poke_dt_X		ds	SV_POKE_BTM - SV_POKE
+
+
+; us_spec./ohsawa/�������m�ۂ̂��� org �L�����Z��
+;	org	0bf0dh
+
+SaveGameSumCheck_X	ds	2	;�Z�[�u�f�[�^�T���`�F�b�N(0002h) (bd45)
+
+SvDistinguishFlag2_X	ds	1	;�Z�[�u�f�[�^�L���̔��ʃt���O(0001h) (bd47)
+;bd48
+
+; us_spec./ohsawa/�{�b�N�X �j���`�F�b�N
+    ifn	test_box_sumcheck
+BoxDestroyFlag		ds	2
+    endif
+
+;===============================================;
+; Category	: Extra RAM mapping
+; address	: G_EXRAM4
+; Infomation	: 
+;===============================================;
+extram4		group	1
+
+
+	org	0a000h
+
+pm_box15	ds	NPM_BOX_SIZE
+
+pm_box16	ds	NPM_BOX_SIZE
+
+pm_box17	ds	NPM_BOX_SIZE
+
+pm_box18	ds	NPM_BOX_SIZE
+
+pm_box19	ds	NPM_BOX_SIZE
+
+pm_box20	ds	NPM_BOX_SIZE
+
+pm_box21	ds	NPM_BOX_SIZE
+
+;===============================================;
+; Category	: Extra RAM mapping
+; address	: G_EXRAM5
+; Infomation	: enc
+;===============================================;
+extram5		group	1
+
+
+	org	0a000h
+
+ExtEncStart:
+ext_enc_order	ds	NEW_MONSTER_NO_MAX*2	;a000
+ext_enc_list	ds	6	;a300
+ext_enc_mode	ds	1	;a306
+ext_enc_search	ds	7	;a307
+ext_enc_unknown	ds	3	;a30e
+ext_enc_type	ds	1	;a311
+ext_enc_sv	ds	6	;a312
+ext_enc_locale	ds	1	;a318
+;a319
+
+

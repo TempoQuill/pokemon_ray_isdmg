@@ -1,0 +1,482 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_jackpot13
+;	;
+;	;	Converting on Mon Jul 23 05:07:29 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	musjack13
+;musjack13:
+	db	0c0h
+	dw	m_jackpot131
+	db	001h
+	dw	m_jackpot132
+	db	002h
+	dw	m_jackpot133
+	db	003h
+	dw	m_jackpot134
+;----------------------------------------
+m_jackpot131:
+;----------------------------------------
+	db	$da,$00,$f5
+	db	$e5,$77
+	db	$db,$03
+	db	$e1,$6,$32
+; P1-1
+	db	$d8,$6,$a6
+	db	$d4,$35
+	db	$d5,$a0
+	db	$d4,$30
+	db	$75
+	db	$30
+	db	$70
+; P1-2
+	db	$a5
+	db	$70
+	db	$a0
+	db	$d3,$37
+loop$:
+; P1-3
+	db	$fe
+	dw	sub3_4$
+	db	$fe
+	dw	sub4_6$
+	db	$75
+	db	$dc,$a1
+	db	$30
+	db	$50
+; P1-7
+	db	$fe
+	dw	sub3_4$
+	db	$fe
+	dw	sub4_6$
+	db	$77
+loop11_18$:
+; P1-11
+	db	$fe
+	dw	sub11_12$
+; P1-13
+	db	$d9,$02
+	db	$fe
+	dw	sub11_12$
+; P1-15
+	db	$d9,$00
+	db	$55
+	db	$20
+	db	$50
+	db	$87
+; P1-16
+	db	$53
+	db	$83
+	db	$a3
+	db	$83
+; P1-17
+	db	$75
+	db	$a3
+	db	$81
+	db	$71
+	db	$51
+; P1-18
+	db	$79
+	db	$51
+	db	$71
+	db	$a1
+; P1-19
+	db	$fd,2
+	dw	loop11_18$
+; P1-27
+	db	$fc
+	dw	loop$
+sub4_6$:
+	db	$23
+	db	$20
+	db	$30
+	db	$50
+	db	$a0
+; P1-5
+sub3_4$:
+; P1-3
+	db	$dc,$d1
+	db	$d5,$71
+	db	$a1
+	db	$d4,$31
+	db	$d5,$80
+	db	$70
+	db	$51
+	db	$81
+	db	$d4,$21
+	db	$d5,$70
+	db	$50
+; P1-4
+	db	$31
+	db	$71
+	db	$51
+	db	$31
+	db	$ff
+sub11_12$:
+; P1-11
+	db	$dc,$a7
+	db	$75
+	db	$30
+	db	$70
+	db	$a3
+	db	$33
+; P1-12
+	db	$d4,$35
+	db	$d5,$a5
+	db	$73
+	db	$ff
+;----------------------------------------
+m_jackpot132:
+;----------------------------------------
+	db	$db,$02
+	db	$e1,$f,$75
+; P2-1
+	db	$d8,$6,$c7
+	db	$d6,$7f
+; P2-2
+	db	$39
+	db	$d7,$a1
+	db	$c1
+	db	$d6,$21
+loop$:
+loop3_6$:
+; P2-3
+	db	$fe
+	dw	base3_4$
+	db	$a1
+	db	$01
+	db	$d6,$23
+; P2-5
+	db	$fe
+	dw	base3_4$
+	db	$d6,$31
+	db	$05
+; P2-7
+	db	$fd,2
+	dw	loop3_6$
+; P2-11
+loop11_18$:
+	db	$33
+	db	$01
+	db	$d7,$a2
+	db	$00
+	db	$c1
+	db	$d6,$22
+	db	$00
+; P2-12
+	db	$33
+	db	$01
+	db	$d7,$a2
+	db	$00
+	db	$c1
+	db	$d6,$21
+	db	$31
+; P2-13
+	db	$53
+	db	$01
+	db	$d7,$c2
+	db	$00
+	db	$d6,$21
+	db	$32
+	db	$00
+; P2-14
+	db	$53
+	db	$01
+	db	$d7,$c2
+	db	$00
+	db	$d6,$21
+	db	$31
+	db	$51
+; P2-15
+	db	$d7,$a3
+	db	$01
+	db	$c2
+	db	$00
+	db	$51
+	db	$d6,$22
+	db	$00
+; P2-16
+	db	$d7,$a3
+	db	$01
+	db	$d6,$52
+	db	$00
+	db	$d7,$a1
+	db	$d6,$51
+	db	$a1
+; P2-17
+	db	$33
+	db	$01
+	db	$72
+	db	$00
+	db	$31
+	db	$a2
+	db	$00
+; P2-18
+	db	$d5,$33
+	db	$01
+	db	$22
+	db	$00
+	db	$d6,$c1
+	db	$a1
+	db	$51
+; P2-19
+	db	$fd,2
+	dw	loop11_18$
+; P2-27
+	db	$fc
+	dw	loop$
+base3_4$:
+; P2-3
+	db	$31
+	db	$03
+	db	$d7,$a1
+	db	$d6,$21
+	db	$03
+	db	$d7,$a1
+; P2-4
+	db	$c1
+	db	$03
+	db	$81
+	db	$ff
+;----------------------------------------
+m_jackpot133:
+;----------------------------------------
+	db	$e1,$9,$13
+; P3-1
+	db	$d8,$6,$1e
+	db	$d3,$a5
+	db	$70
+	db	$a0
+	db	$d2,$35
+	db	$d3,$a0
+	db	$d2,$30
+; P3-2
+	db	$75
+	db	$d8,$3,$1e
+	db	$76
+	db	$dc,$2e
+	db	$76
+	db	$dc,$3e
+	db	$75
+; P3-3
+	db	$d8,$6,$1b
+loop$:
+	db	$fe
+	dw	melo3_4$
+	db	$fe
+	dw	melo4_6$
+	db	$30
+	db	$04
+	db	$dc,$1a
+	db	$c0
+	db	$d2,$20
+; P3-7
+	db	$fe
+	dw	melo3_4$
+	db	$fe
+	dw	melo4_6$
+	db	$30
+	db	$06
+; P3-11
+	db	$dc,$1c
+	db	$fe
+	dw	melo11_16$
+; P3-16 -tie
+	db	$73
+	db	$53
+; P3-17
+	db	$3d
+	db	$d3,$c1
+; P3-18
+	db	$ad
+	db	$01
+; P3-19
+	db	$dc,$10
+	db	$fe
+	dw	melo11_16$
+; P3-24 -tie
+	db	$d3,$a3
+	db	$d2,$23
+; P3-25
+	db	$3d
+	db	$51
+; P3-26
+	db	$3b
+	db	$dc,$1b
+	db	$d3,$80
+	db	$a0
+	db	$c0
+	db	$d2,$20
+; P3-27
+	db	$fc
+	dw	loop$
+melo4_6$:
+	db	$a0
+	db	$02
+	db	$a3
+; P3-5
+melo3_4$:
+; P3-3
+	db	$d2,$30
+	db	$00
+	db	$20
+	db	$00
+	db	$d3,$c0
+	db	$02
+	db	$d2,$20
+	db	$00
+	db	$d3,$c0
+	db	$00
+	db	$a0
+	db	$02
+; P3-4
+	db	$c0
+	db	$00
+	db	$a0
+	db	$00
+	db	$80
+	db	$00
+	db	$71
+	db	$ff
+melo11_16$:
+; P3-11
+	db	$a5
+	db	$70
+	db	$a0
+	db	$d2,$37
+; P3-12
+	db	$3f
+; P3-13
+	db	$d3,$c5
+	db	$90
+	db	$c0
+	db	$d2,$57
+; P3-14
+	db	$5f
+; P3-15
+	db	$d3,$85
+	db	$50
+	db	$80
+	db	$d2,$2f
+; P3-16 -tie
+	db	$ff
+;----------------------------------------
+m_jackpot134:
+;----------------------------------------
+	db	$e3,$006
+; P4-1
+	db	$d8,$3
+	db	$7f
+	db	$0f
+; P4-2
+	db	$7f
+	db	$03
+	db	$23
+	db	$23
+	db	$13
+; P4-3
+	db	$17
+loop$:
+	db	$23
+	db	$13
+	db	$17
+	db	$27
+; P4-4
+	db	$fe
+	dw	dr4_5$
+; P4-6
+	db	$17
+	db	$23
+	db	$13
+	db	$1f
+; P4-7
+	db	$17
+	db	$23
+	db	$13
+	db	$17
+	db	$27
+; P4-8
+	db	$fe
+	dw	dr4_5$
+; P4-10
+	db	$17
+	db	$23
+	db	$13
+	db	$17
+	db	$a0
+	db	$a0
+	db	$a0
+	db	$a0
+	db	$90
+	db	$a0
+	db	$90
+	db	$90
+; P4-11
+	db	$fe
+	dw	dr11_18$
+; P4-19
+	db	$fe
+	dw	dr11_18$
+; P4-27
+	db	$77
+	db	$fc
+	dw	loop$
+dr4_5$:
+; P4-4
+	db	$17
+	db	$23
+	db	$13
+	db	$23
+	db	$13
+	db	$27
+; P4-5
+	db	$17
+	db	$23
+	db	$13
+	db	$17
+	db	$27
+	db	$ff
+dr11_18$:
+; P4-11
+	db	$77
+	db	$23
+	db	$17
+	db	$13
+	db	$27
+loop12$:
+; P4-12
+	db	$17
+	db	$23
+	db	$17
+	db	$13
+	db	$27
+; P4-13
+	db	$fd,6
+	dw	loop12$
+; P4-14
+; P4-15
+; P4-16
+; P4-17
+; P4-18
+	db	$17
+	db	$23
+	db	$13
+loop18$:
+	db	$a0
+	db	$fd,8
+	dw	loop18$
+	db	$90
+	db	$a0
+	db	$90
+	db	$a0
+	db	$90
+	db	$90
+	db	$80
+	db	$80
+; P4-19
+	db	$ff
+
+

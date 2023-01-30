@@ -1,0 +1,54 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;
+	;	Converting on Mon Mar  1 06:40:12 1999
+	;
+	;				by ver 1.02
+	;
+;	public	musunknowndungeon
+;musunknowndungeon:
+		mushdr	80,UnknownD01
+		mushdr	01,UnknownD02
+		mushdr	02,UnknownD03
+;----------------------------------------
+UnknownD01:
+;----------------------------------------
+		speed 00 e0
+		vol 77
+		duty 0
+		bal_s f0
+		init c 44
+		tempo 1 		r
+		jump UNloop20
+;----------------------------------------
+UnknownD02:
+;----------------------------------------
+		chorus 00 02
+		duty 0
+		bal_s 0f
+		init c a4
+UNloop20:
+		tempo 4 	oct 4	c
+				oct 5	a#
+		tempo 2 	oct 4	c#
+					d#
+					c
+				oct 5	a#
+; P2-2
+		tempo 4 	oct 4	c
+				oct 5	a#
+		jump UNloop20
+;----------------------------------------
+UnknownD03:
+;----------------------------------------
+; P3-1
+		init c 10
+loop30$:
+		tempo 2 	oct 6	g#
+				oct 5	c#
+					e
+		tempo 10 		r
+		jump loop30$
+
+

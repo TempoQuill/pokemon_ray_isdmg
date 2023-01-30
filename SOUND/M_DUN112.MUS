@@ -1,0 +1,515 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	dung12
+	;
+	;	Converting on Thu May 27 07:59:54 1999
+	;
+	;				by ver 1.00
+	;
+;	public	musdungeon112
+;musdungeon112:
+		mushdr	c0,dung121
+		mushdr	01,dung122
+		mushdr	02,dung123
+		mushdr	03,dung124
+;----------------------------------------
+dung121:
+;----------------------------------------
+		speed 00 80
+		vol 77
+		duty 3
+		chorus
+		vib 11 15
+		bal_s f0
+; P1-1
+		init c a7
+loop100$:
+		tempo 16 		r
+		loop 4,loop100$
+; P1-5
+		tempo 16 	oct 5	d#
+; P1-6
+					d
+; P1-7
+					c#
+; P1-8
+					c
+		env a3
+loop10$:
+		call sub11$
+		loop 3,loop10$
+; P1-21
+		env b7
+		tempo 8 		g#
+					d#
+; P1-22
+					g
+					d
+; P1-23
+					f
+					c#
+; P1-24
+					d#
+					g
+; P1-25
+					g#
+					d#
+; P1-26
+					g
+					d
+; P1-27
+					f
+					c#
+; P1-28
+					d#
+					c
+; P1-29
+		env a3
+loop11$:
+		call sub11$
+		loop 2,loop11$
+; P1-37
+		tempo 16 		r
+; P1-38
+		tempo 8 		r
+		env b7
+		tempo 2 	oct 6	f
+					g
+		tempo 4 		g#
+; P1-39
+		tempo 16 	oct 5	d#
+; P1-40
+		tempo 8 		r
+		tempo 2 	oct 6	g#
+					g
+		tempo 4 		g#
+; P1-41
+		tempo 16 	oct 5	d#
+; P1-42
+		tempo 2 		g
+		tempo 6 		r
+		tempo 2 		f
+					g
+		tempo 4 		g#
+; P1-43
+		tempo 16 		g
+; P1-44
+		tempo 2 		f
+		tempo 6 		r
+		tempo 2 		g#
+					g
+		tempo 4 		g#
+; P1-45
+		env a3
+loop12$:
+		call sub11$
+		loop 2,loop12$
+		jump loop10$
+sub11$:
+; P1-9
+		tempo 2 	oct 4	d#
+				oct 5	g#
+				oct 4	c
+					d#
+				oct 5	g#
+				oct 4	c
+					d#
+					c
+; P1-10
+					d
+				oct 5	g
+					a#
+				oct 4	d
+				oct 5	g
+					a#
+				oct 4	d
+				oct 5	a#
+; P1-11
+				oct 4	c#
+				oct 5	f
+					a#
+				oct 4	c#
+				oct 5	f
+					a#
+				oct 4	c#
+				oct 5	a#
+; P1-12
+				oct 4	c
+				oct 5	g
+					a#
+				oct 4	c
+				oct 5	g
+					a#
+				oct 4	c
+				oct 5	a#
+		return
+;----------------------------------------
+dung122:
+;----------------------------------------
+		duty 1
+		vib 12 36
+; P2-1
+		bal_s 0f
+		init c a7
+loop200$:
+		tempo 16 		r
+		loop 4,loop200$
+; P2-5
+		tempo 16 	oct 5	g
+; P2-6
+					a#
+; P2-7
+					f
+; P2-8
+					g
+loop20$:
+; P2-9
+loop201$:
+		tempo 16 		r
+		loop 4,loop201$
+; P2-13
+		tempo 8 		r
+		bal_s ff
+		env c7
+		tempo 8 	oct 3	c
+; P2-14
+		env c4
+		tempo 2 		d
+					c
+				oct 4	a#
+		tempo 4 		g
+		tempo 2 		a#
+		tempo 4 	oct 3	d
+; P2-15
+		env b0
+		tempo 4 		c#
+		env b7
+		tempo 12 		c#
+; P2-16
+		env 59
+		tempo 8 		c
+		env c7
+		tempo 8 		c
+; P2-17
+					r
+		env c7
+		tempo 8 		c
+; P2-18
+		env c4
+		tempo 2 		d
+					c
+				oct 4	a#
+					g
+					g
+					a#
+		tempo 4 	oct 3	d
+; P2-19
+		env c7
+		tempo 12 		c#
+		env c3
+		tempo 2 		c
+					c#
+; P2-20
+		env b0
+		tempo 10 		d#
+		env b7
+		tempo 6 		d#
+; P2-21
+		bal_s 0f
+		env c4
+		tempo 4 	oct 4	f
+		tempo 2 		d#
+					d
+		tempo 4 		d#
+		tempo 2 		d
+					c
+; P2-22
+					d
+					c
+				oct 5	a#
+				oct 4	c
+		tempo 4 		d
+		tempo 2 		c
+				oct 5	a#
+; P2-23
+		tempo 8 	oct 4	c#
+				oct 5	a#
+; P2-24
+		env b0
+		tempo 2 	oct 4	d#
+					d
+					c
+				oct 5	a#
+		tempo 8 	oct 4	c
+; P2-25
+		tempo 4 		f
+		tempo 2 		d#
+					d
+		tempo 4 		d#
+		tempo 2 		d
+					c
+; P2-26
+		tempo 2 		d
+					c
+				oct 5	a#
+				oct 4	c
+		tempo 4 		d
+		tempo 2 		c
+				oct 5	a#
+; P2-27
+		tempo 4 	oct 4	c#
+		tempo 2 		c
+					c#
+					c
+					c#
+				oct 5	a#
+				oct 4	c#
+; P2-28
+		env b0
+		tempo 8 		c
+		env b7
+		tempo 8 		c
+; P2-29
+		env c7
+		bal_s ff
+		tempo 8 		r
+				oct 3	c
+; P2-30
+		env c4
+		tempo 2 		d
+					c
+				oct 4	a#
+		tempo 4 		g
+		tempo 2 		a#
+		tempo 4 	oct 3	d
+; P2-31
+		env 49
+		tempo 8 		c#
+		env c7
+		tempo 8 		c#
+; P2-32
+		env b0
+		tempo 8 		c
+		env b7
+		tempo 8 		c
+; P2-33
+					r
+		env c7
+		tempo 8 		c
+; P2-34
+		env c4
+		tempo 2 		d
+					c
+				oct 4	a#
+					g
+					g
+					a#
+		tempo 4 	oct 3	d
+; P2-35
+		env b0
+		tempo 8 		c#
+		env b7
+		tempo 8 		c#
+; P2-36
+		env b0
+		tempo 8 		c
+		env b7
+		tempo 8 		c
+; P2-37
+		env c7
+		tempo 16 		r
+; P2-38
+		bal_s 0f
+		tempo 8 		r
+		tempo 2 	oct 5	a#
+				oct 4	c
+		tempo 4 		c#
+; P2-39
+		tempo 16 		c
+; P2-40
+		tempo 8 		r
+		tempo 2 		c#
+					c
+		tempo 4 		c#
+; P2-41
+		tempo 16 		c
+; P2-42
+		env c2
+		tempo 8 		d#
+		env c7
+		tempo 2 	oct 5	a#
+				oct 4	c
+		tempo 4 		c#
+; P2-43
+		tempo 16 		c
+; P2-44
+		env c2
+		tempo 8 	oct 5	a#
+		env c7
+		tempo 2 	oct 4	c#
+					c
+		env c4
+		tempo 16 		c#
+; P2-45
+		tempo 4 		r
+; P2-46
+		tempo 16 		r
+; P2-47
+					r
+; P2-48
+					r
+; P2-49
+		env b7
+		tempo 16 	oct 3	d#
+; P2-50
+					d
+; P2-51
+					f
+; P2-52
+					d#
+		jump loop20$
+;----------------------------------------
+dung123:
+;----------------------------------------
+; P3-1
+		init c 27
+;;:		env_c 00
+loop301$:
+		call sub33$
+; P3-5
+		loop 2,loop301$
+loop30$:
+; P3-9
+		call sub33$
+		loop 7,loop30$
+; P3-37
+		call sub32$
+; P3-39
+		tempo 4 	oct 5	c
+		tempo 2 		g
+		tempo 4 		d#
+		tempo 2 		g
+		tempo 4 		d#
+; P3-40
+		tempo 2 		f
+					r
+		tempo 12 	oct 6	a#
+; P3-41
+		call sub32$
+; P3-43
+		tempo 4 	oct 5	c
+		tempo 2 		g
+		tempo 4 		d#
+		tempo 2 		g
+		tempo 4 		d#
+; P3-44
+		tempo 2 		f
+					r
+		tempo 4 	oct 6	a#
+		tempo 2 	oct 5	c#
+					c
+		tempo 4 		c#
+; P3-45
+		call sub31$
+; P3-49
+		call sub31$
+		jump loop30$
+sub31$:
+		tempo 4 	oct 5	c
+		tempo 2 		g
+		tempo 4 		d#
+		tempo 2 		g
+		tempo 4 		f
+; P3-2
+		tempo 2 		d#
+					r
+		tempo 4 	oct 6	a#
+		tempo 2 		a#
+				oct 5	c
+		tempo 4 		c#
+; P3-3
+		tempo 4 		c
+		tempo 2 		g
+		tempo 4 		d#
+		tempo 2 		g
+		tempo 4 		d#
+; P3-4
+		tempo 2 		f
+					r
+		tempo 4 	oct 6	a#
+		tempo 2 	oct 5	c#
+					c
+		tempo 4 		c#
+		return
+sub32$:
+		tempo 4 	oct 5	c
+		tempo 2 		g
+		tempo 4 		d#
+		tempo 2 		g
+		tempo 4 		f
+; P3-38
+		tempo 2 		d#
+		tempo 2 		r
+		tempo 12 	oct 6	a#
+		return
+sub33$:
+		tempo 4 	oct 6	c
+		tempo 2 		g
+		tempo 4 		d#
+		tempo 2 		g
+		tempo 4 		f
+; P3-2
+		tempo 2 		d#
+					r
+		tempo 4 	oct 7	a#
+		tempo 2 		a#
+				oct 6	c
+		tempo 4 		c#
+; P3-3
+		tempo 4 		c
+		tempo 2 		g
+		tempo 4 		d#
+		tempo 2 		g
+		tempo 4 		d#
+; P3-4
+		tempo 2 		f
+					r
+		tempo 4 	oct 7	a#
+		tempo 2 	oct 6	c#
+					c
+		tempo 4 		c#
+		return
+;----------------------------------------
+dung124:
+;----------------------------------------
+		drum_mode 03
+		init c
+loop40$:
+; P4-1
+		bal_s ff
+		tempo 8 		drum 4
+					drum 4
+; P4-2
+		tempo 4 		drum 4
+		bal_s f0
+		tempo 4 		drum 2
+		bal_s 0f
+		tempo 2 		drum 2
+					drum 2
+		bal_s f0
+		tempo 4 		drum 2
+; P4-3
+		bal_s ff
+		tempo 8 		drum 4
+					drum 4
+; P4-4
+		tempo 4 		drum 4
+		bal_s 0f
+		tempo 8 		drum 2
+		bal_s f0
+		tempo 2 		drum 2
+					drum 2
+		jump loop40$
+
+

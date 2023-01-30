@@ -1,0 +1,25 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_menyu
+;	;
+;	;	Converting on Wed Jun 10 22:14:56 2020
+;	;
+;	;				by ver 1.00
+;	;
+;	public	musmenyu1
+;musmenyu1:
+	extern	m_menyu1
+	extern	m_menyu3
+	extern	m_menyu5
+	extern	m_menyu7
+	db	0c0h
+	dw	m_menyu1
+	db	001h
+	dw	m_menyu3
+	db	002h
+	dw	m_menyu5
+	db	003h
+	dw	m_menyu7
+
+

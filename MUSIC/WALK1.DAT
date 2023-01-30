@@ -1,0 +1,118 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	walk_01
+;	;
+;	;	Converting on Sat Nov 09 13:57:04 2019
+;	;
+;	;				by ver 1.00
+;	;
+;	public	muswalk1
+;muswalk1:;					jumasu
+	db	080h
+	dw	walk_011
+	db	001h
+	dw	walk_012
+	db	002h
+	dw	walk_013
+;----------------------------------------
+walk_011:
+;----------------------------------------
+	db	$da,$01,$09
+	db	$e5,$77
+; P1-0
+	db	$db,$02
+	db	$d8,$c,$a1
+	db	$03
+; P1-1
+loop$:
+	db	$d5,$50
+	db	$22
+	db	$70
+	db	$32
+; P1-2
+	db	$50
+	db	$22
+	db	$30
+	db	$32
+	db	$fc
+	dw	loop$
+;----------------------------------------
+walk_012:
+;----------------------------------------
+	db	$db,$03
+; P2-0
+	db	$d8,$3,$d2
+	db	$d6,$50
+	db	$d7,$c0
+	db	$90
+	db	$70
+	db	$57
+; P2-1
+loop$:
+	db	$a3
+	db	$fe
+	dw	bass1$
+	db	$d6,$23
+	db	$33
+	db	$fe
+	dw	bass1$
+	db	$d6,$33
+; P2-2
+	db	$23
+	db	$fe
+	dw	bass1$
+	db	$d6,$33
+	db	$53
+	db	$d9,$1b
+	db	$fe
+	dw	bass1$
+	db	$d9,$00
+	db	$d7,$53
+	db	$fc
+	dw	loop$
+bass1$:
+	db	$db,$02
+	db	$d5,$a3
+	db	$a3
+	db	$db,$03
+	db	$ff
+;----------------------------------------
+walk_013:
+;----------------------------------------
+; P3-0
+	db	$d8,$3,$1e
+	db	$d4,$c0
+	db	$d3,$50
+	db	$90
+	db	$a0
+	db	$c1
+	db	$dc,$2e
+	db	$c1
+	db	$dc,$3e
+	db	$c1
+	db	$05
+; P3-1
+loop$:
+	db	$dc,$1c
+	db	$d4,$21
+	db	$01
+	db	$51
+	db	$09
+	db	$31
+	db	$01
+	db	$71
+	db	$09
+; P3-2
+	db	$21
+	db	$01
+	db	$51
+	db	$09
+	db	$51
+	db	$01
+	db	$51
+	db	$09
+	db	$fc
+	dw	loop$
+
+

@@ -1,0 +1,495 @@
+	;
+	;	Koukan
+	;
+	;	Converting on Fri Aug 24 19:44:47 1990
+	;
+	;				by ver 1.02
+	;
+
+		mushdr	c0,Koukan1
+		mushdr	01,Koukan2
+		mushdr	02,Koukan3
+		mushdr	03,Koukan4
+
+;----------------------------------------
+Koukan1
+;----------------------------------------
+
+		speed 00 90
+		vol 77
+		balance de
+		duty 3
+		vib 05 16
+; P1-1
+loop10$:
+		init c c3
+		tempo 1 	oct 4	e
+					r
+					g#
+					r
+					f#
+					r
+					a
+					g#
+		tempo 8 		r
+; P1-2
+		tempo 1 		d#
+					r
+					f#
+					r
+					e
+					r
+					g#
+					f#
+		tempo 4 		r
+		tempo 2 	oct 5	b
+					r
+; P1-3
+		tempo 1 	oct 4	c#
+					r
+					d#
+					r
+					e
+					f#
+		tempo 2 		r
+		tempo 1 		c#
+					r
+					d#
+					r
+					e
+					f#
+		tempo 2 		r
+; P1-4
+		tempo 4 		f#
+					e
+		tempo 1 		f#
+					g#
+					r
+					f#
+					r
+		tempo 2 		d#
+		tempo 1 		r
+; P1-5
+					e
+					r
+					g#
+					r
+					f#
+					r
+					a
+					g#
+		tempo 4 		r
+		tempo 2 		e
+					r
+; P1-6
+		tempo 1 		d#
+					r
+					f#
+					r
+					e
+					r
+					g#
+					f#
+		tempo 8 		r
+; P1-7
+		tempo 1 		c#
+					r
+					d#
+					r
+					e
+					f#
+		tempo 2 		r
+		tempo 1 		c#
+					r
+					d#
+					r
+					e
+					f#
+		tempo 2 		r
+; P1-8
+		tempo 4 		f#
+					e
+		tempo 1 		f#
+					g#
+					r
+					b
+					r
+		tempo 2 		f#
+		tempo 1 		r
+; P1-9
+		tempo 2 		c#
+					r
+					d#
+					r
+					e
+					r
+					g#
+					r
+; P1-10
+		tempo 8 		d#
+		tempo 2 		r
+					e
+					d#
+					c#
+; P1-11
+				oct 5	b
+					r
+				oct 4	c#
+					r
+					d#
+					r
+					f#
+					r
+; P1-12
+		tempo 8 		c#
+		tempo 2 		r
+					d#
+					c#
+				oct 5	b
+; P1-13
+					a
+					g#
+					a
+		tempo 1 		g#
+					f#
+		tempo 8 		r
+; P1-14
+		tempo 2 		b
+					a#
+					b
+		tempo 1 		a
+					g#
+		tempo 4 		r
+		tempo 2 		g#
+					r
+; P1-15
+					f#
+					f
+					f#
+					g#
+					a
+					e
+					c#
+					e
+; P1-16
+					f#
+		tempo 6 		r
+		tempo 2 		d#
+		tempo 6 		r
+
+		loop 0,loop10$
+
+;----------------------------------------
+Koukan2
+;----------------------------------------
+
+		duty 3
+		chorus
+		vib 06 15
+; P2-1
+loop20$:
+		init c d3
+		tempo 1 	oct 4	e
+					r
+				oct 5	b
+					r
+				oct 4	c#
+					r
+				oct 5	b
+				oct 4	e
+		tempo 4 		r
+		tempo 2 		e
+					r
+; P2-2
+		tempo 1 		d#
+					r
+				oct 5	b
+					r
+				oct 4	c#
+					r
+				oct 5	b
+				oct 4	d#
+		tempo 8 		r
+; P2-3
+		tempo 1 		c#
+					r
+					d#
+					r
+					c#
+				oct 5	b
+		tempo 2 		r
+		tempo 1 	oct 4	c#
+					r
+					d#
+					r
+					c#
+				oct 5	b
+		tempo 2 		r
+; P2-4
+		tempo 4 	oct 4	d#
+					c#
+		tempo 1 		d#
+					e
+					r
+					f#
+					r
+		tempo 2 	oct 5	b
+		tempo 1 		r
+; P2-5
+				oct 4	e
+					r
+				oct 5	b
+					r
+				oct 4	c#
+					r
+				oct 5	b
+				oct 4	e
+		tempo 8 		r
+; P2-6
+		tempo 1 		d#
+					r
+				oct 5	b
+					r
+				oct 4	c#
+					r
+				oct 5	b
+				oct 4	d#
+		tempo 4 		r
+		tempo 2 	oct 5	b
+					r
+; P2-7
+		tempo 1 	oct 4	c#
+					r
+					d#
+					r
+					c#
+				oct 5	b
+		tempo 2 		r
+		tempo 1 	oct 4	c#
+					r
+					d#
+					r
+					e
+					f#
+		tempo 2 		r
+; P2-8
+		tempo 4 		f#
+					e
+		tempo 1 		f#
+					g#
+					r
+					f#
+					r
+		tempo 2 		d#
+		tempo 3 		r
+; P2-9 --- tied
+		tempo 2 	oct 5	a
+					r
+					b
+					r
+				oct 4	c#
+					r
+					e
+; P2-10
+		tempo 8 		f#
+		tempo 2 		r
+					e
+					d#
+					c#
+					r
+; P2-11 --- tied
+				oct 5	g#
+					r
+					a
+					r
+					b
+					r
+				oct 4	d#
+; P2-12
+		tempo 8 		e
+		tempo 2 		r
+					d#
+					c#
+					d#
+; P2-13
+				oct 5	a
+					g#
+					a
+		tempo 1 		a#
+					b
+		tempo 4 		r
+		tempo 2 		f#
+					r
+; P2-14
+					b
+					a#
+					b
+		tempo 1 	oct 4	c
+					c#
+		tempo 8 		r
+; P2-15
+		tempo 2 	oct 5	f#
+					f
+					f#
+					g#
+					a
+				oct 4	e
+					d#
+					c#
+; P2-16
+				oct 5	b
+		tempo 6 		r
+		tempo 2 		b
+		tempo 6 		r
+
+		loop 0,loop20$
+
+;----------------------------------------
+Koukan3
+;----------------------------------------
+
+; P3-1
+		init c 10
+loop30$:
+		tempo 2 	oct 4	e
+					r
+				oct 5	b
+				oct 4	e
+					r
+					e
+					g#
+					e
+; P3-2
+					d#
+					r
+				oct 5	b
+				oct 4	d#
+					r
+					d#
+					g#
+					d#
+; P3-3
+					c#
+					r
+				oct 5	a
+				oct 4	c#
+					r
+				oct 5	a
+				oct 4	c#
+				oct 5	a
+; P3-4
+		tempo 4 	oct 4	d#
+		tempo 2 		c#
+		tempo 6 	oct 5	b
+		tempo 2 	oct 4	c#
+					d#
+; P3-5
+				oct 4	e
+					r
+				oct 5	b
+				oct 4	e
+					r
+					e
+					g#
+					e
+; P3-6
+					d#
+					r
+				oct 5	b
+				oct 4	d#
+					r
+					d#
+					g#
+					d#
+; P3-7
+					c#
+					r
+				oct 5	a
+				oct 4	c#
+					r
+				oct 5	a
+				oct 4	c#
+				oct 5	a
+; P3-8
+		tempo 4 	oct 4	d#
+					c#
+		tempo 1 		d#
+					e
+					r
+					f#
+					r
+		tempo 2 		c#
+		tempo 1 		r
+; P3-9
+		tempo 4 		c#
+					d#
+					e
+					g#
+; P3-10
+					f#
+		tempo 2 		r
+		tempo 4 		f#
+		tempo 2 		e
+					d#
+					e
+; P3-11
+		tempo 4 	oct 5	b
+				oct 4	c#
+					d#
+					f#
+; P3-12
+					e
+		tempo 2 		r
+		tempo 4 		e
+		tempo 2 		e
+					d#
+					c#
+; P3-13
+					e
+					d#
+					e
+		tempo 1 		f
+					f#
+		tempo 4 		r
+		tempo 2 		d#
+					r
+; P3-14
+					f#
+					d#
+					f#
+		tempo 1 		g
+					g#
+		tempo 4 		r
+		tempo 2 		e
+					r
+; P3-15
+		tempo 12 		a
+		tempo 4 		g#
+; P3-16
+		tempo 2 		f#
+		tempo 6 		r
+		tempo 2 		d#
+		tempo 6 		r
+
+		loop 0,loop30$
+
+;----------------------------------------
+Koukan4
+;----------------------------------------
+		drum_mode 00
+		init c
+; P4-1 -
+loop40$
+		tempo 6 		drum 8
+					drum 8
+		tempo 4 		drum 8
+; P4-2 -
+		tempo 6 		drum 8
+					drum 8
+		tempo 2 		drum 8
+					drum 8
+; P4-3 -
+
+		loop 0,loop40$
+
+
