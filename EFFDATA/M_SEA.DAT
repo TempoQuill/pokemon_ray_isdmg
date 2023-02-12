@@ -131,7 +131,7 @@ loop10$:
 	db	$91
 	db	$71
 	db	$53	; Loop Tied (tempo 2)
-	db	$fc
+	db	$fd,0
 	dw	loop10$
 ;----------------------------------------
 Sea12:
@@ -221,7 +221,7 @@ loop20$:
 ; P2-14 --- tied
 	db	$a0
 	db	$d3,$25
-	db	$fc
+	db	$fd,0
 	dw	loop20$
 ;----------------------------------------
 Sea13:
@@ -345,7 +345,7 @@ loop30$:
 	db	$21
 	db	$31
 	db	$51
-	db	$fc
+	db	$fd,0
 	dw	loop30$
 
 

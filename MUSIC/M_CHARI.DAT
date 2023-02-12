@@ -168,7 +168,7 @@ loop10$:
 	db	$8b
 	db	$d8,$c,$b5
 	db	$e1,$8,$14
-	db	$fc
+	db	$fd,0
 	dw	loop10$
 ;----------------------------------------
 Chari2:
@@ -311,7 +311,7 @@ loop20$:
 	db	$d8,$c,$c7
 	db	$cb
 	db	$d8,$c,$c3
-	db	$fc
+	db	$fd,0
 	dw	loop20$
 ;----------------------------------------
 Chari3:
@@ -643,7 +643,7 @@ loop30$:
 	db	$00
 	db	$d4,$60
 	db	$00
-	db	$fc
+	db	$fd,0
 	dw	loop30$
 ;----------------------------------------
 Chari4:
@@ -691,7 +691,7 @@ loop40$:
 	dw	sub41$
 	db	$fe
 	dw	sub41$
-	db	$fc
+	db	$fd,0
 	dw	loop40$
 sub41$:
 	db	$01

@@ -6,7 +6,7 @@
 	;				by ver 1.02
 	;
 
-	db	080h
+	db	080h+000h
 	dw	Digda011
 	db	001h
 	dw	Digda012
