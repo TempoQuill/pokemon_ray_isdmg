@@ -31,7 +31,7 @@ road_021:
 	db	$01
 	db	$fe
 	dw	road_02sub2
-; P1-3
+; P1-3 -tie
 	db	$05
 	db	$63
 	db	$65
@@ -69,13 +69,11 @@ road_021:
 	db	$a1
 ; P1-9
 	db	$fe
-	dw	road_02sub9
-; P1-10
-; P1-11
+	dw	road_02sub9_10
 loop$:
+; P1-11
 	db	$fe
-	dw	road_02sub9
-; P1-12
+	dw	road_02sub9_10
 ; P1-13
 	db	$d9,$05
 	db	$fe
@@ -171,8 +169,8 @@ loop$:
 	db	$d9,$00
 	db	$fe
 	dw	road_02sub13
+loop29_36$:
 ; P1-29
-loop29$:
 	db	$d4,$81
 	db	$a1
 	db	$b1
@@ -232,14 +230,8 @@ loop29$:
 	db	$a1
 ; P1-37
 	db	$fd,2
-	dw	loop29$
-; P1-38
-; P1-39
-; P1-40
-; P1-41
-; P1-42
-; P1-43
-; P1-44
+	dw	loop29_36$
+; P1-45
 	db	$fc
 	dw	loop$
 road_02sub2:
@@ -249,9 +241,8 @@ road_02sub2:
 	db	$a1
 	db	$83
 	db	$63
-; P1-3 -tie
 	db	$ff
-road_02sub9:
+road_02sub9_10:
 ; P1-9
 	db	$d8,$c,$a3
 	db	$d5,$b1
@@ -347,17 +338,15 @@ road_022:
 	db	$41
 ; P2-9
 	db	$fe
-	dw	road_02mero9
-; P2-10
-; P2-11
+	dw	road_02mero9_10
 loop$:
+; P2-11
 	db	$fe
-	dw	road_02mero9
-; P2-12
-; P2-13
+	dw	road_02mero9_10
 	db	$db,$02
 	db	$d8,$6,$97
-loop13$:
+loop13_20$:
+; P2-13
 	db	$d9,$1a
 	db	$fe
 	dw	road_02mero13
@@ -417,18 +406,11 @@ loop13$:
 	db	$00
 ; P2-21
 	db	$fd,2
-	dw	loop13$
-; P2-22
-; P2-23
-; P2-24
-; P2-25
-; P2-26
-; P2-27
-; P2-28
+	dw	loop13_20$
+loop29_36$:
 ; P2-29
 	db	$d9,$00
 	db	$d8,$c,$d3
-loop29$:
 	db	$0f
 ; P2-30
 	db	$db,$03
@@ -482,21 +464,15 @@ loop29$:
 	db	$11
 ; P2-37
 	db	$fd,2
-	dw	loop29$
-; P2-38
-; P2-39
-; P2-40
-; P2-41
-; P2-42
-; P2-43
-; P2-44
+	dw	loop29_36$
+; P2-45
 	db	$fc
 	dw	loop$
 road_02mero1:
 	db	$d6,$b1
 	db	$fc
 	dw	road_02sub2
-road_02mero9:
+road_02mero9_10:
 ; P2-9
 	db	$d8,$c,$d2
 	db	$d4,$31
@@ -574,71 +550,27 @@ road_023:
 	dw	bass1$
 ; P3-9
 	db	$fe
-	dw	bass9$
-; P3-10
-; P3-11
+	dw	bass9_10$
 loop$:
+; P3-11
 	db	$d9,$10
 	db	$fe
-	dw	bass9$
-; P3-12
+	dw	bass9_10$
 ; P3-13
 	db	$d9,$00
 	db	$d8,$c,$12
 	db	$01
 	db	$fe
-	dw	bass13$
-	db	$62
-	db	$00
-	db	$62
-; P3-14 -tie
-	db	$00
-	db	$fe
-	dw	bass13$
-	db	$fe
-	dw	bass14$
-; P3-15
-	db	$fe
-	dw	bass15$
-; P3-16
-	db	$fe
-	dw	bass14$
-; P3-17
-	db	$fe
-	dw	bass17$
-; P3-18
-; P3-19
-; P3-20
+	dw	bass13_20$
 ; P3-21
 	db	$d4,$b0
 	db	$00
 	db	$dc,$14
 	db	$fe
-	dw	bass13$
-	db	$62
-	db	$00
-	db	$62
-; P3-22 -tie
-	db	$00
-	db	$fe
-	dw	bass13$
-	db	$fe
-	dw	bass14$
-; P3-23
-	db	$fe
-	dw	bass15$
-; P3-24
-	db	$fe
-	dw	bass14$
-; P3-25
-	db	$fe
-	dw	bass17$
-; P3-26
-; P3-27
-; P3-28
+	dw	bass13_20$
 ; P3-29
 	db	$d8,$6,$1e
-loop29$:
+loop29_36$:
 	db	$d9,$07
 	db	$fe
 	dw	road_02mero13
@@ -687,14 +619,8 @@ loop29$:
 	dw	road_02mero13
 ; P3-37
 	db	$fd,2
-	dw	loop29$
-; P3-38
-; P3-39
-; P3-40
-; P3-41
-; P3-42
-; P3-43
-; P3-44
+	dw	loop29_36$
+; P3-45
 	db	$fc
 	dw	loop$
 bass1$:
@@ -707,7 +633,7 @@ bass1$:
 	db	$63
 	db	$03
 	db	$ff
-bass9$:
+bass9_10$:
 ; P3-9
 	db	$d5,$b5
 	db	$05
@@ -724,14 +650,7 @@ bass9$:
 	db	$b3
 	db	$b3
 	db	$ff
-bass14$:
-	db	$60
-	db	$00
-	db	$d3,$11
-	db	$d4,$b1
-; P3-15
-	db	$01
-bass13$:
+bass13_20$:
 	db	$d4,$b0
 	db	$d3,$10
 	db	$30
@@ -740,11 +659,57 @@ bass13$:
 	db	$00
 	db	$b0
 	db	$00
-	db	$ff
-bass15$:
 	db	$62
 	db	$00
-; P3-16
+	db	$62
+; P3-14 -tie
+	db	$00
+	db	$d4,$b0
+	db	$d3,$10
+	db	$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$b0
+	db	$00
+	db	$d4,$b0
+	db	$d3,$10
+	db	$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$b0
+	db	$00
+	db	$62
+	db	$00
+	db	$62
+; P3-14 -tie
+	db	$00
+	db	$d4,$b0
+	db	$d3,$10
+	db	$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$b0
+	db	$00
+	db	$60
+	db	$00
+	db	$d3,$11
+	db	$d4,$b1
+; P3-15
+	db	$01
+	db	$d4,$b0
+	db	$d3,$10
+	db	$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$b0
+	db	$00
+	db	$62
+	db	$00
+; P3-16 -tie
 	db	$a2
 	db	$00
 	db	$a0
@@ -755,8 +720,20 @@ bass15$:
 	db	$00
 	db	$a0
 	db	$00
-	db	$ff
-bass17$:
+	db	$60
+	db	$00
+	db	$d3,$11
+	db	$d4,$b1
+; P3-17
+	db	$01
+	db	$d4,$b0
+	db	$d3,$10
+	db	$30
+	db	$00
+	db	$d4,$b0
+	db	$00
+	db	$b0
+	db	$00
 	db	$d3,$60
 	db	$00
 	db	$a1
@@ -809,9 +786,9 @@ bass17$:
 road_024:
 ;----------------------------------------
 	db	$e3,$005
+loop1_2$:
 ; P4-1
 	db	$d8,$c
-loop1$:
 	db	$c1
 	db	$51
 	db	$51
@@ -831,10 +808,9 @@ loop1$:
 	db	$c1
 ; P4-3
 	db	$fd,2
-	dw	loop1$
-; P4-4
+	dw	loop1_2$
 ; P4-5
-loop5$:
+loop5_6$:
 	db	$c1
 	db	$51
 	db	$11
@@ -854,23 +830,20 @@ loop5$:
 	db	$c1
 ; P4-7
 	db	$fd,2
-	dw	loop5$
-; P4-8
+	dw	loop5_6$
 ; P4-9
 	db	$fe
-	dw	dr9$
-; P4-10
+	dw	dr9_10$
 	db	$50
 	db	$50
+loop$:
 ; P4-11
-_loop4$:
 	db	$fe
-	dw	dr9$
-; P4-12
+	dw	dr9_10$
 	db	$10
 	db	$10
+loop13_20$:
 ; P4-13
-loop13$:
 	db	$fe
 	dw	dr13$
 	db	$fe
@@ -920,33 +893,13 @@ loop13$:
 	db	$10
 ; P4-21
 	db	$fd,4
-	dw	loop13$
-; P4-22
-; P4-23
-; P4-24
-; P4-25
-; P4-26
-; P4-27
-; P4-28
+	dw	loop13_20$
 ; P4-29
-; P4-30
-; P4-31
-; P4-32
-; P4-33
-; P4-34
-; P4-35
-; P4-36
 ; P4-37
-; P4-38
-; P4-39
-; P4-40
-; P4-41
-; P4-42
-; P4-43
-; P4-44
+; P4-45
 	db	$fc
-	dw	_loop4$
-dr9$:
+	dw	loop$
+dr9_10$:
 ; P4-9
 	db	$c1
 	db	$50

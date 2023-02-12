@@ -312,7 +312,7 @@ walk_024:
 	db	$0f
 ; P4-2
 	db	$0f
-_loop4$:
+loop$:
 ; P4-3
 	db	$11
 	db	$21
@@ -339,6 +339,6 @@ loop3$:
 	db	$73
 ; P4-7
 	db	$fc
-	dw	_loop4$
+	dw	loop$
 
 

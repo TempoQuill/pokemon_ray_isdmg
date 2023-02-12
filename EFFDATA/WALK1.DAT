@@ -119,15 +119,15 @@ walk_014:
 	db	$d8,$c
 	db	$05
 ; P4-1
-_loop4$:
+loop$:
 	db	$11
 	db	$21
 	db	$fd,7
-	dw	_loop4$
+	dw	loop$
 ; P4-2
 	db	$21
 	db	$21
 	db	$fc
-	dw	_loop4$
+	dw	loop$
 
 

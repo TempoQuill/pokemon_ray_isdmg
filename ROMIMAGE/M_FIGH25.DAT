@@ -114,8 +114,8 @@ loop5_6$:
 	db	$fd,3
 	dw	loop5_6$
 ; P1-9
-; P1-11
 loop$:
+; P1-11
 	db	$dc,$a3
 	db	$fe
 	dw	fight25sub11_13

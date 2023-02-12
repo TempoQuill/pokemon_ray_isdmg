@@ -717,7 +717,7 @@ road_034:
 	db	$ef,$ff
 ; P4-1
 	db	$d8,$6
-_loop4$:
+loop$:
 	db	$fe
 	dw	dr1$
 	db	$07
@@ -728,7 +728,7 @@ _loop4$:
 	dw	dr2$
 ; P4-3
 	db	$fd,2
-	dw	_loop4$
+	dw	loop$
 ; P4-4
 ; P4-5
 	db	$fe
@@ -836,7 +836,7 @@ loop23$:
 	db	$fe
 	dw	dr2$
 	db	$fc
-	dw	_loop4$
+	dw	loop$
 dr13$:
 	db	$81
 	db	$81

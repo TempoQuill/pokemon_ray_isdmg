@@ -57,8 +57,8 @@ loop3_4$:
 	dw	loop3_4$
 ; P1-7
 ; P1-9
-; P1-11
 loop$:
+; P1-11
 	db	$fe
 	dw	fight23sub11
 ; P1-12

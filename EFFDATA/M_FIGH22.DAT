@@ -77,8 +77,8 @@ loop3_6$:
 ; P1-7
 	db	$fd,2
 	dw	loop3_6$
-; P1-11
 loop$:
+; P1-11
 	db	$dc,$a3
 	db	$55
 	db	$13
