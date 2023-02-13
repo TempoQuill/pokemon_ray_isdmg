@@ -691,27 +691,6 @@ bass13_20$:
 	db	$00
 	db	$b0
 	db	$00
-	db	$d4,$b0
-	db	$d3,$10
-	db	$30
-	db	$00
-	db	$d4,$b0
-	db	$00
-	db	$b0
-	db	$00
-	db	$62
-	db	$00
-	db	$62
-; P3-14 -tie
-	db	$00
-	db	$d4,$b0
-	db	$d3,$10
-	db	$30
-	db	$00
-	db	$d4,$b0
-	db	$00
-	db	$b0
-	db	$00
 	db	$60
 	db	$00
 	db	$d3,$11
