@@ -322,8 +322,8 @@ road_014:
 ; P4-1
 	db	$d8,$c
 	db	$03
-; P4-2 -tie
 loop40$:
+; P4-2 -tie
 	db	$63
 	db	$63
 	db	$63
@@ -338,10 +338,8 @@ loop40$:
 ; P4-4 -tie
 	db	$fd,3
 	dw	loop40$
-; P4-5
-; P4-6
-; P4-7
-; P4-8
+; P4-6 -tie
+; P4-8 -tie
 	db	$63
 	db	$63
 	db	$63

@@ -1476,8 +1476,6 @@ loop40_41$:
 ; P4-46
 	db	$fe
 	dw	dr12$
-	db	$fe
-	dw	dr2$
 ; P4-47
 	db	$73
 	db	$fe

@@ -741,6 +741,7 @@ m_menyu6:
 	db	$d4,$63
 loop$:
 ; P6-2
+	db	$dc,$14
 	db	$d4,$a7
 	db	$b7
 	db	$d3,$17

@@ -750,7 +750,7 @@ loop23$:
 	db	$61
 	db	$d8,$6,$14
 	db	$4b
-	db	$ef,$f0
+	db	$ef,$0f
 	db	$dc,$15
 	db	$d6,$41
 	db	$81

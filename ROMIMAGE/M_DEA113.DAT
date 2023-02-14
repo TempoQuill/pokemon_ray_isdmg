@@ -39,10 +39,10 @@ loop$:
 ; P1-3-4
 	db	$fe
 	dw	sub3_4$
+	db	$41
 	db	$51
 	db	$61
 	db	$71
-	db	$81
 ; P1-5-6
 	db	$fe
 	dw	sub3_4$
@@ -95,7 +95,7 @@ loop$:
 	db	$00
 	db	$d6,$20
 	db	$00
-	db	$50
+	db	$70
 	db	$00
 	db	$b0
 	db	$00
