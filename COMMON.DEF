@@ -704,7 +704,7 @@ window_work	ds	10h	;cea8
 win_data_work	ds	10h	;ceb8
 content_work	ds	10h	;cec8
 cursor_work	ds	0eh	;ced8
-muslink_work	ds	2	;cee5
+muslink_work	ds	2	;cee6
 
 ev_vb_count	ds	1		; ���C�����[�v����p�^�C�~���O�J�E���^ (cee8)
 
