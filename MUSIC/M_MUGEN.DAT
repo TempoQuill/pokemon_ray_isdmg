@@ -1,0 +1,283 @@
+;	include	group.def
+;bank29	group	G_MUSIC1
+;	;
+;	;	mugen_shinyu
+;	;
+;	;	Converting on Wed Jun 10 22:14:56 2020
+;	;
+;	;				by ver 1.00
+;	;
+;	public	musmugenshinyu
+;musmugenshinyu
+	db	080h
+	dw	m_mugen1
+	db	001h
+	dw	m_mugen2
+	db	002h
+	dw	m_mugen3
+;----------------------------------------
+m_mugen1:
+;----------------------------------------
+	db	$da,$01,$10
+	db	$e5,$77
+	db	$e6,$00,$02
+loop$:
+; P1-1
+	db	$d8,$c,$87
+	db	$d5,$53
+	db	$55
+	db	$82
+	db	$60
+	db	$80
+	db	$c0
+; P1-2
+	db	$fe
+	dw	sub2_3$
+; P1-4
+	db	$d6,$a1
+	db	$d5,$a3
+	db	$53
+	db	$63
+	db	$85
+; P1-5	-tie
+	db	$11
+	db	$51
+	db	$61
+	db	$82
+	db	$60
+	db	$80
+	db	$c0
+; P1-6
+	db	$fe
+	dw	sub2_3$
+; P1-8
+	db	$d6,$a5
+	db	$d5,$11
+	db	$d6,$a1
+	db	$d5,$11
+	db	$83
+; P1-9
+	db	$a3
+	db	$81
+	db	$13
+	db	$31
+	db	$13
+; P1-10
+	db	$11
+	db	$61
+	db	$13
+	db	$13
+	db	$a1
+	db	$61
+; P1-11
+	db	$53
+	db	$81
+	db	$63
+	db	$61
+	db	$53
+; P1-12
+	db	$0f
+	db	$fc
+	dw	loop$
+sub2_3$:
+; P1-2
+	db	$d4,$13
+	db	$d5,$c3
+	db	$83
+	db	$63
+; P1-3
+	db	$53
+	db	$13
+	db	$51
+	db	$63
+	db	$81
+	db	$ff
+;----------------------------------------
+m_mugen2:
+;----------------------------------------
+	db	$f1
+loop$:
+	db	$db,$01
+; P2-1
+	db	$d8,$c,$a7
+	db	$d4,$13
+	db	$15
+	db	$db,$02
+	db	$dc,$77
+	db	$d5,$52
+	db	$30
+	db	$50
+	db	$60
+; P2-2
+	db	$fe
+	dw	melo2_3$
+; P2-4
+	db	$d6,$a1
+	db	$db,$01
+	db	$dc,$a7
+	db	$d4,$11
+	db	$11
+	db	$d5,$a1
+	db	$d4,$11
+	db	$33
+	db	$5b
+; P2-5	-tie
+	db	$db,$02
+	db	$dc,$77
+	db	$d5,$52
+	db	$30
+	db	$50
+	db	$60
+; P2-6
+	db	$fe
+	dw	melo2_3$
+; P2-8
+	db	$d6,$a5
+	db	$db,$01
+	db	$dc,$a7
+	db	$d4,$51
+	db	$51
+	db	$31
+	db	$13
+; P2-9
+	db	$13
+	db	$d5,$c1
+	db	$a3
+	db	$81
+	db	$a3
+; P2-10
+	db	$01
+	db	$a1
+	db	$a1
+	db	$81
+	db	$a3
+	db	$d4,$13
+; P2-11
+	db	$13
+	db	$11
+	db	$33
+	db	$11
+	db	$13
+; P2-12
+	db	$0f
+	db	$fc
+	dw	loop$
+melo2_3$:
+; P2-2
+	db	$81
+	db	$db,$01
+	db	$dc,$a7
+	db	$a1
+	db	$d4,$11
+	db	$d5,$a1
+	db	$d4,$13
+	db	$33
+; P2-3
+	db	$11
+	db	$d5,$a5
+	db	$db,$02
+	db	$dc,$77
+	db	$11
+	db	$33
+	db	$51
+	db	$ff
+;----------------------------------------
+m_mugen3:
+;----------------------------------------
+loop$:
+; P3-1
+	db	$d8,$c,$1a
+	db	$fe
+	dw	bass1_2$
+; P3-3
+	db	$fe
+	dw	bass3$
+; P3-4
+	db	$d5,$a1
+	db	$d4,$11
+	db	$51
+	db	$a1
+	db	$d3,$11
+	db	$d4,$81
+	db	$51
+	db	$31
+; P3-5
+	db	$fe
+	dw	bass1_2$
+; P3-7
+	db	$fe
+	dw	bass3$
+; P3-8
+	db	$fe
+	dw	bass3$
+; P3-9
+	db	$61
+	db	$51
+	db	$31
+	db	$61
+	db	$01
+	db	$11
+	db	$61
+	db	$11
+; P3-10
+	db	$d5,$61
+	db	$d4,$11
+	db	$61
+	db	$11
+	db	$61
+	db	$51
+	db	$61
+	db	$a1
+; P3-11
+	db	$d5,$81
+	db	$d4,$11
+	db	$51
+	db	$81
+	db	$01
+	db	$d5,$81
+	db	$d4,$11
+	db	$01
+; P3-12
+	db	$dc,$2a
+	db	$d3,$11
+	db	$d4,$81
+	db	$d3,$51
+	db	$31
+	db	$01
+	db	$51
+	db	$11
+	db	$01
+	db	$fc
+	dw	loop$
+bass1_2$:
+; P3-1
+	db	$d4,$11
+	db	$51
+	db	$81
+	db	$c1
+	db	$d3,$11
+	db	$d4,$c1
+	db	$81
+	db	$51
+; P3-2
+	db	$11
+	db	$51
+	db	$81
+	db	$61
+	db	$51
+	db	$31
+	db	$11
+	db	$d5,$c1
+	db	$ff
+bass3$:
+	db	$d5,$a1
+	db	$d4,$11
+	db	$51
+	db	$a1
+	db	$d3,$11
+	db	$d4,$a1
+	db	$51
+	db	$11
+	db	$ff
+
+

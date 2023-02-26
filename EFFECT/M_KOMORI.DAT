@@ -1,0 +1,154 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+	;
+	;	komori031
+	;
+	;	Converting on Fri Jun 11 18:22:43 1999
+	;
+	;				by ver 1.02
+	;
+;	public	muskomori
+;muskomori:
+	db	080h
+	dw	komori0311
+	db	001h
+	dw	komori0312
+	db	002h
+	dw	komori0313
+;----------------------------------------
+komori0311:
+;----------------------------------------
+	db	$da,$00,$e0
+	db	$e5,$77
+	db	$db,$03
+	db	$f1
+; P1-1
+loop10$:
+	db	$d8,$c,$a7
+	db	$d5,$8f
+; P1-2
+	db	$d4,$1f
+; P1-3
+	db	$ef,$f0
+	db	$d5,$8f
+; P1-4
+	db	$ef,$0f
+	db	$d4,$17
+	db	$ef,$f0
+	db	$d5,$c7
+; P1-5
+	db	$ef,$0f
+	db	$8f
+; P1-6
+	db	$ef,$f0
+	db	$d4,$17
+	db	$ef,$0f
+	db	$d5,$c7
+; P1-7
+	db	$ef,$f0
+	db	$87
+	db	$ef,$ff
+	db	$01
+	db	$81
+	db	$81
+	db	$c1
+; P1-8
+	db	$d4,$13
+	db	$d5,$c3
+	db	$d4,$13
+	db	$d5,$c3
+; P1-9
+	db	$8f
+; P1-10
+	db	$d4,$17
+	db	$d5,$c7
+	db	$fc
+	dw	loop10$
+;----------------------------------------
+komori0312:
+;----------------------------------------
+	db	$e1,$10,$14
+	db	$db,$00
+	db	$d8,$c,$b4
+; P2-1 -
+loop20$:
+	db	$0f
+; P2-2 -
+	db	$09
+	db	$d4,$81
+	db	$71
+	db	$81
+; P2-3
+	db	$dc,$b7
+	db	$5b
+	db	$31
+	db	$51
+; P2-4
+	db	$63
+	db	$83
+	db	$61
+	db	$51
+	db	$31
+	db	$61
+; P2-5
+	db	$59
+	db	$dc,$b5
+	db	$31
+	db	$31
+	db	$dc,$c7
+	db	$51
+; P2-6
+	db	$63
+	db	$53
+	db	$63
+	db	$dc,$b5
+	db	$81
+	db	$81
+; P2-7
+	db	$41
+	db	$dc,$b7
+	db	$5d
+; P2-8
+	db	$dc,$87
+	db	$d5,$67
+	db	$83
+	db	$dc,$b5
+	db	$d4,$81
+	db	$81
+; P2-9
+	db	$dc,$b7
+	db	$41
+	db	$5f
+; P2-10 -
+	db	$0d
+	db	$fc
+	dw	loop20$
+;----------------------------------------
+komori0313:
+;----------------------------------------
+; P3-1
+	db	$d8,$c,$11
+loop30$:
+	db	$ef,$f0
+	db	$d4,$11
+	db	$51
+	db	$81
+	db	$c1
+	db	$d3,$11
+	db	$d4,$c1
+	db	$a1
+	db	$81
+; P3-2
+	db	$ef,$0f
+	db	$31
+	db	$61
+	db	$a1
+	db	$d3,$11
+	db	$31
+	db	$11
+	db	$d4,$c1
+	db	$a1
+	db	$fc
+	dw	loop30$
+
+

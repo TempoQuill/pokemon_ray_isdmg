@@ -1,0 +1,263 @@
+;	include	group.def
+;bank2b	group	G_MUSIC4
+;	;
+;	;	m_rinia
+;	;
+;	;	Converting on Sun Aug 22 10:15:36 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	musm_rinia
+;musm_rinia:
+	db	0c0h
+	dw	m_rinia1
+	db	001h
+	dw	m_rinia2
+	db	002h
+	dw	m_rinia3
+	db	003h
+	dw	m_rinia4
+;----------------------------------------
+m_rinia1:
+;----------------------------------------
+	db	$da,$00,$6e
+	db	$e5,$77
+; P1-1
+	db	$ef,$0f
+	db	$e1,$14,$23
+	db	$db,$02
+	db	$d8,$c,$b2
+; P1-4
+	db	$0f
+; P1-5
+	db	$0f
+	db	$dc,$b7
+; P1-6
+	db	$d4,$30
+	db	$10
+	db	$d5,$80
+	db	$d4,$10
+	db	$30
+	db	$10
+	db	$d5,$80
+	db	$d4,$10
+	db	$30
+	db	$10
+	db	$d5,$80
+	db	$d4,$10
+	db	$30
+	db	$10
+	db	$d5,$80
+	db	$d4,$10
+; P1-7
+	db	$50
+	db	$10
+	db	$d5,$a0
+	db	$d4,$10
+	db	$50
+	db	$10
+	db	$d5,$a0
+	db	$d4,$10
+	db	$50
+	db	$10
+	db	$d5,$a0
+	db	$d4,$10
+	db	$50
+	db	$10
+	db	$d8,$6,$b7
+	db	$70
+	db	$00
+	db	$70
+	db	$00
+; P1-8
+	db	$d8,$c,$b7
+	db	$3f
+; P1-9
+	db	$ff
+;----------------------------------------
+m_rinia2:
+;----------------------------------------
+; P2-1
+	db	$e1,$14,$23
+	db	$db,$01
+	db	$d8,$c,$d2
+	db	$ef,$f0
+; P2-4
+	db	$d8,$c,$d8
+	db	$d7,$6b
+	db	$01
+	db	$d8,$6,$d7
+	db	$60
+	db	$00
+	db	$60
+	db	$00
+; P2-5
+	db	$d6,$63
+	db	$03
+	db	$63
+	db	$03
+	db	$63
+	db	$03
+	db	$63
+	db	$03
+; P2-6
+	db	$db,$03
+	db	$d8,$c,$d7
+	db	$d4,$8f
+; P2-7
+	db	$ac
+	db	$00
+	db	$d8,$6,$d7
+	db	$a0
+	db	$00
+	db	$a0
+	db	$00
+; P2-8
+	db	$d8,$c,$d7
+	db	$af
+; P2-9
+	db	$ff
+;----------------------------------------
+m_rinia3:
+;----------------------------------------
+; P3-1
+	db	$ef,$ff
+	db	$e1,$10,$23
+	db	$d8,$c,$15
+; P3-4
+	db	$d2,$10
+	db	$d3,$80
+	db	$40
+	db	$10
+	db	$80
+	db	$40
+	db	$10
+	db	$d4,$80
+	db	$d3,$40
+	db	$10
+	db	$d4,$80
+	db	$40
+	db	$d3,$10
+	db	$d4,$80
+	db	$40
+	db	$10
+; P3-5
+	db	$80
+	db	$40
+	db	$10
+	db	$d5,$80
+	db	$d4,$10
+	db	$40
+	db	$80
+	db	$10
+	db	$40
+	db	$80
+	db	$d3,$10
+	db	$d4,$80
+	db	$d3,$10
+	db	$40
+	db	$80
+	db	$10
+; P3-6
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+; P3-7
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+	db	$d6,$30
+	db	$d5,$30
+; P3-8
+	db	$d6,$3f
+; P3-9
+	db	$ff
+;----------------------------------------
+m_rinia4:
+;----------------------------------------
+	db	$e3,$003
+; P4-1
+	db	$d8,$c
+; P4-4
+	db	$cb
+	db	$31
+	db	$b0
+	db	$b0
+; P4-5
+	db	$d8,$6
+	db	$43
+	db	$73
+	db	$43
+	db	$73
+	db	$b3
+	db	$73
+	db	$b3
+	db	$31
+	db	$31
+; P4-6
+	db	$fe
+	dw	dr6$
+; P4-7
+	db	$fe
+	dw	dr6$
+; P4-8
+	db	$d8,$c
+	db	$cf
+; P4-9
+	db	$ff
+dr2$:
+	db	$90
+	db	$80
+	db	$80
+	db	$90
+	db	$80
+	db	$80
+	db	$90
+	db	$80
+	db	$80
+	db	$90
+	db	$80
+	db	$80
+	db	$ff
+dr6$:
+	db	$91
+	db	$81
+	db	$81
+	db	$81
+	db	$91
+	db	$81
+	db	$81
+	db	$81
+	db	$91
+	db	$81
+	db	$81
+	db	$81
+	db	$91
+	db	$81
+	db	$81
+	db	$81
+	db	$ff

@@ -1,0 +1,163 @@
+;	include	group.def
+;bank29	group	G_MUSIC1
+;	;
+;	;	m_rinia
+;	;
+;	;	Converting on Sun Aug 22 10:15:36 1999
+;	;
+;	;				by ver 1.01
+;	;
+;	public	muskahogo
+;muskahogo:
+	db	0c0h
+	dw	kahogo1
+	db	001h
+	dw	kahogo2
+	db	002h
+	dw	kahogo3
+	db	003h
+	dw	kahogo4
+;----------------------------------------
+kahogo1:
+;----------------------------------------
+	db	$da,$00,$94
+	db	$e5,$77
+	db	$db,$01
+	db	$e1,$7,$33
+	db	$e4,$de
+; P1-1
+	db	$d8,$c,$93
+	db	$d5,$51
+	db	$d6,$c1
+	db	$d5,$51
+	db	$73
+	db	$d6,$c1
+	db	$d5,$51
+	db	$93
+; P1-2	-tie
+	db	$71
+	db	$51
+	db	$a3
+	db	$53
+	db	$71
+; P1-3
+	db	$d5,$51
+	db	$d6,$c1
+	db	$d5,$51
+	db	$93
+	db	$71
+	db	$53
+; P1-4
+	db	$83
+	db	$a1
+	db	$51
+	db	$a1
+	db	$c3
+	db	$31
+; P1-5
+	db	$a1
+	db	$d4,$3d
+	db	$ff
+;----------------------------------------
+kahogo2:
+;----------------------------------------
+	db	$db,$02
+	db	$e1,$1f,$74
+; P2-1
+	db	$d8,$c,$e7
+	db	$d7,$5f
+; P2-2
+	db	$a5
+	db	$39
+; P2-3
+	db	$5f
+; P2-4
+	db	$83
+	db	$a5
+	db	$55
+; P2-5
+	db	$3f
+	db	$ff
+;----------------------------------------
+kahogo3:
+;----------------------------------------
+	db	$e1,$0,$23
+; P3-1
+	db	$d8,$c,$00
+	db	$e7,$02
+	db	$fe
+	dw	melo1$
+	db	$05
+; P3-2
+	db	$e7,$00
+	db	$fe
+	dw	melo1$
+	db	$e1,$8,$22
+	db	$d8,$c,$1e
+	db	$50
+	db	$00
+	db	$53
+; P3-3
+	db	$71
+	db	$51
+	db	$71
+	db	$51
+	db	$c5
+	db	$01
+; P3-4
+	db	$a1
+	db	$91
+	db	$a1
+	db	$91
+	db	$a1
+	db	$91
+	db	$a1
+	db	$91
+; P3-5
+	db	$77
+	db	$07
+	db	$ff
+melo1$:
+	db	$dc,$34
+	db	$d3,$a1
+	db	$dc,$24
+	db	$a1
+	db	$dc,$14
+	db	$a1
+	db	$dc,$24
+	db	$a1
+	db	$dc,$34
+	db	$a1
+	db	$ff
+;----------------------------------------
+kahogo4:
+;----------------------------------------
+	db	$e3,$003
+loop1$:
+; P4-1
+	db	$d8,$c
+	db	$b1
+	db	$41
+	db	$31
+	db	$41
+	db	$b1
+	db	$41
+	db	$31
+	db	$41
+; P4-2
+	db	$fd,3
+	dw	loop1$
+; P4-3
+; P4-4
+	db	$31
+	db	$81
+	db	$c3
+	db	$31
+	db	$41
+	db	$b1
+	db	$41
+; P4-5
+	db	$cf
+	db	$ff
+
+
