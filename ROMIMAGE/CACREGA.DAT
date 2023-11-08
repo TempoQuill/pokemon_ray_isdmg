@@ -7,8 +7,8 @@
 	;
 	;				by ver 1.01
 	;
-;	public	m_cacrega
-;m_cacrega:;					uian
+;	public	musdaikonrankakrega
+;musdaikonrankakrega:;				uian
 	db	0c0h
 	dw	m_cacrega1
 	db	001h

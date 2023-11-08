@@ -7,8 +7,8 @@
 	;
 	;				by ver 1.01
 	;
-;	public	musyasu12
-;musyasu12:
+;	public	musazumanoyasumi
+;musazumanoyasumi:;				soroaka
 	db	0c0h
 	dw	yasu_021
 	db	001h

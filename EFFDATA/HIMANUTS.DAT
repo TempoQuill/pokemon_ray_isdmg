@@ -7,8 +7,8 @@
 	;
 	;				by ver 1.01
 	;
-;	public	mushimanuts
-;mushimanuts:;					jagetsu
+;	public	mushimanutsnonuma
+;mushimanutsnonuma:;					jagetsu
 	db	0c0h
 	dw	himanuts1
 	db	001h

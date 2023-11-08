@@ -7,8 +7,8 @@
 ;	;
 ;	;				by ver 1.01
 ;	;
-;	public	m_kita
-;m_kita:
+;	public	muskitanotsuchi
+;muskitanotsuchi:
 	db	0c0h
 	dw	m_kita1
 	db	001h

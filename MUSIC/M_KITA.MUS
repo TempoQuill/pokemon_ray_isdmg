@@ -7,8 +7,8 @@
 ;	;
 ;	;				by ver 1.01
 ;	;
-;	public	m_kita
-;m_kita:
+;	public	muskitanotsuchi
+;muskitanotsuchi:
 		mushdr	c0,m_kita1
 		mushdr	01,m_kita2
 		mushdr	02,m_kita3

@@ -7,8 +7,8 @@
 ;	;
 ;	;				by ver 1.00
 ;	;
-;	public	musm_kaida
-;musm_kaida:;					jagetsu
+;	public	muskaidatsubomori
+;muskaidatsubomori:;				jagetsu
 	db	0c0h
 	dw	m_kaida1
 	db	001h

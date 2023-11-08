@@ -8,7 +8,7 @@
 	;				by ver 1.00
 	;
 ;	public	musfueshiro
-;musfueshiro:;						jumasu;	jagetsu
+;musfueshiro:;					jumasu;	jagetsu
 	db	080h
 	dw	fueshiro1
 	db	001h

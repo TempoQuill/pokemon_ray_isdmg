@@ -25,177 +25,148 @@ MUSIC_MAX	equ 66
 	db		G_AUDIO
 	ef_ndw_g	m_stop,musstop		;0
 
-	db		G_MUSIC4
-	ef_ndw_g	title2_4,mustitle4	;1
-	db		G_MUSIC4
-	ef_ndw_g	title2_5,mustitle5	;2
-
 	db		G_MUSIC1
-	ef_ndw_g	title2_6,mustitle6	;3
-
+	ef_ndw_g	title2_6,mustitle6	;1
+	db		G_MUSIC4
+	ef_ndw_g	title2_4,mustitle4	;2
+	db		G_MUSIC4
+	ef_ndw_g	title2_5,mustitle5	;3
 	db		G_MUSIC4
 	ef_ndw_g	m_main,musm_main	;4
-
 	db		G_MUSIC3
 	ef_ndw_g	m_asa,musasa		;5
+	db		G_MUSIC2
+	ef_ndw_g	m_asa11,musasa11	;6
 	db		G_MUSIC3
-	ef_ndw_g	m_road11,musfield0775	;6
-
+	ef_ndw_g	road_01,musroad11	;7
 	db		G_MUSIC2
-	ef_ndw_g	road_02,musroad12	;7
-
+	ef_ndw_g	road_02,musroad12	;8
 	db		G_MUSIC1
-	ef_ndw_g	road_03,musroad13	;8
-
-	db		G_MUSIC4
-	ef_ndw_g	walk_01,mustsur1	;9
-
+	ef_ndw_g	road_03,musroad13	;9
 	db		G_MUSIC2
-	ef_ndw_g	m_autowalk,musautowalk	;10
+	ef_ndw_g	road_04,musroad14	;10
 	db		G_MUSIC2
-	ef_ndw_g	m_naibu,musnaibu	;11
-	db		G_MUSIC2
-	ef_ndw_g	m_pmc,muspmc		;12
-
+	ef_ndw_g	road_05,musroad15	;11
 	db		G_MUSIC1
-	ef_ndw_g	m_wakaba,muswakaba	;13
-
+	ef_ndw_g	m_capsule,muscapsule	;12
 	db		G_MUSIC4
-	ef_ndw_g	m_town12,mustown12	;14
-	db		G_MUSIC4
-	ef_ndw_g	m_fight21,musfight11	;15
-	db		G_MUSIC4
-	ef_ndw_g	m_fight23,musfight13	;16
-
+	ef_ndw_g	walk_01,mustsur1	;13
+	db		G_MUSIC2
+	ef_ndw_g	walk_02,muswalk2	;14
+	db		G_MUSIC2
+	ef_ndw_g	m_naibu,musnaibu	;15
+	db		G_MUSIC2
+	ef_ndw_g	m_pmc,muspmc		;16
 	db		G_MUSIC1
-	ef_ndw_g	m_fight22,musfight12	;17
+	ef_ndw_g	m_pmc11,muspmc11	;17
 	db		G_MUSIC1
-	ef_ndw_g	m_fight25,musfight15	;18
+	ef_ndw_g	m_koteji,musm_koteji	;18
+	db		G_MUSIC4
+	ef_ndw_g	m_ryoko,musryoko	;19
+	db		G_MUSIC4
+	ef_ndw_g	m_fight21,musfight21	;20
+	db		G_MUSIC4
+	ef_ndw_g	m_fight22,musfight22	;21
 	db		G_MUSIC1
-	ef_ndw_g	m_fight26,musfight16	;19
+	ef_ndw_g	m_fight23,musfight23	;22
 	db		G_MUSIC1
-	ef_ndw_g	m_fight24,musfight14	;20
-
-	db		G_MUSIC2
-	ef_ndw_g	m_dealer3,musdealer3	;21
-	db		G_MUSIC2
-	ef_ndw_g	m_dealer2,musdealer2	;22
-
-	db		G_MUSIC4
-	ef_ndw_g	m_dealer1,musdealer1	;23
-	db		G_MUSIC4
-	ef_ndw_g	m_boy,musdealerboy	;24
-
-	db		G_MUSIC2
-	ef_ndw_g	m_girl,musdealergirl	;25
-
-	db		G_MUSIC4
-	ef_ndw_g	m_victory4,musvictory4	;26
-
-	db		G_MUSIC2
-	ef_ndw_g	m_taimai,mustaimai	;27
-	db		G_MUSIC2
-	ef_ndw_g	m_gotown2,musgotown2	;28
-
-	db		G_MUSIC4
-	ef_ndw_g	m_raibaru1,musraibaru	;29
-
+	ef_ndw_g	m_fight24,musfight24	;23
 	db		G_MUSIC1
-	ef_ndw_g	m_labo11,muslabo11	;30
-
-	db		G_MUSIC4
-	ef_ndw_g	m_raibaru2,musraibaru2	;31
-	db		G_MUSIC4
-	ef_ndw_g	m_jackpot112,musjack112	;32
-	db		G_MUSIC4
-	ef_ndw_g	m_jackpot11,musjack11	;33
-
+	ef_ndw_g	m_fight25,musfight25	;24
 	db		G_MUSIC1
-	ef_ndw_g	m_jackpot12,musjack12	;34
-
+	ef_ndw_g	m_fight26,musfight26	;25
+	db		G_MUSIC2
+	ef_ndw_g	m_deal11,musyakuin	;26
+	db		G_MUSIC2
+	ef_ndw_g	m_deal12,musonnanoko	;27
 	db		G_MUSIC4
-	ef_ndw_g	m_jackpot13,musjack3	;35
+	ef_ndw_g	m_deal13,muskyojin	;28
 	db		G_MUSIC4
-	ef_ndw_g	m_gym,musgym		;36
-
+	ef_ndw_g	m_wakamono,muswakamono	;29
 	db		G_MUSIC2
-	ef_ndw_g	m_asa11,musasa11	;37
-
-
+	ef_ndw_g	m_josay,musjosay	;30
+	db		G_MUSIC4
+	ef_ndw_g	m_kyodai,muskyokai	;31
 	db		G_MUSIC2
-	ef_ndw_g	m_casino,muscasino	;38
+	ef_ndw_g	m_host,mushost	;32
 	db		G_MUSIC2
-	ef_ndw_g	m_chari,muschari	;39
-
+	ef_ndw_g	m_sakka,mussakka	;33
+	db		G_MUSIC4
+	ef_ndw_g	m_havoc,mushavoc	;34
+	db		G_MUSIC4
+	ef_ndw_g	rival2_01,musrival21	;35
+	db		G_MUSIC4
+	ef_ndw_g	rival2_02,musrival22	;36
+	db		G_MUSIC1
+	ef_ndw_g	m_labo21,musm_labo21	;37
+	db		G_MUSIC4
+	ef_ndw_g	m_jackpot112,musjack112	;38
+	db		G_MUSIC4
+	ef_ndw_g	m_jackpot11,musjack11	;39
+	db		G_MUSIC1
+	ef_ndw_g	m_jackpot12,musjack12	;40
+	db		G_MUSIC4
+	ef_ndw_g	m_jackpot13,musjack13	;41
+	db		G_MUSIC4
+	ef_ndw_g	m_jim,musm_jim		;42
+	db		G_MUSIC2
+	ef_ndw_g	m_cagino,muscagino	;43
+	db		G_MUSIC2
+	ef_ndw_g	m_jitens,musjitens	;44
 	db		G_MUSIC3
-	ef_ndw_g	m_dendou,musdendou	;40
-
+	ef_ndw_g	m_dendou1,musdendou1	;45
 	db		G_MUSIC4
-	ef_ndw_g	m_nazanoxa,musnazanoxanonojo	;41
-
+	ef_ndw_g	m_nazonoxa,musnazonoxanonojo	;46
+	db		G_MUSIC4
+	ef_ndw_g	m_golonya,musgolonyanokyuden	;47
+	db		G_MUSIC4
+	ef_ndw_g	m_himanuts,mushimanutsnonuma	;48
 	db		G_MUSIC3
-	ef_ndw_g	m_shinka,musshinka	;42
+	ef_ndw_g	m_shinka,musshinka	;49
 	db		G_MUSIC3
-	ef_ndw_g	m_fin2,musending	;43
-
+	ef_ndw_g	m_fin2,musm_fin2	;50
+	db		G_MUSIC3
+	ef_ndw_g	m_fin3,musm_fin3	;51
 	db		G_MUSIC1
-	ef_ndw_g	m_kaida,muskaidatsubomori	;44
+	ef_ndw_g	m_kaida,muskaidatsubomori	;52
 	db		G_MUSIC1
-	ef_ndw_g	m_joki,musjookiship	;45
+	ef_ndw_g	m_joki,musjookiship	;53
+	db		G_MUSIC2
+	ef_ndw_g	yasu_01,muskatakaketoudai	;54
+	db		G_MUSIC2
+	ef_ndw_g	yasu_02,musazumanoyasumi	;55
+	db		G_MUSIC4
+	ef_ndw_g	m_choko,muskookooka	;56
+	db		G_MUSIC2
+	ef_ndw_g	m_dun211,musshinkuyama	;57
+	db		G_MUSIC4
+	ef_ndw_g	m_dun212,musm_dun212	;58
+	db		G_MUSIC4
+	ef_ndw_g	m_kita,muskitanotsuchi	;59
 	db		G_MUSIC1
-	ef_ndw_g	m_undung,musundung	;46
-
-	db		G_MUSIC2
-	ef_ndw_g	m_yasu11,muskatakaketoudai	;47
-	db		G_MUSIC2
-	ef_ndw_g	m_yasu12,musazumanoyasumi	;48
-	db		G_MUSIC2
-	ef_ndw_g	m_fie112,musroadleague	;49
-
+	ef_ndw_g	m_port,musportnotakasa	;60
+	db		G_MUSIC3
+	ef_ndw_g	m_printer,musprinter	;61
 	db		G_MUSIC4
-	ef_ndw_g	m_kouen,muskouen	;50
+	ef_ndw_g	m_umi1,musumi1		;62
 	db		G_MUSIC4
-	ef_ndw_g	m_yasu15,muskookooka	;51
-
+	ef_ndw_g	m_umi2,musumi2		;63
+	db		G_MUSIC3
+	ef_ndw_g	m_odori,musodori	;64
 	db		G_MUSIC2
-	ef_ndw_g	m_dungeon3,musdungeon3	;52
-
+	ef_ndw_g	m_cacrega,musdaikonrankakrega	;65
 	db		G_MUSIC4
-	ef_ndw_g	m_gotown1,musgotown1	;53
-
+	ef_ndw_g	menyu_01,musmenyu1	;66
+	db		G_MUSIC4
+	ef_ndw_g	menyu_02,musmenyu2	;67
 	db		G_MUSIC1
-	ef_ndw_g	m_port,musportnotakasa	;54
-
-	db		G_MUSIC3
-	ef_ndw_g	m_endafter,musendafter	;55
-	db		G_MUSIC3
-	ef_ndw_g	m_printer,musprinter	;56
-
-	db		G_MUSIC2
-	ef_ndw_g	m_goroad,musgoroad	;57
-
-	db		G_MUSIC4
-	ef_ndw_g	m_rocket,musdealerrocket	;58
-	db		G_MUSIC4
-	ef_ndw_g	m_senkyo,mussenkyo	;59
-	db		G_MUSIC4
-	ef_ndw_g	m_umi11,musumi1	;60
-
-	db		G_MUSIC3
-	ef_ndw_g	m_odori,musodori	;61
-
-	db		G_MUSIC4
-	ef_ndw_g	m_himanuts,mushimanutsnonuma	;62
-	db		G_MUSIC4
-	ef_ndw_g	m_umi12,musumi2		;63
-
-	db		G_MUSIC2
-	ef_ndw_g	m_cacrega,musdaikonrankakrega	;64
-
-	db		G_MUSIC4
-	ef_ndw_g	m_fuemusic,musfuemusic	;65
-	db		G_MUSIC4
-	ef_ndw_g	m_komori,muskomori	;66
+	ef_ndw_g	m_kahogo,muskahogo	;68
+	db		G_MUSIC1
+	ef_ndw_g	m_fueshiro,musfueshiro	;69
+	db		G_MUSIC1
+	ef_ndw_g	m_mugen,musmugenshinyu	;70
+	db		G_MUSIC1
+	ef_ndw_g	m_usuakari,mususuakarinoekuinto	;71
 
 ;=======================================;
 ;	mus STOP 			;
@@ -847,101 +818,106 @@ bank29	group	G_MUSIC1
 ;	MUSIC DATA 			;
 ;=======================================;
 road_03:
-m_fight25:
-m_fight26:
-;	include	..\effect\m_figh5.dat
-m_labo11:
-m_kaida:
-m_fight22:
 m_fight24:
+m_fight25:
+;	include	..\effect\m_figh5.dat
+m_labo21:
+m_kaida:
+m_fight23:
+m_fight26:
 ;	include	..\effect\m_figh14.dat
 m_joki:
 ;	include	..\effect\flower.dat
-m_wakaba:
+m_koteji:
 m_port:
 title2_6:
 ;	include	..\effect\m_title3.dat
-m_undung:
+m_pmc11:
 m_victory1:
 ;	include	..\effect\victory1.dat
+m_kahogo:
+m_capsule:
+m_fueshiro:
+m_mugen:
+m_usuakari:
 
 
 bank2a	group	G_MUSIC2
 
 m_pmc:
 ;	include	..\effect\m_pmc.dat
-m_dealer2:
+m_deal12:
 ;	include	..\effect\m_deal2.dat
-m_dealer3:
+m_deal11:
 ;	include	..\effect\m_deal3.dat
-m_yasu12:
-m_dungeon3:
+yasu_02:
+m_dun211:
 ;	include	..\effect\digda01.dat
-m_autowalk:
+walk_02:
 ;	include	..\effect\m_tsur2.dat
-m_casino:
+m_cagino:
 ;	include	..\effect\m_casino.dat
-m_chari:
+m_jitens:
 ;	include	..\effect\m_bicycl.dat
-m_yasu11:
+yasu_01:
 ;	include	..\effect\hoshi.dat
-m_fie112:
+road_04:
 ;	include	..\effect\m_fie112.dat
 m_cacrega:
-m_girl:
-m_goroad:
-m_gotown2:
+m_josay:
+road_05:
+m_sakka:
 m_asa11:
 ;	include	..\music\m_asa11.dat
 m_naibu:
 ;	include	..\effect\koukan11.dat
-m_taimai:
+m_host:
 road_02:
 
 
 bank2b	group	G_MUSIC4
 
-m_yasu15:
+m_choko:
 m_jackpot11:
 ;	include	..\effect\victory2.dat
 m_jackpot112:
 ;	include ..\effect\vic22.dat
 m_jackpot13:
 ;	include	..\effect\victory3.dat
-m_victory4:
-m_gym:
+m_kyodai:
+m_jim:
 ;	include	..\effect\m_gym.dat
-m_nazanoxa:
-m_raibaru1:
+m_nazonoxa:
+rival2_01:
 ;	include	..\effect\m_riva11.dat
-m_raibaru2:
+rival2_02:
 ;	include	..\effect\m_riva12.dat
-m_umi12:
+m_umi2:
 ;	include	..\effect\m_nami.dat
-m_kouen:
-m_gotown1:
+m_golonya:
+m_kita:
 ;	include	..\effect\gotown1.dat
-m_town12:
+m_ryoko:
 ;	include	..\music\m_ryoko.dat
 m_himanuts:
 m_fight21:
-m_fight23:
-m_boy:
+m_fight22:
+m_wakamono:
 ;	include	..\effect\boy.dat
 walk_01:
 ;	include	..\effect\m_tsur1.dat
-m_fuemusic:
+menyu_01:
 ;	include ..\effect\m_chari.dat
-m_komori:
+menyu_02:
 ;	include ..\effect\m_taikai.dat
-m_umi11:
+m_umi1:
 ;	include	..\effect\m_sea.dat
 title2_4:
 title2_5:
-m_dealer1:
+m_deal13:
 ;	include	..\effect\m_deal1.dat
-m_rocket:
-m_senkyo:
+m_havoc:
+m_dun212:
 m_main:
 ;	include	..\effect\m_start.dat
 ;m_fuemusic:
@@ -955,8 +931,8 @@ m_odori:
 ;	include	..\effect\shiai.dat
 ;m_field0775:
 ;	include	..\music\m_fie775.dat
-m_road11:
-m_dendou:
+road_01:
+m_dendou1:
 ;	include	..\effect\m_dendou.dat
 m_asa:
 	include	..\effdata\m_asa.dat
@@ -966,7 +942,7 @@ m_printer:
 ;	include	..\effect\m_print.dat
 m_fin2:
 ;	include	..\effect\m_finale.dat
-m_endafter:
+m_fin3:
 ;	include	..\effect\m_end2.dat
 
 

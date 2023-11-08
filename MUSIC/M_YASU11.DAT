@@ -7,8 +7,8 @@
 	;
 	;				by ver 1.00
 	;
-;	public	musyasu11
-;musyasu11:;					jumasu
+;	public	muskatakaketoudai
+;muskatakaketoudai:;				jumasu
 	db	080h
 	dw	yasu_011
 	db	001h

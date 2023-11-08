@@ -7,8 +7,8 @@
 ;	;
 ;	;				by ver 1.01
 ;	;
-;	public	musm_dun211
-;musm_dun211:;					jumasu
+;	public	musshinkuyama
+;musshinkuyama:;					jumasu
 	db	080h
 	dw	m_dun2111
 	db	001h

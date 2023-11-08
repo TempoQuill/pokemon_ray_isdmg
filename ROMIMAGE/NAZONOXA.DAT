@@ -1,14 +1,14 @@
 ;	include	group.def
 ;bank2b	group	G_MUSIC4
 ;	;
-;	;	nazonoxa
+;	;	nazonoxa_no_nojo
 ;	;
 ;	;	Converting on Thu Nov 07 08:46:46 2019
 ;	;
 ;	;				by ver 1.00
 ;	;
-;	public	musnozonoxa
-;musnozonoxa:
+;	public	musnazonoxanonojo
+;musnazonoxanonojo:
 	db	080h
 	dw	nazonoxa1
 	db	001h

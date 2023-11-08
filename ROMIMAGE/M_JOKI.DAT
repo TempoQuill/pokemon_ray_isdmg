@@ -7,8 +7,8 @@
 ;	;
 ;	;				by ver 1.00
 ;	;
-;	public	musm_joki
-;musm_joki
+;	public	musjookiship
+;musjookiship:
 	db	080h
 	dw	m_joki1
 	db	001h

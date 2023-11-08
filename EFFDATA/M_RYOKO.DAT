@@ -7,8 +7,8 @@
 	;
 	;				by ver 1.01
 	;
-;	public	m_ryoko
-;m_ryoko:
+;	public	musryoko
+;musryoko:
 	db	080h
 	dw	m_ryoko1
 	db	001h

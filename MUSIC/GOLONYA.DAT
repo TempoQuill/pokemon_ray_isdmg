@@ -1,14 +1,14 @@
 ;	include	group.def
 ;bank2b	group	G_MUSIC4
 ;	;
-;	;	golonya
+;	;	golonya_no_kyuden
 ;	;
 ;	;	Converting on Thu Feb 13 11:27:34 2020
 ;	;
 ;	;				by ver 1.00
 ;	;
-;	public	musgolonya
-;musgolonya:
+;	public	musgolonyanokyuden
+;musgolonyanokyuden:
 	db	080h
 	dw	golonya1
 	db	001h
