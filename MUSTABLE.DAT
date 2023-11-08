@@ -812,6 +812,8 @@ SETable:
 	ef_ndw_g	m_kyushi,muskoban		;e5h
 	db		G_SE2
 	ef_ndw_g	m_fue4,musfue4		;e6h
+	db		G_SE2
+	ef_ndw_g	m_fue5,musfue5		;e7h
 
 bank29	group	G_MUSIC1
 ;=======================================;
