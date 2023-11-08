@@ -2852,29 +2852,29 @@ balance_global:
 	ld	a,(hli)
 	jr	nz,se$
 	and	e
+	ld	(SOUNDWORK_LEN*0 + S_BALANCE + SoundWork),a
+	ld	a,(hli)
+	and	e
 	ld	(SOUNDWORK_LEN*1 + S_BALANCE + SoundWork),a
 	ld	a,(hli)
 	and	e
 	ld	(SOUNDWORK_LEN*2 + S_BALANCE + SoundWork),a
-	ld	a,(hli)
-	and	e
-	ld	(SOUNDWORK_LEN*3 + S_BALANCE + SoundWork),a
 	ld	a,(hl)
 	and	e
-	ld	(SOUNDWORK_LEN*4 + S_BALANCE + SoundWork),a
+	ld	(SOUNDWORK_LEN*3 + S_BALANCE + SoundWork),a
 	ret
 se$
+	and	e
+	ld	(SOUNDWORK_LEN*4 + S_BALANCE + SoundWork),a
+	ld	a,(hli)
 	and	e
 	ld	(SOUNDWORK_LEN*5 + S_BALANCE + SoundWork),a
 	ld	a,(hli)
 	and	e
 	ld	(SOUNDWORK_LEN*6 + S_BALANCE + SoundWork),a
-	ld	a,(hli)
-	and	e
-	ld	(SOUNDWORK_LEN*7 + S_BALANCE + SoundWork),a
 	ld	a,(hl)
 	and	e
-	ld	(SOUNDWORK_LEN*8 + S_BALANCE + SoundWork),a
+	ld	(SOUNDWORK_LEN*7 + S_BALANCE + SoundWork),a
 	ret
 
 ;---------------------------------------;
