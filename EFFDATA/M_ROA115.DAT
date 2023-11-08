@@ -225,7 +225,7 @@ loop8$:
 	db	$43
 	db	$ef,$f0
 	db	$d5,$20
-	db	$90
+	db	$80
 	db	$01
 	db	$ef,$ff
 	db	$d6,$43
@@ -233,7 +233,7 @@ loop8$:
 	db	$43
 	db	$ef,$f0
 	db	$d5,$20
-	db	$90
+	db	$80
 	db	$01
 	db	$ef,$ff
 	db	$d7,$b1
