@@ -312,3 +312,5 @@
 	extern	m_bekebig
 	extern	m_tamago
 	extern	m_kyushi
+	extern	m_fue4
+	extern	m_fue5
