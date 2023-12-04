@@ -40,13 +40,13 @@ MUSIC_MAX	equ 66
 	db		G_MUSIC3
 	ef_ndw_g	road_01,musroad11	;7
 	db		G_MUSIC1
-	ef_ndw_g	road_03,musroad13	;9
+	ef_ndw_g	road_03,musroad13	;8
 	db		G_MUSIC2
-	ef_ndw_g	road_04,musroad14	;10
+	ef_ndw_g	road_04,musroad14	;9
 	db		G_MUSIC2
-	ef_ndw_g	road_05,musroad15	;11
+	ef_ndw_g	road_05,musroad15	;10
 	db		G_MUSIC2
-	ef_ndw_g	road_06,musroad16	;8
+	ef_ndw_g	road_06,musroad16	;11
 	db		G_MUSIC1
 	ef_ndw_g	m_capsule,muscapsule	;12
 	db		G_MUSIC4
@@ -911,8 +911,9 @@ m_naibu:
 m_host:
 	include ..\effdata\host.dat
 ;road_02:
-;	include ..\effdata\m_roa112.dat
+;	include ..\effdata\m_road12.dat
 road_06:
+	include ..\effdata\m_roa116.dat
 
 
 bank2b	group	G_MUSIC4
