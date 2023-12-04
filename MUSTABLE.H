@@ -293,7 +293,7 @@
 	extern	m_fue3
 
 	extern	m_bidbid
-	extern	m_wriggle
+	extern	m_jitabata
 	extern	m_wah
 	extern	m_won
 	extern	m_bua

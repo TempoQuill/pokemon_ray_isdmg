@@ -39,14 +39,14 @@ MUSIC_MAX	equ 66
 	ef_ndw_g	m_asa11,musasa11	;6
 	db		G_MUSIC3
 	ef_ndw_g	road_01,musroad11	;7
-	db		G_MUSIC2
-	ef_ndw_g	road_02,musroad12	;8
 	db		G_MUSIC1
 	ef_ndw_g	road_03,musroad13	;9
 	db		G_MUSIC2
 	ef_ndw_g	road_04,musroad14	;10
 	db		G_MUSIC2
 	ef_ndw_g	road_05,musroad15	;11
+	db		G_MUSIC2
+	ef_ndw_g	road_06,musroad16	;8
 	db		G_MUSIC1
 	ef_ndw_g	m_capsule,muscapsule	;12
 	db		G_MUSIC4
@@ -773,7 +773,7 @@ SETable:
 	db		G_SE2
 	ef_ndw_g	m_bidbid,muslockon		;d2h
 	db		G_SE2
-	ef_ndw_g	m_wriggle,muswriggle		;d3h
+	ef_ndw_g	m_jitabata,musjitabata		;d3h
 	db		G_SE2
 	ef_ndw_g	m_wah,muswah		;d4h
 	db		G_SE2
@@ -820,108 +820,173 @@ bank29	group	G_MUSIC1
 ;	MUSIC DATA 			;
 ;=======================================;
 road_03:
+	include ..\effdata\m_road13.dat
 m_fight24:
+	include ..\effdata\m_figh24.dat
 m_fight25:
-;	include	..\effect\m_figh5.dat
+;	include	..\effdata\m_figh5.dat
+	include ..\effdata\m_figh25.dat
 m_labo21:
+	include ..\effdata\m_labo21.dat
 m_kaida:
+	include ..\effdata\m_kaida.dat
 m_fight23:
+	include ..\effdata\m_figh23.dat
 m_fight26:
-;	include	..\effect\m_figh14.dat
+;	include	..\effdata\m_figh14.dat
+	include ..\effdata\m_figh26.dat
 m_joki:
-;	include	..\effect\flower.dat
+;	include	..\effdata\flower.dat
+	include ..\effdata\m_joki.dat
 m_koteji:
+	include ..\effdata\m_koteji.dat
 m_port:
+;	include ..\effdata\m_port.dat
+	include ..\effdata\m_town24.dat
 title2_6:
 ;	include	..\effect\m_title3.dat
+	include ..\effdata\m_title6.dat
 m_pmc11:
+	include ..\effdata\pmc11.dat
 m_victory1:
-;	include	..\effect\victory1.dat
+;	include	..\effdata\victory1.dat
+	include ..\effdata\m_jack12.dat
 m_kahogo:
+	include ..\effdata\m_kahogo.dat
 m_capsule:
+	include ..\effdata\capsule.dat
 m_fueshiro:
+	include ..\effdata\fueshiro.dat
 m_mugen:
+	include ..\effdata\m_mugen.dat
 m_usuakari:
+	include ..\effdata\m_usu.dat
 
 
 bank2a	group	G_MUSIC2
 
 m_pmc:
 ;	include	..\effect\m_pmc.dat
+	include ..\effdata\pmc.dat
 m_deal12:
-;	include	..\effect\m_deal2.dat
+;	include	..\effdata\m_deal2.dat
+	include ..\effdata\m_dea112.dat
 m_deal11:
-;	include	..\effect\m_deal3.dat
+;	include	..\effdata\m_deal3.dat
+	include ..\effdata\m_dea111.dat
 yasu_02:
+	include ..\effdata\m_yasu12.dat
 m_dun211:
-;	include	..\effect\digda01.dat
+;	include	..\effdata\digda01.dat
+	include ..\effdata\m_dun21.dat
 walk_02:
-;	include	..\effect\m_tsur2.dat
+;	include	..\effdata\m_tsur2.dat
+	include ..\effdata\walk2.dat
 m_cagino:
-;	include	..\effect\m_casino.dat
+;	include	..\effdata\m_casino.dat
+	include ..\effdata\cagino.dat
 m_jitens:
-;	include	..\effect\m_bicycl.dat
+;	include	..\effdata\m_bicycl.dat
+	include ..\effdata\jitens.dat
 yasu_01:
-;	include	..\effect\hoshi.dat
+;	include	..\effdata\hoshi.dat
+	include ..\effdata\m_yasu11.dat
 road_04:
-;	include	..\effect\m_fie112.dat
+;	include	..\effdata\m_fie112.dat
+	include ..\effdata\m_roa114.dat
 m_cacrega:
+	include ..\effdata\cacrega.dat
 m_josay:
+	include ..\effdata\josay.dat
 road_05:
+	include ..\effdata\m_roa115.dat
 m_sakka:
+	include ..\effdata\sakka.dat
 m_asa11:
 ;	include	..\music\m_asa11.dat
+	include ..\effdata\m_asa11.dat
 m_naibu:
-;	include	..\effect\koukan11.dat
+;	include	..\effdata\koukan11.dat
+	include ..\effdata\m_naibu.dat
 m_host:
-road_02:
+	include ..\effdata\host.dat
+;road_02:
+;	include ..\effdata\m_roa112.dat
+road_06:
 
 
 bank2b	group	G_MUSIC4
 
 m_choko:
+	include ..\effdata\m_choko.dat
 m_jackpot11:
-;	include	..\effect\victory2.dat
+;	include	..\effdata\victory2.dat
+	include ..\effdata\m_jack11.dat
 m_jackpot112:
-;	include ..\effect\vic22.dat
+;	include ..\effdata\vic22.dat
+	include ..\effdata\m_jac112.dat
 m_jackpot13:
-;	include	..\effect\victory3.dat
+;	include	..\effdata\victory3.dat
+	include ..\effdata\m_jack13.dat
 m_kyodai:
+	include ..\effdata\kyodai.dat
 m_jim:
-;	include	..\effect\m_gym.dat
+;	include	..\effdata\m_gym.dat
+	include ..\effdata\m_jim.dat
 m_nazonoxa:
+	include ..\effdata\nazonoxa.dat
 rival2_01:
-;	include	..\effect\m_riva11.dat
+;	include	..\effdata\m_riva11.dat
+	include ..\effdata\m_riva21.dat
 rival2_02:
-;	include	..\effect\m_riva12.dat
+;	include	..\effdata\m_riva12.dat
+	include ..\effdata\m_riva22.dat
 m_umi2:
-;	include	..\effect\m_nami.dat
+;	include	..\effdata\m_nami.dat
+	include ..\effdata\m_umi12.dat
 m_golonya:
+	include ..\effdata\golonya.dat
 m_kita:
 ;	include	..\effect\gotown1.dat
+	include ..\effdata\m_kita.dat
 m_ryoko:
 ;	include	..\music\m_ryoko.dat
+	include ..\effdata\m_ryoko.dat
 m_himanuts:
+	include ..\effdata\himanuts.dat
 m_fight21:
+	include ..\effdata\m_figh21.dat
 m_fight22:
+	include ..\effdata\m_figh22.dat
 m_wakamono:
-;	include	..\effect\boy.dat
+;	include	..\effdata\boy.dat
+	include ..\effdata\wakamono.dat
 walk_01:
-;	include	..\effect\m_tsur1.dat
+;	include	..\effdata\m_tsur1.dat
+	include ..\effdata\walk1.dat
 menyu_01:
-;	include ..\effect\m_chari.dat
+;	include ..\effdata\m_chari.dat
+	include ..\effdata\m_menyu1.dat
 menyu_02:
-;	include ..\effect\m_taikai.dat
+;	include ..\effdata\m_taikai.dat
+	include ..\effdata\m_menyu2.dat
 m_umi1:
-;	include	..\effect\m_sea.dat
+;	include	..\effdata\m_sea.dat
+	include ..\effdata\m_umi11.dat
 title2_4:
+	include ..\effdata\m_title4.dat
 title2_5:
+	include ..\effdata\m_title5.dat
 m_deal13:
-;	include	..\effect\m_deal1.dat
+;	include	..\effdata\m_deal1.dat
+	include ..\effdata\m_dea113.dat
 m_havoc:
+	include ..\effdata\havoc.dat
 m_dun212:
+	include ..\effdata\m_dun212.dat
 m_main:
 ;	include	..\effect\m_start.dat
+	include ..\effdata\m_main.dat
 ;m_fuemusic:
 ;	include	..\effect\m_fue2.dat
 ;m_komori:
@@ -930,21 +995,28 @@ m_main:
 
 bank27	group	G_MUSIC3
 m_odori:
-;	include	..\effect\shiai.dat
+;	include	..\effdata\shiai.dat
+	include ..\effdata\odori.dat
 ;m_field0775:
-;	include	..\music\m_fie775.dat
+;	include	..\effdata\m_fie775.dat
 road_01:
+	include ..\effdata\m_roa111.dat
 m_dendou1:
-;	include	..\effect\m_dendou.dat
+;	include	..\effdata\m_dendou.dat
+	include ..\effdata\m_den21.dat
 m_asa:
 	include	..\effdata\m_asa.dat
 m_shinka:
 ;	include	..\effect\m_shinka.dat
+	include ..\effdata\m_shinka.dat
 m_printer:
 ;	include	..\effect\m_print.dat
+	include ..\effdata\m_print.dat
 m_fin2:
-;	include	..\effect\m_finale.dat
+;	include	..\effdata\m_finale.dat
+	include ..\effdata\m_fin2.dat
 m_fin3:
-;	include	..\effect\m_end2.dat
+;	include	..\effdata\m_end2.dat
+	include ..\effdata\m_fin3.dat
 
 

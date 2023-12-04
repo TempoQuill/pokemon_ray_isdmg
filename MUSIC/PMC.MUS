@@ -374,7 +374,9 @@ PMC3:
 ; P3-9
 		call sub9$
 ; P3-10
-		tempo 4 		a
+		env 1b
+		tempo 4 		g
+					a
 					g
 					f#
 		tempo 5 		e
@@ -397,12 +399,15 @@ PMC3:
 		tempo 5 		e
 		env 3b
 		tempo 5 		e
-		call sub11$
 ; P3-12
+		tempo 1 		r
+		call sub12$
 ; P3-13
 		call sub9$
 ; P3-14
-		tempo 4 		f#
+		env 1b
+		tempo 4 		g
+					f#
 					g
 					a
 		tempo 5 		b
@@ -424,8 +429,9 @@ PMC3:
 		tempo 5 		g
 		env 3b
 		tempo 5 		g
-		call sub11$
-; P3-
+		tempo 1 		r
+; P3-16
+		call sub12$
 		jump PMC3
 sub1$:
 ; P3-1
@@ -509,7 +515,6 @@ sub1$:
 		env 1b
 		return
 sub9$:
-; P3-9
 		env 1b
 		tempo 5 	oct 3	f#
 		env 2b
@@ -524,13 +529,8 @@ sub9$:
 		env 3b
 		tempo 5 		a
 		tmepo 1 		r
-; P3-10
-		env 1b
-		tempo 4 		g
 		return
-sub11$:
-		tempo 1 		r
-; P1-12
+sub12$:
 		env 1b
 		tempo 4 		f#
 					g

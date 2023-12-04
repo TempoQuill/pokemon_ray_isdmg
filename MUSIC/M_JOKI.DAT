@@ -874,7 +874,7 @@ melo3$:
 	db	$73
 	db	$83
 	db	$ff
-melo13_14:
+melo13_14$:
 ; P3-13
 	db	$71
 	db	$01

@@ -385,6 +385,8 @@ PMC3:
 	db	$fe
 	dw	sub9$
 ; P3-10
+	db	$dc,$1b
+	db	$83
 	db	$a3
 	db	$83
 	db	$73
@@ -394,7 +396,7 @@ PMC3:
 	db	$dc,$3b
 	db	$54
 	db	$00
-; P3-11-12
+; P3-11
 	db	$dc,$1b
 	db	$24
 	db	$dc,$2b
@@ -408,12 +410,16 @@ PMC3:
 	db	$54
 	db	$dc,$3b
 	db	$54
+	db	$00
+; P3-12
 	db	$fe
 	dw	mero11_12$
 ; P3-13
 	db	$fe
 	dw	sub9$
 ; P3-14
+	db	$dc,$1b
+	db	$83
 	db	$73
 	db	$83
 	db	$a3
@@ -423,7 +429,7 @@ PMC3:
 	db	$dc,$3b
 	db	$c4
 	db	$00
-; P3-15-16
+; P3-15
 	db	$dc,$1b
 	db	$a4
 	db	$dc,$2b
@@ -436,6 +442,8 @@ PMC3:
 	db	$84
 	db	$dc,$3b
 	db	$84
+	db	$00
+; P1-16
 	db	$fe
 	dw	mero11_12$
 	db	$fc
@@ -537,13 +545,9 @@ sub9$:
 	db	$dc,$3b
 	db	$a4
 	db	$00
-; P3-10
-	db	$dc,$1b
-	db	$83
 	db	$ff
 mero11_12$:
 	db	$00
-; P1-12
 	db	$dc,$1b
 	db	$73
 	db	$83

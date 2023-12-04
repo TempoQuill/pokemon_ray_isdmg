@@ -1,0 +1,294 @@
+m_mailpin:
+	db	004h
+	dw	musmail1
+musmail1:
+	db	com_duty,002h
+	db	020h,0d1h,0dch,007h
+	db	com_end
+m_mailpin2:
+	db	044h
+	dw	musmail_21
+	db	005h
+	dw	musmail_22
+musmail_21:
+	db	com_duty,002h
+	db	010h,0f1h,0dch,007h
+	db	com_end
+musmail_22:
+	db	com_duty,002h
+	db	010h,0d1h,0ddh,007h
+	db	com_end
+m_opsuikun01:
+	db	004h
+	dw	musanknown11
+musanknown11:
+	db	com_vib,001,0a3h
+	db	com_duty,002h
+	db	008h,039h,005h,007h
+	db	020h,0e2h,005h,007h
+	db	com_end
+m_opsuikun02:
+	db	005h
+	dw	musanknown22
+musanknown22:
+	db	com_vib,001,073h
+	db	com_duty,002h
+	db	008h,039h,058h,007h
+	db	020h,0e2h,058h,007h
+	db	com_end
+m_opsuikun03:
+	db	006h
+	dw	musanknown32
+musanknown32:
+	db	com_vib,001,053h
+	db	003h,032h,0c2h,007h
+	db	003h,022h,0c2h,007h
+	db	003h,012h,0c2h,007h
+	db	010h,012h,0c2h,007h
+	db	006h,022h,0c2h,007h
+	db	006h,032h,0c2h,007h
+	db	com_end
+m_opsuikun04:
+	db	004h
+	dw	musgfmeta11
+musgfmeta11:
+	db	com_duty,02h
+	db	com_sweep,01eh
+	db	003h,082h,000h,007h
+	db	001h,031h,001h,007h
+	db	com_sweep,016h
+	db	004h,0b1h,040h,006h
+	db	010h,031h,041h,006h
+	db	com_end
+m_opsuikun05:
+	db	004h
+	dw	musgfmeta21
+musgfmeta21:
+	db	com_duty,01h
+	db	com_sweep,026h
+	db	014h,03bh,040h,004h
+	db	004h,097h,0c0h,004h
+	db	004h,067h,0c1h,004h
+	db	004h,042h,0c2h,004h
+	db	com_end
+m_opsuikun06:
+	db	007h
+	dw	mustype1
+mustype1:
+	db	001h,058h,059h
+	db	002h,091h,023h
+	db	com_end
+m_opsuikun07:
+	db	004h
+	dw	mushoyo1
+mushoyo1:
+	db	com_duty,003h
+	db	com_sweep,04dh
+	db	001h,088h,070h,007h
+	db	003h,000h,000h,000h
+	db	com_sweep,017h
+	db	002h,088h,076h,007h
+	db	com_end
+m_opsuikun08:
+	db	007h
+	dw	muskusa1
+muskusa1:
+	db	001h,0a7h,031h
+	db	001h,091h,000h
+	db	001h,092h,021h
+	db	001h,091h,000h
+	db	001h,092h,022h
+	db	001h,082h,011h
+	db	001h,082h,022h
+	db	001h,072h,011h
+	db	001h,072h,012h
+	db	001h,062h,010h
+	db	001h,063h,000h
+	db	001h,053h,010h
+	db	001h,043h,000h
+	db	001h,033h,010h
+	db	001h,023h,000h
+	db	001h,013h,010h
+	db	com_end
+m_opsuikun09:
+	db	007h
+	dw	musrun_a1
+musrun_a1:
+	db	001h,088h,031h
+	db	008h,039h,011h
+	db	004h,0a4h,010h
+	db	004h,044h,010h
+	db	004h,024h,010h
+	db	com_end
+m_opsuikun0a:
+	db	004h
+	dw	musgfmeta01
+musgfmeta01:
+	db	com_duty,02h
+	db	com_sweep,02ch
+	db	002h,082h,0b0h,004h
+	db	000h,031h,0b0h,004h
+	db	com_sweep,034h
+	db	010h,0b1h,020h,004h
+	db	com_end
+m_opsuikun0b:
+	db	007h
+	dw	mussjump4
+mussjump4:
+	db	001h,0a1h,05ch
+	db	000h,000h,000h
+	db	001h,0c1h,04dh
+	db	000h,000h,000h
+	db	004h,0b2h,031h
+	db	000h,000h,000h
+	db	004h,0a2h,002h
+	db	000h,000h,000h
+	db	004h,092h,001h
+	db	000h,000h,000h
+	db	020h,072h,000h
+	db	com_end
+m_opsuikun0c:
+	db	004h
+	dw	gflogo1
+gflogo1:
+	db	0dfh
+;	db	0dah,000h,090h
+	db	0dbh,002h
+	db	0d8h,002h,0b1h	;0b1h
+	db	0ddh,0ffh
+	db	0d9h,01ah
+	db	0d3h
+	db	011h
+	db	051h
+	db	081h
+	db	0d2h
+	db	011h
+	db	051h
+	db	082h
+;	db	0d1h
+	db	0dch,081h
+	db	082h
+	db	0dch,051h
+	db	082h
+	db	0dch,031h
+	db	082h
+	db	com_end
+m_kururin:
+	db	004h
+	dw	henshin1
+henshin1:
+	db	0dfh
+	db	0dbh,001h
+	db	0d9h,00bh
+	db	0d8h,001h,0b1h
+_loop
+	db	0d3h
+	db	012h
+	db	0d2h
+	db	081h
+	db	0d3h
+	db	012h
+	db	001h
+	db	com_loop,2
+	dw	_loop
+	db	011h
+	db	0dch,0a1h
+	db	08ch
+	db	com_end
+m_ptpwarn:
+	db	004h
+	dw	keikoku1
+keikoku1:
+	db	com_duty,002h
+	db	002h,0e8h,0c2h,007h
+	db	002h,028h,0c2h,007h
+	db	002h,0e8h,0c2h,007h
+	db	002h,028h,0c2h,007h
+	db	com_end
+m_ptpfend:
+	db	084h
+	dw	ptopend1
+	db	005h
+	dw	ptopend2
+	db	006h
+	dw	ptopend3
+ptopend1:
+	db	0dfh
+	db	com_duty,002h
+	db	0d8h,002h,0e8h
+	db	0d9h,002h
+
+	db	0d4h
+	db	011h
+	db	0dch,048h
+	db	011h
+	db	0dch,0e8h
+	db	081h
+	db	0dch,048h
+	db	081h
+	db	0d3h
+	db	0dch,0e8h
+	db	051h
+	db	0dch,048h
+	db	051h
+	db	0d2h
+	db	0dch,0e8h
+	db	011h
+	db	0dch,043h
+	db	01fh
+	db	com_end
+
+ptopend2:
+	db	0dfh
+	db	0d8h,002h,0b8h
+	db	008h
+	db	00fh
+	db	com_end
+
+ptopend3:
+	db	0dfh
+	db	0d8h,002h,0b8h
+	db	008h
+	db	00fh
+	db	com_end
+m_folopen:
+	db	004h
+	dw	m_open1
+m_open1:
+	db	0dfh
+	db	com_duty,000h
+	db	0d9h,002h
+	db	0d8h,002h,0e1h
+	db	0d5h
+	db	081h
+	db	0dch,0b1h
+	db	0d4h
+	db	031h
+	db	0dch,0e1h
+	db	0c1h
+	db	0dch,0b1h
+	db	081h
+	db	0dch,0e1h
+	db	0d3h
+	db	031h
+	db	0dch,0b1h
+	db	0d4h
+	db	0c1h
+	db	0dch,0e1h
+	db	0d3h
+	db	085h
+	db	com_end
+m_logoin2:
+	db	007h
+	dw	logoin2
+logoin2:
+	db	001h,010h,010h
+	db	002h,020h,010h
+	db	002h,030h,020h
+	db	002h,040h,020h
+	db	002h,050h,021h
+	db	002h,060h,022h
+	db	004h,070h,022h
+	db	008h,080h,022h
+	db	00fh,094h,022h
+	db	com_end

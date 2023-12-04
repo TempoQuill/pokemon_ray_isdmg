@@ -1,0 +1,342 @@
+m_jitabata:
+	db	S_LINE_1+SE1
+	dw	m_jitabata1
+m_kyushi:
+	db	S_LINE_2+SE1
+	dw	m_kyushi1
+	db	SE2
+	dw	m_kyushi2
+m_won:
+	db	S_LINE_1+SE1
+	dw	m_won1
+m_batontatti:
+	db	S_LINE_1+SE1
+	dw	m_batontatti1
+m_bua:
+	db	S_LINE_1+SE1
+	dw	m_bua1
+m_tama1:
+	db	S_LINE_1+SE1
+	dw	m_tama11
+m_tama2:
+	db	S_LINE_1+SE1
+	dw	m_tama21
+m_tama3:
+	db	S_LINE_1+SE1
+	dw	m_tama31
+m_tama4:
+	db	S_LINE_1+SE1
+	dw	m_tama41
+m_tama5:
+	db	S_LINE_1+SE1
+	dw	m_tama51
+m_tama6:
+	db	S_LINE_1+SE1
+	dw	m_tama61
+m_tama7:
+	db	S_LINE_1+SE1
+	dw	m_tama71
+m_tamabig:
+	db	S_LINE_2+SE1
+	dw	m_tamabig1
+	db	SE2
+	dw	m_tamabig2
+m_waiki:
+	db	S_LINE_1+SE1
+	dw	m_waiki1
+m_kaasaa:
+	db	S_LINE_1+SE1
+	dw	m_kaasaa1
+m_wah:
+	db	S_LINE_1+SE1
+	dw	m_wah1
+m_bekesmall:
+	db	S_LINE_1+SE1
+	dw	m_bekesmall1
+m_bekebig:
+	db	S_LINE_1+SE1
+	dw	m_bekebig1
+m_tamago:
+	db	S_LINE_1+SE1
+	dw	m_tamago1
+m_bidbid:
+	db	S_LINE_2+SE1
+	dw	m_bidbid1
+	db	SE2
+	dw	m_bidbid2
+m_jitabata1:
+	db	$f3
+	db	$db,$02
+	db	$d8,$4,$e1
+	db	$d2,$30
+	db	$10
+	db	$d3,$c0
+	db	$a0
+	db	$ff
+m_roundpoint1:
+	db	$f3
+	db	$db,$02
+	db	$d8,$4,$e1
+	db	$d3,$60
+	db	$a0
+	db	$d2,$10
+	db	$d8,$c,$e3
+	db	$6f
+	db	$ff
+m_slidetest3:
+	db	$f3
+	db	$d8,$c,$10
+	db	$d3
+	db	$e0,$00,$66,$63
+	db	$ff
+m_kyushi1:
+	db	$da,$01,$00
+	db	$db,$02
+	db	$04,$f4,$00,$07
+	db	$01,$a1,$40,$07
+	db	$02,$c1,$80,$07
+	db	$08,$a2,$c0,$07
+	db	$ff
+m_kyushi2:
+	db	$db,$01
+	db	$01,$21,$c0,$06
+	db	$04,$d4,$00,$07
+	db	$01,$81,$40,$07
+	db	$02,$a1,$80,$07
+	db	$08,$82,$c0,$07
+	db	$ff
+m_won1:
+	db	$db,$02
+	db	$00,$42,$00,$05
+	db	$00,$92,$80,$06
+	db	$00,$d2,$00,$07
+	db	$00,$f2,$80,$07
+	db	$00,$d2,$00,$07
+	db	$00,$92,$80,$06
+	db	$0a,$41,$00,$05
+	db	$ff
+m_batontatti1:
+	db	$db,$02
+	db	$dd,$3a
+	db	$04,$f2,$00,$04
+	db	$dd,$23
+	db	$08,$f2,$00,$06
+	db	$dd,$08
+	db	$ff
+m_bua1:
+	db	$db,$00
+	db	$dd,$22
+	db	$04,$f2,$00,$03
+	db	$dd,$08
+	db	$ff
+m_tama11:
+	db	$db,$02
+	db	$dd,$2d
+	db	$06,$f1,$c0,$07
+	db	$dd,$08
+	db	$ff
+m_tama21:
+	db	$db,$02
+	db	$dd,$2d
+	db	$06,$f1,$a0,$07
+	db	$dd,$08
+	db	$ff
+m_tama31:
+	db	$db,$02
+	db	$dd,$2d
+	db	$06,$f1,$80,$07
+	db	$dd,$08
+	db	$ff
+m_tama41:
+	db	$db,$02
+	db	$dd,$2d
+	db	$06,$f1,$60,$07
+	db	$dd,$08
+	db	$ff
+m_tama51:
+	db	$db,$02
+	db	$dd,$2d
+	db	$06,$f1,$40,$07
+	db	$dd,$08
+	db	$ff
+m_tama61:
+	db	$db,$02
+	db	$dd,$2d
+	db	$06,$f1,$20,$07
+	db	$dd,$08
+	db	$ff
+m_tama71:
+	db	$db,$02
+	db	$dd,$2d
+	db	$06,$f1,$00,$07
+	db	$dd,$08
+	db	$ff
+m_tamabig1:
+	db	$db,$02
+	db	$00,$c1,$80,$07
+	db	$01,$f1,$a0,$07
+	db	$01,$c1,$c0,$07
+	db	$04,$f1,$e0,$07
+	db	$ff
+m_tamabig2:
+	db	$db,$02
+	db	$00,$91,$81,$07
+	db	$01,$d1,$a1,$07
+	db	$01,$91,$c1,$07
+	db	$04,$d1,$e1,$07
+	db	$ff
+m_waiki1:
+	db	$db,$01
+	db	$dd,$26
+	db	$08,$f1,$40,$07
+	db	$dd,$36
+	db	$04,$e1,$c0,$07
+	db	$dd,$08
+	db	$ff
+m_kaasaa1:
+	db	$db,$01
+	db	$dd,$15
+	db	$04,$a1,$40,$07
+	db	$dd,$08
+	db	$ff
+m_wah1:
+	db	$db,$02
+	db	$dd,$36
+	db	$08,$f1,$00,$07
+	db	$dd,$08
+	db	$ff
+m_bekesmall1:
+	db	$db,$02
+	db	$dd,$14
+	db	$08,$71,$80,$06
+	db	$08,$41,$00,$07
+	db	$dd,$08
+	db	$ff
+m_bekebig1:
+	db	$db,$02
+	db	$dd,$14
+	db	$08,$d1,$80,$06
+	db	$08,$a1,$00,$07
+	db	$dd,$08
+	db	$ff
+m_tamago1:
+	db	$db,$02
+	db	$dd,$36
+	db	$04,$f4,$80,$07
+	db	$03,$c1,$c0,$07
+	db	$04,$d1,$a0,$07
+	db	$dd,$08
+	db	$ff
+m_bidbid1:
+	db	$db,$02
+	db	$03,$d1,$c0,$07
+	db	$03,$d1,$80,$07
+	db	$03,$d1,$c0,$07
+	db	$03,$d1,$80,$07
+	db	$ff
+m_bidbid2:
+	db	$db,$02
+	db	$03,$a1,$c1,$07
+	db	$03,$a1,$81,$07
+	db	$03,$a1,$c1,$07
+	db	$03,$a1,$81,$07
+	db	$ff
+m_bluestar:
+	db	S_LINE_1+SE1
+	dw	m_bluestar1
+m_bluestar1:
+	db	$de,$e4
+	db	$dd,$2f
+	db	$04,$40,$e0,$07
+	db	$04,$60,$e0,$07
+	db	$04,$80,$e0,$07
+	db	$08,$a0,$e0,$07
+	db	$08,$a0,$e0,$07
+	db	$08,$80,$e0,$07
+	db	$08,$60,$e0,$07
+	db	$08,$30,$e0,$07
+	db	$0f,$12,$e0,$07
+	db	$dd,$08
+	db	$ff
+m_bluesing:
+	db	S_LINE_2+SE1
+	dw	m_bluesing1
+	db	SE2
+	dw	m_bluesing2
+m_bluesing1:
+	db	$f3
+	db	$e1,$a,$24
+	db	$db,$02
+	db	$d8,$a,$87
+	db	$d3,$97
+	db	$d2,$73
+	db	$53
+	db	$d3,$97
+	db	$ff
+m_bluesing2:
+	db	$f3
+	db	$e1,$a,$23
+	db	$db,$02
+	db	$d8,$b,$67
+	db	$d3,$97
+	db	$d8,$a,$67
+	db	$d2,$73
+	db	$53
+	db	$d3,$97
+	db	$ff
+m_corrupt:
+	db	S_LINE_1+SE1
+	dw	m_corrupt1
+m_corrupt1:
+	db	$db,$01
+	db	$dd,$17
+	db	$0f,$d7,$00,$06
+	db	$0f,$b7,$80,$05
+	db	$0f,$87,$00,$05
+	db	$0f,$47,$80,$04
+	db	$0f,$17,$00,$04
+	db	$ff
+m_fue3:
+	db	S_LINE_1+SE3
+	dw	m_fue33
+m_fue33:
+	db	$f3
+	db	$da,$00,$80
+	db	$e1,$b,$24
+
+	db	$d8,$b,$13
+	db	$d3,$90
+	db	$70
+	db	$9a
+	db	$ff
+m_fue4:
+	db	S_LINE_1+SE3
+	dw	m_fue43
+m_fue43:
+	db	$f3
+	db	$da,$00,$8e
+	db	$e1,$b,$24
+
+	db	$d8,$c,$27
+	db	$d3,$30
+	db	$c0
+	db	$a0
+	db	$38
+	db	$ff
+m_fue5:
+	db	S_LINE_1+SE3
+	dw	m_fue53
+m_fue53:
+	db	$f3
+	db	$da,$00,$9c
+	db	$e1,$b,$24
+
+	db	$d8,$c,$11
+	db	$d3,$30
+	db	$50
+	db	$60
+	db	$50
+	db	$31
+	db	$a1
+	db	$a5
+	db	$ff
