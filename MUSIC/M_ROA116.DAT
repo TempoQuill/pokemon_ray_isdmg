@@ -92,10 +92,10 @@ loop$:
 	db	$dc,$b1
 	db	$b0
 	db	$60
-	db	$20
+	db	$10
 	db	$b0
 	db	$60
-	db	$20
+	db	$10
 	db	$a0
 	db	$80
 	db	$dc,$95
@@ -145,7 +145,7 @@ loop$:
 	db	$40
 	db	$41
 	db	$30
-	db	$20
+	db	$10
 	db	$dc,$77
 	db	$35
 	db	$db,$02
@@ -207,7 +207,7 @@ loop$:
 	db	$30
 	db	$d6,$b0
 	db	$80
-	db	$d6,$30
+	db	$d5,$30
 	db	$d6,$b0
 	db	$80
 	db	$d5,$30
@@ -639,7 +639,7 @@ loop$:
 	db	$60
 	db	$40
 	db	$33
-	db	$2b
+	db	$1b
 	db	$d4,$b1
 	db	$01
 ; 3-12
