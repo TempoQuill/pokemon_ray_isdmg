@@ -7,25 +7,25 @@
 	db	005h
 	dw	bluesing2
 bluesing1:
-	db	0f3h
-	db	0e1h,0ah,024h
-	db	0dbh,002h
-	db	0d8h,00ah,087h
-	db	0d3h,097h
-	db	0d2h,073h
+	db	com_seclr
+	db	com_vib,0ah,024h
+	db	com_duty,002h
+	db	com_init,00ah,087h
+	db	com_oct3,097h
+	db	com_oct2,073h
 	db	053h
-	db	0d3h,097h
-	db	0ffh
+	db	com_oct3,097h
+	db	com_end
 bluesing2:
-	db	0f3h
-	db	0e1h,0ah,023h
-	db	0dbh,002h
-	db	0d8h,00bh,067h
-	db	0d3h,097h
-	db	0d8h,00ah,067h
-	db	0d2h,073h
+	db	com_seclr
+	db	com_vib,0ah,023h
+	db	com_duty,002h
+	db	com_init,00bh,067h
+	db	com_oct3,097h
+	db	com_init,00ah,067h
+	db	com_oct2,073h
 	db	053h
-	db	0d3h,097h
-	db	0ffh
+	db	com_oct3,097h
+	db	com_end
 
 

@@ -71,8 +71,8 @@
 	extern	musdonfan		;MVC80
 
 	extern	musearthtron		;MVC81
-	extern	musyossy		;MVC82
-	extern	musyoyossy		;MVC83
+	extern	musyossy		;MVC96
+	extern	musyoyossy		;MVC97
 
 
 

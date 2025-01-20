@@ -87,9 +87,46 @@ bank28	group	G_SE1
 	public	musgulanbull		;MVC79
 	public	musdonfan		;MVC80
 
-	public	musearthtron
-	public	musyossy
-	public	musyoyossy
+	public	musearthtron		;MVC81
+	public	musm_omom		;MVC82
+	public	muskaijyuu1		;MVC83
+	public	musm_karasu		;MVC84
+	public	musm_kawaii4		;MVC85
+	public	musm_kaijyuu2		;MVC86
+	public	mushoho_01		;MVC87
+	public	musm_hoho		;MVC88
+	public	mushoho_02		;MVC89
+	public	muswani			;MVC90
+	public	musmusi			;MVC91
+	public	musm_tora		;MVC92
+	public	musm_nyura		;MVC93
+	public	musyamikarasu		;MVC94
+	public	musledjury		;MVC95
+	public	musyossy		;MVC96
+	public	musyoyossy		;MVC97
+
+	public	muskurikaseki		;MVC98
+	public	muspouchen		;MVC99
+	public	musmafelt		;MVC100
+	public	musjoryu		;MVC101
+	public	muskiklaud		;MVC102
+	public	musduggo		;MVC103
+	public	muskojitaka		;MVC104
+	public	musringokku		;MVC105
+	public	mustealank		;MVC106
+	public	musinotuno		;MVC107
+	public	mussubelsagi		;MVC108
+	public	muskomaidi		;MVC109
+	public	musquindra		;MVC110
+	public	muskochard		;MVC111
+	public	muscroben		;MVC112
+	public	musbomseeker		;MVC113
+	public	musselenumia		;MVC114
+	public	muschiryoteki		;MVC115
+	public	mustornado		;MVC116
+	public	musonibarlo		;MVC117
+	public	muskazennik		;MVC118
+	public	musshinkakeru		;MVC119
 
 ;===============================================================;
 ;								;
@@ -170,10 +207,46 @@ MVC78	equ	65	;houou
 MVC79	equ	66	;gulanbull
 MVC80	equ	67	;donfan
 
+MVC81	equ	68	;earthtron
+MVC82	equ	69	;omom
+MVC83	equ	70	;kaijyu1
+MVC84	equ	71	;kawaii4
+MVC85	equ	72	;karasu
+MVC86	equ	73	;kaijyu2
+MVC87	equ	74	;hoho1
+MVC88	equ	75	;hoho
+MVC89	equ	76	;bobo2
+MVC90	equ	77	;wani
+MVC91	equ	78	;musi
+MVC92	equ	79	;tora
+MVC93	equ	80	;nyura
+MVC94	equ	81	;yamikarasu
+MVC95	equ	82	;ledjury
+MVC96	equ	83	;yossi
+MVC97	equ	84	;yoyossi
 
-MVC81	EQU	68	;earthtron
-MVC82	EQU	69	;yossy
-MVC83	EQU	70	;yoyossy
+MVC98	equ	85	;kurikaseki
+MVC99	equ	86	;pauchen
+MVC100	equ	87	;mafelt
+MVC101	equ	88	;joryu
+MVC102	equ	89	;kiklaud
+MVC103	equ	90	;duggo
+MVC104	equ	91	;kojitaka
+MVC105	equ	92	;ringokku
+MVC106	equ	93	;tealank
+MVC107	equ	94	;inotuno
+MVC108	equ	95	;subelsagi
+MVC109	equ	96	;komaidi
+MVC110	equ	97	;quindra
+MVC111	equ	98	;kochard
+MVC112	equ	99	;croben
+MVC113	equ	100	;bomseeker
+MVC114	equ	101	;selenumia
+MVC115	equ	102	;chiryoteki
+MVC116	equ	103	;tornado
+MVC117	equ	104	;onibarlo
+MVC118	equ	105	;kazennik
+MVC119	equ	106	;shinkakeru
 
 
 
@@ -663,6 +736,7 @@ kaijyuu24:
 
 hoho1:
 	db	com_d_changer,066h
+hoho1_0100:
 	db	004h,078h,050h,006h
 	db	004h,0f8h,060h,006h
 	db	004h,0f8h,05ch,006h
@@ -897,6 +971,7 @@ loop5$
 	db	com_end
 kaijyu12:
 	db	com_d_changer,078h
+kaijyu12_0100:
 	db	008h,099h,040h,007h
 	db	008h,079h,046h,007h
 	db	010h,0f6h,08dh,007h
@@ -2321,14 +2396,14 @@ dog3:
 	db	008h,091h,049h
 	db	com_end
 
-;==================== yossy no tamago ====================;
+;==================== ray & shade ====================;
 musyossy:
 	db	S_LINE_3 + SE1
 	dw	yossy1
 	db	SE2
 	dw	yossy2
 	db	SE4
-	dw	yossy3
+	dw	yossy4
 
 musyoyossy:
 	db	S_LINE_3 + SE1
@@ -2336,12 +2411,156 @@ musyoyossy:
 	db	SE2
 	dw	yoyossy2
 	db	SE4
-	dw	yoyossy3
+	dw	yoyossy4
 
-; --- MONSTERS VOICE ---
+muskurikaseki:
+	db	S_LINE_2 + SE1
+	dw	kurikaseki1
+	db	SE4
+	dw	kurikaseki4
+
+muspouchen:
+	db	S_LINE_2 + SE1
+	dw	pouchen1
+	db	SE2
+	dw	pouchen2
+
+musmafelt:
+	db	S_LINE_2 + SE1
+	dw	mafelt1
+	db	SE2
+	dw	mafelt2
+
+musjoryu:
+	db	S_LINE_2 + SE1
+	dw	joryu1
+	db	SE2
+	dw	joryu2
+
+musm_omom:
+	db	S_LINE_2 + SE1
+	dw	m_omom1
+	db	SE2
+	dw	m_omom2
+
+muskiklaud:
+	db	S_LINE_2 + SE1
+	dw	kiklaud1
+	db	SE4
+	dw	kiklaud4
+
+musduggo:
+	db	S_LINE_2 + SE1
+	dw	duggo1
+	db	SE2
+	dw	duggo2
+
+muskojitaka:
+	db	S_LINE_3 + SE1
+	dw	kojitaka1
+	db	SE2
+	dw	kojitaka2
+	db	SE4
+	dw	kojitaka4
+
+musringokku:
+	db	S_LINE_2 + SE1
+	dw	ringokku1
+	db	SE4
+	dw	ringokku4
+
+mustealank:
+	db	S_LINE_2 + SE1
+	dw	tealank1
+	db	SE2
+	dw	tealank2
+
+musinotuno:
+	db	S_LINE_2 + SE1
+	dw	inotuno1
+	db	SE4
+	dw	inotuno4
+
+mussubelsagi:
+	db	S_LINE_2 + SE1
+	dw	subelsagi1
+	db	SE2
+	dw	subelsagi2
+
+muskomaidi:
+	db	S_LINE_3 + SE1
+	dw	komaidi1
+	db	SE2
+	dw	komaidi2
+	db	SE4
+	dw	komaidi4
+
+musquindra:
+	db	S_LINE_2 + SE1
+	dw	quindra1
+	db	SE2
+	dw	quindra2
+
+muskochard:
+	db	S_LINE_2 + SE1
+	dw	kochard1
+	db	SE2
+	dw	kochard2
+
+muscroben:
+	db	S_LINE_3 + SE1
+	dw	croben1
+	db	SE2
+	dw	croben2
+	db	SE4
+	dw	croben4
+
+musbomseeker:
+	db	S_LINE_3 + SE1
+	dw	bomseeker1
+	db	SE2
+	dw	bomseeker2
+	db	SE4
+	dw	bomseeker4
+
+musselenumia:
+	db	S_LINE_2 + SE1
+	dw	selenumia1
+	db	SE2
+	dw	selenumia2
+
+muschiryoteki:
+	db	S_LINE_2 + SE1
+	dw	kapoera2
+	db	SE2
+	dw	chiryoteki2
+
+mustornado:
+	db	S_LINE_2 + SE1
+	dw	tornado1
+	db	SE4
+	dw	tornado4
+
+musonibarlo:
+	db	S_LINE_2 + SE1
+	dw	gyaradoss2
+	db	SE2
+	dw	onibarlo2
+
+muskazennik:
+	db	S_LINE_2 + SE1
+	dw	kazennik1
+	db	SE4
+	dw	kazennik4
+
+musshinkakeru:
+	db	S_LINE_2 + SE1
+	dw	shinkakeru1
+	db	SE2
+	dw	shinkakeru2
 
 yossy1:
-	db	com_duty,3
+	db	com_duty,003h
 	db	com_sweep,017h
 	db	004h,0f1h,0c0h,006h
 	db	com_sweep,016h
@@ -2351,36 +2570,934 @@ yossy1:
 	db	com_sweep,008h
 	db	com_end
 yossy2:
-	db	com_duty,2
+	db	com_duty,002h
 	db	004h,0d1h,080h,006h
 	db	00fh,0a1h,0c0h,007h
 	db	004h,0c1h,01ch,003h
 	db	com_end
-yossy3:
+yossy4:
 	db	001h,0d1h,038h
 	db	00eh,0d1h,028h
 	db	001h,0d1h,039h
 	db	004h,0d1h,049h
 	db	com_end
+
 yoyossy1:
-	db	com_duty,3
+	db	com_duty,003h
 	db	com_sweep,015h
 	db	007h,0f4h,0c0h,002h
 	db	com_sweep,013h
 	db	00ah,0f2h,0c0h,003h
-	db	com_sweep,01bh
+	db	com_sweep,01dh
 	db	00ch,0f2h,000h,003h
 	db	com_sweep,008h
 	db	com_end
 yoyossy2:
-	db	com_duty,2
+	db	com_duty,002h
 	db	004h,0d1h,080h,002h
 	db	00fh,0a1h,0c0h,003h
 	db	004h,0c1h,080h,002h
 	db	com_end
-yoyossy3:
+yoyossy4:
 	db	004h,0b2h,048h
 	db	00eh,0c1h,038h
 	db	001h,081h,049h
 	db	008h,082h,059h
 	db	com_end
+
+kurikaseki1:
+	db	com_d_changer,018h
+	db	005h,0f1h,06ch,007h
+	db	002h,071h,000h,000h
+	db	005h,0f1h,008h,007h
+	db	005h,0f1h,09eh,007h
+	db	002h,071h,000h,000h
+	db	005h,0f1h,030h,007h
+	db	com_end
+kurikaseki4:
+	db	003h,0f4h,043h
+	db	004h,084h,071h
+	db	001h,0f4h,053h
+	db	000h,084h,071h
+	db	003h,0f4h,033h
+	db	00eh,084h,081h
+	db	000h,011h,0ffh
+	db	com_end
+
+pouchen1:
+	db	com_d_changer,072h
+	db	001h,0f1h,08dh,006h
+	db	003h,0f1h,098h,006h
+	db	005h,0f2h,061h,007h
+	db	001h,071h,000h,000h
+	db	00eh,0f1h,0fch,006h
+	db	003h,0f1h,0b3h,007h
+	db	00eh,0f1h,0f1h,006h
+	db	com_end
+pouchen2:
+	db	com_d_changer,0d9h
+	db	006h,0a1h,083h,006h
+	db	003h,0a1h,08eh,006h
+	db	005h,0a2h,057h,007h
+	db	001h,0a1h,0f6h,007h
+	db	00eh,0a1h,0f2h,006h
+	db	003h,0a1h,0a9h,007h
+	db	00eh,0a1h,0e7h,006h
+	db	com_end
+
+mafelt1:
+	db	com_d_changer,0a7h
+	db	com_detune
+	db	004h,000h,000h,000h
+	db	com_jump
+	dw	mafelt_0100
+mafelt2:
+	db	com_d_changer,05fh
+mafelt_0100:
+	db	com_vib,008h,053h
+	db	014h,03ah,082h,007h
+	db	com_vib,000h,053h
+	db	014h,0d7h,081h,007h
+	db	007h,017h,07fh,007h
+	db	com_end
+
+joryu1:
+	db	com_d_changer,0d0h
+	db	002h,0f4h,04fh,007h
+	db	002h,041h,08ah,007h
+	db	007h,0f4h,030h,007h
+	db	002h,0f4h,03ah,007h
+	db	002h,0f4h,041h,007h
+	db	002h,0f4h,04bh,007h
+	db	007h,0f7h,052h,007h
+	db	002h,0e4h,04bh,007h
+	db	002h,0c4h,041h,007h
+	db	002h,094h,03ah,007h
+	db	com_end
+joryu2:
+	db	com_d_changer,02dh
+	db	003h,084h,0a7h,007h
+	db	002h,041h,0c5h,007h
+	db	007h,084h,098h,007h
+	db	002h,074h,09dh,007h
+	db	002h,074h,0a0h,007h
+	db	002h,064h,0a5h,007h
+	db	007h,067h,0a9h,007h
+	db	002h,054h,0a5h,007h
+	db	002h,054h,0a0h,007h
+	db	002h,044h,09dh,007h
+	db	com_end
+
+m_omom1:
+	db	com_d_changer,0a0h
+	db	008h,0f7h,000h,005h
+	db	008h,0d6h,0e0h,005h
+	db	00fh,0b2h,0c0h,005h
+	db	com_end
+m_omom2:
+	db	com_d_changer,0a0h
+	db	009h,0c6h,0d1h,004h
+	db	007h,0c6h,0b1h,005h
+	db	00fh,0b2h,091h,005h
+	db	com_end
+
+kiklaud1:
+	db	com_d_changer,066h
+	db	008h,0f1h,082h,006h
+	db	002h,0f1h,096h,006h
+	db	002h,0f1h,08ch,006h
+	db	001h,0f1h,0aeh,007h
+	db	006h,0f1h,0f0h,00eh
+	db	002h,0b1h,0aah,006h
+	db	002h,071h,082h,006h
+	db	com_end
+
+kiklaud4:
+	db	004h,0e2h,033h
+	db	001h,0f8h,07bh
+	db	002h,074h,044h
+	db	008h,0e7h,044h
+	db	005h,0d4h,045h
+	db	005h,0c4h,046h
+	db	00ah,0b1h,047h
+	db	com_end
+
+duggo1:
+	db	com_sweep,044h
+	db	com_d_changer,02dh
+	db	001h,000h,000h,000h
+	db	002h,0f1h,028h,007h
+	db	001h,0f1h,00ch,007h
+	db	003h,0f1h,026h,007h
+	db	004h,0f1h,011h,007h
+	db	001h,0f1h,036h,007h
+	db	001h,0f1h,02bh,007h
+	db	004h,0f1h,022h,007h
+	db	com_sweep,008h
+	db	com_end
+
+duggo2:
+	db	com_d_changer,0c3h
+	db	001h,0a1h,098h,007h
+	db	000h,000h,000h,000h
+	db	001h,0a1h,072h,007h
+	db	001h,000h,000h,000h
+	db	001h,0f1h,080h,007h
+	db	000h,000h,000h,000h
+	db	001h,0a1h,071h,007h
+	db	001h,000h,000h,000h
+	db	001h,0f1h,09ch,007h
+	db	000h,000h,000h,000h
+	db	001h,0b1h,078h,007h
+	db	001h,000h,000h,000h
+	db	001h,0f1h,08eh,007h
+	db	001h,000h,000h,000h
+	db	com_end
+
+kojitaka1:
+	db	com_sweep,077h
+	db	com_d_changer,06ah
+	db	001h,049h,070h,007h
+	db	003h,069h,074h,007h
+	db	002h,0b8h,078h,007h
+	db	001h,051h,080h,007h
+	db	com_sweep,0f3h
+	db	com_d_changer,040h
+	db	007h,042h,0f8h,006h
+	db	006h,091h,000h,007h
+	db	com_sweep,0f4h
+	db	007h,0e1h,038h,007h
+	db	007h,0f1h,030h,007h
+	db	008h,0f1h,028h,007h
+	db	009h,0c1h,018h,007h
+	db	com_sweep,0f3h
+	db	008h,0b1h,000h,007h
+	db	006h,0a1h,0e8h,006h
+	db	com_sweep,008h
+	db	com_end
+
+kojitaka2:
+	db	com_detune
+	db	com_d_changer,06ah
+	db	001h,028h,0e7h,007h
+	db	003h,028h,0e8h,007h
+	db	002h,038h,0e9h,007h
+	db	003h,022h,0eah,007h
+	db	com_d_changer,011h
+	db	007h,022h,0f8h,006h
+	db	006h,042h,000h,007h
+	db	007h,072h,038h,007h
+	db	007h,072h,030h,007h
+	db	008h,072h,028h,007h
+	db	009h,062h,018h,007h
+	db	008h,052h,000h,007h
+	db	004h,052h,0e8h,006h
+	db	com_end
+
+kojitaka4:
+	db	00ah,052h,026h
+	db	00ah,081h,001h
+	db	00ah,081h,000h
+	db	00bh,081h,000h
+	db	00ah,081h,000h
+	db	00bh,081h,000h
+	db	008h,081h,001h
+	db	com_end
+
+ringokku1:
+	db	com_sweep,017h
+	db	com_d_changer,0bbh
+	db	003h,059h,020h,006h
+	db	003h,09ah,080h,006h
+	db	003h,0b9h,0c0h,006h
+	db	com_sweep,008h
+	db	008h,008h,000h,000h
+	db	com_d_changer,09ah
+	db	001h,068h,060h,007h
+	db	com_sweep,01fh
+	db	com_d_changer,0bbh
+	db	003h,0f5h,010h,007h
+	db	019h,0d1h,010h,007h
+	db	com_sweep,008h
+	db	com_end
+
+ringokku4:
+	db	014h,008h,000h
+	db	002h,0f1h,033h
+	db	001h,024h,002h
+	db	002h,0d1h,037h
+	db	001h,024h,002h
+	db	002h,0b1h,034h
+	db	001h,024h,002h
+	db	002h,091h,037h
+	db	001h,024h,002h
+	db	002h,071h,035h
+	db	001h,024h,002h
+	db	002h,051h,037h
+	db	001h,024h,002h
+	db	com_end
+
+tealank1:
+	db	com_d_changer,044h
+	db	001h,0f4h,021h,007h
+	db	003h,0f4h,001h,007h
+	db	001h,0f4h,0f1h,006h
+	db	001h,0f4h,0cch,006h
+	db	001h,0f4h,09eh,006h
+	db	004h,0f4h,063h,006h
+	db	001h,0f4h,0cch,006h
+	db	001h,0f4h,0e0h,006h
+	db	003h,0f4h,0f1h,006h
+	db	001h,054h,0cch,006h
+	db	001h,054h,0e0h,006h
+	db	003h,054h,0f1h,006h
+	db	001h,024h,0cch,006h
+	db	001h,024h,0e0h,006h
+	db	003h,024h,0f1h,006h
+	db	001h,014h,0cch,006h
+	db	001h,014h,0e0h,006h
+	db	003h,014h,0f1h,006h
+	db	com_end
+
+tealank2:
+	db	com_d_changer,0eeh
+	db	000h,000h,000h,000h
+	db	001h,0f4h,025h,007h
+	db	003h,0f4h,005h,007h
+	db	001h,0f4h,0f5h,006h
+	db	001h,0f4h,0d0h,006h
+	db	001h,0f4h,0a2h,006h
+	db	004h,0f4h,067h,006h
+	db	001h,0f4h,0d0h,006h
+	db	001h,0f4h,0e4h,006h
+	db	003h,0f4h,0f5h,006h
+	db	001h,054h,0d0h,006h
+	db	001h,054h,0e4h,006h
+	db	003h,054h,0f5h,006h
+	db	001h,024h,0d0h,006h
+	db	001h,024h,0e4h,006h
+	db	003h,024h,0f5h,006h
+	db	001h,014h,0d0h,006h
+	db	001h,014h,0e4h,006h
+	db	003h,014h,0f5h,006h
+	db	com_end
+
+inotuno1:
+	db	com_d_changer,0d2h
+	db	001h,0f4h,05dh,006h
+	db	001h,0f4h,025h,007h
+	db	001h,0f4h,0c1h,006h
+	db	00fh,0f7h,0b8h,006h
+	db	003h,0d4h,0b7h,006h
+	db	001h,0f4h,0ach,000h
+	db	005h,0f4h,0aeh,006h
+	db	005h,0f4h,0a4h,006h
+	db	005h,0f4h,099h,006h
+	db	00ch,0c1h,08dh,006h
+	db	com_end
+
+inotuno4:
+komaidi4:
+	db	001h,0f4h,004h
+	db	006h,0f4h,004h
+	db	007h,0c4h,005h
+	db	004h,0f7h,005h
+	db	005h,0d4h,007h
+	db	000h,0f4h,04dh
+	db	00dh,0e4h,02ch
+	db	005h,0f4h,001h
+	db	005h,0f4h,022h
+	db	002h,041h,002h
+	db	com_end
+
+subelsagi1:
+	db	com_detune
+	db	com_d_changer,066h
+	db	com_jump
+	dw	subelsagi2_0100
+
+subelsagi2:
+	db	com_d_changer,01bh
+subelsagi2_0100:
+	db	com_call
+	dw	paon2_0100
+	db	com_call
+	dw	paon2_0100
+	db	002h,000h,000h,000h
+	db	00fh,0f1h,03ah,007h
+	db	com_end
+
+komaidi1:
+	db	com_d_changer,0a4h
+	db	com_jump
+	dw	kaijyu12_0100
+
+komaidi2:
+	db	com_d_changer,04eh
+loop$:
+	db	004h,078h,050h,006h
+	db	004h,0f8h,05ch,006h
+	db	com_loop,2
+	dw	loop$
+	db	com_call
+	dw	hoho1_0100
+	db	004h,078h,050h,006h
+	db	004h,0f8h,060h,006h
+	db	004h,0f8h,05ch,006h
+	db	com_end
+
+quindra1:
+	db	com_d_changer,0d2h
+	db	004h,02ch,0d1h,004h
+	db	000h,040h,0b0h,004h
+	db	000h,060h,0dch,004h
+	db	00fh,0f7h,01fh,005h
+	db	com_sweep,07fh
+	db	00fh,0f1h,014h,005h
+	db	com_sweep,008h
+	db	com_end
+
+quindra2:
+	db	com_d_changer,0e8h
+	db	004h,02ch,099h,005h
+	db	000h,040h,078h,005h
+	db	000h,060h,0a4h,005h
+	db	00fh,0f7h,0e7h,005h
+	db	00fh,0f1h,028h,000h
+	db	com_end
+
+kochard2:
+	db	com_d_changer,054h
+	db	com_detune
+	db	004h,03ah,03dh,007h
+	db	006h,0a8h,062h,007h
+	db	006h,0a8h,060h,007h
+	db	006h,0a1h,05eh,007h
+	db	com_end
+
+kochard1:
+	db	com_d_changer,08ah
+	db	004h,000h,000h,000h
+	db	004h,01ch,03dh,007h
+	db	006h,048h,062h,007h
+	db	006h,048h,060h,007h
+	db	006h,041h,05eh,007h
+	db	com_end
+
+croben1:
+	db	com_detune
+	db	com_d_changer,0c9h
+	db	com_jump
+	dw	croben2_0100
+
+croben2:
+	db	com_d_changer,079h
+croben2_0100:
+	db	00ah,0e7h,08bh,007h
+	db	002h,0e7h,06bh,007h
+	db	001h,0d7h,04bh,007h
+	db	001h,0d7h,02bh,007h
+	db	00fh,0c1h,00bh,007h
+	db	com_end
+
+croben4:
+	db	004h,074h,02ah
+	db	004h,074h,019h
+	db	004h,071h,029h
+	db	com_end
+
+bomseeker1:
+	db	com_d_changer,0cch
+	db	00ah,0f7h,05ch,007h
+	db	008h,0f7h,06ch,007h
+	db	006h,0f7h,074h,007h
+	db	006h,057h,073h,007h
+	db	01fh,0f7h,075h,007h
+	db	com_end
+
+bomseeker2:
+	db	com_d_changer,059h
+	db	00bh,0f7h,008h,007h
+	db	008h,0f7h,026h,007h
+	db	006h,0f7h,035h,007h
+	db	006h,057h,034h,007h
+	db	01eh,0f7h,036h,007h
+	db	com_end
+
+bomseeker4:
+	db	009h,0f7h,00dh
+	db	008h,0f7h,00ch
+	db	006h,0f7h,00bh
+	db	006h,057h,0fbh
+	db	020h,0f7h,00bh
+	db	com_end
+
+selenumia1:
+	db	com_d_changer,099h
+	db	004h,0f7h,048h,007h
+	db	00fh,0f7h,036h,007h
+	db	00fh,0f7h,03fh,007h
+	db	007h,0f7h,036h,007h
+	db	007h,0f7h,02dh,007h
+	db	007h,0f7h,024h,007h
+	db	01eh,0f7h,01bh,007h
+	db	com_end
+
+selenumia2:
+	db	com_d_changer,030h
+	db	004h,0f7h,0ffh,006h
+	db	00fh,0f7h,0edh,006h
+	db	00fh,0f7h,0f6h,006h
+	db	007h,0f7h,0edh,006h
+	db	007h,0f7h,0e4h,006h
+	db	007h,0f7h,0dbh,006h
+	db	01eh,0f7h,0d2h,006h
+	db	com_end
+
+chiryoteki2:
+	db	com_chorus,002h,000h
+	db	com_jump
+	dw	kapoera2
+
+tornado1:
+	db	003h,094h,026h,002h
+	db	001h,0f4h,0f8h,007h
+	db	001h,094h,044h,002h
+	db	001h,0f4h,0f9h,007h
+	db	001h,094h,02bh,002h
+	db	001h,0f4h,0fah,007h
+	db	001h,094h,00dh,002h
+	db	001h,0f4h,0fbh,007h
+	db	001h,094h,017h,002h
+	db	001h,0f4h,0fch,007h
+	db	001h,094h,035h,002h
+	db	001h,0f4h,0fdh,007h
+	db	00bh,0f4h,02bh,002h
+	db	00bh,0b4h,049h,002h
+	db	00bh,074h,067h,002h
+	db	com_end
+
+tornado4:
+	db	003h,094h,046h
+	db	003h,0f4h,047h
+	db	003h,0f4h,045h
+	db	003h,0f4h,046h
+	db	003h,0f4h,044h
+	db	003h,0f4h,045h
+	db	001h,0f4h,037h
+	db	00bh,0f4h,057h
+	db	00bh,0b4h,056h
+	db	00bh,074h,055h
+	db	com_end
+
+onibarlo2:
+	db	com_chorus,000h,020h
+	db	com_jump
+	dw	gyaradoss1
+
+kazennik1:
+	db	com_d_changer,0c6h
+	db	004h,0afh,060h,007h
+	db	002h,0f8h,06ch,007h
+	db	002h,0f8h,078h,007h
+	db	002h,0f8h,084h,007h
+	db	002h,0f8h,090h,007h
+	db	00ch,0c8h,09ch,007h
+	db	004h,091h,090h,007h
+	db	com_end
+
+kazennik4:
+	db	002h,0e8h,032h
+	db	009h,0f8h,037h
+	db	002h,0d8h,030h
+	db	014h,0c2h,035h
+	db	com_end
+
+shinkakeru1:
+	db	com_d_changer,0c9h
+	db	003h,000h,000h,000h
+	db	com_call
+	dw	main$
+	db	003h,000h,000h,000h
+	db	004h,061h,0dfh,006h
+	db	com_call
+	dw	main$
+	db	008h,000h,000h,000h
+main$:
+	db	004h,077h,08ah,007h
+	db	002h,077h,06ah,007h
+	db	001h,067h,04ah,007h
+	db	001h,067h,02ah,007h
+	db	004h,061h,00ah,007h
+	db	com_end
+
+shinkakeru2:
+	db	com_d_changer,079h
+	db	com_call
+	dw	main$
+	db	003h,000h,000h,000h
+	db	004h,0c1h,0e0h,006h
+	db	com_call
+	dw	main$
+	db	008h,000h,000h,000h
+main$:
+	db	004h,0e7h,08bh,007h
+	db	002h,0e7h,06bh,007h
+	db	001h,0d7h,04bh,007h
+	db	001h,0d7h,02bh,007h
+	db	004h,0c1h,00bh,007h
+	db	com_end
+
+;==================== early voices ====================;
+
+muskaijyuu1:
+	db	S_LINE_3 + SE1
+	dw	kaijyuu11
+	db	SE2
+	dw	kaijyuu12
+	db	SE4
+	dw	kaijyuu14
+
+musm_karasu:
+	db	S_LINE_3 + SE1
+	dw	m_karasu1
+	db	SE2
+	dw	m_karasu2
+	db	SE4
+	dw	m_karasu4
+
+musm_kawaii4:
+	db	S_LINE_3 + SE1
+	dw	m_kawaii41
+	db	SE2
+	dw	m_kawaii42
+	db	SE4
+	dw	m_kawaii34
+
+musm_kaijyuu2:
+	db	S_LINE_3 + SE1
+	dw	m_kaijyuu21
+	db	SE2
+	dw	m_kaijyuu22
+	db	SE4
+	dw	m_kaijyuu24
+
+mushoho_01:
+	db	S_LINE_3 + SE1
+	dw	hoho_01
+	db	SE2
+	dw	hoho_02
+	db	SE4
+	dw	hoho_04
+
+mushoho_02:
+	db	S_LINE_2 + SE1
+	dw	hoho_01
+	db	SE2
+	dw	hoho_02
+
+musm_hoho:
+	db	S_LINE_3 + SE1
+	dw	m_hoho1
+	db	SE2
+	dw	m_hoho2
+	db	SE4
+	dw	m_hoho4
+
+musm_nyura:
+	db	S_LINE_3 + SE1
+	dw	m_nyura1
+	db	SE2
+	dw	m_nyura2
+	db	SE4
+	dw	m_nyura4
+
+musm_tora:
+	db	S_LINE_3 + SE1
+	dw	m_tora1
+	db	SE2
+	dw	m_tora2
+	db	SE4
+	dw	m_tora4
+
+muswani:
+	db	S_LINE_3 + SE1
+	dw	wani1
+	db	SE2
+	dw	wani2
+	db	SE4
+	dw	wani4
+
+musmusi:
+	db	S_LINE_2 + SE2
+	dw	kawaii12
+	db	SE4
+	dw	kaijyuu14
+
+musyamikarasu:
+	db	S_LINE_3 + SE1
+	dw	yamikarasu1
+	db	SE2
+	dw	m_lediba2
+	db	SE4
+	dw	m_lediba4
+
+musledjury:
+	db	S_LINE_3 + SE1
+	dw	ledjury1
+	db	SE2
+	dw	m_lediba2
+	db	SE4
+	dw	m_lediba4
+
+; --- MONSTERS VOICE ---
+
+m_tora1:
+	db	com_sweep,0ffh
+	db	com_d_changer,012h
+	db	001h,0f8h,008h,006h
+	db	006h,09fh,0e8h,004h
+	db	004h,0f8h,0d4h,005h
+	db	020h,0f3h,084h,004h
+	db	com_end
+m_tora2:
+	db	com_d_changer,0f1h
+	db	001h,0f8h,000h,005h
+	db	005h,09fh,0c8h,004h
+	db	004h,0f8h,0b4h,005h
+	db	020h,0f3h,064h,004h
+	db	com_end
+m_tora4:
+	db	002h,06fh,057h
+	db	004h,0ach,05ch
+	db	004h,0f8h,05eh
+	db	020h,0f3h,06eh
+	db	com_end
+
+
+kaijyuu11:
+	db	com_chorus,000h,020h
+kaijyuu12:
+	db	com_d_changer,046h
+	db	002h,0f1h,020h,007h
+	db	004h,0f7h,058h,007h
+	db	010h,0f2h,020h,007h
+	db	com_end
+kaijyuu14:
+	db	002h,081h,04ch
+	db	004h,097h,05ah
+	db	010h,092h,03eh
+	db	com_end
+
+
+m_karasu1:
+	db	com_d_changer,022h
+	db	002h,098h,0d8h,006h
+	db	008h,0f2h,0e0h,006h
+	db	002h,071h,0e5h,006h
+	db	002h,0f8h,0c0h,006h
+	db	002h,0f8h,0b8h,006h
+	db	002h,0f8h,0b0h,006h
+	db	008h,0f1h,0aah,006h
+	db	com_end
+m_karasu2:
+	db	com_d_changer,032h
+	db	002h,068h,0b1h,006h
+	db	005h,0c1h,0b9h,006h
+	db	005h,099h,060h,007h
+	db	002h,0b8h,08ch,006h
+	db	002h,0b8h,084h,006h
+	db	00ah,0b2h,07bh,006h
+	db	com_end
+m_karasu4:
+	db	001h,099h,06ch
+	db	001h,092h,05ch
+	db	00ah,062h,04ch
+	db	002h,068h,06ah
+	db	002h,068h,06bh
+	db	00ah,062h,06ch
+	db	com_end
+
+
+m_kawaii41:
+	db	com_duty,000h
+	db	com_chorus,000h,001h
+	db	com_jump
+	dw	m_kawaii42_0100
+m_kawaii42:
+	db	com_d_changer,02ah
+m_kawaii42_0100:
+	db	003h,03ch,0c7h,007h
+	db	001h,000h,000h,000h
+	db	005h,069h,0beh,007h
+	db	006h,0c4h,0bdh,007h
+	db	com_end
+m_kawaii34:
+	db	003h,092h,010h
+	db	001h,039h,000h
+	db	005h,069h,010h
+	db	006h,093h,000h
+	db	com_end
+
+
+m_kaijyuu21:
+	db	com_chorus,000h,030h
+m_kaijyuu22:
+	db	com_d_changer,02bh
+	db	004h,0f7h,055h,004h
+	db	008h,0f2h,0c8h,005h
+	db	010h,0f1h,0b0h,005h
+	db	com_end
+m_kaijyuu24:
+	db	007h,087h,04ch
+	db	007h,06ch,03fh
+	db	007h,052h,04fh
+	db	com_end
+
+
+hoho_01:
+	db	com_chorus,000h,020h
+	db	com_duty,002h
+	db	com_jump
+	dw	hoho_02_0100
+hoho_02:
+	db	com_d_changer,01bh
+hoho_02_0100:
+	db	com_callsub
+	dw	paon2_0100
+	db	004h,000h,000h,000h
+	db	com_loop,002h
+	dw	hoho_02_0100
+	db	com_end
+hoho_04:
+loop$
+	db	com_callsub
+	dw	paon4
+	db	004h,000h,000h
+	db	com_loop,002h
+	dw	loop$
+	db	com_end
+
+
+m_hoho1:
+	db	com_d_changer,066h
+	db	004h,078h,050h,006h
+	db	004h,0f8h,060h,006h
+	db	004h,0f8h,05ch,006h
+	db	001h,0f8h,07ch,006h
+	db	004h,0f8h,080h,006h
+	db	004h,0f8h,07ch,006h
+	db	004h,0f8h,078h,006h
+	db	004h,0f1h,074h,006h
+	db	com_end
+m_hoho2:
+	db	com_d_changer,022h
+loop1$
+	db	002h,0a1h,000h,006h
+	db	com_loop,003h
+	dw	loop1$
+loop2$
+	db	002h,0a1h,030h,006h
+	db	com_loop,004h
+	dw	loop2$
+	db	004h,0a2h,034h,006h
+	db	004h,091h,038h,006h
+	db	com_end
+m_hoho4:
+	db	001h,058h,055h
+	db	010h,048h,033h
+	db	001h,088h,057h
+	db	010h,087h,037h
+	db	com_end
+
+
+wani1:
+	db	com_chorus,000h,020h
+wani2:
+	db	com_d_changer,0a1h
+	db	008h,02bh,041h,007h
+	db	004h,0f8h,0f6h,006h
+	db	00ah,0f2h,0e0h,006h
+	db	com_end
+wani4:
+	db	008h,03dh,050h
+	db	00eh,072h,042h
+	db	com_end
+
+
+m_lediba1:
+	db	com_chorus,000h,002h
+	db	com_duty,002h
+	db	com_jump
+	dw	m_lediba2_0100
+m_lediba2:
+	db	com_d_changer,001h
+m_lediba2_0100:
+	db	003h,0f8h,091h,007h
+	db	003h,0d8h,08dh,007h
+	db	002h,000h,000h,000h
+	db	001h,078h,0c1h,006h
+	db	001h,0f8h,041h,007h
+	db	004h,0e1h,051h,007h
+	db	com_end
+m_lediba4:
+	db	003h,059h,021h
+	db	003h,081h,000h
+	db	002h,020h,000h
+	db	001h,080h,021h
+	db	001h,080h,010h
+	db	004h,087h,000h
+	db	com_end
+
+
+yamikarasu1:
+	db	com_chorus,000h,002h
+	db	com_duty,000h
+	db	com_jump
+	dw	m_lediba2_0100
+
+
+ledjury1:
+	db	com_duty,000h
+	db	003h,0f8h,093h,007h
+	db	003h,0d8h,08fh,007h
+	db	002h,000h,002h,000h
+	db	001h,078h,0c3h,006h
+	db	001h,0f8h,043h,007h
+	db	004h,0e1h,053h,007h
+	db	com_end
+
+
+m_nyura1:
+	db	com_chorus,000h,002h
+	db	com_duty,2
+	db	com_jump
+	dw	m_nyura2_0100
+m_nyura2:
+	db	com_d_changer,007h
+m_nyura2_0100
+	db	002h,0b9h,038h,007h
+	db	004h,0cbh,042h,007h
+	db	008h,0cbh,054h,007h
+	db	004h,0f6h,036h,007h
+	db	008h,0f1h,032h,007h
+	db	008h,000h,000h,000h
+	db	com_end
+m_nyura4:
+	db	002h,05bh,004h
+	db	004h,068h,013h
+	db	008h,068h,020h
+	db	004h,068h,013h
+	db	008h,051h,004h
+	db	008h,000h,000h
+	db	com_end
+
+
+
+
+
+
+
+
+
+

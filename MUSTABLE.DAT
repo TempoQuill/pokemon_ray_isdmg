@@ -325,10 +325,82 @@ VoiceTable:
 	db	G_SE1
 	dw	musearthtron		;MVC81
 	db	G_SE1
-	dw	musyossy		;MVC82
+	dw	musm_omom		;MVC82
 	db	G_SE1
-	dw	musyoyossy		;MVC83
+	dw	muskaijyuu1		;MVC83
+	db	G_SE1
+	dw	musm_karasu		;MVC84
+	db	G_SE1
+	dw	musm_kawaii4		;MVC85
+	db	G_SE1
+	dw	musm_kaijyuu2		;MVC86
+	db	G_SE1
+	dw	mushoho_01		;MVC87
+	db	G_SE1
+	dw	musm_hoho		;MVC88
+	db	G_SE1
+	dw	mushoho_02		;MVC89
+	db	G_SE1
+	dw	muswani			;MVC90
+	db	G_SE1
+	dw	musmusi			;MVC91
+	db	G_SE1
+	dw	musm_tora		;MVC92
+	db	G_SE1
+	dw	musm_nyura		;MVC93
+	db	G_SE1
+	dw	musyamikarasu		;MVC94
+	db	G_SE1
+	dw	musledjury		;MVC95
+	db	G_SE1
+	dw	musyossy		;MVC96
+	db	G_SE1
+	dw	musyoyossy		;MVC97
 
+	db	G_SE1
+	dw	muskurikaseki		;MVC98
+	db	G_SE1
+	dw	muspouchen		;MVC99
+	db	G_SE1
+	dw	musmafelt		;MVC100
+	db	G_SE1
+	dw	musjoryu		;MVC101
+	db	G_SE1
+	dw	muskiklaud		;MVC102
+	db	G_SE1
+	dw	musduggo		;MVC103
+	db	G_SE1
+	dw	muskojitaka		;MVC104
+	db	G_SE1
+	dw	musringokku		;MVC105
+	db	G_SE1
+	dw	mustealank		;MVC106
+	db	G_SE1
+	dw	musinotuno		;MVC107
+	db	G_SE1
+	dw	mussubelsagi		;MVC108
+	db	G_SE1
+	dw	muskomaidi		;MVC109
+	db	G_SE1
+	dw	musquindra		;MVC110
+	db	G_SE1
+	dw	muskochard		;MVC111
+	db	G_SE1
+	dw	muscroben		;MVC112
+	db	G_SE1
+	dw	musbomseeker		;MVC113
+	db	G_SE1
+	dw	musselenumia		;MVC114
+	db	G_SE1
+	dw	muschiryoteki		;MVC115
+	db	G_SE1
+	dw	mustornado		;MVC116
+	db	G_SE1
+	dw	musonibarlo		;MVC117
+	db	G_SE1
+	dw	muskazennik		;MVC118
+	db	G_SE1
+	dw	musshinkakeru		;MVC119
 
 ;=======================================;
 ;	SE Table 			;
@@ -768,7 +840,11 @@ SETable:
 	db		G_SE2
 	ef_ndw_g	m_bluesing,musgreensing		;d0h
 	db		G_SE2
-	ef_ndw_g	m_fue3,musfue3		;d1h
+	ef_ndw_g	m_purinpyon1,muspurinpyon1		;d0h
+	db		G_SE2
+	ef_ndw_g	m_purinpyon2,muspurinpyon2		;d0h
+	db		G_SE2
+	ef_ndw_g	m_bluein,musgreenin		;d0h
 
 	db		G_SE2
 	ef_ndw_g	m_bidbid,muslockon		;d2h
@@ -810,6 +886,8 @@ SETable:
 	ef_ndw_g	m_tamago,musrikabaa		;e4h
 	db		G_SE2
 	ef_ndw_g	m_kyushi,muskoban		;e5h
+	db		G_SE2
+	ef_ndw_g	m_fue3,musfue3		;d1h
 	db		G_SE2
 	ef_ndw_g	m_fue4,musfue4		;e6h
 	db		G_SE2

@@ -108,401 +108,401 @@ bank6f	group	G_SE3
 VOICE_MAX	equ	190-1
 
 MonsVoiceData:
-	dw	MVC16, 00080h, 00081h	; Voice. Tune. Speed	; 001
-	dw	MVC16, 00020h, 00100h	; Voice. Tune. Speed	; 002
-	dw	MVC16, 00000h, 00140h	; Voice. Tune. Speed	; 003
-	dw	MVC05, 00060h, 000c0h	; Voice. Tune. Speed	; 004
-	dw	MVC05, 00020h, 000c0h	; Voice. Tune. Speed	; 005
-	dw	MVC05, 00000h, 00100h	; Voice. Tune. Speed	; 006
-	dw	MVC30, 00060h, 000c0h	; Voice. Tune. Speed	; 007
-	dw	MVC30, 00020h, 000c0h	; Voice. Tune. Speed	; 008
-	dw	MVC20, 00000h, 00100h	; Voice. Tune. Speed	; 009
-	dw	MVC23, 00080h, 000a0h	; Voice. Tune. Speed	; 010
-	dw	MVC29, 000cch, 00081h	; Voice. Tune. Speed	; 011
-	dw	MVC23, 00077h, 000c0h	; Voice. Tune. Speed	; 012
-	dw	MVC22, 000eeh, 00081h	; Voice. Tune. Speed	; 013 biidoru
-	dw	MVC20, 000ffh, 00081h	; Voice. Tune. Speed	; 014
-	dw	MVC20, 00060h, 00100h	; Voice. Tune. Speed	; 015
-	dw	MVC15, 000dfh, 00084h	; Voice. Tune. Speed	; 016 poppo
-	dw	MVC21, 00028h, 00140h	; Voice. Tune. Speed	; 017
-	dw	MVC21, 00011h, 0017fh	; Voice. Tune. Speed	; 018
-	dw	MVC36, 00000h, 00100h	; Voice. Tune. Speed	; 019
-	dw	MVC36, 00020h, 0017fh	; Voice. Tune. Speed	; 020
-	dw	MVC17, 00000h, 00100h	; Voice. Tune. Speed	; 021 onisuzume
-	dw	MVC25, 00040h, 00120h	; Voice. Tune. Speed	; 022
-	dw	MVC24, 00012h, 000c0h	; Voice. Tune. Speed	; 023
-	dw	MVC24, 000e0h, 00090h	; Voice. Tune. Speed	; 024
-	dw	MVC16, 000eeh, 00081h	; PIKACHUU		; 025
-	dw	MVC10, 000eeh, 00088h	; RAICHUU		; 026
-	dw	MVC01, 00020h, 000c0h	; Voice. Tune. Speed	; 027
-	dw	MVC01, 000ffh, 0017fh	; Voice. Tune. Speed	; 028
-	dw	MVC02, 00000h, 00100h	; Voice. Tune. Speed	; 029
-	dw	MVC02, 0002ch, 00160h	; Voice. Tune. Speed	; 030
-	dw	MVC11, 00000h, 00100h	; Voice. Tune. Speed	; 031
-	dw	MVC01, 00000h, 00100h	; Voice. Tune. Speed	; 032
-	dw	MVC01, 0002ch, 00140h	; Voice. Tune. Speed	; 033
-	dw	MVC10, 00000h, 00100h	; Voice. Tune. Speed	; 034
-	dw	MVC26, 000cch, 00081h	; Voice. Tune. Speed	; 035
-	dw	MVC26, 000aah, 000a0h	; Voice. Tune. Speed	; 036
-	dw	MVC38, 0004fh, 00090h	; Voice. Tune. Speed	; 037
-	dw	MVC38, 00088h, 000e0h	; Voice. Tune. Speed	; 038
-	dw	MVC15, 000ffh, 000b5h	; Voice. Tune. Speed	; 039 purin
-	dw	MVC15, 00068h, 000e0h	; Voice. Tune. Speed	; 040 pukurin
-	dw	MVC30, 000e0h, 00100h	; Voice. Tune. Speed	; 041
-	dw	MVC30, 000fah, 00100h	; Voice. Tune. Speed	; 042
-	dw	MVC09, 000ddh, 00081h	; Voice. Tune. Speed	; 043
-	dw	MVC09, 000aah, 000c0h	; Voice. Tune. Speed	; 044
-	dw	MVC37, 00022h, 0017fh	; Voice. Tune. Speed	; 045
-	dw	MVC31, 00020h, 00160h	; Voice. Tune. Speed	; 046
-	dw	MVC31, 00042h, 0017fh	; Voice. Tune. Speed	; 047
-	dw	MVC27, 00044h, 000c0h	; Voice. Tune. Speed	; 048
-	dw	MVC27, 00029h, 00100h	; Voice. Tune. Speed	; 049
-	dw	MVC12, 000aah, 00081h	; Voice. Tune. Speed	; 050
-	dw	MVC12, 0002ah, 00090h	; Voice. Tune. Speed	; 051
-	dw	MVC26, 00077h, 00090h	; Voice. Tune. Speed	; 052
-	dw	MVC26, 00099h, 0017fh	; Voice. Tune. Speed	; 053
-	dw	MVC35, 00020h, 000e0h	; Voice. Tune. Speed	; 054
-	dw	MVC35, 000ffh, 000c0h	; Voice. Tune. Speed	; 055
-	dw	MVC11, 000ddh, 000e0h	; Voice. Tune. Speed	; 056
-	dw	MVC11, 000afh, 000c0h	; Voice. Tune. Speed	; 057
-	dw	MVC32, 00020h, 000c0h	; Voice. Tune. Speed	; 058
-	dw	MVC22, 00000h, 00100h	; Voice. Tune. Speed	; 059
-	dw	MVC15, 000ffh, 0017fh	; Voice. Tune. Speed	; 060 nyoromo
-	dw	MVC15, 00077h, 000e0h	; Voice. Tune. Speed	; 061 nyorozo
-	dw	MVC15, 00000h, 0017fh	; Voice. Tune. Speed	; 062 nyurobon
-	dw	MVC29, 000c0h, 00081h	; Voice. Tune. Speed	; 063
-	dw	MVC29, 000a8h, 00140h	; Voice. Tune. Speed	; 064
-	dw	MVC29, 00098h, 0017fh	; Voice. Tune. Speed	; 065
-	dw	MVC32, 000eeh, 00081h	; Voice. Tune. Speed	; 066
-	dw	MVC32, 00048h, 000e0h	; Voice. Tune. Speed	; 067
-	dw	MVC32, 00008h, 00140h	; Voice. Tune. Speed	; 068
-	dw	MVC35, 00055h, 00081h	; Voice. Tune. Speed	; 069
-	dw	MVC39, 00044h, 000a0h	; Voice. Tune. Speed	; 070
-	dw	MVC39, 00066h, 0014ch	; Voice. Tune. Speed	; 071
-	dw	MVC27, 00000h, 00100h	; Voice. Tune. Speed	; 072
-	dw	MVC27, 000eeh, 0017fh	; Voice. Tune. Speed	; 073
-	dw	MVC38, 000f0h, 00090h	; Voice. Tune. Speed	; 074
-	dw	MVC38, 00000h, 00100h	; Voice. Tune. Speed	; 075
-	dw	MVC19, 000e0h, 000c0h	; Voice. Tune. Speed	; 076
-	dw	MVC39, 00000h, 00100h	; Voice. Tune. Speed	; 077
-	dw	MVC39, 00020h, 00140h	; Voice. Tune. Speed	; 078
-	dw	MVC03, 00000h, 00100h	; Voice. Tune. Speed	; 079
-	dw	MVC32, 00000h, 00100h	; Voice. Tune. Speed	; 080
-	dw	MVC29, 00080h, 000e0h	; Voice. Tune. Speed	; 081
-	dw	MVC29, 00020h, 00140h	; Voice. Tune. Speed	; 082
-	dw	MVC17, 000ddh, 00081h	; Voice. Tune. Speed	; 083 kamonegi
-	dw	MVC12, 000bbh, 00081h	; Voice. Tune. Speed	; 084
-	dw	MVC12, 00099h, 000a0h	; Voice. Tune. Speed	; 085
-	dw	MVC13, 00088h, 00140h	; Voice. Tune. Speed	; 086
-	dw	MVC13, 00023h, 0017fh	; Voice. Tune. Speed	; 087
-	dw	MVC06, 00000h, 00100h	; Voice. Tune. Speed	; 088
-	dw	MVC08, 000efh, 0017fh	; Voice. Tune. Speed	; 089
-	dw	MVC25, 00000h, 00100h	; Voice. Tune. Speed	; 090
-	dw	MVC25, 0006fh, 00160h	; Voice. Tune. Speed	; 091
-	dw	MVC29, 00000h, 00100h	; Voice. Tune. Speed	; 092
-	dw	MVC29, 00030h, 000c0h	; Voice. Tune. Speed	; 093
-	dw	MVC08, 00000h, 0017fh	; Voice. Tune. Speed	; 094
-	dw	MVC24, 000ffh, 00140h	; Voice. Tune. Speed	; 095
-	dw	MVC14, 00088h, 000a0h	; Voice. Tune. Speed	; 096
-	dw	MVC14, 000eeh, 000c0h	; Voice. Tune. Speed	; 097
-	dw	MVC34, 00020h, 00160h	; Voice. Tune. Speed	; 098
-	dw	MVC34, 000eeh, 00160h	; Voice. Tune. Speed	; 099
-	dw	MVC07, 000edh, 00100h	; Voice. Tune. Speed	; 100
-	dw	MVC07, 000a8h, 00110h	; Voice. Tune. Speed	; 101
-	dw	MVC12, 00000h, 00100h	; Voice. Tune. Speed	; 102
-	dw	MVC14, 00000h, 00100h	; Voice. Tune. Speed	; 103
-	dw	MVC26, 00000h, 00100h	; Voice. Tune. Speed	; 104
-	dw	MVC09, 0004fh, 000e0h	; Voice. Tune. Speed	; 105
-	dw	MVC19, 00080h, 00140h	; Voice. Tune. Speed	; 106
-	dw	MVC13, 000eeh, 00140h	; Voice. Tune. Speed	; 107
-	dw	MVC13, 00000h, 00100h	; Voice. Tune. Speed	; 108
-	dw	MVC19, 000e6h, 0015dh	; Voice. Tune. Speed	; 109
-	dw	MVC19, 000ffh, 0017fh	; Voice. Tune. Speed	; 110
-	dw	MVC05, 00000h, 00100h	; Voice. Tune. Speed	; 111
-	dw	MVC18, 00000h, 00100h	; Voice. Tune. Speed	; 112
-	dw	MVC21, 0000ah, 00140h	; Voice. Tune. Speed	; 113
-	dw	MVC19, 00000h, 00100h	; Voice. Tune. Speed	; 114
-	dw	MVC04, 00000h, 00100h	; Voice. Tune. Speed	; 115
-	dw	MVC26, 00099h, 00090h	; Voice. Tune. Speed	; 116
-	dw	MVC26, 0003ch, 00081h	; Voice. Tune. Speed	; 117
-	dw	MVC23, 00080h, 000c0h	; Voice. Tune. Speed	; 118
-	dw	MVC23, 00010h, 0017fh	; Voice. Tune. Speed	; 119
-	dw	MVC31, 00002h, 000a0h	; Voice. Tune. Speed	; 120
-	dw	MVC31, 00000h, 00100h	; Voice. Tune. Speed	; 121
-	dw	MVC34, 00008h, 000c0h	; Voice. Tune. Speed	; 122
-	dw	MVC23, 00000h, 00100h	; Voice. Tune. Speed	; 123
-	dw	MVC14, 000ffh, 0017fh	; Voice. Tune. Speed	; 124
-	dw	MVC07, 0008fh, 0017fh	; Voice. Tune. Speed	; 125 elebuu
-	dw	MVC05, 000ffh, 000b0h	; Voice. Tune. Speed	; 126
-	dw	MVC21, 00000h, 00100h	; Voice. Tune. Speed	; 127
-	dw	MVC30, 00011h, 000c0h	; Voice. Tune. Speed	; 128
-	dw	MVC24, 00080h, 00080h	; Voice. Tune. Speed	; 129
-	dw	MVC24, 00000h, 00100h	; Voice. Tune. Speed	; 130
-	dw	MVC28, 00000h, 00100h	; Voice. Tune. Speed	; 131
-	dw	MVC15, 000ffh, 0017fh	; Voice. Tune. Speed	; 132 metamon
-	dw	MVC27, 00088h, 000e0h	; Voice. Tune. Speed	; 133
-	dw	MVC27, 000aah, 0017fh	; Voice. Tune. Speed	; 134
-	dw	MVC27, 0003dh, 00100h	; Voice. Tune. Speed	; 135
-	dw	MVC27, 00010h, 000a0h	; Voice. Tune. Speed	; 136
-	dw	MVC39, 000aah, 0017fh	; Voice. Tune. Speed	; 137
-	dw	MVC32, 000f0h, 00081h	; Voice. Tune. Speed	; 138
-	dw	MVC32, 000ffh, 000c0h	; Voice. Tune. Speed	; 139
-	dw	MVC23, 000bbh, 000c0h	; Voice. Tune. Speed	; 140
-	dw	MVC25, 000eeh, 00081h	; Voice. Tune. Speed	; 141
-	dw	MVC37, 00020h, 00170h	; Voice. Tune. Speed	; 142
-	dw	MVC06, 00055h, 00081h	; Voice. Tune. Speed	; 143
-	dw	MVC10, 00080h, 000c0h	; Voice. Tune. Speed	; 144
-	dw	MVC25, 000ffh, 00100h	; Voice. Tune. Speed	; 145
-	dw	MVC10, 000f8h, 000c0h	; Voice. Tune. Speed	; 146
-	dw	MVC16, 00060h, 000c0h	; Voice. Tune. Speed	; 147
-	dw	MVC16, 00040h, 00100h	; Voice. Tune. Speed	; 148
-	dw	MVC16, 0003ch, 00140h	; Voice. Tune. Speed	; 149
-	dw	MVC31, 00099h, 0017fh	; Voice. Tune. Speed	; 150
-	dw	MVC31, 000eeh, 0017fh	; Voice. Tune. Speed	; 151 myu
+	dw	MVC16,	00080h,	00081h	; Voice. Tune. Speed	; 001
+	dw	MVC16,	00020h,	00100h	; Voice. Tune. Speed	; 002
+	dw	MVC16,	00000h,	00140h	; Voice. Tune. Speed	; 003
+	dw	MVC05,	00060h,	000c0h	; Voice. Tune. Speed	; 004
+	dw	MVC05,	00020h,	000c0h	; Voice. Tune. Speed	; 005
+	dw	MVC05,	00000h,	00100h	; Voice. Tune. Speed	; 006
+	dw	MVC30,	00060h,	000c0h	; Voice. Tune. Speed	; 007
+	dw	MVC30,	00020h,	000c0h	; Voice. Tune. Speed	; 008
+	dw	MVC20,	00000h,	00100h	; Voice. Tune. Speed	; 009
+	dw	MVC23,	00080h,	000a0h	; Voice. Tune. Speed	; 010
+	dw	MVC29,	000cch,	00081h	; Voice. Tune. Speed	; 011
+	dw	MVC23,	00077h,	000c0h	; Voice. Tune. Speed	; 012
+	dw	MVC22,	000eeh,	00081h	; Voice. Tune. Speed	; 013 biidoru
+	dw	MVC20,	000ffh,	00081h	; Voice. Tune. Speed	; 014
+	dw	MVC20,	00060h,	00100h	; Voice. Tune. Speed	; 015
+	dw	MVC15,	000dfh,	00084h	; Voice. Tune. Speed	; 016 poppo
+	dw	MVC21,	00028h,	00140h	; Voice. Tune. Speed	; 017
+	dw	MVC21,	00011h,	0017fh	; Voice. Tune. Speed	; 018
+	dw	MVC36,	00000h,	00100h	; Voice. Tune. Speed	; 019
+	dw	MVC36,	00020h,	0017fh	; Voice. Tune. Speed	; 020
+	dw	MVC17,	00000h,	00100h	; Voice. Tune. Speed	; 021 onisuzume
+	dw	MVC25,	00040h,	00120h	; Voice. Tune. Speed	; 022
+	dw	MVC24,	00012h,	000c0h	; Voice. Tune. Speed	; 023
+	dw	MVC24,	000e0h,	00090h	; Voice. Tune. Speed	; 024
+	dw	MVC16,	000eeh,	00081h	; PIKACHUU		; 025
+	dw	MVC10,	000eeh,	00088h	; RAICHUU		; 026
+	dw	MVC01,	00020h,	000c0h	; Voice. Tune. Speed	; 027
+	dw	MVC01,	000ffh,	0017fh	; Voice. Tune. Speed	; 028
+	dw	MVC02,	00000h,	00100h	; Voice. Tune. Speed	; 029
+	dw	MVC02,	0002ch,	00160h	; Voice. Tune. Speed	; 030
+	dw	MVC11,	00000h,	00100h	; Voice. Tune. Speed	; 031
+	dw	MVC01,	00000h,	00100h	; Voice. Tune. Speed	; 032
+	dw	MVC01,	0002ch,	00140h	; Voice. Tune. Speed	; 033
+	dw	MVC10,	00000h,	00100h	; Voice. Tune. Speed	; 034
+	dw	MVC26,	000cch,	00081h	; Voice. Tune. Speed	; 035
+	dw	MVC26,	000aah,	000a0h	; Voice. Tune. Speed	; 036
+	dw	MVC38,	0004fh,	00090h	; Voice. Tune. Speed	; 037
+	dw	MVC38,	00088h,	000e0h	; Voice. Tune. Speed	; 038
+	dw	MVC15,	000ffh,	000b5h	; Voice. Tune. Speed	; 039 purin
+	dw	MVC15,	00068h,	000e0h	; Voice. Tune. Speed	; 040 pukurin
+	dw	MVC30,	000e0h,	00100h	; Voice. Tune. Speed	; 041
+	dw	MVC30,	000fah,	00100h	; Voice. Tune. Speed	; 042
+	dw	MVC09,	000ddh,	00081h	; Voice. Tune. Speed	; 043
+	dw	MVC09,	000aah,	000c0h	; Voice. Tune. Speed	; 044
+	dw	MVC37,	00022h,	0017fh	; Voice. Tune. Speed	; 045
+	dw	MVC31,	00020h,	00160h	; Voice. Tune. Speed	; 046
+	dw	MVC31,	00042h,	0017fh	; Voice. Tune. Speed	; 047
+	dw	MVC27,	00044h,	000c0h	; Voice. Tune. Speed	; 048
+	dw	MVC27,	00029h,	00100h	; Voice. Tune. Speed	; 049
+	dw	MVC12,	000aah,	00081h	; Voice. Tune. Speed	; 050
+	dw	MVC12,	0002ah,	00090h	; Voice. Tune. Speed	; 051
+	dw	MVC26,	00077h,	00090h	; Voice. Tune. Speed	; 052
+	dw	MVC26,	00099h,	0017fh	; Voice. Tune. Speed	; 053
+	dw	MVC35,	00020h,	000e0h	; Voice. Tune. Speed	; 054
+	dw	MVC35,	000ffh,	000c0h	; Voice. Tune. Speed	; 055
+	dw	MVC11,	000ddh,	000e0h	; Voice. Tune. Speed	; 056
+	dw	MVC11,	000afh,	000c0h	; Voice. Tune. Speed	; 057
+	dw	MVC32,	00020h,	000c0h	; Voice. Tune. Speed	; 058
+	dw	MVC22,	00000h,	00100h	; Voice. Tune. Speed	; 059
+	dw	MVC15,	000ffh,	0017fh	; Voice. Tune. Speed	; 060 nyoromo
+	dw	MVC15,	00077h,	000e0h	; Voice. Tune. Speed	; 061 nyorozo
+	dw	MVC15,	00000h,	0017fh	; Voice. Tune. Speed	; 062 nyurobon
+	dw	MVC29,	000c0h,	00081h	; Voice. Tune. Speed	; 063
+	dw	MVC29,	000a8h,	00140h	; Voice. Tune. Speed	; 064
+	dw	MVC29,	00098h,	0017fh	; Voice. Tune. Speed	; 065
+	dw	MVC32,	000eeh,	00081h	; Voice. Tune. Speed	; 066
+	dw	MVC32,	00048h,	000e0h	; Voice. Tune. Speed	; 067
+	dw	MVC32,	00008h,	00140h	; Voice. Tune. Speed	; 068
+	dw	MVC35,	00055h,	00081h	; Voice. Tune. Speed	; 069
+	dw	MVC39,	00044h,	000a0h	; Voice. Tune. Speed	; 070
+	dw	MVC39,	00066h,	0014ch	; Voice. Tune. Speed	; 071
+	dw	MVC27,	00000h,	00100h	; Voice. Tune. Speed	; 072
+	dw	MVC27,	000eeh,	0017fh	; Voice. Tune. Speed	; 073
+	dw	MVC38,	000f0h,	00090h	; Voice. Tune. Speed	; 074
+	dw	MVC38,	00000h,	00100h	; Voice. Tune. Speed	; 075
+	dw	MVC19,	000e0h,	000c0h	; Voice. Tune. Speed	; 076
+	dw	MVC39,	00000h,	00100h	; Voice. Tune. Speed	; 077
+	dw	MVC39,	00020h,	00140h	; Voice. Tune. Speed	; 078
+	dw	MVC03,	00000h,	00100h	; Voice. Tune. Speed	; 079
+	dw	MVC32,	00000h,	00100h	; Voice. Tune. Speed	; 080
+	dw	MVC29,	00080h,	000e0h	; Voice. Tune. Speed	; 081
+	dw	MVC29,	00020h,	00140h	; Voice. Tune. Speed	; 082
+	dw	MVC17,	000ddh,	00081h	; Voice. Tune. Speed	; 083 kamonegi
+	dw	MVC12,	000bbh,	00081h	; Voice. Tune. Speed	; 084
+	dw	MVC12,	00099h,	000a0h	; Voice. Tune. Speed	; 085
+	dw	MVC13,	00088h,	00140h	; Voice. Tune. Speed	; 086
+	dw	MVC13,	00023h,	0017fh	; Voice. Tune. Speed	; 087
+	dw	MVC06,	00000h,	00100h	; Voice. Tune. Speed	; 088
+	dw	MVC08,	000efh,	0017fh	; Voice. Tune. Speed	; 089
+	dw	MVC25,	00000h,	00100h	; Voice. Tune. Speed	; 090
+	dw	MVC25,	0006fh,	00160h	; Voice. Tune. Speed	; 091
+	dw	MVC29,	00000h,	00100h	; Voice. Tune. Speed	; 092
+	dw	MVC29,	00030h,	000c0h	; Voice. Tune. Speed	; 093
+	dw	MVC08,	00000h,	0017fh	; Voice. Tune. Speed	; 094
+	dw	MVC24,	000ffh,	00140h	; Voice. Tune. Speed	; 095
+	dw	MVC14,	00088h,	000a0h	; Voice. Tune. Speed	; 096
+	dw	MVC14,	000eeh,	000c0h	; Voice. Tune. Speed	; 097
+	dw	MVC34,	00020h,	00160h	; Voice. Tune. Speed	; 098
+	dw	MVC34,	000eeh,	00160h	; Voice. Tune. Speed	; 099
+	dw	MVC07,	000edh,	00100h	; Voice. Tune. Speed	; 100
+	dw	MVC07,	000a8h,	00110h	; Voice. Tune. Speed	; 101
+	dw	MVC12,	00000h,	00100h	; Voice. Tune. Speed	; 102
+	dw	MVC14,	00000h,	00100h	; Voice. Tune. Speed	; 103
+	dw	MVC26,	00000h,	00100h	; Voice. Tune. Speed	; 104
+	dw	MVC09,	0004fh,	000e0h	; Voice. Tune. Speed	; 105
+	dw	MVC19,	00080h,	00140h	; Voice. Tune. Speed	; 106
+	dw	MVC13,	000eeh,	00140h	; Voice. Tune. Speed	; 107
+	dw	MVC13,	00000h,	00100h	; Voice. Tune. Speed	; 108
+	dw	MVC19,	000e6h,	0015dh	; Voice. Tune. Speed	; 109
+	dw	MVC19,	000ffh,	0017fh	; Voice. Tune. Speed	; 110
+	dw	MVC05,	00000h,	00100h	; Voice. Tune. Speed	; 111
+	dw	MVC18,	00000h,	00100h	; Voice. Tune. Speed	; 112
+	dw	MVC21,	0000ah,	00140h	; Voice. Tune. Speed	; 113
+	dw	MVC19,	00000h,	00100h	; Voice. Tune. Speed	; 114
+	dw	MVC04,	00000h,	00100h	; Voice. Tune. Speed	; 115
+	dw	MVC26,	00099h,	00090h	; Voice. Tune. Speed	; 116
+	dw	MVC26,	0003ch,	00081h	; Voice. Tune. Speed	; 117
+	dw	MVC23,	00080h,	000c0h	; Voice. Tune. Speed	; 118
+	dw	MVC23,	00010h,	0017fh	; Voice. Tune. Speed	; 119
+	dw	MVC31,	00002h,	000a0h	; Voice. Tune. Speed	; 120
+	dw	MVC31,	00000h,	00100h	; Voice. Tune. Speed	; 121
+	dw	MVC34,	00008h,	000c0h	; Voice. Tune. Speed	; 122
+	dw	MVC23,	00000h,	00100h	; Voice. Tune. Speed	; 123
+	dw	MVC14,	000ffh,	0017fh	; Voice. Tune. Speed	; 124
+	dw	MVC07,	0008fh,	0017fh	; Voice. Tune. Speed	; 125 elebuu
+	dw	MVC05,	000ffh,	000b0h	; Voice. Tune. Speed	; 126
+	dw	MVC21,	00000h,	00100h	; Voice. Tune. Speed	; 127
+	dw	MVC30,	00011h,	000c0h	; Voice. Tune. Speed	; 128
+	dw	MVC24,	00080h,	00080h	; Voice. Tune. Speed	; 129
+	dw	MVC24,	00000h,	00100h	; Voice. Tune. Speed	; 130
+	dw	MVC28,	00000h,	00100h	; Voice. Tune. Speed	; 131
+	dw	MVC15,	000ffh,	0017fh	; Voice. Tune. Speed	; 132 metamon
+	dw	MVC27,	00088h,	000e0h	; Voice. Tune. Speed	; 133
+	dw	MVC27,	000aah,	0017fh	; Voice. Tune. Speed	; 134
+	dw	MVC27,	0003dh,	00100h	; Voice. Tune. Speed	; 135
+	dw	MVC27,	00010h,	000a0h	; Voice. Tune. Speed	; 136
+	dw	MVC39,	000aah,	0017fh	; Voice. Tune. Speed	; 137
+	dw	MVC32,	000f0h,	00081h	; Voice. Tune. Speed	; 138
+	dw	MVC32,	000ffh,	000c0h	; Voice. Tune. Speed	; 139
+	dw	MVC23,	000bbh,	000c0h	; Voice. Tune. Speed	; 140
+	dw	MVC25,	000eeh,	00081h	; Voice. Tune. Speed	; 141
+	dw	MVC37,	00020h,	00170h	; Voice. Tune. Speed	; 142
+	dw	MVC06,	00055h,	00081h	; Voice. Tune. Speed	; 143
+	dw	MVC10,	00080h,	000c0h	; Voice. Tune. Speed	; 144
+	dw	MVC25,	000ffh,	00100h	; Voice. Tune. Speed	; 145
+	dw	MVC10,	000f8h,	000c0h	; Voice. Tune. Speed	; 146
+	dw	MVC16,	00060h,	000c0h	; Voice. Tune. Speed	; 147
+	dw	MVC16,	00040h,	00100h	; Voice. Tune. Speed	; 148
+	dw	MVC16,	0003ch,	00140h	; Voice. Tune. Speed	; 149
+	dw	MVC31,	00099h,	0017fh	; Voice. Tune. Speed	; 150
+	dw	MVC31,	000eeh,	0017fh	; Voice. Tune. Speed	; 151 myu
 
 
-	dw	MVC62, 0fff0h, 000b0h	; Voice. Tune. Speed	;chikolino
-	dw	MVC62, 0ffdeh, 00120h	; Voice. Tune. Speed	;beireave
-	dw	MVC62, 0ff49h, 00200h	; Voice. Tune. Speed	;meganium
-	dw	MVC61, 00347h, 00080h	; Voice. Tune. Speed	;hinoarashi
-	dw	MVC61, 00321h, 00120h	; Voice. Tune. Speed	;magmaarashi
-	dw	MVC71, 00f00h, 000d4h	; Voice. Tune. Speed	;bakufuun
-	dw	MVC63, 0046ch, 000e8h	; Voice. Tune. Speed	;waninoko
-	dw	MVC63, 00440h, 00110h	; Voice. Tune. Speed	;arigeitu
-	dw	MVC63, 003fch, 00180h	; Voice. Tune. Speed	;odail		;160
-	dw	MVC59, 0008ah, 000b8h	; Voice. Tune. Speed	;morten
-	dw	MVC59, 0006bh, 00102h	; Voice. Tune. Speed	;dakuten
-	dw	MVC58, 00091h, 000d8h	; Voice. Tune. Speed	;hoho
-	dw	MVC58, 00000h, 001a0h	; Voice. Tune. Speed	;yoruno
-	dw	MVC67, 00000h, 000deh	; Voice. Tune. Speed	;lediba
-	dw	MVC67, 0ff6ah, 00138h	; Voice. Tune. Speed	;mitsubosi
-	dw	MVC52, 00011h, 00200h	; Voice. Tune. Speed	;kokumo
-	dw	MVC52, 0ff52h, 001e2h	; Voice. Tune. Speed	;2head
-	dw	MVC30, 0fff0h, 00140h	; Voice. Tune. Speed	;xing
-	dw	MVC61, 003c9h, 00140h	; Voice. Tune. Speed	;tyonti-
-	dw	MVC61, 002d0h, 00110h	; Voice. Tune. Speed	;ranta-n
-	dw	MVC77, 00000h, 00140h	; Voice. Tune. Speed	;pichu
-	dw	MVC65, 00061h, 00091h	; Voice. Tune. Speed	;pi
-	dw	MVC62, 000e8h, 000e8h	; Voice. Tune. Speed	;pupurin
-	dw	MVC53, 00010h, 00100h	; Voice. Tune. Speed	;togepi
-	dw	MVC57, 0003bh, 00038h	; Voice. Tune. Speed	;togetic
-	dw	MVC72, 0ff99h, 00100h	; Voice. Tune. Speed	;neiti
-	dw	MVC72, 0ff59h, 00168h	; Voice. Tune. Speed	;neitio
-	dw	MVC56, 00022h, 000d8h	; Voice. Tune. Speed	;patime
-	dw	MVC56, 0fff9h, 00180h	; Voice. Tune. Speed	;mokoko		;180
-	dw	MVC75, 0ff84h, 000e8h	; Voice. Tune. Speed	;denryu
-	dw	MVC65, 00084h, 00150h	; Voice. Tune. Speed	;kireihana
-	dw	MVC51, 0011bh, 00120h	; Voice. Tune. Speed	;mariru
-	dw	MVC51, 000b6h, 00180h	; Voice. Tune. Speed	;mariruri
-	dw	MVC65, 00f40h, 00180h	; Voice. Tune. Speed	;usokki
-	dw	MVC65, 0fd5dh, 001c8h	; Voice. Tune. Speed	;nyorotono
-	dw	MVC65, 0003bh, 000c8h	; Voice. Tune. Speed	;haneko
-	dw	MVC65, 00027h, 00138h	; Voice. Tune. Speed	;poponeko
-	dw	MVC65, 00000h, 00180h	; Voice. Tune. Speed	;wataneko
-	dw	MVC78, 0ffafh, 000e8h	; Voice. Tune. Speed	;eibamu
-	dw	MVC51, 0012bh, 000b8h	; Voice. Tune. Speed	;himanattsu
-	dw	MVC74, 0ffe0h, 00180h	; Voice. Tune. Speed	;sanny
-	dw	MVC63, 00031h, 000c8h	; Voice. Tune. Speed	;yanmanma
-	dw	MVC69, 00093h, 000afh	; Voice. Tune. Speed	;upa-
-	dw	MVC69, 0ff3ah, 00140h	; Voice. Tune. Speed	;nuo-
-	dw	MVC78, 000a2h, 00140h	; Voice. Tune. Speed	;efi
-	dw	MVC27, 0ff17h, 000f0h	; Voice. Tune. Speed	;blacky
-	dw	MVC51, 0ffe1h, 00180h	; Voice. Tune. Speed	;yamikarasu
-	dw	MVC60, 00104h, 00200h	; Voice. Tune. Speed	;yadoking
-	dw	MVC58, 00130h, 000e8h	; Voice. Tune. Speed	;norowara	;200
-	dw	MVC58, 00162h, 00100h	; Voice. Tune. Speed	;annon
-	dw	MVC75, 0027bh, 00144h	; Voice. Tune. Speed	;kagebo-zu
-	dw	MVC54, 00041h, 00200h	; Voice. Tune. Speed	;kirinriki
-	dw	MVC60, 00080h, 00100h	; Voice. Tune. Speed	;kunugidama
-	dw	MVC60, 00000h, 00180h	; Voice. Tune. Speed	;hirakunugi
-	dw	MVC79, 001c4h, 00100h	; Voice. Tune. Speed	;nokocchi
-	dw	MVC64, 0fefeh, 00100h	; Voice. Tune. Speed	;guraiga-
-	dw	MVC71, 000efh, 000f7h	; Voice. Tune. Speed	;haganeru
-	dw	MVC79, 00112h, 000e8h	; Voice. Tune. Speed	;blue
-	dw	MVC79, 00000h, 00180h	; Voice. Tune. Speed	;gulanbull	;210
-	dw	MVC60, 00160h, 000e0h	; Voice. Tune. Speed	;pukuu
-	dw	MVC75, 00000h, 00160h	; Voice. Tune. Speed	;sizasu
-	dw	MVC79, 00290h, 000a8h	; Voice. Tune. Speed	;tsubotsubo
-	dw	MVC75, 00035h, 000e0h	; Voice. Tune. Speed	;helacross
-	dw	MVC69, 00053h, 000afh	; Voice. Tune. Speed	;nyura
-	dw	MVC73, 007a2h, 0006eh	; Voice. Tune. Speed	;kokuma
-	dw	MVC73, 00640h, 000d8h	; Voice. Tune. Speed	;ringuma
-	dw	MVC66, 0fe28h, 00140h	; Voice. Tune. Speed	;magmag
-	dw	MVC76, 0fdf3h, 001c0h	; Voice. Tune. Speed	;magukarugo
-	dw	MVC61, 001feh, 00140h	; Voice. Tune. Speed	;urimu-		;220
-	dw	MVC76, 0fef7h, 00100h	; Voice. Tune. Speed	;inomu
-	dw	MVC76, 000a1h, 000e8h	; Voice. Tune. Speed	;sani-go
-	dw	MVC74, 0000dh, 00100h	; Voice. Tune. Speed	;teppouo
-	dw	MVC63, 00000h, 00180h	; Voice. Tune. Speed	;okutan
-	dw	MVC73, 00002h, 0006ah	; Voice. Tune. Speed	;gift
-	dw	MVC70, 0ff42h, 000f0h	; Voice. Tune. Speed	;haneei
-	dw	MVC75, 008a9h, 00180h	; Voice. Tune. Speed	;yoroidori
-	dw	MVC61, 00039h, 00140h	; Voice. Tune. Speed	;devil
-	dw	MVC63, 0fef6h, 00100h	; Voice. Tune. Speed	;berger
-	dw	MVC66, 002fbh, 00100h	; Voice. Tune. Speed	;kingdora
-	dw	MVC59, 00048h, 00230h	; Voice. Tune. Speed	;paon
-	dw	MVC80, 00000h, 001a0h	; Voice. Tune. Speed	;donfan
-	dw	MVC54, 00073h, 00240h	; Voice. Tune. Speed	;porygon2
-	dw	MVC78, 0fea0h, 00180h	; Voice. Tune. Speed	;mejika
-	dw	MVC77, 0fde6h, 001f0h	; Voice. Tune. Speed	;peinter
-	dw	MVC78, 0002ch, 00108h	; Voice. Tune. Speed	;gongu
-	dw	MVC66, 00000h, 00100h	; Voice. Tune. Speed	;kapoera
-	dw	MVC51, 00068h, 00100h	; Voice. Tune. Speed	;lip
-	dw	MVC74, 0fd28h, 000b4h	; Voice. Tune. Speed	;elekid
-	dw	MVC73, 00176h, 0003ah	; Voice. Tune. Speed	;bubie		;240
-	dw	MVC64, 0fe33h, 001a0h	; Voice. Tune. Speed	;milutank
-	dw	MVC60, 00293h, 00140h	; Voice. Tune. Speed	;happy
-	dw	MVC55, 0022eh, 00120h	; Voice. Tune. Speed	;rai
-	dw	MVC68, 00000h, 001a0h	; Voice. Tune. Speed	;entei
-	dw	MVC76, 00000h, 00180h	; Voice. Tune. Speed	;suikun
-	dw	MVC55, 0005fh, 000d0h	; Voice. Tune. Speed	;igaru
-	dw	MVC52, 0fe25h, 00150h	; Voice. Tune. Speed	;sanagirasu
-	dw	MVC55, 0ff00h, 00180h	; Voice. Tune. Speed	;girasu
-	dw	MVC71, 00000h, 00100h	; Voice. Tune. Speed	;lugia
-	dw	MVC78, 00000h, 00180h	; Voice. Tune. Speed	;houou		;250
-	dw	MVC68, 0014ah, 00111h	; Voice. Tune. Speed	;serebi-
+	dw	MVC62,	0fff0h,	000b0h	; Voice. Tune. Speed	;chikolino
+	dw	MVC62,	0ffdeh,	00120h	; Voice. Tune. Speed	;beireave
+	dw	MVC62,	0ff49h,	00200h	; Voice. Tune. Speed	;meganium
+	dw	MVC61,	00347h,	00080h	; Voice. Tune. Speed	;hinoarashi
+	dw	MVC61,	00321h,	00120h	; Voice. Tune. Speed	;magmaarashi
+	dw	MVC71,	00f00h,	000d4h	; Voice. Tune. Speed	;bakufuun
+	dw	MVC63,	0046ch,	000e8h	; Voice. Tune. Speed	;waninoko
+	dw	MVC63,	00440h,	00110h	; Voice. Tune. Speed	;arigeitu
+	dw	MVC63,	003fch,	00180h	; Voice. Tune. Speed	;odail		;160
+	dw	MVC59,	0008ah,	000b8h	; Voice. Tune. Speed	;morten
+	dw	MVC59,	0006bh,	00102h	; Voice. Tune. Speed	;dakuten
+	dw	MVC58,	00091h,	000d8h	; Voice. Tune. Speed	;hoho
+	dw	MVC58,	00000h,	001a0h	; Voice. Tune. Speed	;yoruno
+	dw	MVC67,	00000h,	000deh	; Voice. Tune. Speed	;lediba
+	dw	MVC67,	0ff6ah,	00138h	; Voice. Tune. Speed	;mitsubosi
+	dw	MVC52,	00011h,	00200h	; Voice. Tune. Speed	;kokumo
+	dw	MVC52,	0ff52h,	001e2h	; Voice. Tune. Speed	;2head
+	dw	MVC30,	0fff0h,	00140h	; Voice. Tune. Speed	;xing
+	dw	MVC61,	003c9h,	00140h	; Voice. Tune. Speed	;tyonti-
+	dw	MVC61,	002d0h,	00110h	; Voice. Tune. Speed	;ranta-n
+	dw	MVC77,	00000h,	00140h	; Voice. Tune. Speed	;pichu
+	dw	MVC65,	00061h,	00091h	; Voice. Tune. Speed	;pi
+	dw	MVC62,	000e8h,	000e8h	; Voice. Tune. Speed	;pupurin
+	dw	MVC53,	00010h,	00100h	; Voice. Tune. Speed	;togepi
+	dw	MVC57,	0003bh,	00038h	; Voice. Tune. Speed	;togetic
+	dw	MVC72,	0ff99h,	00100h	; Voice. Tune. Speed	;neiti
+	dw	MVC72,	0ff59h,	00168h	; Voice. Tune. Speed	;neitio
+	dw	MVC56,	00022h,	000d8h	; Voice. Tune. Speed	;patime
+	dw	MVC56,	0fff9h,	00180h	; Voice. Tune. Speed	;mokoko		;180
+	dw	MVC75,	0ff84h,	000e8h	; Voice. Tune. Speed	;denryu
+	dw	MVC65,	00084h,	00150h	; Voice. Tune. Speed	;kireihana
+	dw	MVC51,	0011bh,	00120h	; Voice. Tune. Speed	;mariru
+	dw	MVC51,	000b6h,	00180h	; Voice. Tune. Speed	;mariruri
+	dw	MVC65,	00f40h,	00180h	; Voice. Tune. Speed	;usokki
+	dw	MVC65,	0fd5dh,	001c8h	; Voice. Tune. Speed	;nyorotono
+	dw	MVC65,	0003bh,	000c8h	; Voice. Tune. Speed	;haneko
+	dw	MVC65,	00027h,	00138h	; Voice. Tune. Speed	;poponeko
+	dw	MVC65,	00000h,	00180h	; Voice. Tune. Speed	;wataneko
+	dw	MVC78,	0ffafh,	000e8h	; Voice. Tune. Speed	;eibamu
+	dw	MVC51,	0012bh,	000b8h	; Voice. Tune. Speed	;himanattsu
+	dw	MVC74,	0ffe0h,	00180h	; Voice. Tune. Speed	;sanny
+	dw	MVC63,	00031h,	000c8h	; Voice. Tune. Speed	;yanmanma
+	dw	MVC69,	00093h,	000afh	; Voice. Tune. Speed	;upa-
+	dw	MVC69,	0ff3ah,	00140h	; Voice. Tune. Speed	;nuo-
+	dw	MVC78,	000a2h,	00140h	; Voice. Tune. Speed	;efi
+	dw	MVC27,	0ff17h,	000f0h	; Voice. Tune. Speed	;blacky
+	dw	MVC51,	0ffe1h,	00180h	; Voice. Tune. Speed	;yamikarasu
+	dw	MVC60,	00104h,	00200h	; Voice. Tune. Speed	;yadoking
+	dw	MVC58,	00130h,	000e8h	; Voice. Tune. Speed	;norowara	;200
+	dw	MVC58,	00162h,	00100h	; Voice. Tune. Speed	;annon
+	dw	MVC75,	0027bh,	00144h	; Voice. Tune. Speed	;kagebo-zu
+	dw	MVC54,	00041h,	00200h	; Voice. Tune. Speed	;kirinriki
+	dw	MVC60,	00080h,	00100h	; Voice. Tune. Speed	;kunugidama
+	dw	MVC60,	00000h,	00180h	; Voice. Tune. Speed	;hirakunugi
+	dw	MVC79,	001c4h,	00100h	; Voice. Tune. Speed	;nokocchi
+	dw	MVC64,	0fefeh,	00100h	; Voice. Tune. Speed	;guraiga-
+	dw	MVC71,	000efh,	000f7h	; Voice. Tune. Speed	;haganeru
+	dw	MVC79,	00112h,	000e8h	; Voice. Tune. Speed	;blue
+	dw	MVC79,	00000h,	00180h	; Voice. Tune. Speed	;gulanbull	;210
+	dw	MVC60,	00160h,	000e0h	; Voice. Tune. Speed	;pukuu
+	dw	MVC75,	00000h,	00160h	; Voice. Tune. Speed	;sizasu
+	dw	MVC79,	00290h,	000a8h	; Voice. Tune. Speed	;tsubotsubo
+	dw	MVC75,	00035h,	000e0h	; Voice. Tune. Speed	;helacross
+	dw	MVC69,	00053h,	000afh	; Voice. Tune. Speed	;nyura
+	dw	MVC73,	007a2h,	0006eh	; Voice. Tune. Speed	;kokuma
+	dw	MVC73,	00640h,	000d8h	; Voice. Tune. Speed	;ringuma
+	dw	MVC66,	0fe28h,	00140h	; Voice. Tune. Speed	;magmag
+	dw	MVC76,	0fdf3h,	001c0h	; Voice. Tune. Speed	;magukarugo
+	dw	MVC61,	001feh,	00140h	; Voice. Tune. Speed	;urimu-		;220
+	dw	MVC76,	0fef7h,	00100h	; Voice. Tune. Speed	;inomu
+	dw	MVC76,	000a1h,	000e8h	; Voice. Tune. Speed	;sani-go
+	dw	MVC74,	0000dh,	00100h	; Voice. Tune. Speed	;teppouo
+	dw	MVC63,	00000h,	00180h	; Voice. Tune. Speed	;okutan
+	dw	MVC73,	00002h,	0006ah	; Voice. Tune. Speed	;gift
+	dw	MVC70,	0ff42h,	000f0h	; Voice. Tune. Speed	;haneei
+	dw	MVC75,	008a9h,	00180h	; Voice. Tune. Speed	;yoroidori
+	dw	MVC61,	00039h,	00140h	; Voice. Tune. Speed	;devil
+	dw	MVC63,	0fef6h,	00100h	; Voice. Tune. Speed	;berger
+	dw	MVC66,	002fbh,	00100h	; Voice. Tune. Speed	;kingdora
+	dw	MVC59,	00048h,	00230h	; Voice. Tune. Speed	;paon
+	dw	MVC80,	00000h,	001a0h	; Voice. Tune. Speed	;donfan
+	dw	MVC54,	00073h,	00240h	; Voice. Tune. Speed	;porygon2
+	dw	MVC78,	0fea0h,	00180h	; Voice. Tune. Speed	;mejika
+	dw	MVC77,	0fde6h,	001f0h	; Voice. Tune. Speed	;peinter
+	dw	MVC78,	0002ch,	00108h	; Voice. Tune. Speed	;gongu
+	dw	MVC66,	00000h,	00100h	; Voice. Tune. Speed	;kapoera
+	dw	MVC51,	00068h,	00100h	; Voice. Tune. Speed	;lip
+	dw	MVC74,	0fd28h,	000b4h	; Voice. Tune. Speed	;elekid
+	dw	MVC73,	00176h,	0003ah	; Voice. Tune. Speed	;bubie		;240
+	dw	MVC64,	0fe33h,	001a0h	; Voice. Tune. Speed	;milutank
+	dw	MVC60,	00293h,	00140h	; Voice. Tune. Speed	;happy
+	dw	MVC55,	0022eh,	00120h	; Voice. Tune. Speed	;rai
+	dw	MVC68,	00000h,	001a0h	; Voice. Tune. Speed	;entei
+	dw	MVC76,	00000h,	00180h	; Voice. Tune. Speed	;suikun
+	dw	MVC55,	0005fh,	000d0h	; Voice. Tune. Speed	;igaru
+	dw	MVC52,	0fe25h,	00150h	; Voice. Tune. Speed	;sanagirasu
+	dw	MVC55,	0ff00h,	00180h	; Voice. Tune. Speed	;girasu
+	dw	MVC71,	00000h,	00100h	; Voice. Tune. Speed	;lugia
+	dw	MVC78,	00000h,	00180h	; Voice. Tune. Speed	;houou		;250
+	dw	MVC68,	0014ah,	00111h	; Voice. Tune. Speed	;serebi-
 
 
-	dw	MVC01, 00000h, 00000h	; Voice. Tune. Speed	;
-	dw	MVC01, 00000h, 00000h	; Voice. Tune. Speed	;
-	dw	MVC01, 00000h, 00000h	; Voice. Tune. Speed	;
-	dw	MVC01, 00000h, 00000h	; Voice. Tune. Speed	;
-	dw	MVC01, 00000h, 00000h	; Voice. Tune. Speed	;
+;	dw	MVC01,	00000h,	00000h	; Voice. Tune. Speed	;
+;	dw	MVC01,	00000h,	00000h	; Voice. Tune. Speed	;
+;	dw	MVC01,	00000h,	00000h	; Voice. Tune. Speed	;
+;	dw	MVC01,	00000h,	00000h	; Voice. Tune. Speed	;
+;	dw	MVC01,	00000h,	00000h	; Voice. Tune. Speed	;
 
 
-	dw	MVC64, 00070h, 000a0h	; Voice. Tune. Speed	;kochard
-	dw	MVC64, 0005ch, 000c0h	; Voice. Tune. Speed	;kogotique
-	dw	MVC65, 00013h, 001c0h	; Voice. Tune. Speed	;kogorden
-	dw	MVC73, 0001ch, 00000h	; Voice. Tune. Speed	;honoguma
-	dw	MVC73, 006e7h, 00080h	; Voice. Tune. Speed	;bolber
-	dw	MVC71, 0072bh, 000d4h	; Voice. Tune. Speed	;dynabea
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;krooz
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
-	dw	MVC82, 00000h, 00100h	; Voice. Tune. Speed	;
+	dw	MVC111,	00070h,	000a0h	; Voice. Tune. Speed	;kochard
+	dw	MVC111,	0001ch,	000c0h	; Voice. Tune. Speed	;kogotique
+	dw	MVC88,	000cdh,	00100h	; Voice. Tune. Speed	;kogorden
+	dw	MVC83,	00000h,	001f0h	; Voice. Tune. Speed	;honoguma
+	dw	MVC83,	0ffcbh,	00270h	; Voice. Tune. Speed	;bolber
+	dw	MVC86,	000e0h,	00270h	; Voice. Tune. Speed	;dynabea
+	dw	MVC90,	0ff80h,	00110h	; Voice. Tune. Speed	;krooz
+	dw	MVC86,	00122h,	0013bh	; Voice. Tune. Speed	;aqua
+	dw	MVC86,	00000h,	001bfh	; Voice. Tune. Speed	;aquaria
+	dw	MVC112,	00023h,	00048h	; Voice. Tune. Speed	;croben
+	dw	MVC112,	00000h,	00183h	; Voice. Tune. Speed	;astron
+	dw	MVC88,	0ff6fh,	00268h	; Voice. Tune. Speed	;yolsbel
+	dw	MVC96,	0fff8h,	000c5h	; Voice. Tune. Speed	;chi'sakyu
+	dw	MVC96,	0ff85h,	0010fh	; Voice. Tune. Speed	;gyusakyu
+	dw	MVC93,	0ff70h,	00120h	; Voice. Tune. Speed	;arbakyu
+	dw	MVC111,	0ff86h,	00100h	; Voice. Tune. Speed	;wilokyu
+	dw	MVC87,	00070h,	00060h	; Voice. Tune. Speed	;mikon
+	dw	MVC86,	00060h,	00100h	; Voice. Tune. Speed	;monja
+	dw	MVC81,	0fe01h,	000e0h	; Voice. Tune. Speed	;haniklage
+	dw	MVC92,	00000h,	00100h	; Voice. Tune. Speed	;shibirefugu
+	dw	MVC92,	002f0h,	00087h	; Voice. Tune. Speed	;amelex
+	dw	MVC95,	0fe36h,	001ach	; Voice. Tune. Speed	;handy
+	dw	MVC103,	00020h,	0017eh	; Voice. Tune. Speed	;quailter
+	dw	MVC103,	0000ah,	001ffh	; Voice. Tune. Speed	;g-clef
+	dw	MVC83,	00089h,	00100h	; Voice. Tune. Speed	;gyopin
+	dw	MVC106,	0ffc0h,	00180h	; Voice. Tune. Speed	;mountobi
+	dw	MVC86,	00190h,	000a0h	; Voice. Tune. Speed	;molaban
+	dw	MVC92,	00090h,	000a0h	; Voice. Tune. Speed	;ikari
+	dw	MVC86,	0fe83h,	00187h	; Voice. Tune. Speed	;grotes
+	dw	MVC99,	000e7h,	000c0h	; Voice. Tune. Speed	;sato
+	dw	MVC118,	00050h,	00100h	; Voice. Tune. Speed	;para
+	dw	MVC100,	0ff01h,	00080h	; Voice. Tune. Speed	;tiedown
+	dw	MVC85,	0002fh,	00225h	; Voice. Tune. Speed	;metabeak
+	dw	MVC113,	0003ah,	00100h	; Voice. Tune. Speed	;crenest
+	dw	MVC82,	001cfh,	00079h	; Voice. Tune. Speed	;animon
+	dw	MVC89,	000a0h,	00100h	; Voice. Tune. Speed	;hinarz
+	dw	MVC113,	0ffd8h,	00084h	; Voice. Tune. Speed	;sansija
+	dw	MVC106,	0001eh,	00130h	; Voice. Tune. Speed	;tealank
+	dw	MVC54,	00030h,	00100h	; Voice. Tune. Speed	;sayameyasa
+	dw	MVC92,	00290h,	000c4h	; Voice. Tune. Speed	;rakuki
+	dw	MVC90,	00090h,	000a0h	; Voice. Tune. Speed	;kornya
+	dw	MVC90,	0001ch,	00100h	; Voice. Tune. Speed	;linlin
+	dw	MVC90,	0ffeah,	00140h	; Voice. Tune. Speed	;berrun
+	dw	MVC113,	00084h,	000d0h	; Voice. Tune. Speed	;starelo
+	dw	MVC101,	0febfh,	001aeh	; Voice. Tune. Speed	;jurayon
+	dw	MVC93,	00056h,	000abh	; Voice. Tune. Speed	;ichikari
+	dw	MVC101,	0fffeh,	000a0h	; Voice. Tune. Speed	;aryugle
+	dw	MVC95,	0fed4h,	00192h	; Voice. Tune. Speed	;ledjury
+	dw	MVC94,	0ffd1h,	00140h	; Voice. Tune. Speed	;puchicorn
+	dw	MVC113,	000a4h,	000f0h	; Voice. Tune. Speed	;whisper
+	dw	MVC106,	000e0h,	00120h	; Voice. Tune. Speed	;klanger
+	dw	MVC109,	000c0h,	000a5h	; Voice. Tune. Speed	;tarban
+	dw	MVC91,	0fef8h,	00140h	; Voice. Tune. Speed	;bettobaby
+	dw	MVC92,	0021fh,	0012eh	; Voice. Tune. Speed	;memoryryu
+	dw	MVC102,	000d0h,	000aah	; Voice. Tune. Speed	;kiklaud
+	dw	MVC82,	00172h,	00080h	; Voice. Tune. Speed	;pudi
+	dw	MVC105,	00000h,	00100h	; Voice. Tune. Speed	;ringokku
+	dw	MVC114,	00040h,	000a0h	; Voice. Tune. Speed	;lakaslip
+	dw	MVC100,	00000h,	00100h	; Voice. Tune. Speed	;mafelt
+	dw	MVC99,	00052h,	000bbh	; Voice. Tune. Speed	;tyara
+	dw	MVC81,	00028h,	000abh	; Voice. Tune. Speed	;gintomi
+	dw	MVC107,	0008ch,	000c3h	; Voice. Tune. Speed	;tansokoshi
+	dw	MVC60,	0023ch,	00100h	; Voice. Tune. Speed	;tsubomitto
+	dw	MVC111,	0ff33h,	00156h	; Voice. Tune. Speed	;milcalf
+	dw	MVC113,	00000h,	00100h	; Voice. Tune. Speed	;bomseeker
+	dw	MVC96,	0ffe8h,	000d0h	; Voice. Tune. Speed	;delflap
+	dw	MVC92,	00310h,	00079h	; Voice. Tune. Speed	;kotora
+	dw	MVC92,	00160h,	00174h	; Voice. Tune. Speed	;raitora
+	dw	MVC72,	00000h,	00100h	; Voice. Tune. Speed	;madam
+	dw	MVC114,	00100h,	00030h	; Voice. Tune. Speed	;norowara
+	dw	MVC114,	000cch,	00060h	; Voice. Tune. Speed	;kyonpan
+	dw	MVC85,	0ffb0h,	00134h	; Voice. Tune. Speed	;karasflee
+	dw	MVC115,	0022ch,	000c1h	; Voice. Tune. Speed	;chiryoteki
+	dw	MVC100,	0fe93h,	00150h	; Voice. Tune. Speed	;haeka
+	dw	MVC100,	0fd93h,	00190h	; Voice. Tune. Speed	;haekumo
+	dw	MVC75,	0022bh,	00150h	; Voice. Tune. Speed	;plax
+	dw	MVC113,	0fef0h,	00100h	; Voice. Tune. Speed	;satapuchi
+	dw	MVC93,	00006h,	00060h	; Voice. Tune. Speed	;ulfman
+	dw	MVC93,	0ffe9h,	000a0h	; Voice. Tune. Speed	;warulf
+	dw	MVC97,	00528h,	000cfh	; Voice. Tune. Speed	;porysacle
+	dw	MVC110,	00260h,	000a0h	; Voice. Tune. Speed	;dakoratta
+	dw	MVC98,	00000h,	00100h	; Voice. Tune. Speed	;kurikaseki
+	dw	MVC93,	0ff85h,	001bbh	; Voice. Tune. Speed	;jishasute
+	dw	MVC84,	0ff40h,	001e0h	; Voice. Tune. Speed	;robashee
+	dw	MVC92,	00020h,	001a4h	; Voice. Tune. Speed	;slidogas
+	dw	MVC116,	0ffe8h,	00110h	; Voice. Tune. Speed	;torando
+	dw	MVC117,	00360h,	000c0h	; Voice. Tune. Speed	;onibarlo
+	dw	MVC117,	001aeh,	000d0h	; Voice. Tune. Speed	;nohotip
+	dw	MVC81,	00080h,	000abh	; Voice. Tune. Speed	;molnite
+	dw	MVC103,	0ffd0h,	00180h	; Voice. Tune. Speed	;duggo
+	dw	MVC82,	000c0h,	000fbh	; Voice. Tune. Speed	;enpeduck
+	dw	MVC99,	007f8h,	000e0h	; Voice. Tune. Speed	;ikalpha
+	dw	MVC108,	0feffh,	00180h	; Voice. Tune. Speed	;pinchla
+	dw	MVC99,	00740h,	00100h	; Voice. Tune. Speed	;pauchen
+	dw	MVC110,	001d8h,	000d0h	; Voice. Tune. Speed	;omanova
+	dw	MVC101,	00090h,	00095h	; Voice. Tune. Speed	;kaboldar
+	dw	MVC108,	00026h,	0014ch	; Voice. Tune. Speed	;gigaotachi
+	dw	MVC54,	0ff76h,	00140h	; Voice. Tune. Speed	;shabel
+	dw	MVC104,	00000h,	00100h	; Voice. Tune. Speed	;kojitaka
+	dw	MVC118,	00010h,	000f0h	; Voice. Tune. Speed	;kazennik
+	dw	MVC118,	0ffc0h,	000c0h	; Voice. Tune. Speed	;kasaitod
+	dw	MVC101,	0ff87h,	00160h	; Voice. Tune. Speed	;dranuu
+	dw	MVC82,	001f0h,	00118h	; Voice. Tune. Speed	;butska
+	dw	MVC82,	00150h,	00130h	; Voice. Tune. Speed	;kikyuma
+	dw	MVC101,	00013h,	000d0h	; Voice. Tune. Speed	;joryu
+	dw	MVC98,	0077eh,	00092h	; Voice. Tune. Speed	;niwatar
+	dw	MVC84,	0004eh,	001b7h	; Voice. Tune. Speed	;amayoto
+	dw	MVC105,	00093h,	00112h	; Voice. Tune. Speed	;jozaiku
+	dw	MVC108,	0ffd8h,	000d0h	; Voice. Tune. Speed	;tobkenun
+	dw	MVC119,	0ffdfh,	000c0h	; Voice. Tune. Speed	;shinkakeru
+	dw	MVC112,	00034h,	00153h	; Voice. Tune. Speed	;yoryu
+	dw	MVC81,	0fff0h,	000c0h	; Voice. Tune. Speed	;soulchin
+	dw	MVC104,	0feb3h,	00190h	; Voice. Tune. Speed	;yorgi
+	dw	MVC93,	00040h,	000a0h	; Voice. Tune. Speed	;tamakazabi
+	dw	MVC107,	006ach,	000f3h	; Voice. Tune. Speed	;inotuno
+	dw	MVC106,	00078h,	00040h	; Voice. Tune. Speed	;koalim
+	dw	MVC88,	0fea0h,	0014ch	; Voice. Tune. Speed	;warflo
+	dw	MVC108,	00048h,	00070h	; Voice. Tune. Speed	;subelsagi
+	dw	MVC119,	000a0h,	000f0h	; Voice. Tune. Speed	;scorps
+	dw	MVC109,	0fe84h,	00110h	; Voice. Tune. Speed	;komaidi
+	dw	MVC118,	00037h,	000e0h	; Voice. Tune. Speed	;kliraruge
+	dw	MVC104,	0ffcdh,	000e6h	; Voice. Tune. Speed	;megator
+	dw	MVC109,	0ffech,	00075h	; Voice. Tune. Speed	;nins
+	dw	MVC110,	00213h,	000b0h	; Voice. Tune. Speed	;tamaryu
+	dw	MVC107,	00728h,	001a0h	; Voice. Tune. Speed	;gobeldol
+	dw	MVC114,	0ff58h,	000a0h	; Voice. Tune. Speed	;centir
+	dw	MVC110,	00063h,	00150h	; Voice. Tune. Speed	;quindra
+	dw	MVC93,	00060h,	00140h	; Voice. Tune. Speed	;haflary
+	dw	MVC102,	00060h,	00112h	; Voice. Tune. Speed	;kedesti
+	dw	MVC107,	0ff68h,	000feh	; Voice. Tune. Speed	;sarning
+	dw	MVC109,	0010ch,	000d4h	; Voice. Tune. Speed	;hiliselia
+	dw	MVC114,	00000h,	00100h	; Voice. Tune. Speed	;selenumia
+	dw	MVC109,	0ff28h,	000c3h	; Voice. Tune. Speed	;parbel
 
 
 

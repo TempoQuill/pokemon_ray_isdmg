@@ -9,14 +9,10 @@
 	;
 ;	public	musfield13
 ;musfield13:
-	db	0c0h
-	dw	field031
-	db	001h
-	dw	field032
-	db	002h
-	dw	field033
-	db	003h
-	dw	field034
+		mushdr	c0,field031
+		mushdr	01,field032
+		mushdr	02,field033
+		mushdr	03,field034
 ;----------------------------------------
 field031:
 ;----------------------------------------
