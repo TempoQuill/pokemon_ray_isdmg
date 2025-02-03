@@ -1,13 +1,13 @@
 ;	include	group.def
 ;bank28	group	G_SE1
-;	public	m_reward12
-;m_reward12:
+;	public	m_reward14
+;m_reward14:
 	db	084h
-	dw	m_reward121
+	dw	m_reward141
 	db	005h
-	dw	m_reward122
+	dw	m_reward142
 	db	006h
-	dw	m_reward123
+	dw	m_reward143
 ;----------------------------------------
 m_reward141:
 ;----------------------------------------

@@ -1,67 +1,67 @@
 ;	include	group.def
 ;bank28	group	G_SE1
-;	public	m_reward12
-;m_reward12:
-	db	084h
-	dw	m_reward121
-	db	005h
-	dw	m_reward122
-	db	006h
-	dw	m_reward123
+;	public	m_reward14
+;m_reward14:
+;	public	m_reward141
+;	public	m_reward142
+;	public	m_reward143
 ;----------------------------------------
 m_reward141:
 ;----------------------------------------
+	db	$ec
 	db	$f3
 	db	$da,$00,$90
 	db	$e5,$77
-	db	$e6,$ff,$ff
-	db	$db,$02
-	db	$e1,$6,$42
+	db	$db,$03
+	db	$f1
+	db	$e1,$5,$25
 ; P1-1
-	db	$d8,$6,$43
-	db	$02
-	db	$fe
-	dw	REWARD14Sub
-	db	$d4,$30
-; P1-2
-	db	$dc,$a2
-	db	$d6,$a1
-	db	$c1
-	db	$d5,$13
+	db	$d8,$c,$b1
+	db	$d5,$80
+	db	$60
+	db	$50
+	db	$30
 	db	$11
-	db	$31
+	db	$d6,$c1
+	db	$a1
+	db	$d5,$51
+	db	$d6,$81
+	db	$d5,$31
+; P1-2
+	db	$11
+	db	$d6,$c1
+	db	$a1
+	db	$81
 	db	$53
-	db	$17
-	db	$d6,$87
-	db	$ff
-REWARD14Sub:
-	db	$d4,$81
-	db	$61
-	db	$51
-	db	$31
-	db	$13
-	db	$d5,$c3
-	db	$a3
-	db	$d4,$53
-	db	$d5,$83
+	db	$d7,$83
+	db	$ed
 	db	$ff
 ;----------------------------------------
 m_reward142:
 ;----------------------------------------
 	db	$f3
 	db	$db,$02
+	db	$e1,$6,$26
 ; P2-1
-	db	$d8,$6,$a2
-	db	$fe
-	dw	REWARD14Sub
-	db	$d4,$33
+	db	$d8,$c,$c2
+	db	$d4,$11
+	db	$d5,$c1
+	db	$a1
+	db	$81
+	db	$50
+	db	$60
+	db	$81
+	db	$30
+	db	$50
+	db	$61
 ; P2-2
-	db	$13
-	db	$d5,$c3
-	db	$a3
-	db	$83
-	db	$57
-	db	$d6,$57
+	db	$51
+	db	$31
+	db	$11
+	db	$d6,$c1
+	db	$d5,$13
+	db	$d8,$c,$b1
+	db	$d5,$13
 	db	$ff
 ;----------------------------------------
 m_reward143:
@@ -69,36 +69,18 @@ m_reward143:
 	db	$f3
 ; P3-1
 	db	$d8,$c,$10
-	db	$d2,$10
-	db	$00
-	db	$d3,$c0
-	db	$00
-	db	$a0
-	db	$00
-	db	$80
-	db	$00
-	db	$50
-	db	$60
-	db	$80
-	db	$00
-	db	$30
-	db	$50
-	db	$60
-	db	$00
+	db	$0f
 ; P3-2
-	db	$50
-	db	$00
-	db	$30
-	db	$00
+	db	$d6,$a0
+	db	$c0
+	db	$d5,$11
 	db	$10
-	db	$00
-	db	$d4,$c0
-	db	$00
-	db	$d3,$10
-	db	$02
-	db	$dc,$1b
-	db	$d4,$10
-	db	$02
+	db	$30
+	db	$51
+	db	$11
+	db	$01
+	db	$d6,$11
+	db	$01
 	db	$ff
 
 

@@ -412,7 +412,7 @@ MonsVoiceData:
 	dw	MVC92,	00290h,	000c4h	; Voice. Tune. Speed	;rakuki
 	dw	MVC90,	00090h,	000a0h	; Voice. Tune. Speed	;kornya
 	dw	MVC90,	0001ch,	00100h	; Voice. Tune. Speed	;linlin
-	dw	MVC90,	0ffeah,	00140h	; Voice. Tune. Speed	;berrun
+	dw	MVC90,	0ffeah,	00140h	; Voice. Tune. Speed	;belrun
 	dw	MVC113,	00084h,	000d0h	; Voice. Tune. Speed	;starelo
 	dw	MVC101,	0febfh,	001aeh	; Voice. Tune. Speed	;jurayon
 	dw	MVC93,	00056h,	000abh	; Voice. Tune. Speed	;ichikari
@@ -422,7 +422,7 @@ MonsVoiceData:
 	dw	MVC113,	000a4h,	000f0h	; Voice. Tune. Speed	;whisper
 	dw	MVC106,	000e0h,	00120h	; Voice. Tune. Speed	;klanger
 	dw	MVC109,	000c0h,	000a5h	; Voice. Tune. Speed	;tarban
-	dw	MVC91,	0fef8h,	00140h	; Voice. Tune. Speed	;bettobaby
+	dw	MVC91,	0fef8h,	00140h	; Voice. Tune. Speed	;bettobeby
 	dw	MVC92,	0021fh,	0012eh	; Voice. Tune. Speed	;memoryryu
 	dw	MVC102,	000d0h,	000aah	; Voice. Tune. Speed	;kiklaud
 	dw	MVC82,	00172h,	00080h	; Voice. Tune. Speed	;pudi
@@ -452,13 +452,13 @@ MonsVoiceData:
 	dw	MVC97,	00528h,	000cfh	; Voice. Tune. Speed	;porysacle
 	dw	MVC110,	00260h,	000a0h	; Voice. Tune. Speed	;dakoratta
 	dw	MVC98,	00000h,	00100h	; Voice. Tune. Speed	;kurikaseki
-	dw	MVC93,	0ff85h,	001bbh	; Voice. Tune. Speed	;jishasute
+	dw	MVC93,	0ff85h,	001bbh	; Voice. Tune. Speed	;jishaste
 	dw	MVC84,	0ff40h,	001e0h	; Voice. Tune. Speed	;robashee
 	dw	MVC92,	00020h,	001a4h	; Voice. Tune. Speed	;slidogas
-	dw	MVC116,	0ffe8h,	00110h	; Voice. Tune. Speed	;torando
+	dw	MVC116,	0ffe8h,	00110h	; Voice. Tune. Speed	;tornado
 	dw	MVC117,	00360h,	000c0h	; Voice. Tune. Speed	;onibarlo
 	dw	MVC117,	001aeh,	000d0h	; Voice. Tune. Speed	;nohotip
-	dw	MVC81,	00080h,	000abh	; Voice. Tune. Speed	;molnite
+	dw	MVC81,	00080h,	000abh	; Voice. Tune. Speed	;hontsufa
 	dw	MVC103,	0ffd0h,	00180h	; Voice. Tune. Speed	;duggo
 	dw	MVC82,	000c0h,	000fbh	; Voice. Tune. Speed	;enpeduck
 	dw	MVC99,	007f8h,	000e0h	; Voice. Tune. Speed	;ikalpha
@@ -468,7 +468,7 @@ MonsVoiceData:
 	dw	MVC101,	00090h,	00095h	; Voice. Tune. Speed	;kaboldar
 	dw	MVC108,	00026h,	0014ch	; Voice. Tune. Speed	;gigaotachi
 	dw	MVC54,	0ff76h,	00140h	; Voice. Tune. Speed	;shabel
-	dw	MVC104,	00000h,	00100h	; Voice. Tune. Speed	;kojitaka
+	dw	MVC104,	00000h,	00100h	; Voice. Tune. Speed	;sleiji
 	dw	MVC118,	00010h,	000f0h	; Voice. Tune. Speed	;kazennik
 	dw	MVC118,	0ffc0h,	000c0h	; Voice. Tune. Speed	;kasaitod
 	dw	MVC101,	0ff87h,	00160h	; Voice. Tune. Speed	;dranuu

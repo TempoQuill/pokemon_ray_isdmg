@@ -1,3 +1,104 @@
+bank2c	group	G_SE2
+;*****************************************
+;*				 	 *
+;*	  MUSIC DATA (SE)	 	 *
+;*					 *
+;*****************************************
+	public	m_fan211		;99
+	public	m_fan212		;100
+	public	m_fan213		;101
+	public	m_fan214		;102
+	public	m_fan215		;103
+	public	m_fan216		;104
+	public	m_fan217		;105
+	public	m_fan218		;106
+	public	m_fan219		;107
+	public	m_reward11		;107
+	public	m_reward12		;107
+	public	m_reward13		;107
+	public	m_reward14		;107
+	public	m_reward15		;107
+	public	m_reward16		;107
+	public	m_reward17		;107
+	public	m_reward18		;107
+	public	m_reward19		;107
+
+	public	m_bluestar
+	public	m_bluesing
+	public	m_purinpyon1
+	public	m_purinpyon2
+	public	m_bluein
+
+	public	m_bidbid
+	public	m_jitabata
+	public	m_wah
+	public	m_won
+	public	m_bua
+	public	m_tamabig
+	public	m_tama1
+	public	m_tama2
+	public	m_tama3
+	public	m_tama4
+	public	m_tama5
+	public	m_tama6
+	public	m_tama7
+	public	m_batontatti
+	public	m_waiki
+	public	m_kaasaa
+	public	m_bekesmall
+	public	m_bekebig
+	public	m_tamago
+	public	m_kyushi
+	public	m_fue3
+	public	m_fue4
+	public	m_fue5
+
+;*****************************************
+;*				 	 *
+;*	  MUSIC DATA (FAN)	 	 *
+;*					 *
+;*****************************************
+m_fan219:
+	include		..\effdata\m_fan219.dat
+m_fan218:
+	include		..\effdata\m_fan218.dat
+m_reward11:
+	include		..\effdata\reward11.dat
+m_fan217:
+	include		..\effdata\m_fan217.dat
+m_fan216:
+	include		..\effdata\m_fan216.dat
+m_fan215:
+	include		..\effdata\m_fan215.dat
+m_fan214:
+	include		..\effdata\m_fan214.dat
+m_fan213:
+	include		..\effdata\m_fan213.dat
+m_fan212:
+	include		..\effdata\m_fan212.dat
+m_fan211:
+	include		..\effdata\m_fan211.dat
+m_reward13:
+	include		..\effdata\reward13.dat
+m_reward12:
+	include		..\effdata\reward12.dat
+m_reward14:
+	include		..\effdata\reward14.dat
+m_reward15:
+	include		..\effdata\reward15.dat
+m_reward16:
+	include		..\effdata\reward16.dat
+m_reward17:
+	include		..\effdata\reward17.dat
+m_reward18:
+	include		..\effdata\reward18.dat
+m_reward19:
+	include		..\effdata\reward19.dat
+;*****************************************
+;*				 	 *
+;*	  MUSIC DATA (SE)	 	 *
+;*					 *
+;*****************************************
 m_jitabata:
 	db	S_LINE_1+SE1
 	dw	m_jitabata1
@@ -65,278 +166,278 @@ m_bidbid:
 	db	SE2
 	dw	m_bidbid2
 m_jitabata1:
-	db	$f3
-	db	$db,$02
-	db	$d8,$4,$e1
-	db	$d2,$30
-	db	$10
-	db	$d3,$c0
-	db	$a0
-	db	$ff
+	db	0f3h
+	db	0dbh,002h
+	db	0d8h,04h,0e1h
+	db	0d2h,030h
+	db	010h
+	db	0d3h,0c0h
+	db	0a0h
+	db	com_end
 m_roundpoint1:
-	db	$f3
-	db	$db,$02
-	db	$d8,$4,$e1
-	db	$d3,$60
-	db	$a0
-	db	$d2,$10
-	db	$d8,$c,$e3
-	db	$6f
-	db	$ff
+	db	0f3h
+	db	0dbh,002h
+	db	0d8h,04h,0e1h
+	db	0d3h,060h
+	db	0a0h
+	db	0d2h,010h
+	db	0d8h,0ch,0e3h
+	db	06fh
+	db	com_end
 m_slidetest3:
-	db	$f3
-	db	$d8,$c,$10
-	db	$d3
-	db	$e0,$00,$66,$63
-	db	$ff
+	db	0f3h
+	db	0d8h,0ch,010h
+	db	0d3h
+	db	0e0h,000h,066h,063h
+	db	com_end
 m_kyushi1:
-	db	$da,$01,$00
-	db	$db,$02
-	db	$04,$f4,$00,$07
-	db	$01,$a1,$40,$07
-	db	$02,$c1,$80,$07
-	db	$08,$a2,$c0,$07
-	db	$ff
+	db	0dah,001h,000h
+	db	0dbh,002h
+	db	004h,0f4h,000h,007h
+	db	001h,0a1h,040h,007h
+	db	002h,0c1h,080h,007h
+	db	008h,0a2h,0c0h,007h
+	db	com_end
 m_kyushi2:
-	db	$db,$01
-	db	$01,$21,$c0,$06
-	db	$04,$d4,$00,$07
-	db	$01,$81,$40,$07
-	db	$02,$a1,$80,$07
-	db	$08,$82,$c0,$07
-	db	$ff
+	db	0dbh,001h
+	db	001h,021h,0c0h,006h
+	db	004h,0d4h,000h,007h
+	db	001h,081h,040h,007h
+	db	002h,0a1h,080h,007h
+	db	008h,082h,0c0h,007h
+	db	com_end
 m_won1:
-	db	$db,$02
-	db	$00,$42,$00,$05
-	db	$00,$92,$80,$06
-	db	$00,$d2,$00,$07
-	db	$00,$f2,$80,$07
-	db	$00,$d2,$00,$07
-	db	$00,$92,$80,$06
-	db	$0a,$41,$00,$05
-	db	$ff
+	db	0dbh,002h
+	db	000h,042h,000h,005h
+	db	000h,092h,080h,006h
+	db	000h,0d2h,000h,007h
+	db	000h,0f2h,080h,007h
+	db	000h,0d2h,000h,007h
+	db	000h,092h,080h,006h
+	db	00ah,041h,000h,005h
+	db	com_end
 m_batontatti1:
-	db	$db,$02
-	db	$dd,$3a
-	db	$04,$f2,$00,$04
-	db	$dd,$23
-	db	$08,$f2,$00,$06
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,03ah
+	db	004h,0f2h,000h,004h
+	db	0ddh,023h
+	db	008h,0f2h,000h,006h
+	db	0ddh,008h
+	db	com_end
 m_bua1:
-	db	$db,$00
-	db	$dd,$22
-	db	$04,$f2,$00,$03
-	db	$dd,$08
-	db	$ff
+	db	0dbh,000h
+	db	0ddh,022h
+	db	004h,0f2h,000h,003h
+	db	0ddh,008h
+	db	com_end
 m_tama11:
-	db	$db,$02
-	db	$dd,$2d
-	db	$06,$f1,$c0,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,02dh
+	db	006h,0f1h,0c0h,007h
+	db	0ddh,008h
+	db	com_end
 m_tama21:
-	db	$db,$02
-	db	$dd,$2d
-	db	$06,$f1,$a0,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,02dh
+	db	006h,0f1h,0a0h,007h
+	db	0ddh,008h
+	db	com_end
 m_tama31:
-	db	$db,$02
-	db	$dd,$2d
-	db	$06,$f1,$80,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,02dh
+	db	006h,0f1h,080h,007h
+	db	0ddh,008h
+	db	com_end
 m_tama41:
-	db	$db,$02
-	db	$dd,$2d
-	db	$06,$f1,$60,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,02dh
+	db	006h,0f1h,060h,007h
+	db	0ddh,008h
+	db	com_end
 m_tama51:
-	db	$db,$02
-	db	$dd,$2d
-	db	$06,$f1,$40,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,02dh
+	db	006h,0f1h,040h,007h
+	db	0ddh,008h
+	db	com_end
 m_tama61:
-	db	$db,$02
-	db	$dd,$2d
-	db	$06,$f1,$20,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,02dh
+	db	006h,0f1h,020h,007h
+	db	0ddh,008h
+	db	com_end
 m_tama71:
-	db	$db,$02
-	db	$dd,$2d
-	db	$06,$f1,$00,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,02dh
+	db	006h,0f1h,000h,007h
+	db	0ddh,008h
+	db	com_end
 m_tamabig1:
-	db	$db,$02
-	db	$00,$c1,$80,$07
-	db	$01,$f1,$a0,$07
-	db	$01,$c1,$c0,$07
-	db	$04,$f1,$e0,$07
-	db	$ff
+	db	0dbh,002h
+	db	000h,0c1h,080h,007h
+	db	001h,0f1h,0a0h,007h
+	db	001h,0c1h,0c0h,007h
+	db	004h,0f1h,0e0h,007h
+	db	com_end
 m_tamabig2:
-	db	$db,$02
-	db	$00,$91,$81,$07
-	db	$01,$d1,$a1,$07
-	db	$01,$91,$c1,$07
-	db	$04,$d1,$e1,$07
-	db	$ff
+	db	0dbh,002h
+	db	000h,091h,081h,007h
+	db	001h,0d1h,0a1h,007h
+	db	001h,091h,0c1h,007h
+	db	004h,0d1h,0e1h,007h
+	db	com_end
 m_waiki1:
-	db	$db,$01
-	db	$dd,$26
-	db	$08,$f1,$40,$07
-	db	$dd,$36
-	db	$04,$e1,$c0,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,001h
+	db	0ddh,026h
+	db	008h,0f1h,040h,007h
+	db	0ddh,036h
+	db	004h,0e1h,0c0h,007h
+	db	0ddh,008h
+	db	com_end
 m_kaasaa1:
-	db	$db,$01
-	db	$dd,$15
-	db	$04,$a1,$40,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,001h
+	db	0ddh,015h
+	db	004h,0a1h,040h,007h
+	db	0ddh,008h
+	db	com_end
 m_wah1:
-	db	$db,$02
-	db	$dd,$36
-	db	$08,$f1,$00,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,036h
+	db	008h,0f1h,000h,007h
+	db	0ddh,008h
+	db	com_end
 m_bekesmall1:
-	db	$db,$02
-	db	$dd,$14
-	db	$08,$71,$80,$06
-	db	$08,$41,$00,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,014h
+	db	008h,071h,080h,006h
+	db	008h,041h,000h,007h
+	db	0ddh,008h
+	db	com_end
 m_bekebig1:
-	db	$db,$02
-	db	$dd,$14
-	db	$08,$d1,$80,$06
-	db	$08,$a1,$00,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,014h
+	db	008h,0d1h,080h,006h
+	db	008h,0a1h,000h,007h
+	db	0ddh,008h
+	db	com_end
 m_tamago1:
-	db	$db,$02
-	db	$dd,$36
-	db	$04,$f4,$80,$07
-	db	$03,$c1,$c0,$07
-	db	$04,$d1,$a0,$07
-	db	$dd,$08
-	db	$ff
+	db	0dbh,002h
+	db	0ddh,036h
+	db	004h,0f4h,080h,007h
+	db	003h,0c1h,0c0h,007h
+	db	004h,0d1h,0a0h,007h
+	db	0ddh,008h
+	db	com_end
 m_bidbid1:
-	db	$db,$02
-	db	$03,$d1,$c0,$07
-	db	$03,$d1,$80,$07
-	db	$03,$d1,$c0,$07
-	db	$03,$d1,$80,$07
-	db	$ff
+	db	0dbh,002h
+	db	003h,0d1h,0c0h,007h
+	db	003h,0d1h,080h,007h
+	db	003h,0d1h,0c0h,007h
+	db	003h,0d1h,080h,007h
+	db	com_end
 m_bidbid2:
-	db	$db,$02
-	db	$03,$a1,$c1,$07
-	db	$03,$a1,$81,$07
-	db	$03,$a1,$c1,$07
-	db	$03,$a1,$81,$07
-	db	$ff
+	db	0dbh,002h
+	db	003h,0a1h,0c1h,007h
+	db	003h,0a1h,081h,007h
+	db	003h,0a1h,0c1h,007h
+	db	003h,0a1h,081h,007h
+	db	com_end
 m_bluestar:
 	db	S_LINE_1+SE1
 	dw	m_bluestar1
 m_bluestar1:
-	db	$de,$e4
-	db	$dd,$2f
-	db	$04,$40,$e0,$07
-	db	$04,$60,$e0,$07
-	db	$04,$80,$e0,$07
-	db	$08,$a0,$e0,$07
-	db	$08,$a0,$e0,$07
-	db	$08,$80,$e0,$07
-	db	$08,$60,$e0,$07
-	db	$08,$30,$e0,$07
-	db	$0f,$12,$e0,$07
-	db	$dd,$08
-	db	$ff
+	db	0deh,0e4h
+	db	0ddh,02fh
+	db	004h,040h,0e0h,007h
+	db	004h,060h,0e0h,007h
+	db	004h,080h,0e0h,007h
+	db	008h,0a0h,0e0h,007h
+	db	008h,0a0h,0e0h,007h
+	db	008h,080h,0e0h,007h
+	db	008h,060h,0e0h,007h
+	db	008h,030h,0e0h,007h
+	db	00fh,012h,0e0h,007h
+	db	0ddh,008h
+	db	com_end
 m_bluesing:
 	db	S_LINE_2+SE1
 	dw	m_bluesing1
 	db	SE2
 	dw	m_bluesing2
 m_bluesing1:
-	db	$f3
-	db	$e1,$a,$24
-	db	$db,$02
-	db	$d8,$a,$87
-	db	$d3,$97
-	db	$d2,$73
-	db	$53
-	db	$d3,$97
-	db	$ff
+	db	0f3h
+	db	0e1h,0ah,024h
+	db	0dbh,002h
+	db	0d8h,0ah,087h
+	db	0d3h,097h
+	db	0d2h,073h
+	db	053h
+	db	0d3h,097h
+	db	com_end
 m_bluesing2:
-	db	$f3
-	db	$e1,$a,$23
-	db	$db,$02
-	db	$d8,$b,$67
-	db	$d3,$97
-	db	$d8,$a,$67
-	db	$d2,$73
-	db	$53
-	db	$d3,$97
-	db	$ff
+	db	0f3h
+	db	0e1h,0ah,023h
+	db	0dbh,002h
+	db	0d8h,0bh,067h
+	db	0d3h,097h
+	db	0d8h,0ah,067h
+	db	0d2h,073h
+	db	053h
+	db	0d3h,097h
+	db	com_end
 m_corrupt:
 	db	S_LINE_1+SE1
 	dw	m_corrupt1
 m_corrupt1:
-	db	$db,$01
-	db	$dd,$17
-	db	$0f,$d7,$00,$06
-	db	$0f,$b7,$80,$05
-	db	$0f,$87,$00,$05
-	db	$0f,$47,$80,$04
-	db	$0f,$17,$00,$04
-	db	$ff
+	db	0dbh,001h
+	db	0ddh,017h
+	db	00fh,0d7h,000h,006h
+	db	00fh,0b7h,080h,005h
+	db	00fh,087h,000h,005h
+	db	00fh,047h,080h,004h
+	db	00fh,017h,000h,004h
+	db	com_end
 m_fue3:
 	db	S_LINE_1+SE3
 	dw	m_fue33
 m_fue33:
-	db	$f3
-	db	$da,$00,$80
-	db	$e1,$b,$24
+	db	0f3h
+	db	0dah,000h,080h
+	db	0e1h,0bh,024h
 
-	db	$d8,$b,$13
-	db	$d3,$90
-	db	$70
-	db	$9a
-	db	$ff
+	db	0d8h,0bh,013h
+	db	0d3h,090h
+	db	070h
+	db	09ah
+	db	com_end
 m_fue4:
 	db	S_LINE_1+SE3
 	dw	m_fue43
 m_fue43:
-	db	$f3
-	db	$da,$00,$8e
-	db	$e1,$b,$24
+	db	0f3h
+	db	0dah,000h,08eh
+	db	0e1h,0bh,024h
 
-	db	$d8,$c,$27
-	db	$d3,$30
-	db	$c0
-	db	$a0
-	db	$38
-	db	$ff
+	db	0d8h,0ch,027h
+	db	0d3h,030h
+	db	0c0h
+	db	0a0h
+	db	038h
+	db	com_end
 m_fue5:
 	db	S_LINE_1+SE3
 	dw	m_fue53
 m_fue53:
-	db	$f3
-	db	$da,$00,$9c
-	db	$e1,$b,$24
+	db	0f3h
+	db	0dah,000h,09ch
+	db	0e1h,0bh,024h
 
-	db	$d8,$c,$11
-	db	$d3,$30
-	db	$50
-	db	$60
-	db	$50
-	db	$31
-	db	$a1
-	db	$a5
-	db	$ff
+	db	0d8h,0ch,011h
+	db	0d3h,030h
+	db	050h
+	db	060h
+	db	050h
+	db	031h
+	db	0a1h
+	db	0a5h
+	db	com_end

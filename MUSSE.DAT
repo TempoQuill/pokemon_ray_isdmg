@@ -626,6 +626,7 @@ m_elev:
 	db	07h
 	dw	elev3
 
+ ifn 0
 m_fanfare1:
 	include		..\effect\fanfare1.dat
 ;	db	84h
@@ -719,6 +720,7 @@ m_fanfare19:
 	include		..\effect\fan19.dat
 m_fanfare20:
 	include		..\effect\fan20.dat
+ endif
 
 m_waza02:
 	include		..\effect\se_02.dat
@@ -812,7 +814,7 @@ m_se34:
 	include		..\effect\se_34.dat
 m_se35:
 	include		..\effect\se_35.dat
-
+ ifn 0
 m_fan101:
 	include		..\effect\fan101.dat
 m_fan105:
@@ -823,6 +825,7 @@ m_fan107:
 	include		..\effect\fan107.dat
 m_fan108:
 	include		..\effect\fan108.dat
+ endif
 
 m_se37:
 	include		..\effect\se_37.dat
@@ -874,7 +877,7 @@ fue1:
 	db	061h
 	db	087h
 	db	00bh
-	db	0ffh
+	db	com_end
 go:
 	db	002h,0f7h,024h
 	db	002h,0f7h,034h
@@ -2246,7 +2249,6 @@ Fanfare63:
 
 	db	$47
 	db	$ff
- endif
 Fanfare71:
 	db	$df
 	db	$ec
@@ -2309,7 +2311,6 @@ Fanfare73:
 
 	db	$95
 	db	$ff
- ifn 0
 Fanfare81:
 	db	$df
 	db	$ec
@@ -2370,7 +2371,6 @@ Fanfare83:
 
 	db	$93
 	db	$ff
- endif
 Fanfare91:
 	db	$df
 	db	$ec
@@ -2460,6 +2460,7 @@ Fanfare93:
 
 	db	$75
 	db	$ff
+ endif
 
 
 

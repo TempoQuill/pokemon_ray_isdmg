@@ -71,9 +71,46 @@
 	extern	musdonfan		;MVC80
 
 	extern	musearthtron		;MVC81
+	extern	musm_omom		;MVC82
+	extern	muskaijyuu1		;MVC83
+	extern	musm_karasu		;MVC84
+	extern	musm_kawaii4		;MVC85
+	extern	musm_kaijyuu2		;MVC86
+	extern	mushoho_01		;MVC87
+	extern	musm_hoho		;MVC88
+	extern	mushoho_02		;MVC89
+	extern	muswani			;MVC90
+	extern	musmusi			;MVC91
+	extern	musm_tora		;MVC92
+	extern	musm_nyura		;MVC93
+	extern	musyamikarasu		;MVC94
+	extern	musledjury		;MVC95
 	extern	musyossy		;MVC96
 	extern	musyoyossy		;MVC97
 
+
+	extern	muskurikaseki		;MVC98
+	extern	muspouchen		;MVC99
+	extern	musmafelt		;MVC100
+	extern	musjoryu		;MVC101
+	extern	muskiklaud		;MVC102
+	extern	musduggo		;MVC103
+	extern	muskojitaka		;MVC104
+	extern	musringokku		;MVC105
+	extern	mustealank		;MVC106
+	extern	musinotuno		;MVC107
+	extern	mussubelsagi		;MVC108
+	extern	muskomaidi		;MVC109
+	extern	musquindra		;MVC110
+	extern	muskochard		;MVC111
+	extern	muscroben		;MVC112
+	extern	musbomseeker		;MVC113
+	extern	musselenumia		;MVC114
+	extern	muschiryoteki		;MVC115
+	extern	mustornado		;MVC116
+	extern	musonibarlo		;MVC117
+	extern	muskazennik		;MVC118
+	extern	musshinkakeru		;MVC119
 
 
 	extern	m_wngo			;00
@@ -175,26 +212,24 @@
 	extern	m_utau			;96
 	extern	m_beam2			;97
 	extern	m_syakin		;98
-	extern	m_fanfare1		;99
-	extern	m_fanfare2		;100
-	extern	m_fanfare3		;101
-	extern	m_fanfare4		;102
-	extern	m_fanfare5		;103
-	extern	m_fanfare6		;104
-	extern	m_fanfare7		;105
-	extern	m_fanfare8		;106
-	extern	m_fanfare9		;107
-	extern	m_fanfare10		;107
-	extern	m_fanfare11		;107
-	extern	m_fanfare12		;107
-	extern	m_fanfare13		;107
-	extern	m_fanfare14		;107
-	extern	m_fanfare15		;107
-	extern	m_fanfare16		;107
-	extern	m_fanfare17		;107
-	extern	m_fanfare18		;107
-	extern	m_fanfare19		;107
-	extern	m_fanfare20		;107
+	extern	m_fan211		;99
+	extern	m_fan212		;100
+	extern	m_fan213		;101
+	extern	m_fan214		;102
+	extern	m_fan215		;103
+	extern	m_fan216		;104
+	extern	m_fan217		;105
+	extern	m_fan218		;106
+	extern	m_fan219		;107
+	extern	m_reward11		;107
+	extern	m_reward12		;107
+	extern	m_reward13		;107
+	extern	m_reward14		;107
+	extern	m_reward15		;107
+	extern	m_reward16		;107
+	extern	m_reward17		;107
+	extern	m_reward18		;107
+	extern	m_reward19		;107
 	extern	m_psycho2
 	extern	m_telephone
 	extern	m_telstop1
@@ -244,11 +279,6 @@
 	extern	m_se29
 	extern	m_se30
 	extern	m_se31
-	extern	m_fan101
-	extern	m_fan105
-	extern	m_fan106
-	extern	m_fan107
-	extern	m_fan108
 	extern	m_se32
 	extern	m_se33
 	extern	m_se34
@@ -290,7 +320,9 @@
 
 	extern	m_bluestar
 	extern	m_bluesing
-	extern	m_fue3
+	extern	m_purinpyon1
+	extern	m_purinpyon2
+	extern	m_bluein
 
 	extern	m_bidbid
 	extern	m_jitabata
@@ -312,5 +344,6 @@
 	extern	m_bekebig
 	extern	m_tamago
 	extern	m_kyushi
+	extern	m_fue3
 	extern	m_fue4
 	extern	m_fue5

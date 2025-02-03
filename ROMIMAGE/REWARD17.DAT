@@ -2,23 +2,20 @@
 ;bank28	group	G_SE1
 ;	public	m_reward17
 ;m_reward17:
-	db	084h
-	dw	m_reward171
-	db	005h
-	dw	m_reward172
-	db	006h
-	dw	m_reward173
+;	public	m_reward171
+;	public	m_reward172
 ;----------------------------------------
 m_reward171:
 ;----------------------------------------
+	db	$ec
 	db	$f3
-	db	$da,$00,$cb
+	db	$da,$00,$80
 	db	$e5,$77
+	db	$db,$03
 	db	$f1
-	db	$db,$01
-	db	$e1,$7,$34
+	db	$e1,$1,$23
 ; P1-1
-	db	$d8,$8,$a3
+	db	$d8,$c,$b1
 	db	$d5,$c0
 ; P1-2
 	db	$d4,$94
@@ -33,17 +30,19 @@ m_reward171:
 	db	$91
 	db	$a0
 	db	$c2
-	db	$d4,$95
+	db	$d8,$c,$b2
+	db	$d4,$99
 ; P1-4 -tie
+	db	$ed
 	db	$ff
 ;----------------------------------------
 m_reward172:
 ;----------------------------------------
 	db	$f3
-	db	$db,$01
-	db	$e1,$a,$23
+	db	$db,$02
+	db	$e1,$0,$24
 ; P2-1
-	db	$d8,$8,$d2
+	db	$d8,$c,$c2
 	db	$d4,$50
 ; P2-2
 	db	$c4
@@ -58,51 +57,12 @@ m_reward172:
 	db	$91
 	db	$70
 	db	$52
-	db	$d3,$55
+	db	$d8,$c,$c3
+	db	$d3,$59
 ; P2-4 -tie
 	db	$ff
 ;----------------------------------------
 m_reward173:
 ;----------------------------------------
-	db	$f3
-; P3-1
-	db	$d8,$4,$1b
-	db	$d6,$c0
-	db	$00
-; P3-2
-	db	$d5,$50
-	db	$00
-	db	$90
-	db	$00
-	db	$c0
-	db	$00
-	db	$d4,$50
-	db	$02
-	db	$d5,$c0
-	db	$00
-	db	$50
-	db	$02
-	db	$d4,$40
-	db	$00
-	db	$50
-	db	$02
-	db	$20
-	db	$00
-; P3-3
-	db	$d5,$c0
-	db	$02
-	db	$a0
-	db	$00
-	db	$90
-	db	$02
-	db	$70
-	db	$00
-	db	$50
-	db	$04
-	db	$d6,$50
-	db	$04
-; P3-4
-	db	$05
-	db	$ff
 
 

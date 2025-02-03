@@ -1,0 +1,24 @@
+	GlobalBank	kotejiScrnBank
+	GlobalLevel	kotejiScrnTop
+; Map size	X = 10  Y = 9
+; Page size	PX = 2  PY = 2
+	db	018h,019h,005h,005h,005h,005h,005h,018h
+	db	019h,016h
+	db	01eh,002h,002h,002h,002h,047h,016h,01eh
+	db	001h,045h
+	db	001h,001h,001h,001h,001h,001h,005h,002h
+	db	002h,001h
+	db	018h,01fh,019h,001h,002h,005h,014h,015h
+	db	001h,01ch
+	db	077h,01eh,001h,012h,015h,002h,047h,001h
+	db	047h,001h
+	db	002h,001h,002h,005h,00bh,001h,001h,001h
+	db	001h,001h
+	db	001h,001h,001h,054h,076h,055h,00ch,00dh
+	db	054h,076h
+	db	076h,055h,005h,005h,005h,018h,019h,005h
+	db	005h,005h
+	db	005h,005h,005h,005h,010h,011h,005h,005h
+	db	005h,005h
+
+	GlobalLabel	kotejiScrnBtm
